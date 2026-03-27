@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "title": "আবহাওয়া ও জলবায়ু",
+    "image": "/assets/chapters/chapter-1.png",
+    "borderColor": "#a78bfa",
+    "glowColor": "rgba(167,139,250,0.35)"
+  },
+  {
+    "id": 14,
+    "title": "বন্যা",
+    "image": "/assets/chapters/chapter-14.png",
+    "borderColor": "#7dd3fc",
+    "glowColor": "rgba(125,211,252,0.35)"
+  },
+  {
+    "id": 15,
+    "title": "ঘূর্ণিঝড়",
+    "image": "/assets/chapters/chapter-15.png",
+    "borderColor": "#6ee7b7",
+    "glowColor": "rgba(110,231,183,0.35)"
+  },
+  {
+    "id": 4,
+    "title": "জীবমণ্ডল (জীবন্ত পৃথিবী)",
+    "image": "/assets/chapters/chapter-4.png",
+    "borderColor": "#86efac",
+    "glowColor": "rgba(134,239,172,0.35)"
+  },
+  {
+    "id": 5,
+    "title": "পৃথিবীর গঠন (ভূতত্ত্ব)",
+    "image": "/assets/chapters/chapter-5.png",
+    "borderColor": "#fca5a5",
+    "glowColor": "rgba(252,165,165,0.35)"
+  },
+  {
+    "id": 6,
+    "title": "জল ও আবহাওয়া জনিত দুর্যোগ",
+    "image": "/assets/chapters/chapter-6.png",
+    "borderColor": "#a78bfa",
+    "glowColor": "rgba(167,139,250,0.35)"
+  },
+  {
+    "id": 7,
+    "title": "ভূমি ও আগুনজনিত দুর্যোগ",
+    "image": "/assets/chapters/chapter-7.png",
+    "borderColor": "#fca5a5",
+    "glowColor": "rgba(252,165,165,0.35)"
+  },
+  {
+    "id": 8,
+    "title": "জলবায়ু পরিবর্তন",
+    "image": "/assets/chapters/chapter-8.png",
+    "borderColor": "#7dd3fc",
+    "glowColor": "rgba(125,211,252,0.35)"
+  },
+  {
+    "id": 9,
+    "title": "প্রারম্ভিক সতর্কীকরণ",
+    "image": "/assets/chapters/chapter-9.png",
+    "borderColor": "#fcd34d",
+    "glowColor": "rgba(252,211,77,0.35)"
+  },
+  {
+    "id": 10,
+    "title": "দুর্যোগ ঝুঁকি হ্রাস ও প্রস্তুতি",
+    "image": "/assets/chapters/chapter-10.png",
+    "borderColor": "#86efac",
+    "glowColor": "rgba(134,239,172,0.35)"
+  }
+]

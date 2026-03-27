@@ -1,0 +1,258 @@
+import { useState, useRef, useEffect } from "react";
+import { FaPlay, FaPause } from "react-icons/fa";
+import bgImage from "../../../assets/images/chapter-bg.png";
+import { useLoaderData, useNavigate } from "react-router";
+import TopNav from "../../../components/Shared/TopBar";
+import BottomNav from "../../../components/Shared/BottomNav";
+import { useAudio, useAudioSync } from "../../../hooks/UseAudio";
+
+
+export default function Section() {
+  const [current, setCurrent] = useState(0);
+  const [animDir, setAnimDir] = useState<string | null>(null);
+  const [animating, setAnimating] = useState(false);
+  const [isPending, setIsPending] = useState(false);
+  const SECTIONS = useLoaderData();
+  const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    const isChapterFinished = async () => {
+      const res = await fetch('https://meet-club.vercel.app/api/v1/students/chapter-completion', {
+        headers: { "Content-Type": "application/json", "Authorization": `${localStorage.getItem("token")}` },
+      });
+      const resData = await res.json();
+      if (resData.data) {
+        setShowModal(true);
+      }
+    }
+    isChapterFinished();
+  }, [])
+
+  const TOTAL = SECTIONS.length;
+
+  const section = SECTIONS[current];
+
+  const activeWordRef = useRef<HTMLSpanElement | null>(null);
+  const navigateToQuiz = useNavigate()
+
+  const { toggle, isThisSrcPlaying, currentTime } = useAudio();
+  useAudioSync(section?.audioSrc);
+  const isPlaying = isThisSrcPlaying(section.audioSrc);
+  const togglePlay = () => {
+    if (section?.audioSrc) {
+      toggle(section.audioSrc);
+    }
+  };
+
+
+  useEffect(() => {
+    if (isPlaying && activeWordRef.current) {
+      // শব্দটি ভিউপোর্টের বাইরে গেলে smooth ভাবে স্ক্রল করবে
+      activeWordRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center", // হাইলাইট করা শব্দটি কন্টেইনারের মাঝখানে রাখবে
+      });
+    }
+  }, [currentTime, isPlaying]);
+
+  const navigate = (dir: number) => {
+    if (animating) return;
+    const next = current + dir;
+    if (next < 0 || next >= TOTAL) return;
+    setAnimDir(dir === 1 ? "left" : "right");
+    setAnimating(true);
+    setTimeout(() => {
+      setCurrent(next);
+      setAnimDir(null);
+      setAnimating(false);
+    }, 280);
+  };
+
+  const handleNext = async () => {
+    if (isPending) return;
+
+    if (current < TOTAL - 1) {
+      navigate(1);
+    }
+    else {
+      setIsPending(true);
+      try {
+        const res = await fetch('https://meet-club.vercel.app/api/v1/students/chapter-finish', {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json", "Authorization": `${localStorage.getItem("token")}` },
+        });
+
+        if (res.ok) {
+          navigateToQuiz(`/start-quiz/${section.chapterId}`);
+        }
+      } finally {
+        setIsPending(false);
+      }
+    }
+  };
+  return (
+    <>
+      <div className="fixed inset-0 z-50 flex flex-col"
+        style={{
+          backgroundImage: `url(${bgImage})`,
+          backgroundSize: "cover", backgroundPosition: "center bottom",
+        }}>
+        {/* Overlay */}
+        <div className="absolute inset-0 pointer-events-none"
+          style={{ background: "linear-gradient(to bottom,rgba(255,255,255,0.52) 0%,rgba(255,255,255,0.18) 55%,rgba(255,255,255,0.04) 100%)" }} />
+
+        <TopNav title={section.title} />
+
+        {/* ── Content Card ── */}
+        <div className="px-4 py-4 flex flex-col items-center justify-start lg:justify-center min-h-[calc(100%-150px)] custom-scrollbar overflow-auto custom-scrollbar">
+          <div
+            className={`relative z-10 w-full max-w-7xl mt-6 lg:max-h-100 rounded-2xl bg-white/82 backdrop-blur-md flex flex-col lg:flex-row items-stretch lg:overflow-hidden ${animating
+              ? animDir === "left"
+                ? "content-exit-left"
+                : "content-exit-right"
+              : "content-enter"
+              }`}
+            style={{
+              border: "2.5px solid #93c5fd",
+              boxShadow: "0 8px 48px rgba(125,211,252,0.25), 0 2px 16px rgba(0,0,0,0.08)",
+            }}
+          >
+            {/* ── Illustration (Left Half) ── */}
+            {/* এখানে md:w-1/2 ব্যবহার করা হয়েছে যেন বড় স্ক্রিনে অর্ধেক জায়গা নেয় */}
+            <div className="w-full lg:w-[55%] relative overflow-hidden bg-blue-50/50 shrink-0 rounded-t-2xl lg:rounded-t-none">
+
+              <img
+                src={section.image}
+                alt="story-illustration"
+                className="w-full object-cover hidden lg:block"
+                style={{
+                  height: "100%",
+                  minHeight: "280px",
+                  aspectRatio: "16/10",
+                }}
+              />
+
+              <img
+                src={section.image}
+                alt="story-illustration"
+                className="w-full block lg:hidden"
+                style={{
+                  aspectRatio: "16/9",
+                  objectFit: "contain",
+                }}
+              />
+
+              {/* ২. বাটনটিতে onClick এবং আইকন কন্ডিশন যোগ করা হয়েছে */}
+              <button
+                onClick={togglePlay}
+                className="absolute bottom-6 right-6 w-14 h-14 bg-white/80 backdrop-blur-md rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.15)] border-2 border-white flex items-center justify-center text-blue-500 hover:scale-110 hover:bg-white hover:text-blue-600 hover:shadow-[0_6px_20px_rgba(59,130,246,0.3)] transition-all duration-300 z-20 group"
+                title={isPlaying ? "Pause Audio" : "Play Audio"}
+              >
+                <div className={isPlaying ? "" : "ml-1"}>
+                  {isPlaying ? (
+                    <FaPause className="text-xl sm:text-2xl drop-shadow-sm transition-colors duration-300" />
+                  ) : (
+                    <FaPlay className="text-xl sm:text-2xl drop-shadow-sm transition-colors duration-300" />
+                  )}
+                </div>
+              </button>
+            </div>
+            {/* ── Story Text Section (Right Half) ── */}
+            {/* এখানেও md:w-1/2 ব্যবহার করা হয়েছে এবং টেক্সটগুলো মাঝ বরাবর রাখার জন্য flex যোগ করা হয়েছে */}
+            <div className="w-full lg:w-[45%] p-4 flex flex-col justify-start text-left overflow-y-auto custom-scrollbar">
+              {/* চেক করছি text-এর প্রথম আইটেম Array কি না (প্যারাগ্রাফ হাইলাইটের জন্য) */}
+              {Array.isArray(section.text[0]) ? (
+                <div className="text-sm sm:text-base md:text-lg">
+                  {section.text.map((paragraph: string | Array<{ word: string; start: number; end: number }>, pIndex: number) => {
+                    const timedParagraph = paragraph as Array<{ word: string; start: number; end: number }>;
+                    return (
+                      <p key={pIndex} className="mb-3 text-xl" style={{ lineHeight: "1.3", letterSpacing: "0.03em" }}>
+                        {timedParagraph.map((item, wIndex: number) => {
+                          const isHighlighted =
+                            currentTime >= item.start && currentTime <= item.end;
+                          return (
+                            <span
+                              key={wIndex}
+                              ref={isHighlighted ? activeWordRef : null}
+                              className={`inline-block transition-all duration-150 px-0.5 ${isHighlighted
+                                ? "bg-yellow-300 text-black scale-105"
+                                : "bg-transparent text-gray-700"
+                                }`}
+                            >
+                              {item.word}{" "}
+                            </span>
+                          );
+                        })}
+                      </p>
+                    );
+                  })}
+                </div>
+              ) : (
+                // সাধারণ টেক্সটের জন্য (Section 2, 3...)
+                <div className="text-xl text-gray-700">
+                  {section.text.map((paragraph: string, index: number) => (
+                    <p key={index} className="mb-2">
+                      {String(paragraph)}
+                    </p>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* ── Bottom Navigation ── */}
+        <BottomNav
+          current={current}
+          total={TOTAL}
+          onPrev={() => navigate(-1)}
+          onNext={handleNext}
+          variant="section"
+          isPending={isPending}
+        />
+
+        {showModal && (
+          <div className="fixed inset-0 z-40 flex items-center justify-center px-4">
+            <div
+              className="absolute inset-0 bg-slate-900/45 backdrop-blur-[2px]"
+              onClick={() => setShowModal(false)}
+            />
+
+            <div
+              className="relative z-50 w-full max-w-md rounded-3xl border border-sky-200 bg-white p-6 sm:p-7"
+              style={{ boxShadow: "0 18px 48px rgba(14,116,144,0.28)" }}
+            >
+              <div className="inline-flex rounded-full bg-emerald-100 px-3 py-1 text-xs font-black tracking-wider text-emerald-700">
+                CHAPTER COMPLETED
+              </div>
+
+              <h3 className="mt-3 text-2xl font-black text-slate-800">
+                তুমি এই লেসন সম্পন্ন করেছো
+              </h3>
+
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                এখন তুমি চাইলে আবার লেসন দেখতে পারো অথবা সরাসরি কুইজে যেতে পারো।
+              </p>
+
+              <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                <button
+                  onClick={() => setShowModal(false)}
+                  className="rounded-2xl border border-sky-200 bg-sky-50 px-4 py-3 text-sm font-bold text-sky-700 transition-all hover:bg-sky-100 active:scale-[0.98]"
+                >
+                  লেসন চালিয়ে যাও
+                </button>
+
+                <button
+                  onClick={() => navigateToQuiz(`/start-quiz/${section.chapterId}`)}
+                  className="rounded-2xl bg-linear-to-r from-cyan-500 to-sky-600 px-4 py-3 text-sm font-bold text-white shadow-[0_8px_20px_rgba(2,132,199,0.30)] transition-all hover:from-cyan-600 hover:to-sky-700 active:scale-[0.98]"
+                >
+                  সরাসরি কুইজে যাও
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </>
+  );
+}

@@ -1,0 +1,308 @@
+@font-face {
+  font-family: 'SolaimanLipi';
+  src: url('/fonts/SolaimanLipi.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import "tailwindcss";
+
+body {
+  font-family: "SolaimanLipi", sans-serif;
+}
+
+.clipPath {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 55% 75%, 50% 100%, 45% 75%, 0% 75%);
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes float-delayed {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 3s ease-in-out infinite 1.5s;
+}
+
+/* ── Custom Scrollbar Style ── */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 3px;
+  /* স্ক্রলবারের চওড়া (চিকন রাখা হয়েছে আধুনিক লুকের জন্য) */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  /* ট্র্যাকের ব্যাকগ্রাউন্ড স্বচ্ছ */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #93c5fd;
+  /* আপনার কার্ডের বর্ডারের নীল কালার */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #60a5fa;
+  /* মাউস নিলে কালার একটু গাঢ় হবে */
+}
+
+@keyframes floatUpDown {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes bannerPop {
+  0% {
+    transform: scale(0.7) rotate(-4deg);
+    opacity: 0;
+  }
+
+  70% {
+    transform: scale(1.06) rotate(1deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes coinSpin {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.banner-pop {
+  animation: bannerPop 0.65s cubic-bezier(.34, 1.56, .64, 1) both 0.1s;
+}
+
+.body-fade {
+  animation: fadeSlideUp 0.5s ease both 0.35s;
+}
+
+.coin-spin {
+  animation: coinSpin 2.5s linear infinite;
+  display: inline-block;
+}
+
+.q-enter {
+  animation: fadeUp 0.35s ease both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeft {
+  to {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+}
+
+@keyframes slideRight {
+  to {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+}
+
+@keyframes sunSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes sparkle {
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.content-enter {
+  animation: fadeIn 0.32s ease both;
+}
+
+.content-exit-left {
+  animation: slideLeft 0.28s ease forwards;
+}
+
+.content-exit-right {
+  animation: slideRight 0.28s ease forwards;
+}
+
+.sun-spin {
+  animation: sunSpin 12s linear infinite;
+}
+
+.sparkle {
+  animation: sparkle 2.4s ease-in-out infinite;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes titlePop {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardPop {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.92);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes topicFloat {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes glowPulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+
+  50% {
+    box-shadow: 0 0 32px 8px rgba(125, 211, 252, 0.35);
+  }
+}
+
+.title-anim {
+  animation: fadeDown 0.6s cubic-bezier(.34, 1.56, .64, 1) both 0s;
+}
+
+.sub-anim {
+  animation: fadeDown 0.6s ease both 0.15s;
+}
+
+.topic-anim {
+  animation: cardPop 0.65s cubic-bezier(.34, 1.56, .64, 1) both 0.25s;
+}
+
+.btn-1 {
+  animation: cardPop 0.55s cubic-bezier(.34, 1.56, .64, 1) both 0.4s;
+}
+
+.btn-2 {
+  animation: cardPop 0.55s cubic-bezier(.34, 1.56, .64, 1) both 0.52s;
+}
+
+.btn-3 {
+  animation: cardPop 0.55s cubic-bezier(.34, 1.56, .64, 1) both 0.64s;
+}
+
+.topic-float {
+  animation: topicFloat 3.5s ease-in-out infinite;
+}

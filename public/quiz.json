@@ -1,0 +1,2250 @@
+[
+    {
+        "id": 1,
+        "chapterId": 1,
+        "difficulty": "easy",
+        "type": "hotspot",
+        "title": "প্রশ্ন ১: ছবিতে ক্লিক করো",
+        "description": "ছবিটি ভালো করে দেখো।",
+        "question": "ছবির কোন কোন অংশ দেখে বুঝতে পারছ যে আজকের আবহাওয়া খুব গরম? সঠিক জায়গায় ক্লিক করে টিক চিহ্ন দাও।",
+        "hotspots": [
+            {
+                "id": "sun",
+                "label": "তীব্র সূর্য",
+                "x": 25,
+                "y": 30
+            },
+            {
+                "id": "sweat",
+                "label": "টুনির কপালের ঘাম",
+                "x": 42,
+                "y": 33
+            }
+        ],
+        "correctAnswer": [
+            "sun",
+            "sweat"
+        ],
+        "image": "/assets/images/chapter1/quiz1.png",
+        "audio": "/assets/audios/chapter-1/easyQuiz1.mp3"
+    },
+    {
+        "id": 2,
+        "chapterId": 1,
+        "difficulty": "easy",
+        "type": "true_false",
+        "title": "প্রশ্ন ২: সত্য না মিথ্যা বলো",
+        "description": "একটি ছবি দেওয়া আছে। ছবিতে আবহাওয়া আঙ্কেল বসে আছেন, তার হাতে থার্মোমিটার আর একটা খাতা।",
+        "question": "\"আবহাওয়া আঙ্কেল প্রতিদিনের খবর রাখেন। তিনি দেখেন আজ কেমন আছে আকাশ, বাতাস, রোদ-বৃষ্টি।\"",
+        "options": [
+            "সত্য",
+            "মিথ্যা"
+        ],
+        "correctAnswer": "সত্য",
+        "image": "/assets/images/chapter1/E-1_Q-2.png",
+        "audio": "/assets/audios/chapter-1/easyQuiz2.mp3"
+    },
+    {
+        "id": 3,
+        "chapterId": 1,
+        "difficulty": "easy",
+        "type": "fill_in_the_blanks",
+        "title": "প্রশ্ন ৩: খালি জায়গা পূরণ করো",
+        "description": "একটি ছবি দেওয়া আছে। ছবিতে তিনটি দৃশ্য আছে—সকালে সূর্য ওঠা, দুপুরে তীব্র রোদ, বিকেলে বৃষ্টি।",
+        "statement": "সকালের হাওয়া, দুপুরের গরম, বিকেলের মেঘ—এগুলোকেই বলে ____।",
+        "options": [
+            "আবহাওয়া",
+            "জলবায়ু",
+            "ঋতু",
+            "তাপমাত্রা"
+        ],
+        "correctAnswer": "আবহাওয়া",
+        "image": "/assets/images/chapter1/E-1_Q-3.png",
+        "audio": "/assets/audios/chapter-1/easyQuiz3.mp3"
+    },
+    {
+        "id": 4,
+        "chapterId": 1,
+        "difficulty": "easy",
+        "type": "image_selection",
+        "title": "প্রশ্ন ৪: ছবিতে ক্লিক করো",
+        "description": "পাশাপাশি দুইটি ছবি দেয়া থাকবে। একটি ছবিতে সূর্য সহ আলো। আরেকটি ছবিতে রঙিন ফল।",
+        "question": "আবহাওয়া কোনটি? সঠিক ছবিতে ক্লিক করো।",
+        "options": [
+            {
+                "id": "weather_image",
+                "label": "সূর্য সহ আলো",
+                "image": "/assets/images/chapter1/E-1_Q-4.1.png"
+            },
+            {
+                "id": "fruit_image",
+                "label": "রঙিন ফল",
+                "image": "/assets/images/chapter1/E-1_Q-4.2.png"
+            }
+        ],
+        "correctAnswer": "weather_image",
+        "image": null,
+        "audio": "/assets/audios/chapter-1/easyQuiz4.mp3"
+    },
+    {
+        "id": 5,
+        "chapterId": 1,
+        "difficulty": "easy",
+        "type": "match_the_following",
+        "title": "প্রশ্ন ৫: টেনে আনো আর মেলাও",
+        "description": "বাম পাশে চারটি ছবি এবং ডান পাশে চারটি শব্দ দেওয়া আছে।",
+        "question": "কোন ছবি কোন শব্দের সাথে মেলে? টেনে মেলাও।",
+        "leftItems": [
+            {
+                "id": "L1",
+                "label": "সূর্যের ছবি",
+                "image": "/assets/images/chapter1/E-1_Q-5.1.png"
+            },
+            {
+                "id": "L2",
+                "label": "মেঘের ছবি",
+                "image": "/assets/images/chapter1/E-1_Q-5.2.png"
+            },
+            {
+                "id": "L3",
+                "label": "বাতাসে দুলছে গাছের ছবি",
+                "image": "/assets/images/chapter1/E-1_Q-5.3.png"
+            },
+            {
+                "id": "L4",
+                "label": "থার্মোমিটারের ছবি",
+                "image": "/assets/images/chapter1/E-1_Q-5.4.png"
+            }
+        ],
+        "rightItems": [
+            "রোদ",
+            "মেঘলা আকাশ",
+            "বাতাস",
+            "তাপমাত্রা"
+        ],
+        "correctAnswer": {
+            "L1": "রোদ",
+            "L2": "মেঘলা আকাশ",
+            "L3": "বাতাস",
+            "L4": "তাপমাত্রা"
+        },
+        "image": null,
+        "audio": "/assets/audios/chapter-1/easyQuiz5.mp3"
+    },
+    {
+        "id": 6,
+        "chapterId": 1,
+        "difficulty": "easy",
+        "type": "mcq",
+        "title": "প্রশ্ন ৬: ছবি দেখে খবর তৈরি করো",
+        "description": "একটি ছবি দেওয়া আছে। ছবিতে জানালা দিয়ে বাইরের দৃশ্য—নীল আকাশ, উজ্জ্বল সূর্য, কোথাও মেঘ নেই। টুনি জানালার পাশে দাঁড়িয়ে, তার গায়ে ঘাম।",
+        "question": "এই ছবি দেখে তুমি আজকের আবহাওয়া সম্পর্কে কী খবর দেবে?",
+        "options": [
+            "আজ বৃষ্টি হবে",
+            "আজ প্রচণ্ড গরম পড়েছে",
+            "আজ শীত পড়েছে",
+            "আজ বজ্রপাত হবে"
+        ],
+        "correctAnswer": "আজ প্রচণ্ড গরম পড়েছে",
+        "image": "/assets/images/chapter1/E-1_Q-6.png"
+    },
+    {
+        "id": 7,
+        "chapterId": 1,
+        "difficulty": "easy",
+        "type": "fill_in_the_blanks",
+        "title": "প্রশ্ন ৭: খালি জায়গা পূরণ করো",
+        "description": "একটি ছবি দেওয়া আছে। ছবিতে জলবায়ু জাদুকর তার জাদুর কাঠি দিয়ে ছয়টি ঋতুর ছবি দেখাচ্ছেন।",
+        "statement": "বাংলাদেশে ____ টি ঋতু আছে। এটি বাংলাদেশের ____।",
+        "options": [
+            "চার-আবহাওয়া",
+            "পাঁচ-জলবায়ু",
+            "ছয়-জলবায়ু",
+            "সাত-আবহাওয়া"
+        ],
+        "correctAnswer": "ছয়-জলবায়ু",
+        "image": "/assets/images/chapter1/E-1_Q-7.png"
+    },
+    {
+        "id": 8,
+        "chapterId": 1,
+        "difficulty": "easy",
+        "type": "true_false",
+        "title": "প্রশ্ন ৮: সত্য না মিথ্যা বলো",
+        "description": "একটি ছবি দেওয়া আছে। ছবিতে টুনির মা টুনিকে একটি ছাতা দিচ্ছেন আর আকাশে কালো মেঘ দেখা যাচ্ছে।",
+        "question": "টুনির মা সকালে তাকে বলেছিলেন, 'আজ মেঘলা দিন, ছাতা নিয়ে যাও।' টুনির মা আসলে সেদিনের আবহাওয়ার খবর দিয়েছিলেন।",
+        "options": [
+            "সত্য",
+            "মিথ্যা"
+        ],
+        "correctAnswer": "সত্য",
+        "image": "/assets/images/chapter1/E-1_Q-8.png"
+    },
+    {
+        "id": 9,
+        "chapterId": 1,
+        "difficulty": "easy",
+        "type": "arrange_sequence",
+        "title": "প্রশ্ন ৯: ঘটনা সাজাও",
+        "description": "তিনটি ছবি এলোমেলোভাবে দেওয়া আছে।",
+        "question": "সকাল থেকে বিকেল পর্যন্ত আবহাওয়ার পরিবর্তন সঠিক ক্রমে সাজাও।",
+        "options": [
+            {
+                "id": "A",
+                "text": "সকালে সূর্য ওঠা",
+                "emoji": "🌅",
+                "image": "/assets/images/chapter1/E-1_Q-9.1.png"
+            },
+            {
+                "id": "B",
+                "text": "দুপুরে তীব্র রোদ",
+                "emoji": "☀️",
+                "image": "/assets/images/chapter1/E-1_Q-9.2.png"
+            },
+            {
+                "id": "C",
+                "text": "বিকেলে বৃষ্টি",
+                "emoji": "🌧️",
+                "image": "/assets/images/chapter1/E-1_Q-9.3.png"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C"
+        ],
+        "image": null
+    },
+    {
+        "id": 10,
+        "chapterId": 1,
+        "difficulty": "easy",
+        "type": "drag_drop_categorize",
+        "title": "প্রশ্ন ১০: টেনে আনো আর মেলাও",
+        "description": "বাম পাশে তিনটি ঘটনা দেওয়া আছে এবং ডান পাশে দুটি বক্স দেওয়া আছে।",
+        "question": "কোন ঘটনা কোন বক্সে যাবে? টেনে মেলাও।",
+        "itemsToCategorize": [
+            {
+                "id": "1",
+                "text": "আজ বৃষ্টি হচ্ছে"
+            },
+            {
+                "id": "2",
+                "text": "প্রতি বছর জুন-জুলাইয়ে বৃষ্টি হয়"
+            },
+            {
+                "id": "3",
+                "text": "গতকাল প্রচণ্ড গরম ছিল"
+            }
+        ],
+        "categories": [
+            "আবহাওয়া",
+            "জলবায়ু"
+        ],
+        "correctAnswer": {
+            "আবহাওয়া": [
+                "1",
+                "3"
+            ],
+            "জলবায়ু": [
+                "2"
+            ]
+        },
+        "image": null
+    },
+    {
+        "id": 11,
+        "chapterId": 1,
+        "difficulty": "medium",
+        "type": "hotspot",
+        "title": "প্রশ্ন ১১: ছবিতে ক্লিক করো",
+        "description": "জাদুর কাঠির আলো থেকে তৈরি একটা পর্দায় দুটি দৃশ্য দেখা যাচ্ছে।",
+        "question": "গল্পে বলা হয়েছে, 'পটুয়াখালীতে প্রতি বছর এপ্রিল-মে মাসে ঝড় হয়।' পটুয়াখালীর দৃশ্যের কোন অংশে ঘূর্ণিঝড় ও মেঘ বোঝানো হয়েছে? ক্লিক করো।",
+        "hotspots": [
+            {
+                "id": "storm",
+                "label": "ঘূর্ণিঝড় ও কালো মেঘ",
+                "x": 72,
+                "y": 30,
+                "width": 35,
+                "height": 60
+            }
+        ],
+        "correctAnswer": [
+            "storm"
+        ],
+        "image": "/assets/images/chapter1/E-1_Q-11.png",
+        "audio": "/assets/audios/chapter-1/medQuiz11.mp3"
+    },
+    {
+        "id": 12,
+        "chapterId": 1,
+        "difficulty": "medium",
+        "type": "fill_in_the_blanks",
+        "title": "প্রশ্ন ১২: খালি জায়গা পূরণ করো",
+        "description": "জলবায়ু জাদুকর টুনিকে ৩০ বছরের বৃষ্টিপাতের একটি ক্যালেন্ডার দেখাচ্ছেন।",
+        "statement": "কোনো অঞ্চলের দীর্ঘ সময়ের ____ বছর গড় আবহাওয়াকে জলবায়ু বলে।",
+        "options": [
+            "৫",
+            "১০",
+            "২০",
+            "৩০"
+        ],
+        "correctAnswer": "৩০",
+        "image": "/assets/images/chapter1/E-1_Q-12.png",
+        "audio": "/assets/audios/chapter-1/medQuiz12.mp3"
+    },
+    {
+        "id": 13,
+        "chapterId": 1,
+        "difficulty": "medium",
+        "type": "true_false",
+        "title": "প্রশ্ন ১৩: সত্য না মিথ্যা বলো",
+        "description": "ছবিতে পটুয়াখালীর দৃশ্য—নারকেল গাছ হেলে আছে, আকাশে কালো মেঘ এবং দূরে ঘূর্ণিঝড় আশ্রয়কেন্দ্র।",
+        "question": "\"পটুয়াখালীতে ঘূর্ণিঝড় হয়—এটি পটুয়াখালীর আবহাওয়া।\"—কথাটি কি সত্য না মিথ্যা?",
+        "options": [
+            "সত্য",
+            "মিথ্যা"
+        ],
+        "correctAnswer": "মিথ্যা",
+        "image": "/assets/images/chapter1/E-1_Q-13.png",
+        "audio": "/assets/audios/chapter-1/medQuiz13.mp3"
+    },
+    {
+        "id": 14,
+        "chapterId": 1,
+        "difficulty": "medium",
+        "type": "match_the_following",
+        "title": "প্রশ্ন ১৪: টেনে আনো আর মেলাও",
+        "description": "বাম পাশে তিনটি অঞ্চলের নাম এবং ডান পাশে তিনটি জলবায়ুগত বৈশিষ্ট্য দেওয়া আছে।",
+        "question": "কোন অঞ্চলের সাথে কোন বৈশিষ্ট্যটি মেলে? টেনে মেলাও।",
+        "leftItems": [
+            {
+                "id": "L1",
+                "label": "চট্টগ্রাম"
+            },
+            {
+                "id": "L2",
+                "label": "গাইবান্ধা"
+            },
+            {
+                "id": "L3",
+                "label": "পটুয়াখালী"
+            }
+        ],
+        "rightItems": [
+            "বর্ষাকালে প্রচুর বৃষ্টি হয়",
+            "প্রতি বছর বন্যা হয়",
+            "প্রতি বছর ঘূর্ণিঝড় হয়"
+        ],
+        "correctAnswer": {
+            "L1": "বর্ষাকালে প্রচুর বৃষ্টি হয়",
+            "L2": "প্রতি বছর বন্যা হয়",
+            "L3": "প্রতি বছর ঘূর্ণিঝড় হয়"
+        },
+        "image": null,
+        "audio": "/assets/audios/chapter-1/medQuiz14.mp3"
+    },
+    {
+        "id": 15,
+        "chapterId": 1,
+        "difficulty": "medium",
+        "type": "mcq",
+        "title": "প্রশ্ন ১৫: ছবি দেখে খবর তৈরি করো",
+        "description": "জাদুকর বাতাসের ওপর ছয়টি ঋতুর বৈশিষ্ট্য (আম, কদম ফুল, কাশফুল, ধান কাটা, পিঠা ও পলাশ) দেখাচ্ছেন।",
+        "question": "এই ছবিগুলো বাংলাদেশের কিসের পরিচয় তুলে ধরছে?",
+        "options": [
+            "প্রতিদিনের আবহাওয়া",
+            "ছয়টি ঋতু—এটাই বাংলাদেশের জলবায়ু",
+            "শুধু গ্রীষ্মকাল",
+            "শুধু শীতকাল"
+        ],
+        "correctAnswer": "ছয়টি ঋতু—এটাই বাংলাদেশের জলবায়ু",
+        "image": "/assets/images/chapter1/E-1_Q-15.png",
+        "audio": "/assets/audios/chapter-1/medQuiz15.mp3"
+    },
+    {
+        "id": 16,
+        "chapterId": 1,
+        "difficulty": "medium",
+        "type": "arrange_sequence",
+        "title": "প্রশ্ন ১৬: ঘটনা সাজাও",
+        "description": "জলবায়ু নির্ণয়ের চারটি ধাপ এলোমেলোভাবে দেওয়া আছে।",
+        "question": "একটি অঞ্চলের জলবায়ু নির্ণয়ের সঠিক ধাপগুলো ক্রমানুসারে সাজাও।",
+        "options": [
+            {
+                "id": "A",
+                "text": "প্রতিদিনের আবহাওয়ার তথ্য সংগ্রহ"
+            },
+            {
+                "id": "B",
+                "text": "৩০ বছর জমা করা"
+            },
+            {
+                "id": "C",
+                "text": "গড় বের করা"
+            },
+            {
+                "id": "D",
+                "text": "জলবায়ু নির্ণয়"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "image": null,
+        "audio": "/assets/audios/chapter-1/medQuiz16.mp3"
+    },
+    {
+        "id": 17,
+        "chapterId": 1,
+        "difficulty": "medium",
+        "type": "fill_in_the_blanks",
+        "title": "প্রশ্ন ১৭: খালি জায়গা পূরণ করো",
+        "description": "আবহাওয়া আঙ্কেল ও জলবায়ু জাদুকর টুনিকে জামা পরার উদাহরণ দিচ্ছেন।",
+        "statement": "ঢাকা শহরের মানুষ সাধারণত আবহাওয়া ও জলবায়ুর প্রভাবে ____।",
+        "options": [
+            "গরমে সোয়েটার পরে",
+            "শীতে সুতি কাপড় পরে",
+            "গরমে সুতি কাপড় ও শীতে সোয়েটার পরে",
+            "বর্ষায় ছাতা নিয়ে যায়"
+        ],
+        "correctAnswer": "গরমে সুতি কাপড় ও শীতে সোয়েটার পরে",
+        "image": "/assets/images/chapter1/E-1_Q-17.png",
+        "audio": "/assets/audios/chapter-1/medQuiz17.mp3"
+    },
+    {
+        "id": 18,
+        "chapterId": 1,
+        "difficulty": "medium",
+        "type": "true_false",
+        "title": "প্রশ্ন ১৮: সত্য না মিথ্যা বলো",
+        "description": "একজন দাদু নাতনিকে বলছেন—'আমাদের ছেলেবেলায় এত গরম পড়ত না'—অর্থাৎ দীর্ঘ সময়ের পরিবর্তন।",
+        "question": "দাদী যদি বলেন, 'আগের দিনে এত গরম পড়ত না', তবে তিনি জলবায়ু পরিবর্তনের কথা বলছেন। কথাটি কি সত্য?",
+        "options": [
+            "সত্য",
+            "মিথ্যা"
+        ],
+        "correctAnswer": "সত্য",
+        "image": "/assets/images/chapter1/E-1_Q-18.png",
+        "audio": "/assets/audios/chapter-1/medQuiz18.mp3"
+    },
+    {
+        "id": 19,
+        "chapterId": 1,
+        "difficulty": "medium",
+        "type": "drag_drop_categorize",
+        "title": "প্রশ্ন ১৯: টেনে আনো আর মেলাও",
+        "description": "পাঁচটি বিবৃতি এবং দুটি বক্স (আবহাওয়া ও জলবায়ু) দেওয়া আছে।",
+        "question": "কোন বিবৃতিটি আবহাওয়ার আর কোনটি জলবায়ুর? টেনে সঠিক বক্সে রাখো।",
+        "itemsToCategorize": [
+            {
+                "id": "1",
+                "text": "আজ বৃষ্টি হচ্ছে"
+            },
+            {
+                "id": "2",
+                "text": "বাংলাদেশে ছয়টি ঋতু আছে"
+            },
+            {
+                "id": "3",
+                "text": "গতকাল প্রচণ্ড গরম ছিল"
+            },
+            {
+                "id": "4",
+                "text": "মরুভূমিতে দিনে গরম রাতে ঠান্ডা হয়"
+            },
+            {
+                "id": "5",
+                "text": "এপ্রিল-মে মাসে কালবৈশাখী ঝড় হয়"
+            }
+        ],
+        "categories": [
+            "আবহাওয়া",
+            "জলবায়ু"
+        ],
+        "correctAnswer": {
+            "আবহাওয়া": [
+                "1",
+                "3"
+            ],
+            "জলবায়ু": [
+                "2",
+                "4",
+                "5"
+            ]
+        },
+        "image": null,
+        "audio": "/assets/audios/chapter-1/medQuiz19.mp3"
+    },
+    {
+        "id": 20,
+        "chapterId": 1,
+        "difficulty": "medium",
+        "type": "puzzle",
+        "title": "প্রশ্ন ২০: পাজল সাজাও",
+        "description": "নিচে কিছু শব্দের টুকরো দেওয়া আছে।",
+        "question": "টুকরোগুলো সঠিকভাবে সাজিয়ে একটি অর্থপূর্ণ বাক্য তৈরি করো।",
+        "options": [
+            {
+                "id": "P1",
+                "text": "৩০"
+            },
+            {
+                "id": "P2",
+                "text": "বছরের"
+            },
+            {
+                "id": "P3",
+                "text": "গড় আবহাওয়াকে"
+            },
+            {
+                "id": "P4",
+                "text": "জলবায়ু"
+            },
+            {
+                "id": "P5",
+                "text": "বলে"
+            }
+        ],
+        "correctAnswer": [
+            "P1",
+            "P2",
+            "P3",
+            "P4",
+            "P5"
+        ],
+        "image": null,
+        "audio": "/assets/audios/chapter-1/medQuiz20.mp3"
+    },
+    {
+        "id": 21,
+        "chapterId": 1,
+        "difficulty": "hard",
+        "type": "mcq",
+        "title": "প্রশ্ন ২১: সঠিক দৃশ্য শনাক্ত করো",
+        "description": "জাদুর কাঠির আলো থেকে তৈরি একটি পর্দায় দুটি দৃশ্য পাশাপাশি দেখা যাচ্ছে। বাম দৃশ্যে লেখা: 'আজ চট্টগ্রামে বৃষ্টি হচ্ছে' এবং ডান দৃশ্যে লেখা: 'পটুয়াখালীতে প্রতি বছর ঘূর্ণিঝড় হয়'。",
+        "question": "কোন দৃশ্যটি আবহাওয়া আর কোনটি জলবায়ু তা শনাক্ত করে সঠিক উত্তরটি বেছে নাও।",
+        "options": [
+            "বাম দৃশ্য আবহাওয়া, ডান দৃশ্য জলবায়ু",
+            "বাম দৃশ্য জলবায়ু, ডান দৃশ্য আবহাওয়া",
+            "দুটোই আবহাওয়া",
+            "দুটোই জলবায়ু"
+        ],
+        "correctAnswer": "বাম দৃশ্য আবহাওয়া, ডান দৃশ্য জলবায়ু",
+        "image": "/assets/images/chapter1/E-1_Q-21.png",
+        "audio": "/assets/audios/chapter-1/hardQuiz21.mp3"
+    },
+    {
+        "id": 22,
+        "chapterId": 1,
+        "difficulty": "hard",
+        "type": "true_false",
+        "title": "প্রশ্ন ২২: সত্য না মিথ্যা বলো",
+        "description": "ছবিতে দুটি বার্তা লেখা আছে— প্রথম বার্তা: 'আজ তাপমাত্রা ৩৫ ডিগ্রি', দ্বিতীয় বার্তা: 'গ্রীষ্মকালে তাপমাত্রা সাধারণত ৩৫-৪০ ডিগ্রি থাকে'。",
+        "question": "'প্রথম বার্তাটি জলবায়ু আর দ্বিতীয় বার্তাটি আবহাওয়া নির্দেশ করে।'—কথাটি কি সত্য না মিথ্যা?",
+        "options": [
+            "সত্য",
+            "মিথ্যা"
+        ],
+        "correctAnswer": "মিথ্যা",
+        "image": "/assets/images/chapter1/E-1_Q-22.png",
+        "audio": "/assets/audios/chapter-1/hardQuiz22.mp3"
+    },
+    {
+        "id": 23,
+        "chapterId": 1,
+        "difficulty": "hard",
+        "type": "drag_drop_categorize",
+        "title": "প্রশ্ন ২৩: টেনে আনো আর মেলাও",
+        "description": "ছয়টি বিবৃতি এবং দুটি বক্স (আবহাওয়া ও জলবায়ু) দেওয়া আছে।",
+        "question": "কোনগুলো আবহাওয়া আর কোনগুলো জলবায়ু? সঠিক বক্সে টেনে মেলাও।",
+        "itemsToCategorize": [
+            {
+                "id": "1",
+                "text": "আজ বৃষ্টি হচ্ছে"
+            },
+            {
+                "id": "2",
+                "text": "বাংলাদেশে ছয়টি ঋতু আছে"
+            },
+            {
+                "id": "3",
+                "text": "গতকাল প্রচণ্ড গরম ছিল"
+            },
+            {
+                "id": "4",
+                "text": "মরুভূমিতে দিনে গরম রাতে ঠান্ডা হয়"
+            },
+            {
+                "id": "5",
+                "text": "এই মাসে অনেকবার বজ্রপাত হয়েছে"
+            },
+            {
+                "id": "6",
+                "text": "এপ্রিল-মে মাসে কালবৈশাখী ঝড় হয়"
+            }
+        ],
+        "categories": [
+            "আবহাওয়া",
+            "জলবায়ু"
+        ],
+        "correctAnswer": {
+            "আবহাওয়া": [
+                "1",
+                "3",
+                "5"
+            ],
+            "জলবায়ু": [
+                "2",
+                "4",
+                "6"
+            ]
+        },
+        "image": null,
+        "audio": "/assets/audios/chapter-1/hardQuiz23.mp3"
+    },
+    {
+        "id": 24,
+        "chapterId": 1,
+        "difficulty": "hard",
+        "type": "mcq",
+        "title": "প্রশ্ন ২৪: গল্পের ঘটনা শনাক্ত করো",
+        "description": "গল্পের তিনটি প্যানেল। প্যানেল ১: টুনি জানালা দিয়ে তাকিয়ে বলছে 'উফ! কী গরম!' প্যানেল ২: আবহাওয়া আঙ্কেল বলছেন 'আজ বৃষ্টি হবে কিনা সেটা আমি বলতে পারি।' প্যানেল ৩: জলবায়ু জাদুকর বলছেন 'বাংলাদেশে সাধারণত কখন বৃষ্টি হয় সেটা আমি জানি।'。",
+        "question": "কোন প্যানেলে আবহাওয়া আর কোন প্যানেলে জলবায়ুর কথা বলা হয়েছে?",
+        "options": [
+            "প্যানেল ১-আবহাওয়া, প্যানেল ২-জলবায়ু, প্যানেল ৩-আবহাওয়া",
+            "প্যানেল ১-আবহাওয়া, প্যানেল ২-আবহাওয়া, প্যানেল ৩-জলবায়ু",
+            "প্যানেল ১-জলবায়ু, প্যানেল ২-আবহাওয়া, প্যানেল ৩-জলবায়ু",
+            "প্যানেল ১-জলবায়ু, প্যানেল ২-জলবায়ু, প্যানেল ৩-আবহাওয়া"
+        ],
+        "correctAnswer": "প্যানেল ১-আবহাওয়া, প্যানেল ২-আবহাওয়া, প্যানেল ৩-জলবায়ু",
+        "audio": "/assets/audios/chapter-1/hardQuiz24.mp3"
+    },
+    {
+        "id": 25,
+        "chapterId": 1,
+        "difficulty": "hard",
+        "type": "fill_in_the_blanks",
+        "title": "প্রশ্ন ২৫: খালি জায়গা পূরণ করো",
+        "description": "ছবিতে বাম পাশে একটি ঘড়ি (অল্প সময় বোঝাচ্ছে) এবং ডান পাশে একটি ক্যালেন্ডার (দীর্ঘ সময় বোঝাচ্ছে)।",
+        "statement": "____ অল্প সময়ের অবস্থা, যেমন আজ গরম বলে হাফ-হাতা পরা। ____ দীর্ঘ সময়ের গড় অবস্থা, যেমন ঢাকা শহরের মানুষ সাধারণত গরমে সুতি কাপড় পরে।",
+        "options": [
+            "আবহাওয়া-জলবায়ু",
+            "জলবায়ু-আবহাওয়া",
+            "ঋতু-আবহাওয়া",
+            "তাপমাত্রা-জলবায়ু"
+        ],
+        "correctAnswer": "আবহাওয়া-জলবায়ু",
+        "image": "/assets/images/chapter1/E-1_Q-25.png",
+        "audio": "/assets/audios/chapter-1/hardQuiz25.mp3"
+    },
+    {
+        "id": 26,
+        "chapterId": 1,
+        "difficulty": "hard",
+        "type": "mcq",
+        "title": "প্রশ্ন ২৬: ভেবে উত্তর দাও (বিশ্লেষণ)",
+        "description": "ছবিতে দুই বন্ধু কথা বলছে। একজন বলছে, 'আজ বৃষ্টি হয়েছে, তাই বাংলাদেশের জলবায়ু বদলে গেছে! এখন থেকে হয়তো সারা বছর বৃষ্টি হবে।'。",
+        "question": "বন্ধুটির কথায় কী ভুল আছে? সঠিক উত্তরটি বাছাই করো।",
+        "options": [
+            "একটি দিনের বৃষ্টিতে জলবায়ু বদলায় না।",
+            "বন্ধুর কথা ঠিক আছে, কারণ বৃষ্টি হলেই সেটা জলবায়ুর পরিবর্তন।",
+            "বৃষ্টি হলে সবসময় জলবায়ু বদলে যায়।",
+            "আজ বৃষ্টি হওয়াটা আবহাওয়া, কিন্তু জলবায়ু বদলাতে ১০০ বছর লাগে।"
+        ],
+        "correctAnswer": "একটি দিনের বৃষ্টিতে জলবায়ু বদলায় না।",
+        "image": "/assets/images/chapter1/E-1_Q-26.png",
+        "audio": "/assets/audios/chapter-1/hardQuiz26.mp3"
+    },
+    {
+        "id": 27,
+        "chapterId": 1,
+        "difficulty": "hard",
+        "type": "puzzle",
+        "title": "প্রশ্ন ২৭: পাজল সাজাও",
+        "description": "নিচে কিছু শব্দের টুকরো দেওয়া আছে।",
+        "question": "টুকরোগুলো সঠিকভাবে সাজিয়ে একটি অর্থপূর্ণ বাক্য তৈরি করো।",
+        "options": [
+            {
+                "id": "P1",
+                "text": "আবহাওয়া"
+            },
+            {
+                "id": "P2",
+                "text": "দ্রুত"
+            },
+            {
+                "id": "P3",
+                "text": "বদলায়,"
+            },
+            {
+                "id": "P4",
+                "text": "জলবায়ু"
+            },
+            {
+                "id": "P5",
+                "text": "ধীরে"
+            },
+            {
+                "id": "P6",
+                "text": "বদলায়"
+            }
+        ],
+        "correctAnswer": [
+            "P1",
+            "P2",
+            "P3",
+            "P4",
+            "P5",
+            "P6"
+        ],
+        "image": null,
+        "audio": "/assets/audios/chapter-1/hardQuiz27.mp3"
+    },
+    {
+        "id": 28,
+        "chapterId": 1,
+        "difficulty": "hard",
+        "type": "mcq",
+        "title": "প্রশ্ন ২৮: ভেবে উত্তর দাও (প্রয়োগ)",
+        "description": "একটি গ্রাফে ১৫ বছর ধরে একটি এলাকার তাপমাত্রা দেখা যাচ্ছে। প্রতি বছরের তুলনায় গ্রীষ্মকাল আরও বেশি গরম হচ্ছে, বর্ষাকালে বৃষ্টি কম হচ্ছে, আর শীতকাল আগের মতো ঠান্ডা হচ্ছে না।",
+        "question": "এটা আবহাওয়ার পরিবর্তন নাকি জলবায়ুর পরিবর্তন? সঠিক উত্তরটি বাছাই করো।",
+        "options": [
+            "আবহাওয়ার পরিবর্তন, কারণ আজ গরম লাগছে।",
+            "জলবায়ুর পরিবর্তন, কারণ এটি দীর্ঘ সময়ের ধারাবাহিক পরিবর্তন।",
+            "এটা সাধারণ ব্যাপার, কিছুই বদলায়নি।",
+            "শুধু গ্রীষ্মকাল বদলেছে, তাই এটি আবহাওয়ার পরিবর্তন।"
+        ],
+        "correctAnswer": "জলবায়ুর পরিবর্তন, কারণ এটি দীর্ঘ সময়ের ধারাবাহিক পরিবর্তন।",
+        "image": "/assets/images/chapter1/E-1_Q-28.png",
+        "audio": "/assets/audios/chapter-1/hardQuiz28.mp3"
+    },
+    {
+        "id": 29,
+        "chapterId": 1,
+        "difficulty": "hard",
+        "type": "drag_drop_categorize",
+        "title": "প্রশ্ন ২৯: ঘটনা সাজাও",
+        "description": "তিনটি ঘটনা এলোমেলোভাবে দেওয়া আছে।",
+        "question": "কোনটি আবহাওয়া আর কোনটি জলবায়ু? সঠিক বক্সে সাজাও।",
+        "itemsToCategorize": [
+            {
+                "id": "A",
+                "text": "চট্টগ্রামে আজ বৃষ্টি হচ্ছে"
+            },
+            {
+                "id": "B",
+                "text": "চট্টগ্রামে প্রতি বছর বর্ষাকালে বৃষ্টি হয়"
+            },
+            {
+                "id": "C",
+                "text": "চট্টগ্রামে গতকাল বৃষ্টি ছিল"
+            }
+        ],
+        "categories": [
+            "আবহাওয়া",
+            "জলবায়ু"
+        ],
+        "correctAnswer": {
+            "আবহাওয়া": [
+                "A",
+                "C"
+            ],
+            "জলবায়ু": [
+                "B"
+            ]
+        },
+        "image": null,
+        "audio": "/assets/audios/chapter-1/hardQuiz29.mp3"
+    },
+    {
+        "id": 30,
+        "chapterId": 1,
+        "difficulty": "hard",
+        "type": "mcq",
+        "title": "প্রশ্ন ৩০: ভেবে উত্তর দাও (যুক্তি)",
+        "description": "একজন কৃষক ধানের ক্ষেতে দাঁড়িয়ে আকাশের দিকে তাকিয়ে আছেন। তিনি জানতে চান, এ বছর কবে বৃষ্টি শুরু হবে, যেন তিনি মাটি তৈরি করে ধানের চারা রোপণ করতে পারেন।",
+        "question": "তাকে আবহাওয়ার তথ্য দেবে নাকি জলবায়ুর তথ্য? কেন? সঠিক উত্তরটি বাছাই করো।",
+        "options": [
+            "জলবায়ুর তথ্য দেব, কারণ জলবায়ু বলে সাধারণত কোন মাসে বৃষ্টি হয়।",
+            "আবহাওয়ার তথ্য দেব, কারণ জলবায়ু বলে সাধারণত কখন বৃষ্টি হয়, কিন্তু এ বছর ঠিক কবে শুরু হবে তা জানতে আবহাওয়ার পূর্বাভাস দরকার।",
+            "কোনো তথ্যই দরকার নেই, কৃষক নিজেই বুঝবেন।",
+            "শুধু গত বছরের হিসাব দেখলেই চলবে।"
+        ],
+        "correctAnswer": "আবহাওয়ার তথ্য দেব, কারণ জলবায়ু বলে সাধারণত কখন বৃষ্টি হয়, কিন্তু এ বছর ঠিক কবে শুরু হবে তা জানতে আবহাওয়ার পূর্বাভাস দরকার।",
+        "image": "/assets/images/chapter1/E-1_Q-30.png",
+        "audio": "/assets/audios/chapter-1/hardQuiz30.mp3"
+    },
+    {
+        "id": 31,
+        "chapterId": 14,
+        "difficulty": "easy",
+        "type": "hotspot",
+        "title": "প্রশ্ন ১: ছবিতে ক্লিক করো",
+        "description": "একটি ছবি দেওয়া আছে। ছবিতে তিস্তা নদী দেখা যাচ্ছে। এক পাশে নদী শান্ত, অন্যপাশে পানি তীর ছাপিয়ে ছড়িয়ে পড়ছে।",
+        "question": "ছবির কোন অংশ দেখে তুমি বুঝতে পারছ যে বন্যা হচ্ছে? সঠিক জায়গায় ক্লিক করো।",
+        "hotspots": [
+            {
+                "id": "flood_water",
+                "label": "নদীর পানি তীর ছাপিয়ে চারদিকে ছড়িয়ে পড়ছে",
+                "x": 65,
+                "y": 55
+            }
+        ],
+        "correctAnswer": [
+            "flood_water"
+        ],
+        "image": "/assets/images/chapter14/E-14_Q-1.png",
+        "audio": "/assets/audios/chapter-14/easyQuiz-1.mp3"
+    },
+    {
+        "id": 32,
+        "chapterId": 14,
+        "difficulty": "easy",
+        "type": "true_false",
+        "title": "প্রশ্ন ২: সত্য না মিথ্যা বলো",
+        "description": "একটি ছবি দেওয়া আছে। ছবিতে ময়না টিভির পর্দার দিকে তাকিয়ে আছে। টিভিতে লেখা আছে 'উজানে ভারী বৃষ্টিপাত হচ্ছে। তিস্তা নদীর পানি বাড়ছে।'",
+        "question": "টিভিতে খবর দেখানোর পর ময়নার বাবা সঙ্গে সঙ্গে ঘরের জিনিসপত্র উঁচু জায়গায় তুলতে শুরু করলেন।",
+        "options": [
+            "সত্য",
+            "মিথ্যা"
+        ],
+        "correctAnswer": "সত্য",
+        "image": "/assets/images/chapter14/E-14_Q-2.png",
+        "audio": "/assets/audios/chapter-14/easyQuiz-2.mp3"
+    },
+    {
+        "id": 33,
+        "chapterId": 14,
+        "difficulty": "easy",
+        "type": "fill_in_the_blanks",
+        "title": "প্রশ্ন ৩: খালি জায়গা পূরণ করো",
+        "description": "একটি ছবি দেওয়া আছে। ছবিতে আকাশ থেকে মুষলধারে বৃষ্টি পড়ছে। ময়না দৌড়ে বাড়ি ফিরছে।",
+        "statement": "বন্যার মূল কারণ হলো ____।",
+        "options": [
+            "খরা",
+            "ভারী বৃষ্টি",
+            "শীত",
+            "তুষারপাত"
+        ],
+        "correctAnswer": "ভারী বৃষ্টি",
+        "image": "/assets/images/chapter14/E-14_Q-3.png",
+        "audio": "/assets/audios/chapter-14/easyQuiz-3.mp3"
+    },
+    {
+        "id": 34,
+        "chapterId": 14,
+        "difficulty": "easy",
+        "type": "image_selection",
+        "title": "প্রশ্ন ৪: ছবিতে ক্লিক করো",
+        "description": "পাশাপাশি দুইটি ছবি দেয়া থাকবে। একটি ছবিতে নদী শান্ত অবস্থায় আছে। আরেকটি ছবিতে নদীর পানি ফুলে উঠে চারদিকে ছড়িয়ে পড়ছে।",
+        "question": "বন্যা কোনটি? সঠিক ছবিতে ক্লিক করো।",
+        "options": [
+            {
+                "id": "calm_river",
+                "label": "শান্ত নদী",
+                "image": "/assets/images/chapter14/E-14_Q-4.1.png"
+            },
+            {
+                "id": "flood_river",
+                "label": "বন্যার নদী",
+                "image": "/assets/images/chapter14/E-14_Q-4.2.png"
+            }
+        ],
+        "correctAnswer": "flood_river",
+        "audio": "/assets/audios/chapter-14/easyQuiz-4.mp3"
+    },
+    {
+        "id": 35,
+        "chapterId": 14,
+        "difficulty": "easy",
+        "type": "match_the_following",
+        "title": "প্রশ্ন ৫: টেনে আনো আর মেলাও",
+        "description": "বাম পাশে চারটি ছবি এবং ডান পাশে চারটি শব্দ দেওয়া আছে।",
+        "question": "কোন ছবি কোন শব্দের সাথে মেলে? টেনে মেলাও।",
+        "leftItems": [
+            {
+                "id": "L1",
+                "label": "মুষলধারে বৃষ্টির ছবি",
+                "image": "/assets/images/chapter14/E-14_Q-5.1.png"
+            },
+            {
+                "id": "L2",
+                "label": "নদীর ছবি",
+                "image": "/assets/images/chapter14/E-14_Q-5.2.png"
+            },
+            {
+                "id": "L3",
+                "label": "পানি ফুলে ওঠার ছবি",
+                "image": "/assets/images/chapter14/E-14_Q-5.3.png"
+            },
+            {
+                "id": "L4",
+                "label": "বাড়ি ঘর ডোবার ছবি",
+                "image": "/assets/images/chapter14/E-14_Q-5.4.png"
+            }
+        ],
+        "rightItems": [
+            "বৃষ্টি",
+            "নদী",
+            "পানি বৃদ্ধি",
+            "বন্যা"
+        ],
+        "correctAnswer": {
+            "L1": "বৃষ্টি",
+            "L2": "নদী",
+            "L3": "পানি বৃদ্ধি",
+            "L4": "বন্যা"
+        },
+        "image": "/assets/images/chapter14/quiz5.png",
+        "audio": "/assets/audios/chapter-14/easyQuiz-5.mp3"
+    },
+    {
+        "id": 36,
+        "chapterId": 14,
+        "difficulty": "easy",
+        "type": "mcq",
+        "title": "প্রশ্ন ৬: ছবি দেখে খবর তৈরি করো",
+        "description": "একটি ছবি দেওয়া আছে। ছবিতে টিভির পর্দায় একজন ঘোষক বলছেন, 'নদীর পানি বিপদসীমা অতিক্রম করেছে। নিচু এলাকার মানুষ প্রস্তুতি নিন।'",
+        "question": "এই ছবি দেখে তুমি কী বুঝতে পারছ?",
+        "options": [
+            "আজ বৃষ্টি হবে না",
+            "বন্যা আসছে",
+            "শীত পড়বে",
+            "গরম বাড়বে"
+        ],
+        "correctAnswer": "বন্যা আসছে",
+        "image": "/assets/images/chapter14/E-14_Q-6.png",
+        "audio": "/assets/audios/chapter-14/easyQuiz-6.mp3"
+    },
+    {
+        "id": 37,
+        "chapterId": 14,
+        "difficulty": "easy",
+        "type": "fill_in_the_blanks",
+        "title": "প্রশ্ন ৭: খালি জায়গা পূরণ করো",
+        "description": "একটি ছবি দেওয়া আছে। ছবিতে ময়না তার প্রিয় বইগুলো, স্কুলের খাতা, আর জন্মসনদ একটা প্লাস্টিকের ব্যাগে ভরে রাখছে।",
+        "statement": "বন্যার আগে গুরুত্বপূর্ণ জিনিসপত্র ____ জায়গায় তুলে রাখতে হয়।",
+        "options": [
+            "নিচু",
+            "উঁচু",
+            "পানি ভরা",
+            "ময়লা"
+        ],
+        "correctAnswer": "উঁচু",
+        "image": "/assets/images/chapter14/E-14_Q-7.png",
+        "audio": "/assets/audios/chapter-14/easyQuiz-7.mp3"
+    },
+    {
+        "id": 38,
+        "chapterId": 14,
+        "difficulty": "easy",
+        "type": "true_false",
+        "title": "প্রশ্ন ৮: সত্য না মিথ্যা বলো",
+        "description": "একটি ছবি দেওয়া আছে। ছবিতে ময়নার মা রান্নাঘরের সব মশলা-তেল-চাল উঁচু তাকে রাখছেন।",
+        "question": "বন্যার আগে শুকনো খাবার মজুদ রাখা উচিত।",
+        "options": [
+            "সত্য",
+            "মিথ্যা"
+        ],
+        "correctAnswer": "সত্য",
+        "image": "/assets/images/chapter14/E-14_Q-8.png",
+        "audio": "/assets/audios/chapter-14/easyQuiz-8.mp3"
+    },
+    {
+        "id": 39,
+        "chapterId": 14,
+        "difficulty": "easy",
+        "type": "arrange_sequence",
+        "title": "প্রশ্ন ৯: ঘটনা সাজাও",
+        "description": "তিনটি ছবি এলোমেলোভাবে দেওয়া আছে।",
+        "question": "বন্যা শুরু হওয়ার সঠিক ক্রম সাজাও।",
+        "options": [
+            {
+                "id": "A",
+                "text": "আকাশে কালো মেঘ ও ভারী বৃষ্টি",
+                "image": "/assets/images/chapter14/E-14_Q-9.1.png"
+            },
+            {
+                "id": "B",
+                "text": "নদীর পানি ফুলে উঠে বাড়িতে পানি ঢুকছে",
+                "image": "/assets/images/chapter14/E-14_Q-9.2.png"
+            },
+            {
+                "id": "C",
+                "text": "টিভিতে সতর্ক সংকেত দেখানো হচ্ছে",
+                "image": "/assets/images/chapter14/E-14_Q-9.3.png"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "C",
+            "B"
+        ],
+        "audio": "/assets/audios/chapter-14/easyQuiz-9.mp3"
+    },
+    {
+        "id": 40,
+        "chapterId": 14,
+        "difficulty": "easy",
+        "type": "drag_drop_categorize",
+        "title": "প্রশ্ন ১০: টেনে আনো আর মেলাও",
+        "description": "বাম পাশে তিনটি কাজ দেওয়া আছে এবং ডান পাশে দুটি বক্স দেওয়া আছে।",
+        "question": "কোন কাজ কোন বক্সে যাবে? টেনে মেলাও।",
+        "itemsToCategorize": [
+            {
+                "id": "1",
+                "text": "ঘরের জিনিসপত্র উঁচুতে তোলা"
+            },
+            {
+                "id": "2",
+                "text": "জরুরি ব্যাগ তৈরি করা"
+            },
+            {
+                "id": "3",
+                "text": "নিরাপদ আশ্রয়ে চলে যাওয়া"
+            }
+        ],
+        "categories": [
+            "বন্যার আগে",
+            "বন্যার সময়"
+        ],
+        "correctAnswer": {
+            "বন্যার আগে": [
+                "1",
+                "2"
+            ],
+            "বন্যার সময়": [
+                "3"
+            ]
+        },
+        "audio": "/assets/audios/chapter-14/easyQuiz-10.mp3"
+    },
+    {
+        "id": 41,
+        "chapterId": 14,
+        "difficulty": "medium",
+        "type": "hotspot",
+        "title": "প্রশ্ন ১১: ছবিতে ক্লিক করো",
+        "description": "একটি ছবি দেওয়া আছে। ছবিতে তিস্তা নদীর উজানে ভারী বৃষ্টি পড়ছে। নিচের দিকে নদীর পানি বাড়ছে। ময়নার গ্রাম নিমতলা নদীর পাশে অবস্থিত।",
+        "question": "ছবির কোন অংশ দেখে তুমি বুঝতে পারছ যে ময়নার গ্রামে বন্যা হবে? সঠিক জায়গায় ক্লিক করো।",
+        "hotspots": [
+            {
+                "id": "upstream_rain",
+                "label": "উজানে ভারী বৃষ্টি পড়ছে",
+                "x": 30,
+                "y": 25
+            }
+        ],
+        "correctAnswer": [
+            "upstream_rain"
+        ],
+        "image": "/assets/images/chapter14/E-14_Q-11.png",
+        "audio": "/assets/audios/chapter-14/mediumQuiz-1.mp3"
+    },
+    {
+        "id": 42,
+        "chapterId": 14,
+        "difficulty": "medium",
+        "type": "fill_in_the_blanks",
+        "title": "প্রশ্ন ১২: খালি জায়গা পূরণ করো",
+        "description": "একটি ছবি দেওয়া আছে। ছবিতে টিভির পর্দায় লেখা আছে 'নদীর পানি বিপদসীমা অতিক্রম করেছে। জারি করা হয়েছে ______ সংকেত।'",
+        "statement": "বন্যার আগে টিভিতে ____ সংকেত দেখানো হয়।",
+        "options": [
+            "সতর্ক",
+            "শীত",
+            "গরম",
+            "বৃষ্টি"
+        ],
+        "correctAnswer": "সতর্ক",
+        "image": "/assets/images/chapter14/E-14_Q-12.png",
+        "audio": "/assets/audios/chapter-14/mediumQuiz-2.mp3"
+    },
+    {
+        "id": 43,
+        "chapterId": 14,
+        "difficulty": "medium",
+        "type": "true_false",
+        "title": "প্রশ্ন ১৩: সত্য না মিথ্যা বলো",
+        "description": "একটি ছবি দেওয়া আছে। ছবিতে রহিম মিয়া নদীর দিকে তাকিয়ে আছেন। তিনি বলছেন, 'এইবার মনে হয় বড় বন্যা হবে।'",
+        "question": "বয়স্ক মানুষরা নদীর ভাব দেখে অনেক সময় বন্যার আগাম আন্দাজ করতে পারেন।",
+        "options": [
+            "সত্য",
+            "মিথ্যা"
+        ],
+        "correctAnswer": "সত্য",
+        "image": "/assets/images/chapter14/E-14_Q-13.png",
+        "audio": "/assets/audios/chapter-14/mediumQuiz-3.mp3"
+    },
+    {
+        "id": 44,
+        "chapterId": 14,
+        "difficulty": "medium",
+        "type": "match_the_following",
+        "title": "প্রশ্ন ১৪: টেনে আনো আর মেলাও",
+        "description": "বাম পাশে তিনটি বন্যার কারণ এবং ডান পাশে তিনটি ছবি দেওয়া আছে।",
+        "question": "কোন কারণের সাথে কোন ছবি মেলে? টেনে মেলাও।",
+        "leftItems": [
+            {
+                "id": "L1",
+                "label": "উজানে ভারী বৃষ্টি",
+                "image": "/assets/images/chapter14/E-14_Q-14.1.png"
+            },
+            {
+                "id": "L2",
+                "label": "নদীর পানি বৃদ্ধি",
+                "image": "/assets/images/chapter14/E-14_Q-14.2.png"
+            },
+            {
+                "id": "L3",
+                "label": "বাঁধ ভেঙে যাওয়া",
+                "image": "/assets/images/chapter14/E-14_Q-14.3.png"
+            }
+        ],
+        "rightItems": [
+            "পাহাড়ে বৃষ্টির ছবি",
+            "নদীতে পানি বাড়ার ছবি",
+            "ভাঙা বাঁধের ছবি"
+        ],
+        "correctAnswer": {
+            "L1": "পাহাড়ে বৃষ্টির ছবি",
+            "L2": "নদীতে পানি বাড়ার ছবি",
+            "L3": "ভাঙা বাঁধের ছবি"
+        },
+        "audio": "/assets/audios/chapter-14/mediumQuiz-4.mp3"
+    },
+    {
+        "id": 45,
+        "chapterId": 14,
+        "difficulty": "medium",
+        "type": "mcq",
+        "title": "প্রশ্ন ১৫: ছবি দেখে খবর তৈরি করো",
+        "description": "একটি ছবি দেওয়া আছে। ছবিতে ময়না তার জরুরি ব্যাগটা হাতে নিয়ে তৈরি আছে। ব্যাগের ভেতরে শুকনো খাবার, পানির বোতল, টর্চ, ব্যাটারি আর মোমবাতি দেখা যাচ্ছে।",
+        "question": "ময়না কেন এই ব্যাগ তৈরি করেছে?",
+        "options": [
+            "স্কুলে নেওয়ার জন্য",
+            "বাজারে যাওয়ার জন্য",
+            "বন্যার সময় নিরাপদ আশ্রয়ে যাওয়ার জন্য",
+            "খেলার জন্য"
+        ],
+        "correctAnswer": "বন্যার সময় নিরাপদ আশ্রয়ে যাওয়ার জন্য",
+        "image": "/assets/images/chapter14/E-14_Q-15.png",
+        "audio": "/assets/audios/chapter-14/mediumQuiz-5.mp3"
+    },
+    {
+        "id": 46,
+        "chapterId": 14,
+        "difficulty": "medium",
+        "type": "arrange_sequence",
+        "title": "প্রশ্ন ১৬: ঘটনা সাজাও",
+        "description": "চারটি ঘটনা এলোমেলোভাবে দেওয়া আছে।",
+        "question": "বন্যা হওয়ার সঠিক ধাপগুলো সাজাও।",
+        "options": [
+            {
+                "id": "A",
+                "text": "উজানে ভারী বৃষ্টি"
+            },
+            {
+                "id": "B",
+                "text": "নদীর পানি বাড়া"
+            },
+            {
+                "id": "C",
+                "text": "সতর্ক সংকেত জারি"
+            },
+            {
+                "id": "D",
+                "text": "নিচু এলাকায় পানি ঢোকা"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "image": "/assets/images/chapter14/quiz16.png",
+        "audio": "/assets/audios/chapter-14/mediumQuiz-6.mp3"
+    },
+    {
+        "id": 47,
+        "chapterId": 14,
+        "difficulty": "medium",
+        "type": "fill_in_the_blanks",
+        "title": "প্রশ্ন ১৭: খালি জায়গা পূরণ করো",
+        "description": "একটি ছবি দেওয়া আছে। ছবিতে ময়নার বাবা বাড়ি থেকে বের হওয়ার আগে মেইন সুইচ বন্ধ করছেন এবং গ্যাস সংযোগ বন্ধ করছেন।",
+        "statement": "বন্যার সময় বাড়ি ছেড়ে যাওয়ার আগে _____ ও _____ বন্ধ করে দিতে হবে।",
+        "options": [
+            "পানি-দরজা",
+            "বিদ্যুৎ-গ্যাস",
+            "টিভি-ফ্যান",
+            "লাইট-খাট"
+        ],
+        "correctAnswer": "বিদ্যুৎ-গ্যাস",
+        "image": "/assets/images/chapter14/E-14_Q-17.png",
+        "audio": "/assets/audios/chapter-14/mediumQuiz-7.mp3"
+    },
+    {
+        "id": 48,
+        "chapterId": 14,
+        "difficulty": "medium",
+        "type": "true_false",
+        "title": "প্রশ্ন ১৮: সত্য না মিথ্যা বলো",
+        "description": "একটি ছবি দেওয়া আছে। ছবিতে ময়নার পরিবার হাঁটু পানি ভেঙে নিরাপদ আশ্রয়ের দিকে যাচ্ছে। বাবা টুটুলকে কাঁধে তুলে নিয়েছেন।",
+        "question": "বন্যার সময় ছোট বাচ্চাদের কাঁধে বা উঁচু জায়গায় তুলে নিয়ে যেতে হয়।",
+        "options": [
+            "সত্য",
+            "মিথ্যা"
+        ],
+        "correctAnswer": "সত্য",
+        "image": "/assets/images/chapter14/E-14_Q-18.png",
+        "audio": "/assets/audios/chapter-14/mediumQuiz-8.mp3"
+    },
+    {
+        "id": 49,
+        "chapterId": 14,
+        "difficulty": "medium",
+        "type": "drag_drop_categorize",
+        "title": "প্রশ্ন ১৯: টেনে আনো আর মেলাও",
+        "description": "বাম পাশে পাঁচটি কাজ দেওয়া আছে এবং ডান পাশে তিনটি বক্স দেওয়া আছে।",
+        "question": "কোন কাজ কোন বক্সে যাবে? টেনে মেলাও।",
+        "itemsToCategorize": [
+            {
+                "id": "1",
+                "text": "শুকনো খাবার মজুদ করা"
+            },
+            {
+                "id": "2",
+                "text": "জিনিসপত্র উঁচু জায়গায় তোলা"
+            },
+            {
+                "id": "3",
+                "text": "টিভিতে সতর্ক সংকেত দেখা"
+            },
+            {
+                "id": "4",
+                "text": "নিরাপদ আশ্রয়ে চলে যাওয়া"
+            },
+            {
+                "id": "5",
+                "text": "বাড়ি ফিরে পরিষ্কার করা"
+            }
+        ],
+        "categories": [
+            "বন্যার আগে",
+            "বন্যার সময়",
+            "বন্যার পরে"
+        ],
+        "correctAnswer": {
+            "বন্যার আগে": [
+                "1",
+                "2",
+                "3"
+            ],
+            "বন্যার সময়": [
+                "4"
+            ],
+            "বন্যার পরে": [
+                "5"
+            ]
+        },
+        "audio": "/assets/audios/chapter-14/mediumQuiz-9.mp3"
+    },
+    {
+        "id": 50,
+        "chapterId": 14,
+        "difficulty": "medium",
+        "type": "puzzle",
+        "title": "প্রশ্ন ২০: পাজল সাজাও",
+        "description": "নিচে কিছু শব্দের টুকরো দেওয়া আছে।",
+        "question": "টুকরোগুলো সঠিকভাবে সাজিয়ে একটি অর্থপূর্ণ বাক্য তৈরি করো।",
+        "options": [
+            {
+                "id": "P1",
+                "text": "বন্যার"
+            },
+            {
+                "id": "P2",
+                "text": "কারণ"
+            },
+            {
+                "id": "P3",
+                "text": "ভারী বৃষ্টি"
+            }
+        ],
+        "correctAnswer": [
+            "P3",
+            "P1",
+            "P2"
+        ],
+        "image": null,
+        "audio": "/assets/audios/chapter-14/mediumQuiz-10.mp3"
+    },
+    {
+        "id": 51,
+        "chapterId": 14,
+        "difficulty": "hard",
+        "type": "image_selection",
+        "title": "প্রশ্ন ২১: ছবিতে ক্লিক করো",
+        "description": "একটি ছবি দেওয়া আছে। ছবিতে দুটি দৃশ্য পাশাপাশি দেখা যাচ্ছে। বাম দৃশ্যে: ময়নার পরিবার বাড়ি ছেড়ে নিরাপদ আশ্রয়ে যাচ্ছে। ডান দৃশ্যে: ময়নার পরিবার বাড়ি ফিরে কাদা পরিষ্কার করছে।",
+        "question": "কোন দৃশ্যটি বন্যার সময়ের আর কোনটি বন্যার পরের? সঠিক দৃশ্যগুলো চিহ্নিত করো।",
+        "options": [
+            {
+                "id": "during_flood",
+                "label": "বন্যার সময় — পরিবার নিরাপদ আশ্রয়ে যাচ্ছে",
+                "image": "/assets/images/chapter14/E-14_Q-21.1.png"
+            },
+            {
+                "id": "after_flood",
+                "label": "বন্যার পরে — কাদা পরিষ্কার করছে",
+                "image": "/assets/images/chapter14/E-14_Q-21.2.png"
+            }
+        ],
+        "correctAnswer": [
+            "during_flood",
+            "after_flood"
+        ],
+        "audio": "/assets/audios/chapter-14/hardQuiz-1.mp3"
+    },
+    {
+        "id": 52,
+        "chapterId": 14,
+        "difficulty": "hard",
+        "type": "true_false",
+        "title": "প্রশ্ন ২২: সত্য না মিথ্যা বলো",
+        "description": "একটি ছবি দেওয়া আছে। ছবিতে ময়নার বাবা বাড়ি ফিরে পড়ে যাওয়া বিদ্যুতের তার খুঁজছেন এবং গ্যাসের লাইন চেক করছেন।",
+        "question": "বাড়ি ফিরে প্রথমে পড়ে যাওয়া বিদ্যুতের তার ও গ্যাসের লাইন চেক করতে হয়। তারপর ঘরের ভেতরে ঢুকতে হয়।",
+        "options": [
+            "সত্য",
+            "মিথ্যা"
+        ],
+        "correctAnswer": "সত্য",
+        "image": "/assets/images/chapter14/E-14_Q-22.png",
+        "audio": "/assets/audios/chapter-14/hardQuiz-2.mp3"
+    },
+    {
+        "id": 53,
+        "chapterId": 14,
+        "difficulty": "hard",
+        "type": "drag_drop_categorize",
+        "title": "প্রশ্ন ২৩: টেনে আনো আর মেলাও",
+        "description": "বাম পাশে ছয়টি বিবৃতি দেওয়া আছে এবং ডান পাশে চারটি বক্স দেওয়া আছে।",
+        "question": "কোন বিবৃতি কোন বক্সে যাবে? টেনে মেলাও।",
+        "itemsToCategorize": [
+            {
+                "id": "1",
+                "text": "উজানে ভারী বৃষ্টি হচ্ছে"
+            },
+            {
+                "id": "2",
+                "text": "শুকনো খাবার মজুদ করো"
+            },
+            {
+                "id": "3",
+                "text": "পানি হাঁটু পরিমাণ হয়েছে"
+            },
+            {
+                "id": "4",
+                "text": "বাড়ির সব জানালা খুলে দাও"
+            },
+            {
+                "id": "5",
+                "text": "ফুটানো পানি খাও"
+            },
+            {
+                "id": "6",
+                "text": "নিরাপদ আশ্রয়ে চলে যাও"
+            }
+        ],
+        "categories": [
+            "বন্যার কারণ",
+            "বন্যার আগের কাজ",
+            "বন্যার সময়ের কাজ",
+            "বন্যার পরের কাজ"
+        ],
+        "correctAnswer": {
+            "বন্যার কারণ": [
+                "1"
+            ],
+            "বন্যার আগের কাজ": [
+                "2"
+            ],
+            "বন্যার সময়ের কাজ": [
+                "3",
+                "6"
+            ],
+            "বন্যার পরের কাজ": [
+                "4",
+                "5"
+            ]
+        },
+        "audio": "/assets/audios/chapter-14/hardQuiz-3.mp3"
+    },
+    {
+        "id": 54,
+        "chapterId": 14,
+        "difficulty": "hard",
+        "type": "mcq",
+        "title": "প্রশ্ন ২৪: গল্পের ঘটনা শনাক্ত করো",
+        "description": "গল্পের তিনটি প্যানেল তৈরি করে দেখানো হয়েছে। প্যানেল ১: টিভিতে বন্যার খবর। প্যানেল ২: ময়নার বাবা জিনিসপত্র উঁচুতে তুলছেন। প্যানেল ৩: ময়নার পরিবার হাঁটু পানি ভেঙে নিরাপদ আশ্রয়ে যাচ্ছে।",
+        "question": "কোন প্যানেলে বন্যার কারণ, কোনটিতে বন্যার আগের কাজ আর কোনটিতে বন্যার সময়ের কাজ দেখানো হয়েছে?",
+        "options": [
+            "প্যানেল ১-কারণ, প্যানেল ২-আগে, প্যানেল ৩-সময়",
+            "প্যানেল ১-আগে, প্যানেল ২-কারণ, প্যানেল ৩-সময়",
+            "প্যানেল ১-সময়, প্যানেল ২-আগে, প্যানেল ৩-কারণ",
+            "প্যানেল ১-কারণ, প্যানেল ২-সময়, প্যানেল ৩-আগে"
+        ],
+        "correctAnswer": "প্যানেল ১-কারণ, প্যানেল ২-আগে, প্যানেল ৩-সময়",
+        "audio": "/assets/audios/chapter-14/hardQuiz-4.mp3"
+    },
+    {
+        "id": 55,
+        "chapterId": 14,
+        "difficulty": "hard",
+        "type": "fill_in_the_blanks",
+        "title": "প্রশ্ন ২৫: খালি জায়গা পূরণ করো",
+        "description": "একটি ছবি দেওয়া আছে। ছবিতে ময়না রাশেদকে ফুটানো পানি দিচ্ছে। রাশেদ বলছে, 'বন্যার পানি ফুটিয়ে খেতে হবে। পড়ে যাওয়া বিদ্যুতের তার ছোঁয়া যাবে না।' ",
+        "statement": "বন্যার পরে ____ পানি খেতে হবে এবং ____ বিদ্যুতের তার ছোঁয়া যাবে না।",
+        "options": [
+            "ফুটানো-পড়ে যাওয়া",
+            "ঠান্ডা-ভাঙা",
+            "গরম-ঝুলে থাকা",
+            "মিষ্টি-কাটা"
+        ],
+        "correctAnswer": "ফুটানো-পড়ে যাওয়া",
+        "image": "/assets/images/chapter14/E-14_Q-25.png",
+        "audio": "/assets/audios/chapter-14/hardQuiz25.mp3"
+    },
+    {
+        "id": 56,
+        "chapterId": 14,
+        "difficulty": "hard",
+        "type": "mcq",
+        "title": "প্রশ্ন ২৬: ক্রিটিকাল থিংকিং - বিশ্লেষণধর্মী",
+        "description": "একটি ছবি দেওয়া আছে। ছবিতে দুই বন্ধু কথা বলছে। একজন বলছে, 'আজ আমাদের বাড়িতে পানি উঠেছে, তাই আমরা এখন বন্যায় আছি!'",
+        "question": "বন্ধুটির কথায় কী ভুল আছে? সঠিক উত্তরটি বাছাই করো।",
+        "options": [
+            "একদিন পানি উঠলেই বন্যা হয় না",
+            "বন্ধুর কথা ঠিক আছে, পানি উঠলেই বন্যা",
+            "পানি উঠলে সবসময় বন্যা হয় না",
+            "একটু পানি উঠলেই বন্যা বলা যায়"
+        ],
+        "correctAnswer": "একদিন পানি উঠলেই বন্যা হয় না",
+        "explanation": "বন্যা মানে বিস্তীর্ণ এলাকা দীর্ঘ সময় প্লাবিত হওয়া।",
+        "image": "/assets/images/chapter14/E-14_Q-26.png",
+        "audio": "/assets/audios/chapter-14/hardQuiz26.mp3"
+    },
+    {
+        "id": 57,
+        "chapterId": 14,
+        "difficulty": "hard",
+        "type": "arrange_sequence",
+        "title": "প্রশ্ন ২৭: পাজল সাজাও",
+        "description": "চারটি টুকরো দেওয়া আছে।",
+        "question": "টুকরোগুলো সঠিকভাবে সাজিয়ে একটি অর্থপূর্ণ বাক্য তৈরি করো।",
+        "options": [
+            {
+                "id": "A",
+                "text": "বন্যার"
+            },
+            {
+                "id": "B",
+                "text": "পানি"
+            },
+            {
+                "id": "C",
+                "text": "ফুটিয়ে"
+            },
+            {
+                "id": "D",
+                "text": "খেতে হবে"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "audio": "/assets/audios/chapter-2/hardQuiz27.mp3"
+    },
+    {
+        "id": 58,
+        "chapterId": 14,
+        "difficulty": "hard",
+        "type": "mcq",
+        "title": "প্রশ্ন ২৮: ক্রিটিকাল থিংকিং - প্রয়োগমূলক",
+        "description": "একটি ছবি দেওয়া আছে। ছবিতে ময়না তার প্রতিবেশী খালামণিকে বন্যার সময়ের করণীয়গুলো বুঝিয়ে বলছে। খালামণি একা থাকেন, তার কোনো সন্তান নেই।",
+        "question": "ময়না কেন খালামণিকে বন্যার করণীয়গুলো শেখাচ্ছে?",
+        "options": [
+            "খালামণি ময়নাকে ভালোবাসেন বলে",
+            "একা থাকা মানুষদের বন্যার সময় বেশি সাহায্যের দরকার হয়",
+            "ময়না বাড়ির কাজ ফাঁকি দিতে চায়",
+            "খালামণি ময়নাকে মিষ্টি খেতে দেবেন বলে"
+        ],
+        "correctAnswer": "একা থাকা মানুষদের বন্যার সময় বেশি সাহায্যের দরকার হয়",
+        "image": "/assets/images/chapter14/E-14_Q-28.png",
+        "audio": "/assets/audios/chapter-14/hardQuiz28.mp3"
+    },
+    {
+        "id": 59,
+        "chapterId": 14,
+        "difficulty": "hard",
+        "type": "arrange_sequence",
+        "title": "প্রশ্ন ২৯: ঘটনা সাজাও",
+        "description": "তিনটি ঘটনা এলোমেলোভাবে দেওয়া আছে।",
+        "question": "এগুলোকে সঠিক ক্রমে সাজাও।",
+        "options": [
+            {
+                "id": "A",
+                "text": "ময়না তিনটা পরিবারকে বন্যার করণীয় শেখায়",
+                "emoji": "👨‍👩‍👧"
+            },
+            {
+                "id": "B",
+                "text": "ময়না বন্যাবন্ধু হয়",
+                "emoji": "🏅"
+            },
+            {
+                "id": "C",
+                "text": "মেট ক্লাবের দিদি ময়নাকে বন্যাবন্ধু হওয়ার কথা বলেন",
+                "emoji": "👩‍🏫"
+            }
+        ],
+        "correctAnswer": [
+            "C",
+            "A",
+            "B"
+        ],
+        "image": "/assets/images/chapter2/quiz29.png",
+        "audio": "/assets/audios/chapter-2/hardQuiz29.mp3"
+    },
+    {
+        "id": 60,
+        "chapterId": 14,
+        "difficulty": "hard",
+        "type": "mcq",
+        "title": "প্রশ্ন ৩০: ক্রিটিকাল থিংকিং - যুক্তিভিত্তিক",
+        "description": "একটি ছবি দেওয়া আছে। ছবিতে ময়না ঘুমানোর আগে জানালার বাইরে তাকিয়ে আছে। তিস্তা নদী শান্ত। সে মনে মনে বলছে, 'তুমি আজ শান্ত, কিন্তু আমরা তোমাকে চিনি। তাই আমরা সব সময় তৈরি থাকব।'",
+        "question": "ময়না কেন সব সময় তৈরি থাকতে চায়?",
+        "options": [
+            "সে নদীকে ভয় পায়",
+            "সে জানে যে কোন সময় বন্যা আসতে পারে",
+            "সে নদীতে মাছ ধরতে চায়",
+            "সে নদী দেখতে ভালোবাসে"
+        ],
+        "correctAnswer": "সে জানে যে কোন সময় বন্যা আসতে পারে",
+        "image": "/assets/images/chapter14/E-14_Q-30.png",
+        "audio": "/assets/audios/chapter-14/hardQuiz30.mp3"
+    },
+    {
+        "id": 61,
+        "chapterId": 15,
+        "difficulty": "easy",
+        "type": "hotspot",
+        "title": "প্রশ্ন ১: ছবির রহস্য উদঘাটন করো",
+        "description": "ছবিতে খলিল আর ইরতেজা সাগরপাড়ে বসে আছে। সাগরের দূরের আকাশ কালো মেঘে ঢাকা। সাগরের পানি অস্থির।",
+        "question": "ছবির কোন অংশ দেখে তুমি বুঝতে পারছ যে ঘূর্ণিঝড় আসতে পারে? সঠিক জায়গায় ক্লিক করো।",
+        "hotspots": [
+            {
+                "id": "sky",
+                "label": "কালো আকাশ",
+                "x": 50,
+                "y": 20
+            },
+            {
+                "id": "water",
+                "label": "অস্থির সাগর",
+                "x": 50,
+                "y": 60
+            }
+        ],
+        "correctAnswer": [
+            "sky",
+            "water"
+        ],
+        "image": "/assets/images/chapter15/E-15_Q-1.png",
+        "audio": "/assets/audios/chapter-15/easyQuiz1.mp3"
+    },
+    {
+        "id": 62,
+        "chapterId": 15,
+        "difficulty": "easy",
+        "type": "true_false",
+        "title": "প্রশ্ন ২: সত্যি নাকি মিথ্যা?",
+        "description": "খলিল বলল, 'ঘূর্ণিঝড় তৈরি হতে গেলে প্রথমে দরকার ঠান্ডা সমুদ্রের পানি।'",
+        "question": "খলিলের কথা কি সঠিক?",
+        "options": [
+            "সত্য",
+            "মিথ্যা"
+        ],
+        "correctAnswer": "মিথ্যা",
+        "audio": "/assets/audios/chapter-15/easyQuiz2.mp3"
+    },
+    {
+        "id": 63,
+        "chapterId": 15,
+        "difficulty": "easy",
+        "type": "fill_in_the_blanks",
+        "title": "প্রশ্ন ৩: খালি জায়গায় কী বসবে?",
+        "description": "খলিলের বাবা বললেন, 'ঘূর্ণিঝড়ের একদম মাঝখানের শান্ত জায়গাটাকে বলে ____।'",
+        "statement": "ঘূর্ণিঝড়ের একদম মাঝখানের শান্ত জায়গাটাকে বলে ____।",
+        "options": [
+            "বাতাস",
+            "চোখ",
+            "মুখ",
+            "পেট"
+        ],
+        "correctAnswer": "চোখ",
+        "audio": "/assets/audios/chapter-15/easyQuiz3.mp3"
+    },
+    {
+        "id": 64,
+        "chapterId": 15,
+        "difficulty": "easy",
+        "type": "image_selection",
+        "title": "প্রশ্ন ৪: সঠিক ছবিটি বেছে নাও",
+        "description": "পাশাপাশি দুইটি ছবি দেয়া আছে। প্রথম ছবিতে সাগর শান্ত। দ্বিতীয় ছবিতে সাগরে বিশাল ঢেউ ও ঘূর্ণি।",
+        "question": "কোন ছবিটি ঘূর্ণিঝড়ের সময়কার?",
+        "options": [
+            {
+                "id": "calm",
+                "label": "শান্ত সাগর",
+                "image": "/assets/images/chapter15/E-15_Q-4.1.png"
+            },
+            {
+                "id": "storm",
+                "label": "বিশাল ঢেউ ও ঘূর্ণি",
+                "image": "/assets/images/chapter15/E-15_Q-4.2.png"
+            }
+        ],
+        "correctAnswer": "storm",
+        "image": null,
+        "audio": "/assets/audios/chapter-15/easyQuiz4.mp3"
+    },
+    {
+        "id": 65,
+        "chapterId": 15,
+        "difficulty": "easy",
+        "type": "match_the_following",
+        "title": "প্রশ্ন ৫: সংকেত ও কাজ মেলাও",
+        "description": "বাম পাশে তিনটি সংকেত—১ নম্বর, ৫ নম্বর, ১০ নম্বর\nডান পাশে তিনটি কাজ—সতর্ক থাকা, প্রস্তুতি নেওয়া, আশ্রয়ে যাওয়া",
+        "question": "কোন সংকেতের সঙ্গে কোন কাজ মেলে?",
+        "leftItems": [
+            {
+                "id": "S1",
+                "label": "১ নম্বর সংকেত"
+            },
+            {
+                "id": "S5",
+                "label": "৫ নম্বর সংকেত"
+            },
+            {
+                "id": "S10",
+                "label": "১০ নম্বর সংকেত"
+            }
+        ],
+        "rightItems": [
+            "সতর্ক থাকা",
+            "প্রস্তুতি নেওয়া",
+            "আশ্রয়ে যাওয়া"
+        ],
+        "correctAnswer": {
+            "S1": "সতর্ক থাকা",
+            "S5": "প্রস্তুতি নেওয়া",
+            "S10": "আশ্রয়ে যাওয়া"
+        },
+        "image": null,
+        "audio": "/assets/audios/chapter-15/easyQuiz5.mp3"
+    },
+    {
+        "id": 66,
+        "chapterId": 15,
+        "difficulty": "easy",
+        "type": "mcq",
+        "title": "প্রশ্ন ৬: খলিলের বাবা কী করছেন?",
+        "description": "একটি ছবি দেওয়া আছে। ছবিতে খলিলের বাবা গাছের বড় ডাল কাটছেন। খলিল তাকে সাহায্য করছে।",
+        "question": "খলিলের বাবা কেন গাছের ডাল কাটছেন?",
+        "options": [
+            "জ্বালানি কাঠ বানানোর জন্য",
+            "বাড়ি পরিষ্কার করার জন্য",
+            "ঝড়ে যাতে ডাল ভেঙে বাড়ির ওপর না পড়ে",
+            "গাছটাকে ছোট করার জন্য"
+        ],
+        "correctAnswer": "ঝড়ে যাতে ডাল ভেঙে বাড়ির ওপর না পড়ে",
+        "image": "/assets/images/chapter15/E-15_Q-6.png",
+        "audio": "/assets/audios/chapter-15/easyQuiz6.mp3"
+    },
+    {
+        "id": 67,
+        "chapterId": 15,
+        "difficulty": "easy",
+        "type": "mcq",
+        "title": "প্রশ্ন ৭: বিশেষ ব্যাগটার নাম কী?",
+        "description": "একটি ছবি দেওয়া আছে। ছবিতে ইরতেজা তার মায়ের সাথে শুকনো খাবার, পানি, টর্চ, ব্যাটারি এক জায়গায় রাখছে।",
+        "question": "এই জিনিসগুলো একসাথে রাখার ব্যাগটার বিশেষ নাম কী?",
+        "options": [
+            "স্কুল ব্যাগ",
+            "গো-ব্যাগ",
+            "শপিং ব্যাগ",
+            "ট্রাভেল ব্যাগ"
+        ],
+        "correctAnswer": "গো-ব্যাগ",
+        "image": "/assets/images/chapter15/E-15_Q-7.png",
+        "audio": "/assets/audios/chapter-15/easyQuiz7.mp3"
+    },
+    {
+        "id": 68,
+        "chapterId": 15,
+        "difficulty": "easy",
+        "type": "true_false",
+        "title": "প্রশ্ন ৮: ঠিক বলেছে কি?",
+        "description": "ইরতেজা বলল, '১০ নম্বর সংকেত পেলে দেরি না করে নিরাপদ আশ্রয়ে চলে যেতে হবে।'",
+        "question": "ইরতেজার কথা কি ঠিক?",
+        "options": [
+            "সত্য",
+            "মিথ্যা"
+        ],
+        "correctAnswer": "সত্য",
+        "audio": "/assets/audios/chapter-15/easyQuiz8.mp3"
+    },
+    {
+        "id": 69,
+        "chapterId": 15,
+        "difficulty": "easy",
+        "type": "arrange_sequence",
+        "title": "প্রশ্ন ৯: ঘটনাগুলো সঠিক ক্রমে সাজাও",
+        "description": "তিনটি ঘটনা এলোমেলো করে দেওয়া আছে—",
+        "question": "ঘূর্ণিঝড় তৈরি হওয়ার সঠিক ক্রম কোনটি?",
+        "options": [
+            {
+                "id": "A",
+                "text": "সাগরের পানি গরম হওয়া"
+            },
+            {
+                "id": "B",
+                "text": "বাষ্প ঘুরতে ঘুরতে ঘূর্ণিঝড় তৈরি হওয়া"
+            },
+            {
+                "id": "C",
+                "text": "বাষ্প ওপরে ওঠা"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "C",
+            "B"
+        ],
+        "image": null,
+        "audio": "/assets/audios/chapter-15/easyQuiz9.mp3"
+    },
+    {
+        "id": 70,
+        "chapterId": 15,
+        "difficulty": "easy",
+        "type": "mcq",
+        "title": "প্রশ্ন ১০: রহস্যময় সময়ের নাম কী?",
+        "description": "একটি ছবি দেওয়া আছে। ছবিতে খলিল আর ইরতেজা শেল্টারের ভেতরে বসে আছে। বাইরে ঝড় হচ্ছে। হঠাৎ কিছুক্ষণের জন্য সব শান্ত হয়ে গেছে।",
+        "question": "ঝড় থেমে যাওয়ার এই রহস্যময় সময়টাকে কী বলে?",
+        "options": [
+            "ঝড়ের ঘুম",
+            "ঘূর্ণিঝড়ের চোখ",
+            "শান্ত ঘূর্ণি",
+            "ঝড়ের বিরতি"
+        ],
+        "correctAnswer": "ঘূর্ণিঝড়ের চোখ",
+        "image": "/assets/images/chapter15/E-15_Q-10.png",
+        "audio": "/assets/audios/chapter-15/easyQuiz10.mp3"
+    },
+    {
+        "id": 71,
+        "chapterId": 15,
+        "difficulty": "medium",
+        "type": "hotspot",
+        "title": "প্রশ্ন ১১: ছবিতে চোখ খুঁজে বের করো",
+        "description": "একটি ছবি দেওয়া আছে। ছবিতে ঘূর্ণিঝড়ের বিভিন্ন অংশ দেখানো হয়েছে। মাঝখানে একটি শান্ত জায়গা আছে। চারপাশে ঘূর্ণি।",
+        "question": "ঘূর্ণিঝড়ের চোখ কোন অংশে?",
+        "hotspots": [
+            {
+                "id": "edge",
+                "label": "চারপাশের ঘূর্ণি",
+                "x": 80,
+                "y": 50
+            },
+            {
+                "id": "center",
+                "label": "মাঝখানের শান্ত জায়গা",
+                "x": 50,
+                "y": 50
+            }
+        ],
+        "correctAnswer": [
+            "center"
+        ],
+        "image": "/assets/images/chapter15/cyclone_eye.png",
+        "audio": "/assets/audios/chapter-15/mediumQuiz11.mp3"
+    },
+    {
+        "id": 72,
+        "chapterId": 15,
+        "difficulty": "medium",
+        "type": "fill_in_the_blanks",
+        "title": "প্রশ্ন ১২: খালি জায়গায় কী বসবে?",
+        "description": "খলিল বলল, 'ঘূর্ণিঝড়ের সময় সাগরের পানি ৩-৬ মিটার উঁচু ঢেউ হয়ে উঠে আসে।'",
+        "statement": "ঘূর্ণিঝড়ের সময় সাগরের পানি ৩-৬ মিটার উঁচু ঢেউ হয়ে উঠে আসে। একে বলে ____।",
+        "options": [
+            "বন্যা",
+            "জলোচ্ছ্বাস",
+            "সুনামি",
+            "জোয়ার"
+        ],
+        "correctAnswer": "জলোচ্ছ্বাস",
+        "audio": "/assets/audios/chapter-15/mediumQuiz12.mp3"
+    },
+    {
+        "id": 73,
+        "chapterId": 15,
+        "difficulty": "medium",
+        "type": "true_false",
+        "title": "প্রশ্ন ১৩: ঠিক না ভুল?",
+        "description": "৭ নম্বর সংকেত মানে ঘর মজবুত করা আর গাছের ডাল কেটে ফেলা।",
+        "question": "এই কথাটা কি ঠিক?",
+        "options": [
+            "সত্য",
+            "মিথ্যা"
+        ],
+        "correctAnswer": "সত্য",
+        "audio": "/assets/audios/chapter-15/mediumQuiz13.mp3"
+    },
+    {
+        "id": 74,
+        "chapterId": 15,
+        "difficulty": "medium",
+        "type": "match_the_following",
+        "title": "প্রশ্ন ১৪: সময়ের সঙ্গে কাজ মেলাও",
+        "description": "বাম পাশে তিনটি সময়—আগে, সময়, পরে\nডান পাশে তিনটি কাজ—গো-ব্যাগ তৈরি করা, শেল্টারে যাওয়া, বাড়ি পরিষ্কার করা",
+        "question": "কোন সময়ের সঙ্গে কোন কাজ মেলে?",
+        "leftItems": [
+            {
+                "id": "T1",
+                "label": "আগে"
+            },
+            {
+                "id": "T2",
+                "label": "সময়"
+            },
+            {
+                "id": "T3",
+                "label": "পরে"
+            }
+        ],
+        "rightItems": [
+            "গো-ব্যাগ তৈরি করা",
+            "শেল্টারে যাওয়া",
+            "বাড়ি পরিষ্কার করা"
+        ],
+        "correctAnswer": {
+            "T1": "গো-ব্যাগ তৈরি করা",
+            "T2": "শেল্টারে যাওয়া",
+            "T3": "বাড়ি পরিষ্কার করা"
+        },
+        "image": null,
+        "audio": "/assets/audios/chapter-15/mediumQuiz14.mp3"
+    },
+    {
+        "id": 75,
+        "chapterId": 15,
+        "difficulty": "medium",
+        "type": "mcq",
+        "title": "প্রশ্ন ১৫: এই চার্টটা কীসের?",
+        "description": "একটি ছবি দেওয়া আছে। ছবিতে খলিলের বাবা একটি চার্ট দেখাচ্ছেন। চার্টে লেখা: ১-২: সতর্ক থাকো, ৩-৪: নৌকা বন্দরে ফেরাও, ৫-৬: প্রস্তুতি নাও, ৭ লাল: ঘর মজবুত করো, ৮-৯: তৈরি থাকো, ১০: এখনই আশ্রয়ে যাও।",
+        "question": "এই চার্টটা কীসের জন্য?",
+        "options": [
+            "পূজার সময়সূচির জন্য",
+            "ঘূর্ণিঝড়ের সতর্ক সংকেত মনে রাখার জন্য",
+            "স্কুলের রুটিনের জন্য",
+            "বাজারের তালিকার জন্য"
+        ],
+        "correctAnswer": "ঘূর্ণিঝড়ের সতর্ক সংকেত মনে রাখার জন্য",
+        "image": "/assets/images/chapter15/E-15_Q-15.png",
+        "audio": "/assets/audios/chapter-15/mediumQuiz15.mp3"
+    },
+    {
+        "id": 76,
+        "chapterId": 15,
+        "difficulty": "medium",
+        "type": "arrange_sequence",
+        "title": "প্রশ্ন ১৬: ক্রম ঠিক করো",
+        "description": "চারটি ঘটনা এলোমেলো করে দেওয়া আছে—",
+        "question": "সঠিক ক্রম কোনটি?",
+        "options": [
+            {
+                "id": "A",
+                "text": "৫ নম্বর সংকেত পাওয়া"
+            },
+            {
+                "id": "B",
+                "text": "শুকনো খাবার মজুদ করা"
+            },
+            {
+                "id": "C",
+                "text": "১০ নম্বর সংকেত পাওয়া"
+            },
+            {
+                "id": "D",
+                "text": "শেল্টারে চলে যাওয়া"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "image": null,
+        "audio": "/assets/audios/chapter-15/mediumQuiz16.mp3"
+    },
+    {
+        "id": 77,
+        "chapterId": 15,
+        "difficulty": "medium",
+        "type": "mcq",
+        "title": "প্রশ্ন ১৭: প্রথমে কী দেখতে হবে?",
+        "question": "ঘূর্ণিঝড়ের পর বাড়ি ফিরে প্রথমে কী আছে কিনা দেখতে হবে?",
+        "options": [
+            "পানি জমা",
+            "বিদ্যুতের তার পড়ে",
+            "খাবার নষ্ট",
+            "দরজা ভাঙা"
+        ],
+        "correctAnswer": "বিদ্যুতের তার পড়ে",
+        "audio": "/assets/audios/chapter-15/mediumQuiz17.mp3"
+    },
+    {
+        "id": 78,
+        "chapterId": 15,
+        "difficulty": "medium",
+        "type": "true_false",
+        "title": "প্রশ্ন ১৮: ঠিক না ভুল?",
+        "description": "ঘূর্ণিঝড়ের পর প্রতিবেশীদের খোঁজ নেওয়া উচিত না, কারণ নিজেদেরই অনেক কাজ থাকে। এই কথাটা কি ঠিক?",
+        "question": "এই কথাটা কি ঠিক?",
+        "options": [
+            "সত্য",
+            "মিথ্যা"
+        ],
+        "correctAnswer": "মিথ্যা",
+        "audio": "/assets/audios/chapter-15/mediumQuiz18.mp3"
+    },
+    {
+        "id": 79,
+        "chapterId": 15,
+        "difficulty": "medium",
+        "type": "match_the_following",
+        "title": "প্রশ্ন ১৯: দূরত্বের সঙ্গে মেলাও",
+        "description": "বাম পাশে তিনটি সংকেত—৩ নম্বর, ৭ নম্বর, ৯ নম্বর\nডান পাশে তিনটি দূরত্ব—৪০০ কিমি, ২০০ কিমি, উপকূলের কাছে",
+        "question": "কোন সংকেতের সঙ্গে কোন দূরত্ব মেলে?",
+        "leftItems": [
+            {
+                "id": "S3",
+                "label": "৩ নম্বর সংকেত"
+            },
+            {
+                "id": "S7",
+                "label": "৭ নম্বর সংকেত"
+            },
+            {
+                "id": "S9",
+                "label": "৯ নম্বর সংকেত"
+            }
+        ],
+        "rightItems": [
+            "৪০০ কিমি",
+            "২০০ কিমি",
+            "উপকূলের কাছে"
+        ],
+        "correctAnswer": {
+            "S3": "উপকূলের কাছে",
+            "S7": "৪০০ কিমি",
+            "S9": "২০০ কিমি"
+        },
+        "image": null,
+        "audio": "/assets/audios/chapter-15/mediumQuiz19.mp3"
+    },
+    {
+        "id": 80,
+        "chapterId": 15,
+        "difficulty": "medium",
+        "type": "puzzle",
+        "title": "প্রশ্ন ২০: পাজল সমাধান করো",
+        "description": "নিচে কিছু শব্দের টুকরো দেওয়া আছে।",
+        "question": "টুকরোগুলো সঠিকভাবে সাজিয়ে একটি অর্থপূর্ণ বাক্য তৈরি করো।",
+        "options": [
+            {
+                "id": "P1",
+                "text": "১০ নম্বর"
+            },
+            {
+                "id": "P2",
+                "text": "সংকেত"
+            },
+            {
+                "id": "P3",
+                "text": "মানে"
+            },
+            {
+                "id": "P4",
+                "text": "মহাবিপদ"
+            }
+        ],
+        "correctAnswer": [
+            "P1",
+            "P2",
+            "P3",
+            "P4"
+        ],
+        "image": null,
+        "audio": "/assets/audios/chapter-15/mediumQuiz20.mp3"
+    },
+    {
+        "id": 81,
+        "chapterId": 15,
+        "difficulty": "hard",
+        "type": "mcq",
+        "title": "প্রশ্ন ২১: তিন দৃশ্যের রহস্য ভেদ করো",
+        "description": "একটি ছবি দেওয়া আছে। ছবিতে তিনটি দৃশ্য—\nবামে: খলিল গাছের ডাল কাটছে\nমাঝে: খলিল গো-ব্যাগ বানাচ্ছে\nডানে: খলিল শেল্টারে বসে আছে",
+        "question": "কোন দৃশ্যটি ৫ নম্বর সংকেতের কাজ, কোনটি ৭ নম্বরের, কোনটি ১০ নম্বরের?",
+        "options": [
+            "বাম → ৫ নম্বর, মাঝে → ৭ নম্বর, ডানে → ১০ নম্বর",
+            "বাম → ৭ নম্বর, মাঝে → ৫ নম্বর, ডানে → ১০ নম্বর",
+            "বাম → ১০ নম্বর, মাঝে → ৭ নম্বর, ডানে → ৫ নম্বর",
+            "বাম → ৫ নম্বর, মাঝে → ১০ নম্বর, ডানে → ৭ নম্বর"
+        ],
+        "correctAnswer": "বাম → ৭ নম্বর, মাঝে → ৫ নম্বর, ডানে → ১০ নম্বর",
+        "image": "/assets/images/chapter15/E-15_Q-21.1.png",
+        "audio": "/assets/audios/chapter-15/hardQuiz21.mp3"
+    },
+    {
+        "id": 82,
+        "chapterId": 15,
+        "difficulty": "hard",
+        "type": "mcq",
+        "title": "প্রশ্ন ২২: ভুলটা ধরো",
+        "description": "\"৭ নম্বর সংকেতের অর্থ হলো এখনই আশ্রয়ে চলে যাওয়া।\"",
+        "question": "এই বাক্যটা কি ঠিক? যদি ভুল হয়, তাহলে সঠিক কথাটা কী হওয়া উচিত?",
+        "options": [
+            "ঠিক আছে",
+            "ভুল। ৭ নম্বর সংকেত মানে ঘর মজবুত করা, গাছের ডাল কাটা, প্রস্তুতি নেওয়া। ১০ নম্বর সংকেত মানে আশ্রয়ে চলে যাওয়া।",
+            "ভুল। ৭ নম্বর সংকেত মানে কিছুই করতে হবে না।",
+            "ভুল। ৭ নম্বর সংকেত মানে শুধু খবর রাখা।"
+        ],
+        "correctAnswer": "ভুল। ৭ নম্বর সংকেত মানে ঘর মজবুত করা, গাছের ডাল কাটা, প্রস্তুতি নেওয়া। ১০ নম্বর সংকেত মানে আশ্রয়ে চলে যাওয়া।",
+        "audio": "/assets/audios/chapter-15/hardQuiz22.mp3"
+    },
+    {
+        "id": 83,
+        "chapterId": 15,
+        "difficulty": "hard",
+        "type": "drag_drop_categorize",
+        "title": "প্রশ্ন ২৩: কাজগুলোকে সঠিক বাক্সে রাখো",
+        "description": "বাম পাশে পাঁচটি কাজ দেওয়া আছে এবং ডান পাশে তিনটি বাক্স দেওয়া আছে—আগে, সময়, পরে",
+        "question": "কোন কাজ কোন বাক্সে যাবে?",
+        "itemsToCategorize": [
+            {
+                "id": "1",
+                "text": "শুকনো খাবার মজুদ করা"
+            },
+            {
+                "id": "2",
+                "text": "শেল্টারে চলে যাওয়া"
+            },
+            {
+                "id": "3",
+                "text": "পড়ে যাওয়া তার থেকে দূরে থাকা"
+            },
+            {
+                "id": "4",
+                "text": "গাছের ডাল কাটা"
+            },
+            {
+                "id": "5",
+                "text": "পানি ফুটিয়ে খাওয়া"
+            }
+        ],
+        "categories": [
+            "আগে",
+            "সময়",
+            "পরে"
+        ],
+        "correctAnswer": {
+            "আগে": [
+                "1",
+                "4"
+            ],
+            "সময়": [
+                "2"
+            ],
+            "পরে": [
+                "3",
+                "5"
+            ]
+        },
+        "audio": "/assets/audios/chapter-15/hardQuiz23.mp3"
+    },
+    {
+        "id": 84,
+        "chapterId": 15,
+        "difficulty": "hard",
+        "type": "mcq",
+        "title": "প্রশ্ন ২৪: গল্পের তিনটি প্যানেলের রহস্য",
+        "description": "গল্পের তিনটি প্যানেল তৈরি করে দেখানো হয়েছে—\nপ্যানেল ১: খলিল আর ইরতেজা সাগরপাড়ে বসে আছে। আকাশ কালো। সাগর অস্থির।\nপ্যানেল ২: খলিলের বাবা গাছের ডাল কাটছেন। খলিল গো-ব্যাগ বানাচ্ছে।\nপ্যানেল ৩: সবাই শেল্টারে বসে আছে। বাইরে ঝড়। কিছুক্ষণের জন্য সব শান্ত।",
+        "question": "কোন প্যানেলে ঘূর্ণিঝড়ের শুরুর লক্ষণ, কোনটিতে আগের কাজ আর কোনটিতে ঘূর্ণিঝড়ের চোখ দেখানো হয়েছে?",
+        "options": [
+            "প্যানেল ১-শুরুর লক্ষণ, প্যানেল ২-আগে, প্যানেল ৩-চোখ",
+            "প্যানেল ১-আগে, প্যানেল ২-শুরুর লক্ষণ, প্যানেল ৩-চোখ",
+            "প্যানেল ১-চোখ, প্যানেল ২-আগে, প্যানেল ৩-শুরুর লক্ষণ",
+            "প্যানেল ১-শুরুর লক্ষণ, প্যানেল ২-চোখ, প্যানেল ৩-আগে"
+        ],
+        "correctAnswer": "প্যানেল ১-শুরুর লক্ষণ, প্যানেল ২-আগে, প্যানেল ৩-চোখ",
+        "audio": "/assets/audios/chapter-15/hardQuiz24.mp3"
+    },
+    {
+        "id": 85,
+        "chapterId": 15,
+        "difficulty": "hard",
+        "type": "fill_in_the_blanks",
+        "title": "প্রশ্ন ২৫: খালি জায়গা পূরণ করো",
+        "description": "খলিলের বাবা বললেন, 'আমরা যদি ___ করতাম, তাহলে পথেই আটকে যেতাম। ১০ নম্বর সংকেত শুনে ___ না করে চলে আসাই বুদ্ধিমানের কাজ।' এখানে একই শব্দ দুটো জায়গায় বসবে। শব্দটা কী?",
+        "statement": "আমরা যদি ___ করতাম, তাহলে পথেই আটকে যেতাম। ১০ নম্বর সংকেত শুনে ___ না করে চলে আসাই বুদ্ধিমানের কাজ।",
+        "options": [
+            "দেরি",
+            "প্রস্তুতি",
+            "ভয়",
+            "সাবধান"
+        ],
+        "correctAnswer": "দেরি",
+        "audio": "/assets/audios/chapter-15/hardQuiz25.mp3"
+    },
+    {
+        "id": 86,
+        "chapterId": 15,
+        "difficulty": "hard",
+        "type": "mcq",
+        "title": "প্রশ্ন ২৬: বন্ধুটির কথায় ভুলটা কী?",
+        "description": "একটি ছবি দেওয়া আছে। ছবিতে দুই বন্ধু কথা বলছে। একজন বলছে, 'আমাদের এলাকায় ৭ নম্বর সংকেত দেওয়া হয়েছে। এখনই আমাদের শেল্টারে চলে যেতে হবে।'",
+        "question": "বন্ধুটির কথায় কী ভুল আছে? সঠিক উত্তরটি বাছাই করো।",
+        "options": [
+            "৭ নম্বর সংকেত মানে প্রস্তুতি নেওয়া, এখনই আশ্রয়ে যেতে হয় না। ১০ নম্বর পেলে আশ্রয়ে যেতে হয়।",
+            "বন্ধুর কথা ঠিক আছে, ৭ নম্বর মানেই আশ্রয়ে যেতে হবে।",
+            "৭ নম্বর সংকেত মানে কিছুই করতে হবে না।",
+            "৭ নম্বর সংকেত মানে শুধু খবর রাখা।"
+        ],
+        "correctAnswer": "৭ নম্বর সংকেত মানে প্রস্তুতি নেওয়া, এখনই আশ্রয়ে যেতে হয় না। ১০ নম্বর পেলে আশ্রয়ে যেতে হয়।",
+        "image": "/assets/images/chapter15/E-15_Q-26.png",
+        "audio": "/assets/audios/chapter-15/hardQuiz26.mp3"
+    },
+    {
+        "id": 87,
+        "chapterId": 15,
+        "difficulty": "hard",
+        "type": "puzzle",
+        "title": "প্রশ্ন ২৭: পাজল সমাধান করো",
+        "description": "নিচে কিছু শব্দের টুকরো দেওয়া আছে।",
+        "question": "টুকরোগুলো সঠিকভাবে সাজিয়ে একটি অর্থপূর্ণ বাক্য তৈরি করো।",
+        "options": [
+            {
+                "id": "P1",
+                "text": "জলোচ্ছ্বাস"
+            },
+            {
+                "id": "P2",
+                "text": "ঘূর্ণিঝড়"
+            },
+            {
+                "id": "P3",
+                "text": "নিয়ে আসে"
+            },
+            {
+                "id": "P4",
+                "text": "সঙ্গে করে"
+            }
+        ],
+        "correctAnswer": [
+            "P2",
+            "P4",
+            "P3",
+            "P1"
+        ],
+        "image": null,
+        "audio": "/assets/audios/chapter-15/hardQuiz27.mp3"
+    },
+    {
+        "id": 88,
+        "chapterId": 15,
+        "difficulty": "hard",
+        "type": "mcq",
+        "title": "প্রশ্ন ২৮: ইরতেজার বাবা কী উত্তর দেবেন?",
+        "description": "একটি ছবি দেওয়া আছে। ছবিতে ইরতেজা তার বাবাকে প্রশ্ন করছে, 'বাবা, মাঝরাতে কিছুক্ষণের জন্য ঝড় থেমে গিয়েছিল কেন?'",
+        "question": "ইরতেজার বাবা কী উত্তর দেবেন?",
+        "options": [
+            "ঝড় ক্লান্ত হয়ে গিয়েছিল",
+            "এটা ছিল ঘূর্ণিঝড়ের চোখ। ঘূর্ণিঝড়ের মাঝখানে কিছুক্ষণের জন্য শান্ত থাকে। তারপর আবার ঝড় শুরু হয়।",
+            "সাগর শান্ত হয়ে গিয়েছিল",
+            "বাতাস থেমে গিয়েছিল"
+        ],
+        "correctAnswer": "এটা ছিল ঘূর্ণিঝড়ের চোখ। ঘূর্ণিঝড়ের মাঝখানে কিছুক্ষণের জন্য শান্ত থাকে। তারপর আবার ঝড় শুরু হয়।",
+        "image": "/assets/images/chapter15/E-15_Q-28.png",
+        "audio": "/assets/audios/chapter-15/hardQuiz28.mp3"
+    },
+    {
+        "id": 89,
+        "chapterId": 15,
+        "difficulty": "hard",
+        "type": "arrange_sequence",
+        "title": "প্রশ্ন ২৯: ঘটনাগুলো সঠিক ক্রমে সাজাও",
+        "description": "তিনটি ঘটনা এলোমেলোভাবে দেওয়া আছে—",
+        "question": "এগুলোকে সঠিক ক্রমে সাজাও (কোনটি আগে, কোনটি পরে)।",
+        "options": [
+            {
+                "id": "A",
+                "text": "ইরতেজা গো-ব্যাগ বানায়"
+            },
+            {
+                "id": "B",
+                "text": "খলিলের বাবা গাছের ডাল কাটেন"
+            },
+            {
+                "id": "C",
+                "text": "খলিল আর ইরতেজা সতর্ক সংকেতের ছড়া শেখে"
+            }
+        ],
+        "correctAnswer": [
+            "C",
+            "A",
+            "B"
+        ],
+        "image": null,
+        "audio": "/assets/audios/chapter-15/hardQuiz29.mp3"
+    },
+    {
+        "id": 90,
+        "chapterId": 15,
+        "difficulty": "hard",
+        "type": "mcq",
+        "title": "প্রশ্ন ৩০: খলিল কেন এমন সিদ্ধান্ত নিল?",
+        "description": "একটি ছবি দেওয়া আছে। ছবিতে খলিল তার ডায়েরিতে লিখছে: 'আমি সিদ্ধান্ত নিয়েছি, আমি আমার বন্ধুদেরও এই সংকেতগুলো শেখাব। বাবা বলেন, সচেতনতাই সবচেয়ে বড় অস্ত্র।'",
+        "question": "খলিল কেন তার বন্ধুদের সংকেতগুলো শেখাতে চায়?",
+        "options": [
+            "বন্ধুরা তাকে মিষ্টি খাওয়াবে বলে",
+            "সচেতনতা থাকলে সবাই ঘূর্ণিঝড়ে নিজেদের বাঁচাতে পারবে এবং ভয় পাবে না।",
+            "স্কুলে বকুনি খেতে হবে বলে",
+            "বাবা জোর করছেন বলে"
+        ],
+        "correctAnswer": "সচেতনতা থাকলে সবাই ঘূর্ণিঝড়ে নিজেদের বাঁচাতে পারবে এবং ভয় পাবে না।",
+        "image": "/assets/images/chapter15/E-15_Q-30.png",
+        "audio": "/assets/audios/chapter-15/hardQuiz30.mp3"
+    }
+]
