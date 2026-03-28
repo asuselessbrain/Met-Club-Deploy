@@ -26,7 +26,7 @@ export default function StartInterface() {
                     className="absolute inset-0 pointer-events-none"
                     style={{
                         background:
-                            "linear-gradient(to bottom, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0.20) 55%, rgba(255,255,255,0.06) 100%)",
+                            "linear-gradient(to bottom, rgba(255,244,242,0.56) 0%, rgba(255,230,226,0.22) 55%, rgba(255,214,210,0.08) 100%)",
                     }}
                 />
 
@@ -39,9 +39,9 @@ export default function StartInterface() {
                         <div
                             className="rounded-2xl sm:rounded-3xl overflow-visible pt-12 sm:pt-16 w-full relative z-10 flex flex-col items-center justify-center"
                             style={{
-                                background: "linear-gradient(160deg,#e0f0ff 0%,#f0e8ff 50%,#fff0e8 100%)",
+                                background: "linear-gradient(160deg,#ffe4e6 0%,#ffe8e3 50%,#fff1ec 100%)",
                                 border: "3px solid rgba(255,255,255,0.9)",
-                                boxShadow: "0 20px 60px rgba(100,120,200,0.22), 0 4px 16px rgba(0,0,0,0.10), inset 0 0 0 1px rgba(255,255,255,0.6)",
+                                boxShadow: "0 20px 60px rgba(220,38,38,0.18), 0 4px 16px rgba(0,0,0,0.10), inset 0 0 0 1px rgba(255,255,255,0.6)",
                             }}
                         >
                             {/* ── Ribbon banner ── */}
@@ -81,8 +81,8 @@ export default function StartInterface() {
                                 <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 w-full">
                                     {/* Correct pill */}
                                     <div className="flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-bold text-xs sm:text-sm"
-                                        style={{ background: "#dcfce7", border: "2px solid #4ade80", color: "#166534" }}>
-                                        <span className="w-6 h-6 flex items-center justify-center rounded-full bg-green-500 text-white text-xs font-black">✓</span>
+                                        style={{ background: "#fee2e2", border: "2px solid #fca5a5", color: "#991b1b" }}>
+                                            <span className="w-6 h-6 flex items-center justify-center rounded-full bg-red-500 text-white text-xs font-black">✓</span>
                                         <span className="coin-spin">🪙</span>
                                         <span>+10 pts</span>
                                     </div>
@@ -115,11 +115,11 @@ export default function StartInterface() {
                                     className="w-full flex items-center justify-center gap-2 sm:gap-3 py-3 sm:py-4 rounded-2xl font-bold text-white text-base sm:text-xl transition-all duration-200 active:scale-95"
                                     style={{
                                         background: btnHover
-                                            ? "linear-gradient(135deg,#16a34a,#15803d)"
-                                            : "linear-gradient(135deg,#22c55e,#16a34a)",
+                                            ? "linear-gradient(135deg,#dc2626,#b91c1c)"
+                                            : "linear-gradient(135deg,#ef4444,#dc2626)",
                                         boxShadow: btnHover
-                                            ? "0 3px 0 #14532d, 0 6px 24px rgba(34,197,94,0.45)"
-                                            : "0 5px 0 #14532d, 0 8px 28px rgba(34,197,94,0.35)",
+                                            ? "0 3px 0 #7f1d1d, 0 6px 24px rgba(239,68,68,0.45)"
+                                            : "0 5px 0 #7f1d1d, 0 8px 28px rgba(239,68,68,0.35)",
                                         transform: btnHover ? "translateY(2px)" : "translateY(0)",
                                         border: "2px solid rgba(255,255,255,0.30)",
                                         letterSpacing: "0.03em",

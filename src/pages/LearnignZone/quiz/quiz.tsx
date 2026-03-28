@@ -1184,7 +1184,7 @@ export default function Quiz({ onFinish }: QuizProps) {
                 }}>
                 {/* Overlay */}
                 <div className="absolute inset-0 pointer-events-none"
-                    style={{ background: "linear-gradient(to bottom,rgba(255,255,255,0.52) 0%,rgba(255,255,255,0.18) 55%,rgba(255,255,255,0.04) 100%)" }} />
+                    style={{ background: "linear-gradient(to bottom,rgba(255,244,242,0.56) 0%,rgba(255,230,226,0.22) 55%,rgba(255,214,210,0.08) 100%)" }} />
 
                 {/* Top nav */}
                 <TopNav
@@ -1199,10 +1199,10 @@ export default function Quiz({ onFinish }: QuizProps) {
                                 <div className="q-enter w-full max-w-3xl mt-4 rounded-3xl p-6 md:p-8 flex flex-col gap-6"
                                     style={{
                                         background: "rgba(255,255,255,0.95)", backdropFilter: "blur(12px)",
-                                        border: "2.5px solid #bfdbfe", boxShadow: "0 12px 48px rgba(59,130,246,0.18)"
+                                        border: "2.5px solid #fecaca", boxShadow: "0 12px 48px rgba(239,68,68,0.15)"
                                     }}>
                                     <div className="flex justify-between items-center border-b pb-4">
-                                        <h2 className="text-2xl font-bold text-blue-800">ভুল উত্তরগুলো মিলিয়ে নাও</h2>
+                                        <h2 className="text-2xl font-bold text-red-800">ভুল উত্তরগুলো মিলিয়ে নাও</h2>
                                         <button onClick={() => setShowReview(false)}
                                             className="px-4 py-2 bg-gray-200 text-gray-700 rounded-xl font-bold hover:bg-gray-300">
                                             ← ফিরে যাও
@@ -1255,36 +1255,36 @@ export default function Quiz({ onFinish }: QuizProps) {
                                 <div className="q-enter w-full max-w-2xl mt-8 rounded-3xl p-8 flex flex-col items-center gap-6"
                                     style={{
                                         background: "rgba(255,255,255,0.88)", backdropFilter: "blur(12px)",
-                                        border: "2.5px solid #bfdbfe", boxShadow: "0 12px 48px rgba(59,130,246,0.18)"
+                                        border: "2.5px solid #fecaca", boxShadow: "0 12px 48px rgba(239,68,68,0.16)"
                                     }}>
                                     <div style={{ fontSize: 88 }}>🏆</div>
-                                    <h2 className="text-4xl font-bold text-center" style={{ color: "#1e40af" }}>গেম শেষ!</h2>
+                                    <h2 className="text-4xl font-bold text-center" style={{ color: "#991b1b" }}>গেম শেষ!</h2>
 
                                     {/* Score Card */}
-                                    <div className="w-full bg-blue-50 p-6 rounded-2xl border-2 border-blue-200 flex flex-col items-center gap-3 shadow-inner">
+                                    <div className="w-full bg-red-50 p-6 rounded-2xl border-2 border-red-200 flex flex-col items-center gap-3 shadow-inner">
                                         <p className="text-xl font-bold text-gray-700">তোমার মোট স্কোর</p>
-                                        <p className="text-5xl font-black text-blue-600 drop-shadow-sm">
-                                            {totalScore} <span className="text-2xl text-blue-400">/ {TOTAL * POINTS_PER_QUESTION}</span>
+                                        <p className="text-5xl font-black text-red-600 drop-shadow-sm">
+                                            {totalScore} <span className="text-2xl text-red-400">/ {TOTAL * POINTS_PER_QUESTION}</span>
                                         </p>
                                     </div>
 
                                     {/* Correct / Wrong Stats */}
-                                    <div className="flex gap-6 w-full justify-center text-lg font-semibold">
-                                        <div className="flex items-center gap-2 px-5 py-3 bg-green-100 text-green-700 rounded-xl border border-green-300">
+                                    <div className="grid w-full grid-cols-1 sm:grid-cols-2 gap-3 text-base sm:text-lg font-semibold">
+                                        <div className="flex items-center justify-center gap-2 px-5 py-3 bg-green-100 text-green-700 rounded-xl border border-green-300">
                                             ✅ সঠিক: {correctCount}
                                         </div>
-                                        <div className="flex items-center gap-2 px-5 py-3 bg-red-100 text-red-700 rounded-xl border border-red-300">
+                                        <div className="flex items-center justify-center gap-2 px-5 py-3 bg-red-100 text-red-700 rounded-xl border border-red-300">
                                             ❌ ভুল: {wrongCount}
                                         </div>
                                     </div>
 
-                                    <div className="flex flex-col sm:flex-row gap-4 mt-4 w-full justify-center">
+                                    <div className="mt-4 grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
                                         {/* Review Button */}
                                         {wrongCount > 0 && (
                                             <button onClick={() => setShowReview(true)}
-                                                className="px-8 py-4 rounded-full font-bold text-blue-700 text-lg transition-all hover:scale-105 active:scale-95"
+                                                className="w-full px-6 py-4 rounded-full font-bold text-red-700 text-base sm:text-lg transition-all hover:scale-105 active:scale-95"
                                                 style={{
-                                                    background: "#dbeafe", border: "2px solid #93c5fd"
+                                                    background: "#fee2e2", border: "2px solid #fca5a5"
                                                 }}>
                                                 উত্তর মিলিয়ে দেখ
                                             </button>
@@ -1292,24 +1292,37 @@ export default function Quiz({ onFinish }: QuizProps) {
 
                                         {/* Play Again Button */}
                                         <button onClick={() => { setFinished(false); setShowReview(false); setCurrent(0); setAnswers({}); }}
-                                            className="px-10 py-4 rounded-full font-bold text-white text-lg transition-all hover:scale-105 active:scale-95"
+                                            className="w-full px-6 py-4 rounded-full font-bold text-white text-base sm:text-lg transition-all hover:scale-105 active:scale-95"
                                             style={{
-                                                background: "linear-gradient(135deg,#3b82f6,#2563eb)",
-                                                boxShadow: "0 6px 0 #1d4ed8,0 8px 24px rgba(59,130,246,0.35)"
+                                                background: "linear-gradient(135deg,#ef4444,#dc2626)",
+                                                boxShadow: "0 6px 0 #991b1b,0 8px 24px rgba(239,68,68,0.35)"
                                             }}>
                                             আবার খেলো
                                         </button>
 
                                         {/* Go to Home Button */}
-                                        <Link to={`/select-difficulty/${chapterId}`}>
+                                        <Link to={`/select-difficulty/${chapterId}`} className="w-full">
                                             <button
-                                                className="px-10 py-4 rounded-full font-bold text-white text-lg transition-all hover:scale-105 active:scale-95 w-full"
+                                                className="px-6 py-4 rounded-full font-bold text-white text-base sm:text-lg transition-all hover:scale-105 active:scale-95 w-full"
                                                 style={{
                                                     background: "linear-gradient(135deg,#f59e0b,#d97706)",
                                                     boxShadow: "0 6px 0 #b45309,0 8px 24px rgba(245,158,11,0.35)"
                                                 }}
                                             >
                                                 নতুন Level বেছে নাও
+                                            </button>
+                                        </Link>
+
+                                        <Link to="/learning-zone" className="w-full">
+                                            <button
+                                                className="px-6 py-4 rounded-full font-bold text-red-700 text-base sm:text-lg transition-all hover:scale-105 active:scale-95 w-full"
+                                                style={{
+                                                    background: "#fff1f2",
+                                                    border: "2px solid #fda4af",
+                                                    boxShadow: "0 6px 0 #fb7185,0 8px 24px rgba(244,63,94,0.24)",
+                                                }}
+                                            >
+                                                চ্যাপ্টারে ফিরে যাও
                                             </button>
                                         </Link>
                                     </div>
@@ -1321,8 +1334,8 @@ export default function Quiz({ onFinish }: QuizProps) {
                                     style={{
                                         background: "rgba(255,255,255,0.88)",
                                         backdropFilter: "blur(12px)",
-                                        border: "2.5px solid rgba(191,219,254,0.8)",
-                                        boxShadow: "0 8px 40px rgba(59,130,246,0.14), 0 2px 12px rgba(0,0,0,0.07)",
+                                        border: "2.5px solid rgba(252,165,165,0.85)",
+                                        boxShadow: "0 8px 40px rgba(239,68,68,0.12), 0 2px 12px rgba(0,0,0,0.07)",
                                     }}
                                 >
                                     <QuestionHeader title={q.title} qNum={current + 1} total={TOTAL} audioUrl={q.audio} />
@@ -1348,7 +1361,7 @@ export default function Quiz({ onFinish }: QuizProps) {
                 )}
 
                 {/* Corner sparkle */}
-                <div className="absolute bottom-6 right-6 sparkle pointer-events-none z-10 text-2xl select-none" style={{ color: "#93c5fd" }}>✦</div>
+                <div className="absolute bottom-6 right-6 sparkle pointer-events-none z-10 text-2xl select-none" style={{ color: "#fca5a5" }}>✦</div>
             </div>
         </>
     );

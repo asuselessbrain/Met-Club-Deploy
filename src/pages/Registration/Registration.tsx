@@ -51,17 +51,17 @@ export default function Registration() {
     };
 
     return (
-        <div className="relative overflow-hidden min-h-screen bg-linear-to-br from-blue-500 via-teal-500 to-cyan-500 text-white">
+        <div className="relative overflow-hidden min-h-screen bg-linear-to-br from-red-500 via-rose-500 to-orange-500 text-white">
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute -top-24 -left-16 h-72 w-72 rounded-full bg-white/18 blur-3xl" />
-                <div className="absolute top-1/3 right-0 h-80 w-80 rounded-full bg-cyan-200/25 blur-3xl" />
-                <div className="absolute bottom-0 left-1/3 h-64 w-64 rounded-full bg-teal-100/20 blur-3xl" />
+                <div className="absolute top-1/3 right-0 h-80 w-80 rounded-full bg-rose-200/25 blur-3xl" />
+                <div className="absolute bottom-0 left-1/3 h-64 w-64 rounded-full bg-orange-100/20 blur-3xl" />
             </div>
 
             <div className="relative z-10 flex min-h-screen items-center justify-center px-4 py-8 sm:px-8 md:px-12">
-                <div className="w-full max-w-3xl rounded-4xl border border-white/35 bg-white/82 p-6 text-gray-900 shadow-[0_20px_70px_rgba(7,89,133,0.28)] backdrop-blur-xl sm:p-8 md:p-10">
+                <div className="w-full max-w-3xl rounded-4xl border border-white/35 bg-white/82 p-6 text-gray-900 shadow-[0_20px_70px_rgba(185,28,28,0.24)] backdrop-blur-xl sm:p-8 md:p-10">
                     <div className="mb-8 flex flex-col gap-3">
-                        <div className="inline-flex w-fit rounded-full bg-sky-100 px-4 py-1 text-xs font-bold tracking-[0.18em] text-sky-700">
+                        <div className="inline-flex w-fit rounded-full bg-red-100 px-4 py-1 text-xs font-bold tracking-[0.18em] text-red-700">
                             নতুন সদস্য নিবন্ধন
                         </div>
                         <h1 className="text-3xl font-black leading-tight text-slate-900 sm:text-4xl">
@@ -83,7 +83,7 @@ export default function Registration() {
                                     id="fullName"
                                     placeholder="পূর্ণ নাম লিখুন"
                                     {...register("fullName", { required: "নাম আবশ্যক" })}
-                                    className={`w-full rounded-2xl border bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:ring-4 focus:ring-sky-100 ${errors.fullName ? "border-red-400 focus:border-red-400" : "border-sky-100 focus:border-sky-400"}`}
+                                    className={`w-full rounded-2xl border bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:ring-4 focus:ring-red-100 ${errors.fullName ? "border-red-400 focus:border-red-400" : "border-red-100 focus:border-red-400"}`}
                                 />
                                 {errors.fullName && <p className="mt-1 text-xs text-red-500">{errors.fullName.message}</p>}
                             </div>
@@ -101,7 +101,7 @@ export default function Registration() {
                                         minLength: { value: 3, message: "কমপক্ষে ৩ অক্ষর" },
                                         pattern: { value: /^[a-zA-Z0-9_]+$/, message: "শুধু অক্ষর, সংখ্যা ও _ ব্যবহার করুন" },
                                     })}
-                                    className={`w-full rounded-2xl border bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:ring-4 focus:ring-sky-100 ${errors.studentId ? "border-red-400 focus:border-red-400" : "border-sky-100 focus:border-sky-400"}`}
+                                    className={`w-full rounded-2xl border bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:ring-4 focus:ring-red-100 ${errors.studentId ? "border-red-400 focus:border-red-400" : "border-red-100 focus:border-red-400"}`}
                                 />
                                 {errors.studentId && <p className="mt-1 text-xs text-red-500">{errors.studentId.message}</p>}
                             </div>
@@ -115,7 +115,7 @@ export default function Registration() {
                                     id="institution"
                                     placeholder="স্কুলের নাম লিখুন"
                                     {...register("institution", { required: "প্রতিষ্ঠানের নাম আবশ্যক" })}
-                                    className={`w-full rounded-2xl border bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:ring-4 focus:ring-sky-100 ${errors.institution ? "border-red-400 focus:border-red-400" : "border-sky-100 focus:border-sky-400"}`}
+                                    className={`w-full rounded-2xl border bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:ring-4 focus:ring-red-100 ${errors.institution ? "border-red-400 focus:border-red-400" : "border-red-100 focus:border-red-400"}`}
                                 />
                                 {errors.institution && <p className="mt-1 text-xs text-red-500">{errors.institution.message}</p>}
                             </div>
@@ -128,7 +128,7 @@ export default function Registration() {
                                     id="className"
                                     {...register("className", { required: "শ্রেণি নির্বাচন করুন" })}
                                     defaultValue=""
-                                    className={`w-full rounded-2xl border bg-white px-4 py-3 text-slate-900 outline-none transition focus:ring-4 focus:ring-sky-100 ${errors.className ? "border-red-400 focus:border-red-400" : "border-sky-100 focus:border-sky-400"}`}
+                                    className={`w-full rounded-2xl border bg-white px-4 py-3 text-slate-900 outline-none transition focus:ring-4 focus:ring-red-100 ${errors.className ? "border-red-400 focus:border-red-400" : "border-red-100 focus:border-red-400"}`}
                                 >
                                     <option value="" disabled>
                                         শ্রেণি নির্বাচন করুন
@@ -153,7 +153,7 @@ export default function Registration() {
                                         required: "মোবাইল নম্বর আবশ্যক",
                                         pattern: { value: /^01[3-9]\d{8}$/, message: "সঠিক বাংলাদেশি নম্বর দিন" },
                                     })}
-                                    className={`w-full rounded-2xl border bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:ring-4 focus:ring-sky-100 ${errors.guardianPhone ? "border-red-400 focus:border-red-400" : "border-sky-100 focus:border-sky-400"}`}
+                                    className={`w-full rounded-2xl border bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:ring-4 focus:ring-red-100 ${errors.guardianPhone ? "border-red-400 focus:border-red-400" : "border-red-100 focus:border-red-400"}`}
                                 />
                                 {errors.guardianPhone && <p className="mt-1 text-xs text-red-500">{errors.guardianPhone.message}</p>}
                             </div>
@@ -167,7 +167,7 @@ export default function Registration() {
                                     id="district"
                                     placeholder="আপনার জেলা লিখুন"
                                     {...register("district")}
-                                    className="w-full rounded-2xl border border-sky-100 bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-sky-400 focus:ring-4 focus:ring-sky-100"
+                                    className="w-full rounded-2xl border border-red-100 bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-red-400 focus:ring-4 focus:ring-red-100"
                                 />
                             </div>
 
@@ -183,7 +183,7 @@ export default function Registration() {
                                         required: "পাসওয়ার্ড আবশ্যক",
                                         minLength: { value: 6, message: "কমপক্ষে ৬ অক্ষর দিন" },
                                     })}
-                                    className={`w-full rounded-2xl border bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:ring-4 focus:ring-sky-100 ${errors.password ? "border-red-400 focus:border-red-400" : "border-sky-100 focus:border-sky-400"}`}
+                                    className={`w-full rounded-2xl border bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:ring-4 focus:ring-red-100 ${errors.password ? "border-red-400 focus:border-red-400" : "border-red-100 focus:border-red-400"}`}
                                 />
                                 {errors.password && <p className="mt-1 text-xs text-red-500">{errors.password.message}</p>}
                             </div>
@@ -200,13 +200,13 @@ export default function Registration() {
                                         required: "পাসওয়ার্ড নিশ্চিত করুন",
                                         validate: (val: string) => val === getValues("password") || "পাসওয়ার্ড মিলছে না",
                                     })}
-                                    className={`w-full rounded-2xl border bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:ring-4 focus:ring-sky-100 ${errors.confirmPassword ? "border-red-400 focus:border-red-400" : "border-sky-100 focus:border-sky-400"}`}
+                                    className={`w-full rounded-2xl border bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:ring-4 focus:ring-red-100 ${errors.confirmPassword ? "border-red-400 focus:border-red-400" : "border-red-100 focus:border-red-400"}`}
                                 />
                                 {errors.confirmPassword && <p className="mt-1 text-xs text-red-500">{errors.confirmPassword.message}</p>}
                             </div>
                         </div>
 
-                        <div className="rounded-2xl border border-emerald-100 bg-emerald-50 px-4 py-3 text-sm leading-6 text-emerald-800">
+                        <div className="rounded-2xl border border-red-100 bg-red-50 px-4 py-3 text-sm leading-6 text-red-800">
                             আবহাওয়া, জলবায়ু ও দুর্যোগ বিষয়ে শেখার জন্য এই প্রোফাইল ব্যবহার হবে। তথ্য সংরক্ষণের আগে অভিভাবকের অনুমতি নিয়ে নিন।
                         </div>
 
@@ -214,7 +214,7 @@ export default function Registration() {
                             <input
                                 type="checkbox"
                                 {...register("consent", { required: "সম্মতি দেওয়া আবশ্যক" })}
-                                className="mt-1 h-4 w-4 rounded border-slate-300 text-sky-600 focus:ring-sky-500"
+                                className="mt-1 h-4 w-4 rounded border-slate-300 text-red-600 focus:ring-red-500"
                             />
                             <span>আমি প্রদত্ত তথ্য সঠিক এবং শেখার কার্যক্রমের জন্য এটি ব্যবহারে সম্মত।</span>
                         </label>
@@ -224,13 +224,13 @@ export default function Registration() {
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="flex-1 rounded-2xl bg-linear-to-r from-sky-600 to-blue-700 px-6 py-3.5 text-base font-bold text-white shadow-[0_10px_24px_rgba(37,99,235,0.35)] transition hover:scale-[1.01] hover:from-sky-700 hover:to-blue-800 active:scale-[0.99] disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
+                                className="flex-1 rounded-2xl bg-linear-to-r from-red-600 to-rose-700 px-6 py-3.5 text-base font-bold text-white shadow-[0_10px_24px_rgba(185,28,28,0.32)] transition hover:scale-[1.01] hover:from-red-700 hover:to-rose-800 active:scale-[0.99] disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
                             >
                                 {isSubmitting ? "অনুগ্রহ করে অপেক্ষা করুন..." : "নিবন্ধন সম্পন্ন করুন"}
                             </button>
                             <Link
                                 to="/"
-                                className="inline-flex flex-1 items-center justify-center rounded-2xl border border-sky-200 bg-sky-50 px-6 py-3.5 text-base font-bold text-sky-700 transition hover:bg-sky-100"
+                                className="inline-flex flex-1 items-center justify-center rounded-2xl border border-red-200 bg-red-50 px-6 py-3.5 text-base font-bold text-red-700 transition hover:bg-red-100"
                             >
                                 আমার অ্যাকাউন্ট আছে
                             </Link>

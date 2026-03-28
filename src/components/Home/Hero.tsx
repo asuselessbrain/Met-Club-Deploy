@@ -30,7 +30,7 @@ export default function Hero() {
                         এসো আবহাওয়া শিখি খেলতে খেলতে
                     </p>
                     <Link to="/about" className="flex justify-center lg:justify-start mt-6">
-                        <button className="px-6 py-3 cursor-pointer bg-white/80 text-blue-700 font-semibold rounded-lg hover:bg-blue-50 transition">
+                        <button className="px-6 py-3 cursor-pointer bg-white/85 text-red-700 font-semibold rounded-lg hover:bg-red-50 transition">
                             মেট ক্লাব সম্পর্কে জানুন
                         </button>
                     </Link>

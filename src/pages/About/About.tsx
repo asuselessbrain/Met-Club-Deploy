@@ -45,9 +45,9 @@ export default function About() {
             <section id="mission-vision" data-animate className={`py-24 px-4 bg-gradient-to-br from-orange-50 to-yellow-50`}>
                 <div className="container mx-auto max-w-7xl">
                     <div className="grid md:grid-cols-2 gap-8 mb-16">
-                        <div className="group bg-white rounded-3xl shadow-2xl p-10 hover:scale-105 transition-all duration-500 border-t-8 border-teal-500 animate-slide-right">
+                        <div className="group bg-white rounded-3xl shadow-2xl p-10 hover:scale-105 transition-all duration-500 border-t-8 border-red-500 animate-slide-right">
                             <div className="flex items-center space-x-4 mb-6">
-                                <div className="w-20 h-20 bg-gradient-to-br from-teal-400 to-cyan-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform">
+                                <div className="w-20 h-20 bg-gradient-to-br from-red-400 to-rose-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform">
                                     <Eye className="w-10 h-10 text-white" />
                                 </div>
                                 <h3 className="text-4xl font-black text-gray-800">ভিশন</h3>
@@ -55,7 +55,7 @@ export default function About() {
                             <p className="text-xl text-gray-700 leading-relaxed">
                                 একটি নিরাপদ ও সচেতন সমাজ গড়ে তুলতে শিশুদের আবহাওয়া পর্যবেক্ষণ, পূর্বাভাস এবং আগাম সতর্কতার শিক্ষা প্রদান করা।
                             </p>
-                            <div className="mt-6 flex items-center space-x-2 text-teal-600">
+                            <div className="mt-6 flex items-center space-x-2 text-red-600">
                                 <Sparkles className="w-5 h-5" />
                                 <span className="font-semibold">একটি নিরাপদ ভবিষ্যৎ</span>
                             </div>
@@ -78,7 +78,7 @@ export default function About() {
                         </div>
                     </div>
 
-                    <div className="bg-gradient-to-br from-blue-500 via-teal-500 to-cyan-500 rounded-3xl p-12 text-white shadow-2xl">
+                    <div className="bg-gradient-to-br from-red-500 via-rose-500 to-orange-500 rounded-3xl p-12 text-white shadow-2xl">
                         <div className="text-center mb-10">
                             <h3 className="text-4xl md:text-5xl font-black mb-4">MET ক্লাব কী?</h3>
                             <div className="w-24 h-1 bg-yellow-400 mx-auto mb-6"></div>
@@ -128,12 +128,12 @@ export default function About() {
 
                     <div className="grid md:grid-cols-3 gap-8">
                         {[
-                            { icon: '🌡️', title: 'আবহাওয়া পর্যবেক্ষণের জ্ঞান প্রদান', color: 'from-blue-400 to-cyan-500' },
+                            { icon: '🌡️', title: 'আবহাওয়া পর্যবেক্ষণের জ্ঞান প্রদান', color: 'from-red-400 to-rose-500' },
                             { icon: '⚠️', title: 'আগাম সতর্কীকরণ ব্যবস্থার অনিশ্চয়তা সম্পর্কে জানানো', color: 'from-orange-400 to-red-500' },
-                            { icon: '🛡️', title: 'নিজেকে এবং অন্যকে নিরাপদ রাখতে শেখানো', color: 'from-green-400 to-teal-500' },
-                            { icon: '💡', title: 'শিশুদের মাঝে সচেতনতা গড়ে তোলা', color: 'from-purple-400 to-pink-500' },
+                            { icon: '🛡️', title: 'নিজেকে এবং অন্যকে নিরাপদ রাখতে শেখানো', color: 'from-red-500 to-orange-500' },
+                            { icon: '💡', title: 'শিশুদের মাঝে সচেতনতা গড়ে তোলা', color: 'from-rose-400 to-red-500' },
                             { icon: '✍️', title: 'হাতে কলমে প্রশিক্ষণ দেওয়া', color: 'from-yellow-400 to-orange-500' },
-                            { icon: '🦸', title: 'দুর্যোগ মোকাবেলায় শিশুদের সক্রিয় ভূমিকা রাখতে অনুপ্রাণিত করা', color: 'from-indigo-400 to-blue-500' }
+                            { icon: '🦸', title: 'দুর্যোগ মোকাবেলায় শিশুদের সক্রিয় ভূমিকা রাখতে অনুপ্রাণিত করা', color: 'from-orange-400 to-red-500' }
                         ].map((objective, index) => (
                             <div
                                 key={index}
@@ -157,14 +157,14 @@ export default function About() {
                     <div className="text-center mb-16">
                         <h2 className="text-5xl md:text-6xl font-black text-gray-800 mb-4">সংগঠন কাঠামো</h2>
                         <p className="text-xl text-gray-600">যুব নেতৃত্ব এবং সহযোগিতার মাধ্যমে শক্তিশালী</p>
-                        <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-cyan-500 mx-auto mt-4"></div>
+                        <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-orange-500 mx-auto mt-4"></div>
                     </div>
 
                     <div className="max-w-7xl mx-auto">
                         <div className="bg-white rounded-3xl shadow-2xl p-12">
                             <div className="flex flex-col items-center space-y-8">
                                 <div className="w-full max-w-md">
-                                    <div className="bg-gradient-to-r from-teal-500 to-cyan-500 text-white rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition-transform">
+                                    <div className="bg-gradient-to-r from-red-500 to-rose-500 text-white rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition-transform">
                                         <Users className="w-12 h-12 mx-auto mb-3" />
                                         <h3 className="text-2xl font-bold">কারিগরি উপদেষ্টা</h3>
                                         <p className="text-sm mt-2 opacity-90">পেশাদার নির্দেশনা প্রদান</p>
@@ -172,7 +172,7 @@ export default function About() {
                                 </div>
 
                                 <div className="flex items-center justify-center w-full">
-                                    <div className="w-1 h-12 bg-gradient-to-b from-teal-500 to-orange-500"></div>
+                                    <div className="w-1 h-12 bg-gradient-to-b from-red-500 to-orange-500"></div>
                                 </div>
 
                                 <div className="grid md:grid-cols-2 gap-6 w-full">
@@ -181,7 +181,7 @@ export default function About() {
                                         <h3 className="text-xl font-bold">প্রধান নির্বাহী</h3>
                                         <p className="text-3xl font-black mt-2">৪ জন</p>
                                     </div>
-                                    <div className="bg-gradient-to-br from-blue-400 to-cyan-500 text-white rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition-transform">
+                                    <div className="bg-gradient-to-br from-rose-400 to-red-500 text-white rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition-transform">
                                         <Users className="w-10 h-10 mx-auto mb-3" />
                                         <h3 className="text-xl font-bold">কার্যনির্বাহী সদস্য</h3>
                                         <p className="text-3xl font-black mt-2">৭ জন</p>
@@ -189,11 +189,11 @@ export default function About() {
                                 </div>
 
                                 <div className="flex items-center justify-center w-full">
-                                    <div className="w-1 h-12 bg-gradient-to-b from-blue-500 to-green-500"></div>
+                                    <div className="w-1 h-12 bg-gradient-to-b from-red-500 to-rose-500"></div>
                                 </div>
 
                                 <div className="w-full max-w-md">
-                                    <div className="bg-gradient-to-r from-green-400 to-teal-500 text-white rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition-transform">
+                                    <div className="bg-gradient-to-r from-red-400 to-orange-500 text-white rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition-transform">
                                         <Heart className="w-12 h-12 mx-auto mb-3" />
                                         <h3 className="text-2xl font-bold">সাধারণ সদস্য</h3>
                                         <p className="text-sm mt-2 opacity-90">৭ম-৯ম শ্রেণির সকল শিক্ষার্থী</p>
@@ -205,20 +205,20 @@ export default function About() {
                 </div>
             </section>
 
-            <section id="activities" data-animate className={`py-24 px-4 bg-gradient-to-br from-blue-50 to-cyan-50`}>
+            <section id="activities" data-animate className={`py-24 px-4 bg-gradient-to-br from-red-50 to-rose-50`}>
                 <div className="container mx-auto max-w-7xl">
                     <div className="text-center mb-16">
                         <h2 className="text-5xl md:text-6xl font-black text-gray-800 mb-4">আমাদের কার্যক্রম</h2>
                         <p className="text-xl text-gray-600">হাতে-কলমে শিক্ষা এবং সম্প্রদায় সম্পৃক্ততা</p>
-                        <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-4"></div>
+                        <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-orange-500 mx-auto mt-4"></div>
                     </div>
 
                     <div className="grid md:grid-cols-5 gap-6 mb-12">
                         {[
-                            { icon: '👥', title: 'ক্লাব সভা', color: 'from-teal-400 to-cyan-500' },
-                            { icon: '🌤️', title: 'আবহাওয়া পর্যবেক্ষণ', color: 'from-blue-400 to-indigo-500' },
+                            { icon: '👥', title: 'ক্লাব সভা', color: 'from-red-400 to-rose-500' },
+                            { icon: '🌤️', title: 'আবহাওয়া পর্যবেক্ষণ', color: 'from-rose-400 to-red-500' },
                             { icon: '📚', title: 'ওয়ার্কশপ ও প্রশিক্ষণ', color: 'from-orange-400 to-red-500' },
-                            { icon: '📢', title: 'সচেতনতা ক্যাম্পেইন', color: 'from-pink-400 to-purple-500' },
+                            { icon: '📢', title: 'সচেতনতা ক্যাম্পেইন', color: 'from-red-400 to-orange-500' },
                             { icon: '📅', title: 'ইভেন্ট/দিবস উদ্যাপন', color: 'from-yellow-400 to-orange-500' }
                         ].map((activity, index) => (
                             <div
@@ -324,7 +324,7 @@ export default function About() {
             ))}
           </div> */}
 
-                    <div className="bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 rounded-3xl p-12 text-white text-center shadow-2xl">
+                    <div className="bg-gradient-to-r from-red-500 via-rose-500 to-orange-500 rounded-3xl p-12 text-white text-center shadow-2xl">
                         <div className="flex items-center justify-center space-x-4">
                             <img src={logo} alt="MET CLUB LOGO" className='w-52 h-52' />
                         </div>
@@ -339,7 +339,7 @@ export default function About() {
                 </div>
             </section>
 
-            <section id="locations" data-animate className={`py-24 px-4 bg-gradient-to-br from-green-50 to-teal-50`}>
+            <section id="locations" data-animate className={`py-24 px-4 bg-gradient-to-br from-red-50 to-orange-50`}>
                 <div className="container mx-auto max-w-7xl">
                     <div className="text-center mb-16">
                         <h2 className="text-5xl md:text-6xl font-black text-gray-800 mb-4">কার্যক্রমের এলাকা</h2>
@@ -351,43 +351,43 @@ export default function About() {
                         <div className="group bg-white rounded-3xl shadow-2xl p-10 text-center hover:scale-105 transition-all duration-500 border-4 border-yellow-400">
                             <div className="relative mb-6">
                                 <MapPin className="w-24 h-24 mx-auto text-yellow-500 group-hover:scale-110 transition-transform" />
-                                <div className="absolute -top-2 -right-2 bg-green-500 text-white rounded-full px-3 py-1 text-sm font-bold">
+                                <div className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full px-3 py-1 text-sm font-bold">
                                     চালু
                                 </div>
                             </div>
                             <h3 className="text-3xl font-black text-gray-800 mb-3">চট্টগ্রাম</h3>
                             <p className="text-lg text-gray-600 font-semibold">বর্তমানে সক্রিয়</p>
-                            <div className="mt-6 flex items-center justify-center space-x-2 text-green-600">
+                            <div className="mt-6 flex items-center justify-center space-x-2 text-red-600">
                                 <TrendingUp className="w-5 h-5" />
                                 <span className="font-semibold">৫০+ সদস্য</span>
                             </div>
                         </div>
 
-                        <div className="group bg-white rounded-3xl shadow-2xl p-10 text-center hover:scale-105 transition-all duration-500 border-4 border-teal-400">
+                        <div className="group bg-white rounded-3xl shadow-2xl p-10 text-center hover:scale-105 transition-all duration-500 border-4 border-red-300">
                             <div className="relative mb-6">
-                                <MapPin className="w-24 h-24 mx-auto text-teal-500 group-hover:scale-110 transition-transform" />
-                                <div className="absolute -top-2 -right-2 bg-blue-500 text-white rounded-full px-3 py-1 text-sm font-bold">
+                                <MapPin className="w-24 h-24 mx-auto text-red-500 group-hover:scale-110 transition-transform" />
+                                <div className="absolute -top-2 -right-2 bg-rose-500 text-white rounded-full px-3 py-1 text-sm font-bold">
                                     শীঘ্রই
                                 </div>
                             </div>
                             <h3 className="text-3xl font-black text-gray-800 mb-3">পটুয়াখালী</h3>
                             <p className="text-lg text-gray-600 font-semibold">শীঘ্রই চালু হবে</p>
-                            <div className="mt-6 flex items-center justify-center space-x-2 text-blue-600">
+                            <div className="mt-6 flex items-center justify-center space-x-2 text-red-600">
                                 <Sparkles className="w-5 h-5" />
                                 <span className="font-semibold">প্রস্তুতি চলছে</span>
                             </div>
                         </div>
 
-                        <div className="group bg-white rounded-3xl shadow-2xl p-10 text-center hover:scale-105 transition-all duration-500 border-4 border-green-400">
+                        <div className="group bg-white rounded-3xl shadow-2xl p-10 text-center hover:scale-105 transition-all duration-500 border-4 border-red-300">
                             <div className="relative mb-6">
-                                <MapPin className="w-24 h-24 mx-auto text-green-500 group-hover:scale-110 transition-transform" />
-                                <div className="absolute -top-2 -right-2 bg-blue-500 text-white rounded-full px-3 py-1 text-sm font-bold">
+                                <MapPin className="w-24 h-24 mx-auto text-red-500 group-hover:scale-110 transition-transform" />
+                                <div className="absolute -top-2 -right-2 bg-rose-500 text-white rounded-full px-3 py-1 text-sm font-bold">
                                     শীঘ্রই
                                 </div>
                             </div>
                             <h3 className="text-3xl font-black text-gray-800 mb-3">গাইবান্ধা</h3>
                             <p className="text-lg text-gray-600 font-semibold">শীঘ্রই চালু হবে</p>
-                            <div className="mt-6 flex items-center justify-center space-x-2 text-blue-600">
+                            <div className="mt-6 flex items-center justify-center space-x-2 text-red-600">
                                 <Sparkles className="w-5 h-5" />
                                 <span className="font-semibold">প্রস্তুতি চলছে</span>
                             </div>
@@ -396,20 +396,20 @@ export default function About() {
                 </div>
             </section>
 
-            <section id="values" data-animate className={`py-24 px-4 bg-gradient-to-br from-purple-50 to-pink-50`}>
+            <section id="values" data-animate className={`py-24 px-4 bg-gradient-to-br from-red-50 to-rose-50`}>
                 <div className="container mx-auto max-w-7xl">
                     <div className="text-center mb-16">
                         <h2 className="text-5xl md:text-6xl font-black text-gray-800 mb-4">আমাদের মূল্যবোধ</h2>
                         <p className="text-xl text-gray-600">শিশু সুরক্ষা এবং অন্তর্ভুক্তিতে প্রতিশ্রুতিবদ্ধ</p>
-                        <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mt-4"></div>
+                        <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-orange-500 mx-auto mt-4"></div>
                     </div>
 
                     <div className="grid md:grid-cols-4 gap-6">
                         {[
-                            { icon: '🤝', title: 'বন্ধুত্বপূর্ণ আচরণ', desc: 'সকলের সাথে শ্রদ্ধা এবং দয়া', color: 'from-blue-400 to-cyan-500' },
+                            { icon: '🤝', title: 'বন্ধুত্বপূর্ণ আচরণ', desc: 'সকলের সাথে শ্রদ্ধা এবং দয়া', color: 'from-red-400 to-rose-500' },
                             { icon: '🚫', title: 'ভিন্নমতে সম্মান', desc: 'মতামতের বৈচিত্র্য মূল্যায়ন', color: 'from-orange-400 to-red-500' },
-                            { icon: '🌈', title: 'বৈচিত্র্যে শ্রদ্ধাশীল', desc: 'সকল পটভূমি স্বাগত', color: 'from-green-400 to-teal-500' },
-                            { icon: '✋', title: 'স্বেচ্ছায় অংশগ্রহণ', desc: 'কোন বাধ্যবাধকতা নেই', color: 'from-purple-400 to-pink-500' }
+                            { icon: '🌈', title: 'বৈচিত্র্যে শ্রদ্ধাশীল', desc: 'সকল পটভূমি স্বাগত', color: 'from-red-500 to-orange-500' },
+                            { icon: '✋', title: 'স্বেচ্ছায় অংশগ্রহণ', desc: 'কোন বাধ্যবাধকতা নেই', color: 'from-rose-400 to-red-500' }
                         ].map((value, index) => (
                             <div
                                 key={index}
@@ -428,7 +428,7 @@ export default function About() {
                         ))}
                     </div>
 
-                    <div className="mt-16 bg-gradient-to-r from-blue-500 to-teal-500 rounded-3xl p-12 text-white text-center shadow-2xl">
+                    <div className="mt-16 bg-gradient-to-r from-red-500 to-orange-500 rounded-3xl p-12 text-white text-center shadow-2xl">
                         <Shield className="w-20 h-20 mx-auto mb-6" />
                         <h3 className="text-4xl font-black mb-6">শিশু সুরক্ষা নীতি</h3>
                         <p className="text-xl leading-relaxed max-w-4xl mx-auto">

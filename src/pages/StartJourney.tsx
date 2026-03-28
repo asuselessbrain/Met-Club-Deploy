@@ -5,19 +5,19 @@ import simulationImg from "../assets/images/practice-zone.png";
 import { useNavigate } from "react-router";
 
 const watercolorBg = `
-  radial-gradient(ellipse at 10% 20%, rgba(173, 216, 230, 0.45) 0%, transparent 50%),
-  radial-gradient(ellipse at 85% 10%, rgba(255, 253, 180, 0.5) 0%, transparent 45%),
-  radial-gradient(ellipse at 90% 85%, rgba(200, 230, 201, 0.4) 0%, transparent 50%),
-  radial-gradient(ellipse at 5% 90%, rgba(179, 229, 252, 0.5) 0%, transparent 45%),
-  radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.6) 0%, transparent 70%),
-  linear-gradient(135deg, #e8f4fd 0%, #fffde7 35%, #e8f5e9 65%, #e1f5fe 100%)
+  radial-gradient(ellipse at 12% 18%, rgba(255, 180, 170, 0.42) 0%, transparent 52%),
+  radial-gradient(ellipse at 85% 12%, rgba(255, 226, 186, 0.34) 0%, transparent 48%),
+  radial-gradient(ellipse at 86% 88%, rgba(255, 150, 150, 0.35) 0%, transparent 52%),
+  radial-gradient(ellipse at 8% 86%, rgba(255, 203, 203, 0.30) 0%, transparent 46%),
+  radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.52) 0%, transparent 72%),
+  linear-gradient(135deg, #ffe8e5 0%, #ffd8cf 38%, #ffc6bc 68%, #ffb8ab 100%)
 `;
 
 const user = {
   name: "রাহেলা বেগম",
   role: "শিক্ষার্থী",
   avatar: "রা",
-  avatarBg: "linear-gradient(135deg, #4caf50, #2d6a9f)",
+  avatarBg: "linear-gradient(135deg, #ef4444, #f97316)",
   email: "rahela@example.com",
 };
 
@@ -81,11 +81,11 @@ export default function StartJourney() {
       <nav
         className="w-full flex items-center justify-between px-6 py-3 sticky top-0 z-50"
         style={{
-          background: "rgba(255,255,255,0.72)",
+          background: "rgba(255,245,243,0.78)",
           backdropFilter: "blur(18px)",
           WebkitBackdropFilter: "blur(18px)",
-          borderBottom: "1.5px solid rgba(126,200,227,0.22)",
-          boxShadow: "0 2px 24px rgba(45,106,159,0.07)",
+          borderBottom: "1.5px solid rgba(239,68,68,0.22)",
+          boxShadow: "0 2px 24px rgba(185,28,28,0.10)",
         }}
       >
         {/* Logo + Home */}
@@ -100,8 +100,8 @@ export default function StartJourney() {
             style={{
               width: 38,
               height: 38,
-              background: "linear-gradient(135deg, #2d6a9f 0%, #7ec8e3 100%)",
-              boxShadow: "0 2px 10px rgba(45,106,159,0.22)",
+              background: "linear-gradient(135deg, #ef4444 0%, #fb7185 100%)",
+              boxShadow: "0 2px 10px rgba(220,38,38,0.28)",
             }}
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.2" className="w-5 h-5">
@@ -112,7 +112,7 @@ export default function StartJourney() {
           <span
             className="font-black text-lg tracking-tight hidden sm:block"
             style={{
-              color: "#2d6a9f",
+              color: "#b91c1c",
               fontFamily: "'Noto Serif Bengali', serif",
               letterSpacing: "-0.5px",
             }}
@@ -129,10 +129,10 @@ export default function StartJourney() {
             className="flex items-center gap-2 rounded-2xl px-3 py-1.5 transition-all duration-200 select-none"
             style={{
               background: dropdownOpen
-                ? "rgba(45,106,159,0.10)"
-                : "rgba(255,255,255,0.55)",
-              border: "1.5px solid rgba(126,200,227,0.35)",
-              boxShadow: dropdownOpen ? "0 0 0 2.5px rgba(126,200,227,0.38)" : "none",
+                ? "rgba(239,68,68,0.12)"
+                : "rgba(255,255,255,0.52)",
+              border: "1.5px solid rgba(239,68,68,0.35)",
+              boxShadow: dropdownOpen ? "0 0 0 2.5px rgba(239,68,68,0.22)" : "none",
               cursor: "pointer",
             }}
           >
@@ -151,7 +151,7 @@ export default function StartJourney() {
             </span>
             <span
               className="font-semibold hidden sm:block"
-              style={{ color: "#2d6a9f", fontSize: "0.9rem" }}
+              style={{ color: "#b91c1c", fontSize: "0.9rem" }}
             >
               {user.name}
             </span>
@@ -159,7 +159,7 @@ export default function StartJourney() {
             <svg
               viewBox="0 0 24 24"
               fill="none"
-              stroke="#7ec8e3"
+              stroke="#ef4444"
               strokeWidth="2.5"
               className="w-4 h-4 transition-transform duration-200"
               style={{ transform: dropdownOpen ? "rotate(180deg)" : "rotate(0deg)" }}
@@ -174,9 +174,9 @@ export default function StartJourney() {
               className="absolute right-0 mt-3 rounded-2xl overflow-hidden"
               style={{
                 width: 230,
-                background: "rgba(255,255,255,0.96)",
-                boxShadow: "0 8px 40px rgba(45,106,159,0.16), 0 1.5px 6px rgba(0,0,0,0.07)",
-                border: "1.5px solid rgba(126,200,227,0.28)",
+                background: "rgba(255,251,250,0.96)",
+                boxShadow: "0 8px 40px rgba(185,28,28,0.13), 0 1.5px 6px rgba(0,0,0,0.07)",
+                border: "1.5px solid rgba(239,68,68,0.22)",
                 backdropFilter: "blur(16px)",
                 animation: "dropIn 0.18s cubic-bezier(.34,1.56,.64,1) both",
               }}
@@ -185,8 +185,8 @@ export default function StartJourney() {
               <div
                 className="flex items-center gap-3 px-4 py-3"
                 style={{
-                  borderBottom: "1.5px solid rgba(126,200,227,0.18)",
-                  background: "linear-gradient(120deg, rgba(232,244,253,0.8), rgba(232,245,233,0.6))",
+                  borderBottom: "1.5px solid rgba(239,68,68,0.15)",
+                  background: "linear-gradient(120deg, rgba(255,237,234,0.88), rgba(255,223,215,0.78))",
                 }}
               >
                 <span
@@ -202,10 +202,10 @@ export default function StartJourney() {
                   {user.avatar}
                 </span>
                 <div>
-                  <div style={{ color: "#2d6a9f", fontWeight: 700, fontSize: "0.92rem" }}>
+                  <div style={{ color: "#991b1b", fontWeight: 700, fontSize: "0.92rem" }}>
                     {user.name}
                   </div>
-                  <div style={{ color: "#7ec8e3", fontSize: "0.76rem" }}>{user.role}</div>
+                  <div style={{ color: "#ef4444", fontSize: "0.76rem" }}>{user.role}</div>
                 </div>
               </div>
 
@@ -217,29 +217,29 @@ export default function StartJourney() {
                     href={item.href}
                     className="flex items-center gap-3 px-4 py-2.5 transition-colors duration-150"
                     style={{
-                      color: "#2d6a9f",
+                      color: "#991b1b",
                       textDecoration: "none",
                       fontSize: "0.88rem",
                       fontWeight: 500,
                     }}
                     onMouseEnter={(e) =>
-                      (e.currentTarget.style.background = "rgba(126,200,227,0.13)")
+                      (e.currentTarget.style.background = "rgba(239,68,68,0.10)")
                     }
                     onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
                   >
-                    <span style={{ color: "#7ec8e3" }}>{item.icon}</span>
+                    <span style={{ color: "#ef4444" }}>{item.icon}</span>
                     {item.label}
                   </a>
                 ))}
               </div>
 
               {/* Logout */}
-              <div style={{ borderTop: "1.5px solid rgba(126,200,227,0.18)" }}>
+              <div style={{ borderTop: "1.5px solid rgba(239,68,68,0.15)" }}>
                 <button
                 onClick={handleLogout}
                   className="w-full flex items-center gap-3 px-4 py-2.5 transition-colors duration-150"
                   style={{
-                    color: "#e07b1a",
+                    color: "#b45309",
                     fontSize: "0.88rem",
                     fontWeight: 600,
                     background: "transparent",
@@ -248,7 +248,7 @@ export default function StartJourney() {
                     textAlign: "left",
                   }}
                   onMouseEnter={(e) =>
-                    (e.currentTarget.style.background = "rgba(244,185,66,0.10)")
+                    (e.currentTarget.style.background = "rgba(245,158,11,0.12)")
                   }
                   onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
                 >
@@ -272,9 +272,9 @@ export default function StartJourney() {
           <h1
             className="text-5xl md:text-6xl font-black mb-2"
             style={{
-              color: "#2d6a9f",
+              color: "#b91c1c",
               textShadow:
-                "0 2px 0 rgba(45,106,159,0.12), 0 4px 16px rgba(45,106,159,0.10)",
+                "0 2px 0 rgba(185,28,28,0.12), 0 4px 16px rgba(185,28,28,0.13)",
             }}
           >
             মেট ক্লাবে স্বাগতম!
@@ -292,10 +292,10 @@ export default function StartJourney() {
           <div className="card1">
             <ZoneCard
               title="লার্নিং জোন"
-              titleColor="#2d6a9f"
-              borderColor="#7ec8e3"
-              btnBg="linear-gradient(135deg, #4caf50, #388e3c)"
-              btnShadow="rgba(76,175,80,0.45)"
+              titleColor="#991b1b"
+              borderColor="#f87171"
+              btnBg="linear-gradient(135deg, #ef4444, #dc2626)"
+              btnShadow="rgba(239,68,68,0.42)"
               btnLabel="পড়া শুরু করুন"
               link="/learning-zone"
               description={
@@ -305,7 +305,7 @@ export default function StartJourney() {
                   আবহাওয়া, জলবায়ু এবং দুর্যোগ সম্পর্কে জানুন।
                 </>
               }
-              blobColor="#7ec8e3"
+              blobColor="#fca5a5"
               illustration={
                 <img
                   src={storyImg}
@@ -319,10 +319,10 @@ export default function StartJourney() {
           <div className="card2">
           <ZoneCard
             title="স্টোরি সিচুয়েশন"
-            titleColor="#e07b1a"
-            borderColor="#f4b942"
-            btnBg="linear-gradient(135deg, #f4a826, #d4721a)"
-            btnShadow="rgba(244,169,38,0.45)"
+            titleColor="#9a3412"
+            borderColor="#fb923c"
+            btnBg="linear-gradient(135deg, #fb923c, #f97316)"
+            btnShadow="rgba(249,115,22,0.42)"
             btnLabel="সিমুলেশনে প্রবেশ করুন"
             link="https://play.unity.com/en/games/3a2b8c05-a5e6-4a0e-98d5-e5f0e34ace11/disaster-management"
             description={
@@ -332,7 +332,7 @@ export default function StartJourney() {
                 বাস্তব জীবনের সিমুলেশনে সিদ্ধান্ত নিন।
               </>
             }
-            blobColor="#f4b942"
+            blobColor="#fdba74"
             illustration={
               <img
                 src={simulationImg}

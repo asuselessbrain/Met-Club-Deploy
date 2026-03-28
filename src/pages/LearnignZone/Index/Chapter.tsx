@@ -19,35 +19,39 @@ const fetchChapters = async () => {
 
 const chaptersPromise = fetchChapters();
 
+const redCardAccent = {
+  border: "#fca5a5",
+  glow: "rgba(252,165,165,0.26)",
+};
+
 
 function TopicCard({ topic, index }: { topic: ChapterTopic; index: number }) {
   const [hovered, setHovered] = useState(false);
 
   const isDisabled = ![0, 1, 2, 3].includes(index);
-
   return (
     <Link to={`/lesson/${topic.id}`} className={isDisabled ? "pointer-events-none opacity-50" : ""}>
       <div
-        className="relative flex flex-col items-center justify-between rounded-2xl bg-white/85 backdrop-blur-md p-4 cursor-pointer transition-all duration-300 shrink-0"
+        className="relative flex flex-col items-center justify-between rounded-2xl bg-[linear-gradient(145deg,rgba(255,255,255,0.86),rgba(255,245,242,0.74))] backdrop-blur-md p-4 cursor-pointer transition-all duration-300 shrink-0"
         style={{
-          border: `2.5px solid ${topic.borderColor}`,
+          border: `2.5px solid ${redCardAccent.border}`,
           width: 160,
           minHeight: 170,
           boxShadow: hovered
-            ? `0 8px 32px ${topic.glowColor}, 0 2px 8px rgba(0,0,0,0.10)`
+            ? `0 8px 32px ${redCardAccent.glow}, 0 2px 8px rgba(0,0,0,0.10)`
             : `0 2px 12px rgba(0,0,0,0.08)`,
-          transform: hovered ? "translateY(-8px) scale(1.04)" : "translateY(0) scale(1)",
+          transform: hovered ? "translateY(-6px)" : "translateY(0)",
           animationDelay: `${index * 0.08}s`,
-          animation: "fadeUp 0.5s ease both",
+          animation: "cardFade 0.5s ease both",
         }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
         {/* Title */}
         <p
-          className="text-center font-bold text-gray-800 leading-snug mb-3"
+          className="text-center font-bold text-red-900 leading-snug mb-3"
           style={{
-            fontSize: "0.82rem",
+            fontSize: "0.95rem",
           }}
         >
           {topic.title}
@@ -83,7 +87,7 @@ export default function Chapter() {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "linear-gradient(to bottom, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.15) 60%, rgba(255,255,255,0.05) 100%)",
+              "linear-gradient(to bottom, rgba(255,245,243,0.50) 0%, rgba(255,231,226,0.24) 60%, rgba(255,217,211,0.10) 100%)",
           }}
         />
 
@@ -91,9 +95,9 @@ export default function Chapter() {
         <h1
           className="relative z-10 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-center mb-6 sm:mb-8 md:mb-10 px-2"
           style={{
-            color: "#2d6a9f",
+            color: "#b91c1c",
             textShadow:
-              "0 2px 0 rgba(45,106,159,0.15), 0 6px 24px rgba(45,106,159,0.12)",
+              "0 2px 0 rgba(185,28,28,0.16), 0 6px 24px rgba(220,38,38,0.18)",
             animation: "titlePop 0.7s cubic-bezier(0.34,1.56,0.64,1) both",
             letterSpacing: "0.03em",
           }}
@@ -108,6 +112,13 @@ export default function Chapter() {
           ))}
         </div>
       </div>
+
+      <style>{`
+        @keyframes cardFade {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+      `}</style>
     </>
   );
 }

@@ -99,9 +99,9 @@ export default function Section() {
         }}>
         {/* Overlay */}
         <div className="absolute inset-0 pointer-events-none"
-          style={{ background: "linear-gradient(to bottom,rgba(255,255,255,0.52) 0%,rgba(255,255,255,0.18) 55%,rgba(255,255,255,0.04) 100%)" }} />
+          style={{ background: "linear-gradient(to bottom,rgba(255,244,242,0.56) 0%,rgba(255,230,226,0.22) 55%,rgba(255,214,210,0.08) 100%)" }} />
 
-        <TopNav title={section.title} />
+        <TopNav title={section.title} tone="red" />
 
         {/* ── Content Card ── */}
         <div className="px-4 py-4 flex flex-col items-center justify-start lg:justify-center min-h-[calc(100%-150px)] custom-scrollbar overflow-auto custom-scrollbar">
@@ -113,13 +113,13 @@ export default function Section() {
               : "content-enter"
               }`}
             style={{
-              border: "2.5px solid #93c5fd",
-              boxShadow: "0 8px 48px rgba(125,211,252,0.25), 0 2px 16px rgba(0,0,0,0.08)",
+              border: "2.5px solid #fca5a5",
+              boxShadow: "0 8px 48px rgba(239,68,68,0.22), 0 2px 16px rgba(0,0,0,0.08)",
             }}
           >
             {/* ── Illustration (Left Half) ── */}
             {/* এখানে md:w-1/2 ব্যবহার করা হয়েছে যেন বড় স্ক্রিনে অর্ধেক জায়গা নেয় */}
-            <div className="w-full lg:w-[55%] relative overflow-hidden bg-blue-50/50 shrink-0 rounded-t-2xl lg:rounded-t-none">
+            <div className="w-full lg:w-[55%] relative overflow-hidden bg-red-50/55 shrink-0 rounded-t-2xl lg:rounded-t-none">
 
               <img
                 src={section.image}
@@ -145,7 +145,7 @@ export default function Section() {
               {/* ২. বাটনটিতে onClick এবং আইকন কন্ডিশন যোগ করা হয়েছে */}
               <button
                 onClick={togglePlay}
-                className="absolute bottom-6 right-6 w-14 h-14 bg-white/80 backdrop-blur-md rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.15)] border-2 border-white flex items-center justify-center text-blue-500 hover:scale-110 hover:bg-white hover:text-blue-600 hover:shadow-[0_6px_20px_rgba(59,130,246,0.3)] transition-all duration-300 z-20 group"
+                className="absolute bottom-6 right-6 w-14 h-14 bg-white/85 backdrop-blur-md rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.15)] border-2 border-red-100 flex items-center justify-center text-red-500 hover:scale-110 hover:bg-white hover:text-red-600 hover:shadow-[0_6px_20px_rgba(239,68,68,0.3)] transition-all duration-300 z-20 group"
                 title={isPlaying ? "Pause Audio" : "Play Audio"}
               >
                 <div className={isPlaying ? "" : "ml-1"}>
@@ -176,7 +176,7 @@ export default function Section() {
                               ref={isHighlighted ? activeWordRef : null}
                               className={`inline-block transition-all duration-150 px-0.5 ${isHighlighted
                                 ? "bg-yellow-300 text-black scale-105"
-                                : "bg-transparent text-gray-700"
+                                : "bg-transparent text-red-900/90"
                                 }`}
                             >
                               {item.word}{" "}
@@ -189,7 +189,7 @@ export default function Section() {
                 </div>
               ) : (
                 // সাধারণ টেক্সটের জন্য (Section 2, 3...)
-                <div className="text-xl text-gray-700">
+                <div className="text-xl text-red-900/90">
                   {section.text.map((paragraph: string, index: number) => (
                     <p key={index} className="mb-2">
                       {String(paragraph)}
@@ -219,14 +219,14 @@ export default function Section() {
             />
 
             <div
-              className="relative z-50 w-full max-w-md rounded-3xl border border-sky-200 bg-white p-6 sm:p-7"
-              style={{ boxShadow: "0 18px 48px rgba(14,116,144,0.28)" }}
+              className="relative z-50 w-full max-w-md rounded-3xl border border-red-200 bg-white p-6 sm:p-7"
+              style={{ boxShadow: "0 18px 48px rgba(220,38,38,0.22)" }}
             >
-              <div className="inline-flex rounded-full bg-emerald-100 px-3 py-1 text-xs font-black tracking-wider text-emerald-700">
+              <div className="inline-flex rounded-full bg-red-100 px-3 py-1 text-xs font-black tracking-wider text-red-700">
                 CHAPTER COMPLETED
               </div>
 
-              <h3 className="mt-3 text-2xl font-black text-slate-800">
+              <h3 className="mt-3 text-2xl font-black text-red-900">
                 তুমি এই লেসন সম্পন্ন করেছো
               </h3>
 
@@ -237,14 +237,14 @@ export default function Section() {
               <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <button
                   onClick={() => setShowModal(false)}
-                  className="rounded-2xl border border-sky-200 bg-sky-50 px-4 py-3 text-sm font-bold text-sky-700 transition-all hover:bg-sky-100 active:scale-[0.98]"
+                  className="rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-bold text-red-700 transition-all hover:bg-red-100 active:scale-[0.98]"
                 >
                   লেসন চালিয়ে যাও
                 </button>
 
                 <button
                   onClick={() => navigateToQuiz(`/start-quiz/${section.chapterId}`)}
-                  className="rounded-2xl bg-linear-to-r from-cyan-500 to-sky-600 px-4 py-3 text-sm font-bold text-white shadow-[0_8px_20px_rgba(2,132,199,0.30)] transition-all hover:from-cyan-600 hover:to-sky-700 active:scale-[0.98]"
+                  className="rounded-2xl bg-linear-to-r from-red-500 to-red-600 px-4 py-3 text-sm font-bold text-white shadow-[0_8px_20px_rgba(220,38,38,0.30)] transition-all hover:from-red-600 hover:to-red-700 active:scale-[0.98]"
                 >
                   সরাসরি কুইজে যাও
                 </button>

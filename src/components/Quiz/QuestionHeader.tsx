@@ -23,7 +23,7 @@ export function QuestionHeader({ title, qNum, total, audioUrl }: QuestionHeaderP
                 className="font-bold leading-snug flex-1 min-w-0
                    text-sm sm:text-base md:text-lg lg:text-xl
                    line-clamp-2 sm:line-clamp-none"
-                style={{ color: "#1e40af", fontFamily: "'Hind Siliguri',sans-serif" }}
+                style={{ color: "#991b1b", fontFamily: "'Hind Siliguri',sans-serif" }}
             >
                 {title}
             </h2>
@@ -40,8 +40,8 @@ export function QuestionHeader({ title, qNum, total, audioUrl }: QuestionHeaderP
                         rounded-full transition-all duration-300
                         border-2 shrink-0
                         ${isPlaying
-                                ? "bg-blue-100 border-blue-500 text-blue-600 animate-pulse scale-105 shadow-md"
-                                : "bg-white border-gray-200 text-gray-500 hover:bg-blue-50 hover:text-blue-500 hover:border-blue-300 hover:scale-105 hover:shadow-md active:scale-95"
+                            ? "bg-red-100 border-red-500 text-red-600 animate-pulse scale-105 shadow-md"
+                            : "bg-white border-gray-200 text-gray-500 hover:bg-red-50 hover:text-red-500 hover:border-red-300 hover:scale-105 hover:shadow-md active:scale-95"
                             }`}
                         title={isPlaying ? "অডিও থামাও" : "প্রশ্নটি শোনো"}
                     >
@@ -54,11 +54,11 @@ export function QuestionHeader({ title, qNum, total, audioUrl }: QuestionHeaderP
 
                 {/* Question badge */}
                 <span
-                    className="font-bold rounded-full border border-blue-200 shrink-0
+                    className="font-bold rounded-full border border-red-200 shrink-0
                      text-xs sm:text-sm
                      px-2.5 py-1 sm:px-4 sm:py-2"
                     style={{
-                        background: "#dbeafe", color: "#1d4ed8",
+                        background: "#fee2e2", color: "#b91c1c",
                         fontFamily: "'Hind Siliguri',sans-serif"
                     }}
                 >

@@ -19,6 +19,7 @@ export default function BottomNav({
 }: BottomNavProps) {
 
   const isLast = current === total - 1;
+  const isSectionTone = true;
 
   /* ── Label sets per variant ───────────────────────────────── */
   const labels = {
@@ -39,20 +40,20 @@ export default function BottomNav({
   /* ── Button styles ────────────────────────────────────────── */
   const prevStyle: React.CSSProperties = {
     background: current === 0
-      ? "rgba(209,250,229,0.5)"
-      : "linear-gradient(135deg,#d1fae5,#a7f3d0)",
-    border:    "2.5px solid #6ee7b7",
-    color:     "#065f46",
-    boxShadow: current > 0 ? "0 4px 16px rgba(110,231,183,0.30)" : "none",
+      ? "rgba(254,226,226,0.7)"
+      : "linear-gradient(135deg,#fee2e2,#fecaca)",
+    border:    "2.5px solid #fca5a5",
+    color:     "#991b1b",
+    boxShadow: current > 0 ? "0 4px 16px rgba(239,68,68,0.23)" : "none",
   };
 
   const nextStyle: React.CSSProperties = {
     background: answered
-      ? "linear-gradient(135deg,#0ea5e9,#0284c7)"
-      : "linear-gradient(135deg,#e0f2fe,#bae6fd)",
-    border:    "2.5px solid #38bdf8",
-    color:     answered ? "#fff" : "#7dd3fc",
-    boxShadow: answered ? "0 4px 16px rgba(14,165,233,0.35)" : "none",
+      ? "linear-gradient(135deg,#ef4444,#dc2626)"
+      : "linear-gradient(135deg,#fee2e2,#fecaca)",
+    border:    "2.5px solid #f87171",
+    color:     answered ? "#fff" : "#fca5a5",
+    boxShadow: answered ? "0 4px 16px rgba(239,68,68,0.33)" : "none",
   };
 
   /* ── Shared button classes ────────────────────────────────── */
@@ -66,9 +67,9 @@ export default function BottomNav({
     <div
       className="flex items-center justify-between gap-2 px-3 sm:px-6 py-3 sm:py-4 relative z-20"
       style={{
-        background:    "rgba(255,255,255,0.50)",
+        background:    "rgba(255,245,243,0.62)",
         backdropFilter:"blur(10px)",
-        borderTop:     "1.5px solid rgba(200,230,255,0.6)",
+        borderTop:     "1.5px solid rgba(252,165,165,0.62)",
       }}
     >
       {/* ── Previous ── */}
@@ -84,7 +85,7 @@ export default function BottomNav({
 
       {/* ── Progress dots + counter ── */}
       <div className="flex flex-col items-center gap-1 shrink min-w-0">
-        <span className="text-xs font-semibold text-gray-500 whitespace-nowrap">
+        <span className="text-xs font-semibold whitespace-nowrap text-red-700">
           {current + 1} / {total}
         </span>
         {/* overflow-x-auto so dots never break layout on small screens */}
@@ -97,9 +98,11 @@ export default function BottomNav({
                 width:  i === current ? 16 : 6,
                 height: 6,
                 background:
-                  i < current  ? "#34d399"
-                  : i === current ? "#3b82f6"
-                  : "#bfdbfe",
+                  i < current
+                    ? "#ef4444"
+                    : i === current
+                      ? "#b91c1c"
+                      : "#fecaca",
               }}
             />
           ))}
