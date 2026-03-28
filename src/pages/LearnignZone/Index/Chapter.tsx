@@ -23,7 +23,7 @@ const chaptersPromise = fetchChapters();
 function TopicCard({ topic, index }: { topic: ChapterTopic; index: number }) {
   const [hovered, setHovered] = useState(false);
 
-  const isDisabled = ![0, 1, 2].includes(index);
+  const isDisabled = ![0, 1, 2, 3].includes(index);
 
   return (
     <Link to={`/lesson/${topic.id}`} className={isDisabled ? "pointer-events-none opacity-50" : ""}>

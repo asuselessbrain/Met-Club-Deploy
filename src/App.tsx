@@ -1,6 +1,7 @@
 import Hero from './components/Home/Hero'
 import Login from './components/Login/Login'
 import { useMemo, useEffect, useState } from 'react'
+import bgImage from './assets/images/bg.jpeg'
 
 function App() {
   const [countdown, setCountdown] = useState(10)
@@ -53,10 +54,10 @@ function App() {
   if (!isRevealed) {
     return (
       <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-black">
-        
+
         {/* Animated Grid Background */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_110%)] opacity-20" />
-        
+
         {/* Dynamic Gradient Orbs */}
         <div className="absolute top-[20%] left-[10%] h-125 w-125 rounded-full bg-linear-to-r from-cyan-500 to-blue-600 opacity-30 blur-[100px] animate-pulse" />
         <div className="absolute bottom-[10%] right-[10%] h-150 w-150 rounded-full bg-linear-to-r from-purple-600 to-pink-500 opacity-20 blur-[120px] animate-pulse" style={{ animationDelay: '1s' }} />
@@ -78,9 +79,8 @@ function App() {
 
         {/* Top Curtain with Holographic Effect */}
         <div
-          className={`absolute inset-x-0 top-0 z-50 h-1/2 origin-top backdrop-blur-sm transition-all duration-2000 ease-[cubic-bezier(0.87,0,0.13,1)] ${
-            isUnveiling ? '-translate-y-full opacity-0' : 'translate-y-0 opacity-100'
-          }`}
+          className={`absolute inset-x-0 top-0 z-50 h-1/2 origin-top backdrop-blur-sm transition-all duration-2000 ease-[cubic-bezier(0.87,0,0.13,1)] ${isUnveiling ? '-translate-y-full opacity-0' : 'translate-y-0 opacity-100'
+            }`}
           style={{
             background: 'linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(15,23,42,0.9) 50%, rgba(30,41,59,0.8) 100%)',
             borderBottom: '2px solid rgba(34, 211, 238, 0.3)',
@@ -93,12 +93,11 @@ function App() {
             <span className="text-cyan-400/80 text-xs tracking-[0.5em] uppercase font-light">Encrypted</span>
           </div>
         </div>
-        
+
         {/* Bottom Curtain with Holographic Effect */}
         <div
-          className={`absolute inset-x-0 bottom-0 z-50 h-1/2 origin-bottom backdrop-blur-sm transition-all duration-2000 ease-[cubic-bezier(0.87,0,0.13,1)] ${
-            isUnveiling ? 'translate-y-full opacity-0' : 'translate-y-0 opacity-100'
-          }`}
+          className={`absolute inset-x-0 bottom-0 z-50 h-1/2 origin-bottom backdrop-blur-sm transition-all duration-2000 ease-[cubic-bezier(0.87,0,0.13,1)] ${isUnveiling ? 'translate-y-full opacity-0' : 'translate-y-0 opacity-100'
+            }`}
           style={{
             background: 'linear-gradient(0deg, rgba(0,0,0,0.95) 0%, rgba(15,23,42,0.9) 50%, rgba(30,41,59,0.8) 100%)',
             borderTop: '2px solid rgba(34, 211, 238, 0.3)',
@@ -113,13 +112,12 @@ function App() {
         </div>
 
         {/* Main Content */}
-        <div className={`relative z-60 text-center transition-all duration-1000 ${
-          isUnveiling ? 'scale-150 opacity-0 blur-xl' : 'scale-100 opacity-100 blur-0'
-        }`}>
-          
+        <div className={`relative z-60 text-center transition-all duration-1000 ${isUnveiling ? 'scale-150 opacity-0 blur-xl' : 'scale-100 opacity-100 blur-0'
+          }`}>
+
           {/* Glassmorphic Container */}
           <div className="relative px-16 py-12 rounded-3xl backdrop-blur-xl bg-white/5 border border-white/10 shadow-[0_0_80px_rgba(34,211,238,0.3)]">
-            
+
             {/* Animated Corner Accents */}
             <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-cyan-400 rounded-tl-3xl opacity-60" />
             <div className="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-purple-400 rounded-tr-3xl opacity-60" />
@@ -128,24 +126,24 @@ function App() {
 
             {/* Logo/Title Section */}
             <div className="relative mb-12">
-              
+
               {/* Glow Effect Behind Text */}
               <div className="absolute top-1/2 left-1/2 h-25 w-75 -translate-x-1/2 -translate-y-1/2 bg-linear-to-r from-cyan-500 via-purple-500 to-pink-500 blur-[60px] opacity-50 animate-pulse" />
-              
+
               <h1 className="relative text-[clamp(3rem,8vw,5rem)] font-black uppercase tracking-[0.3em] mb-4">
                 <span className="bg-clip-text text-transparent bg-linear-to-r from-cyan-400 via-purple-400 to-pink-400 drop-shadow-[0_0_30px_rgba(34,211,238,0.8)] animate-gradient">
                   Met Club
                 </span>
               </h1>
-              
+
               {/* Animated Underline */}
               <div className="relative h-1 w-32 mx-auto overflow-hidden rounded-full">
                 <div className="absolute inset-0 bg-linear-to-r from-transparent via-cyan-400 to-transparent animate-shimmer" />
               </div>
-              
+
               {/* Subtitle */}
               <p className="mt-4 text-sm text-white/60 tracking-[0.4em] uppercase font-light">
-                Premium Experience
+                Interactive Learning Hub
               </p>
             </div>
 
@@ -200,7 +198,7 @@ function App() {
                       </linearGradient>
                     </defs>
                   </svg>
-                  
+
                   {/* Center Percentage */}
                   <div className="absolute inset-0 flex items-center justify-center">
                     <span className="text-2xl font-bold text-white/80">
@@ -269,8 +267,23 @@ function App() {
   }
 
   return (
-    <div className="bg-linear-to-br from-blue-500 via-teal-500 to-cyan-500">
-      <div className="flex flex-col lg:flex-row items-center lg:items-center min-h-[calc(100vh-68px)] px-4 sm:px-8 md:px-16 py-6 gap-8">
+    <div
+      className="relative min-h-screen" // relative দেওয়াটা খুব জরুরি
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+
+      {/* আধুনিক ওভারলে: হালকা কালো আস্তরণ এবং সামান্য ব্লার */}
+      <div
+        className="absolute inset-0 pointer-events-none z-0 bg-black/50 backdrop-blur-[3px]"
+      />
+
+      {/* মেইন কন্টেন্ট: z-10 দেওয়া হয়েছে যেন ওভারলে এর ওপরে থাকে */}
+      <div className="relative z-10 flex flex-col lg:flex-row items-center lg:items-center min-h-[calc(100vh-68px)] px-4 sm:px-8 md:px-16 py-6 gap-8">
         <div className="flex flex-col justify-between flex-1 w-full">
           <Hero />
         </div>
@@ -278,8 +291,11 @@ function App() {
           <Login />
         </div>
       </div>
-      <footer className="text-white py-6 text-sm text-center">
-        <a href="http://cdsr.com.bd" target="_blank" rel="noopener noreferrer">Developed by Centre for Data Science Research (CDSR)</a>
+
+      <footer className="relative z-10 text-white py-6 text-sm text-center drop-shadow-md">
+        <a href="http://cdsr.com.bd" target="_blank" rel="noopener noreferrer">
+          Developed by Centre for Data Science Research (CDSR)
+        </a>
       </footer>
     </div>
   )

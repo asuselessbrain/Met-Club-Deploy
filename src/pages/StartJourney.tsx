@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import ZoneCard from "../components/StartJourney/ZoneCard";
 import storyImg from "../assets/images/learning-zone.png";
 import simulationImg from "../assets/images/practice-zone.png";
+import { useNavigate } from "react-router";
 
 const watercolorBg = `
   radial-gradient(ellipse at 10% 20%, rgba(173, 216, 230, 0.45) 0%, transparent 50%),
@@ -55,6 +56,13 @@ const menuItems = [
 export default function StartJourney() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const navigate = useNavigate()
+
+  const handleLogout = () => {
+  localStorage.removeItem("token");
+  navigate("/");
+}
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -228,6 +236,7 @@ export default function StartJourney() {
               {/* Logout */}
               <div style={{ borderTop: "1.5px solid rgba(126,200,227,0.18)" }}>
                 <button
+                onClick={handleLogout}
                   className="w-full flex items-center gap-3 px-4 py-2.5 transition-colors duration-150"
                   style={{
                     color: "#e07b1a",
@@ -242,7 +251,6 @@ export default function StartJourney() {
                     (e.currentTarget.style.background = "rgba(244,185,66,0.10)")
                   }
                   onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
-                  onClick={() => alert("লগআউট করা হচ্ছে…")}
                 >
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
                     <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />

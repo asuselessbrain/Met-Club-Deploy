@@ -7,6 +7,13 @@
     "glowColor": "rgba(167,139,250,0.35)"
   },
   {
+    "id": 3,
+    "title": "আবহাওয়ার অনিশ্চয়তা",
+    "image": "/assets/chapters/chapter-4.png",
+    "borderColor": "#86efac",
+    "glowColor": "rgba(134,239,172,0.35)"
+  },
+  {
     "id": 14,
     "title": "বন্যা",
     "image": "/assets/chapters/chapter-14.png",
@@ -19,13 +26,6 @@
     "image": "/assets/chapters/chapter-15.png",
     "borderColor": "#6ee7b7",
     "glowColor": "rgba(110,231,183,0.35)"
-  },
-  {
-    "id": 4,
-    "title": "জীবমণ্ডল (জীবন্ত পৃথিবী)",
-    "image": "/assets/chapters/chapter-4.png",
-    "borderColor": "#86efac",
-    "glowColor": "rgba(134,239,172,0.35)"
   },
   {
     "id": 5,
