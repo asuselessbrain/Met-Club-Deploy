@@ -19,41 +19,41 @@ export default function BottomNav({
 }: BottomNavProps) {
 
   const isLast = current === total - 1;
-  const isSectionTone = true;
+  const isSectionTone = variant === "section";
 
   /* ── Label sets per variant ───────────────────────────────── */
   const labels = {
     section: {
       prevShort: "← পূর্ববর্তী",
-      prevFull:  "← পূর্ববর্তী",
+      prevFull: "← পূর্ববর্তী",
       nextShort: isLast ? "শেষ করো ✓" : "পরবর্তী →",
-      nextFull:  isLast ? "শেষ করো ✓" : "পরবর্তী →",
+      nextFull: isLast ? "শেষ করো ✓" : "পরবর্তী →",
     },
     quiz: {
       prevShort: "←",
-      prevFull:  "← আগের প্রশ্ন",
-      nextShort: isLast ? "শেষ ✓"    : "পরের →",
-      nextFull:  isLast ? "শেষ করো ✓" : "পরের প্রশ্ন →",
+      prevFull: "← আগের প্রশ্ন",
+      nextShort: isLast ? "শেষ ✓" : "পরের →",
+      nextFull: isLast ? "শেষ করো ✓" : "পরের প্রশ্ন →",
     },
   }[variant];
 
   /* ── Button styles ────────────────────────────────────────── */
   const prevStyle: React.CSSProperties = {
     background: current === 0
-      ? "rgba(254,226,226,0.7)"
-      : "linear-gradient(135deg,#fee2e2,#fecaca)",
-    border:    "2.5px solid #fca5a5",
-    color:     "#991b1b",
-    boxShadow: current > 0 ? "0 4px 16px rgba(239,68,68,0.23)" : "none",
+      ? (isSectionTone ? "rgba(254,226,226,0.7)" : "rgba(209,250,229,0.5)")
+      : (isSectionTone ? "linear-gradient(135deg,#fee2e2,#fecaca)" : "linear-gradient(135deg,#d1fae5,#a7f3d0)"),
+    border: isSectionTone ? "2.5px solid #fca5a5" : "2.5px solid #6ee7b7",
+    color: isSectionTone ? "#991b1b" : "#065f46",
+    boxShadow: current > 0 ? (isSectionTone ? "0 4px 16px rgba(239,68,68,0.23)" : "0 4px 16px rgba(110,231,183,0.30)") : "none",
   };
 
   const nextStyle: React.CSSProperties = {
     background: answered
-      ? "linear-gradient(135deg,#ef4444,#dc2626)"
-      : "linear-gradient(135deg,#fee2e2,#fecaca)",
-    border:    "2.5px solid #f87171",
-    color:     answered ? "#fff" : "#fca5a5",
-    boxShadow: answered ? "0 4px 16px rgba(239,68,68,0.33)" : "none",
+      ? (isSectionTone ? "linear-gradient(135deg,#ef4444,#dc2626)" : "linear-gradient(135deg,#0ea5e9,#0284c7)")
+      : (isSectionTone ? "linear-gradient(135deg,#fee2e2,#fecaca)" : "linear-gradient(135deg,#e0f2fe,#bae6fd)"),
+    border: isSectionTone ? "2.5px solid #f87171" : "2.5px solid #38bdf8",
+    color: answered ? "#fff" : (isSectionTone ? "#fca5a5" : "#7dd3fc"),
+    boxShadow: answered ? (isSectionTone ? "0 4px 16px rgba(239,68,68,0.33)" : "0 4px 16px rgba(14,165,233,0.35)") : "none",
   };
 
   /* ── Shared button classes ────────────────────────────────── */
@@ -67,42 +67,99 @@ export default function BottomNav({
     <div
       className="flex items-center justify-between gap-2 px-3 sm:px-6 py-3 sm:py-4 relative z-20"
       style={{
-        background:    "rgba(255,245,243,0.62)",
-        backdropFilter:"blur(10px)",
-        borderTop:     "1.5px solid rgba(252,165,165,0.62)",
+        background: "rgba(255,255,255,0.14)",
+        backdropFilter: "blur(26px) saturate(180%)",
+        WebkitBackdropFilter: "blur(26px) saturate(180%)",
+
+        borderTop: "1px solid rgba(255,255,255,0.25)",
+
+        boxShadow:
+          "0 -10px 40px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.35)",
+
+        position: "relative",
+        overflow: "hidden",
       }}
     >
+      {/* 🌟 Apple glass shine layer */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          background:
+            "linear-gradient(120deg, rgba(255,255,255,0.35), rgba(255,255,255,0.08), transparent 70%)",
+          pointerEvents: "none",
+        }}
+      />
+
+      {/* optional subtle noise */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage:
+            "url('https://www.transparenttextures.com/patterns/noise.png')",
+          opacity: 0.03,
+          pointerEvents: "none",
+          mixBlendMode: "overlay",
+        }}
+      />
+
       {/* ── Previous ── */}
       <button
         onClick={onPrev}
         disabled={current === 0}
         className={btnBase}
-        style={prevStyle}
+        style={{
+          ...prevStyle,
+          backdropFilter: "blur(14px)",
+          WebkitBackdropFilter: "blur(14px)",
+          boxShadow:
+            current > 0
+              ? "0 6px 18px rgba(0,0,0,0.12)"
+              : "none",
+        }}
       >
         <span className="sm:hidden">{labels.prevShort}</span>
         <span className="hidden sm:inline">{labels.prevFull}</span>
       </button>
 
-      {/* ── Progress dots + counter ── */}
-      <div className="flex flex-col items-center gap-1 shrink min-w-0">
-        <span className="text-xs font-semibold whitespace-nowrap text-red-700">
+      {/* ── Progress ── */}
+      <div className="flex flex-col items-center gap-1 shrink min-w-0 relative z-10">
+        <span
+          className="text-xs font-semibold"
+          style={{ color: isSectionTone ? "#7f1d1d" : "#1e3a8a" }}
+        >
           {current + 1} / {total}
         </span>
-        {/* overflow-x-auto so dots never break layout on small screens */}
-        <div className="flex gap-1 sm:gap-1.5 overflow-x-auto max-w-25 sm:max-w-none pb-0.5">
+
+        <div className="flex gap-1 sm:gap-1.5">
           {Array.from({ length: total }).map((_, i) => (
             <div
               key={i}
-              className="rounded-full shrink-0 transition-all duration-300"
+              className="rounded-full transition-all duration-300"
               style={{
-                width:  i === current ? 16 : 6,
+                width: i === current ? 18 : 6,
                 height: 6,
+
                 background:
                   i < current
-                    ? "#ef4444"
+                    ? isSectionTone
+                      ? "linear-gradient(135deg,#f87171,#ef4444)"
+                      : "linear-gradient(135deg,#f87171,#ef4444)"
                     : i === current
-                      ? "#b91c1c"
-                      : "#fecaca",
+                      ? isSectionTone
+                        ? "linear-gradient(135deg,#dc2626,#b91c1c)"
+                        : "linear-gradient(135deg,#dc2626,#b91c1c)"
+                      : isSectionTone
+                        ? "rgba(248,113,113,0.35)"
+                        : "rgba(248,113,113,0.35)",
+
+                boxShadow:
+                  i === current
+                    ? isSectionTone
+                      ? "0 2px 10px rgba(220,38,38,0.38)"
+                      : "0 2px 10px rgba(220,38,38,0.38)"
+                    : "none",
               }}
             />
           ))}
@@ -114,10 +171,17 @@ export default function BottomNav({
         onClick={onNext}
         disabled={!answered || isPending}
         className={btnBase}
-        style={nextStyle}
+        style={{
+          ...nextStyle,
+          backdropFilter: "blur(14px)",
+          WebkitBackdropFilter: "blur(14px)",
+
+          boxShadow: answered
+            ? "0 8px 24px rgba(0,0,0,0.18)"
+            : "none",
+        }}
       >
         {isPending ? (
-          /* Spinner shown only in section variant during API call */
           <>
             <span className="h-4 w-4 rounded-full border-2 border-white border-t-transparent animate-spin" />
             <span className="hidden sm:inline">লোড হচ্ছে...</span>

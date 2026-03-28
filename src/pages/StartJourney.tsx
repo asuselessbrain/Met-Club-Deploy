@@ -3,15 +3,8 @@ import ZoneCard from "../components/StartJourney/ZoneCard";
 import storyImg from "../assets/images/learning-zone.png";
 import simulationImg from "../assets/images/practice-zone.png";
 import { useNavigate } from "react-router";
+import bgImage from "../assets/images/start-journey-page-bg.jpeg";
 
-const watercolorBg = `
-  radial-gradient(ellipse at 12% 18%, rgba(255, 180, 170, 0.42) 0%, transparent 52%),
-  radial-gradient(ellipse at 85% 12%, rgba(255, 226, 186, 0.34) 0%, transparent 48%),
-  radial-gradient(ellipse at 86% 88%, rgba(255, 150, 150, 0.35) 0%, transparent 52%),
-  radial-gradient(ellipse at 8% 86%, rgba(255, 203, 203, 0.30) 0%, transparent 46%),
-  radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.52) 0%, transparent 72%),
-  linear-gradient(135deg, #ffe8e5 0%, #ffd8cf 38%, #ffc6bc 68%, #ffb8ab 100%)
-`;
 
 const user = {
   name: "রাহেলা বেগম",
@@ -75,17 +68,28 @@ export default function StartJourney() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col" style={{ background: watercolorBg }}>
+    <div className="relative min-h-screen flex flex-col overflow-x-hidden" style={{
+    backgroundImage: `url(${bgImage})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center"
+  }}>
+
+      <div
+        className="absolute inset-0 pointer-events-none z-0"
+        style={{
+          background: "linear-gradient(180deg, rgba(20,6,6,0.22) 0%, rgba(20,6,6,0.14) 55%, rgba(20,6,6,0.18) 100%)",
+        }}
+      />
 
       {/* ── Navbar ── */}
       <nav
-        className="w-full flex items-center justify-between px-6 py-3 sticky top-0 z-50"
+        className="fixed top-0 left-0 right-0 w-full flex items-center justify-between px-6 py-3 z-50"
         style={{
-          background: "rgba(255,245,243,0.78)",
-          backdropFilter: "blur(18px)",
-          WebkitBackdropFilter: "blur(18px)",
-          borderBottom: "1.5px solid rgba(239,68,68,0.22)",
-          boxShadow: "0 2px 24px rgba(185,28,28,0.10)",
+          background: "linear-gradient(120deg, rgba(255,255,255,0.34), rgba(255,237,234,0.20))",
+          backdropFilter: "blur(24px) saturate(140%)",
+          WebkitBackdropFilter: "blur(24px) saturate(140%)",
+          borderBottom: "1.5px solid rgba(255,255,255,0.34)",
+          boxShadow: "0 8px 32px rgba(185,28,28,0.16), inset 0 1px 0 rgba(255,255,255,0.42)",
         }}
       >
         {/* Logo + Home */}
@@ -115,6 +119,8 @@ export default function StartJourney() {
               color: "#b91c1c",
               fontFamily: "'Noto Serif Bengali', serif",
               letterSpacing: "-0.5px",
+              textShadow:
+                "-0.6px -0.6px 0 rgba(255,255,255,0.95), 0.6px -0.6px 0 rgba(255,255,255,0.95), -0.6px 0.6px 0 rgba(255,255,255,0.95), 0.6px 0.6px 0 rgba(255,255,255,0.95), 0 2px 8px rgba(127,29,29,0.18)",
             }}
           >
             মেট ক্লাব
@@ -129,10 +135,14 @@ export default function StartJourney() {
             className="flex items-center gap-2 rounded-2xl px-3 py-1.5 transition-all duration-200 select-none"
             style={{
               background: dropdownOpen
-                ? "rgba(239,68,68,0.12)"
-                : "rgba(255,255,255,0.52)",
-              border: "1.5px solid rgba(239,68,68,0.35)",
-              boxShadow: dropdownOpen ? "0 0 0 2.5px rgba(239,68,68,0.22)" : "none",
+                ? "rgba(255,255,255,0.42)"
+                : "rgba(255,255,255,0.30)",
+              border: "1.5px solid rgba(255,255,255,0.45)",
+              boxShadow: dropdownOpen
+                ? "0 0 0 2.5px rgba(239,68,68,0.18), 0 8px 22px rgba(185,28,28,0.18)"
+                : "0 4px 14px rgba(185,28,28,0.12)",
+              backdropFilter: "blur(14px)",
+              WebkitBackdropFilter: "blur(14px)",
               cursor: "pointer",
             }}
           >
@@ -151,7 +161,11 @@ export default function StartJourney() {
             </span>
             <span
               className="font-semibold hidden sm:block"
-              style={{ color: "#b91c1c", fontSize: "0.9rem" }}
+              style={{
+                color: "#7f1d1d",
+                fontSize: "0.9rem",
+                textShadow: "0 1px 4px rgba(255,255,255,0.28)",
+              }}
             >
               {user.name}
             </span>
@@ -174,10 +188,11 @@ export default function StartJourney() {
               className="absolute right-0 mt-3 rounded-2xl overflow-hidden"
               style={{
                 width: 230,
-                background: "rgba(255,251,250,0.96)",
-                boxShadow: "0 8px 40px rgba(185,28,28,0.13), 0 1.5px 6px rgba(0,0,0,0.07)",
-                border: "1.5px solid rgba(239,68,68,0.22)",
-                backdropFilter: "blur(16px)",
+                background: "linear-gradient(150deg, rgba(255,255,255,0.55), rgba(255,240,236,0.38))",
+                boxShadow: "0 12px 42px rgba(185,28,28,0.18), 0 2px 8px rgba(0,0,0,0.08)",
+                border: "1.5px solid rgba(255,255,255,0.44)",
+                backdropFilter: "blur(20px) saturate(140%)",
+                WebkitBackdropFilter: "blur(20px) saturate(140%)",
                 animation: "dropIn 0.18s cubic-bezier(.34,1.56,.64,1) both",
               }}
             >
@@ -202,10 +217,19 @@ export default function StartJourney() {
                   {user.avatar}
                 </span>
                 <div>
-                  <div style={{ color: "#991b1b", fontWeight: 700, fontSize: "0.92rem" }}>
+                  <div
+                    style={{
+                      color: "#7f1d1d",
+                      fontWeight: 700,
+                      fontSize: "0.92rem",
+                      textShadow: "0 1px 3px rgba(255,255,255,0.25)",
+                    }}
+                  >
                     {user.name}
                   </div>
-                  <div style={{ color: "#ef4444", fontSize: "0.76rem" }}>{user.role}</div>
+                  <div style={{ color: "#b91c1c", fontSize: "0.78rem", fontWeight: 600 }}>
+                    {user.role}
+                  </div>
                 </div>
               </div>
 
@@ -217,10 +241,11 @@ export default function StartJourney() {
                     href={item.href}
                     className="flex items-center gap-3 px-4 py-2.5 transition-colors duration-150"
                     style={{
-                      color: "#991b1b",
+                      color: "#7f1d1d",
                       textDecoration: "none",
-                      fontSize: "0.88rem",
-                      fontWeight: 500,
+                      fontSize: "0.9rem",
+                      fontWeight: 600,
+                      textShadow: "0 1px 3px rgba(255,255,255,0.2)",
                     }}
                     onMouseEnter={(e) =>
                       (e.currentTarget.style.background = "rgba(239,68,68,0.10)")
@@ -266,7 +291,7 @@ export default function StartJourney() {
       </nav>
 
       {/* ── Main Content ── */}
-      <div className="flex-1 flex flex-col items-center justify-center px-4 py-12">
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 pt-24 pb-12">
         {/* Header */}
         <div className="header-anim text-center mb-10">
           <h1
@@ -274,14 +299,19 @@ export default function StartJourney() {
             style={{
               color: "#b91c1c",
               textShadow:
-                "0 2px 0 rgba(185,28,28,0.12), 0 4px 16px rgba(185,28,28,0.13)",
+                "-1px -1px 0 rgba(255,255,255,0.96), 1px -1px 0 rgba(255,255,255,0.96), -1px 1px 0 rgba(255,255,255,0.96), 1px 1px 0 rgba(255,255,255,0.96), 0 2px 0 rgba(185,28,28,0.20), 0 8px 20px rgba(127,29,29,0.24)",
             }}
           >
             মেট ক্লাবে স্বাগতম!
           </h1>
           <p
-            className="text-gray-500 text-lg md:text-xl"
-            style={{ fontSize: "1.3rem" }}
+            className="text-lg md:text-xl"
+            style={{
+              fontSize: "1.3rem",
+              color: "#1f2937",
+              fontWeight: 600,
+              textShadow: "0 1px 6px rgba(255,255,255,0.28)",
+            }}
           >
             প্রস্তুতির জন্য আপনার পথ নির্বাচন করুন
           </p>

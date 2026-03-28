@@ -24,7 +24,6 @@ export default function ZoneCard({
     titleColor,
     borderColor,
     btnBg,
-    btnShadow,
     btnLabel,
     link,
     description,
@@ -46,30 +45,53 @@ export default function ZoneCard({
 
     return (
         <div
-            className="relative flex flex-col items-center rounded-2xl p-6 bg-white/70 backdrop-blur-sm cursor-pointer select-none transition-all duration-300"
+            className="relative flex flex-col items-center rounded-2xl p-6 cursor-pointer select-none transition-all duration-300 overflow-hidden"
             style={{
-                border: `2.5px solid ${borderColor}`,
+                background: hovered
+                    ? "rgba(255, 255, 255, 0.25)"
+                    : "rgba(255, 255, 255, 0.18)",
+
+                border: `1.5px solid ${borderColor}99`,
+
+                backdropFilter: "blur(20px) saturate(160%)",
+                WebkitBackdropFilter: "blur(20px) saturate(160%)",
+
                 boxShadow: hovered
-                    ? `0 20px 60px -10px ${borderColor}55, 0 4px 20px rgba(0,0,0,0.08)`
-                    : `0 4px 24px rgba(0,0,0,0.07)`,
+                    ? "0 20px 60px rgba(0,0,0,0.25)"
+                    : "0 10px 30px rgba(0,0,0,0.15)",
+
                 transform: hovered ? "translateY(-6px)" : "translateY(0)",
             }}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
         >
+            {/* Glass shine effect */}
+            <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                    background:
+                        "linear-gradient(120deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.05) 40%, transparent 70%)",
+                    opacity: 0.6,
+                }}
+            />
+
             <CardBlob color={blobColor} />
 
             {/* Title */}
             <h2
                 className="text-2xl font-black tracking-widest uppercase z-10"
-                style={{ color: titleColor, fontFamily: "'Fredoka One', cursive", letterSpacing: "0.12em" }}
+                style={{
+                    color: titleColor,
+                    textShadow:
+                        "-1px -1px 0 rgba(255,255,255,0.96), 1px -1px 0 rgba(255,255,255,0.96), -1px 1px 0 rgba(255,255,255,0.96), 1px 1px 0 rgba(255,255,255,0.96), 0 2px 0 rgba(185,28,28,0.20), 0 5px 10px rgba(127,29,29,0.24)",
+                }}
             >
                 {title}
             </h2>
 
-            {/* Illustration area */}
+            {/* Illustration */}
             <div
-                className="flex items-center justify-center rounded-full transition-transform duration-500 bg-red-500"
+                className="flex items-center justify-center rounded-full transition-transform duration-500"
                 style={{
                     background: `radial-gradient(circle, ${blobColor}22 0%, transparent 70%)`,
                     transform: hovered ? "scale(1.06)" : "scale(1)",
@@ -87,45 +109,51 @@ export default function ZoneCard({
             </div>
 
             {/* Description */}
-            <p className="text-center text-gray-600 mb-6 z-10 leading-relaxed" style={{ fontSize: "1rem" }}>
+            <p
+                className="text-center mb-6 z-10 leading-relaxed"
+                style={{
+                    fontSize: "1rem",
+                    color: "#111827",
+                    fontWeight: 500,
+                }}
+            >
                 {description}
             </p>
 
             {/* Button */}
-            {
-                title === "লার্নিং জোন" && (<Link to={link}>
+            {title === "লার্নিং জোন" ? (
+                <Link to={link} className="z-10 inline-block cursor-pointer">
                     <button
-                        className="z-10 px-8 py-3 rounded-full text-white font-bold text-base transition-all duration-200 active:scale-95 cursor-pointer"
+                        className="z-10 px-8 py-3 rounded-full text-white font-medium text-base transition-all duration-200 active:scale-95 cursor-pointer"
                         style={{
                             background: btnBg,
-                            boxShadow: hovered ? `0 6px 24px ${btnShadow}` : `0 3px 12px ${btnShadow}`,
-                            letterSpacing: "0.02em",
+                            boxShadow: hovered
+                                ? "0 6px 24px rgba(0,0,0,0.3)"
+                                : "0 3px 12px rgba(0,0,0,0.2)",
                             transform: hovered ? "scale(1.05)" : "scale(1)",
+                            cursor: "pointer",
                         }}
                     >
                         {btnLabel}
                     </button>
-                </Link>)
-            }
-
-            {
-                title === "স্টোরি সিচুয়েশন" && (
-                    <a href={link} target="_blank" rel="noopener noreferrer">
-                        <button
-                            className="z-10 px-8 py-3 rounded-full text-white font-bold text-base transition-all duration-200 active:scale-95 cursor-pointer"
-                            style={{
-                                background: btnBg,
-                                boxShadow: hovered ? `0 6px 24px ${btnShadow}` : `0 3px 12px ${btnShadow}`,
-                                letterSpacing: "0.02em",
-                                transform: hovered ? "scale(1.05)" : "scale(1)",
-                            }}
-                        >
-                            {btnLabel}
-                        </button>
-                    </a>
-                )
-            }
-
+                </Link>
+            ) : (
+                <a href={link} target="_blank" rel="noopener noreferrer" className="z-10 inline-block cursor-pointer">
+                    <button
+                        className="z-10 px-8 py-3 rounded-full text-white font-medium text-base transition-all duration-200 active:scale-95 cursor-pointer"
+                        style={{
+                            background: btnBg,
+                            boxShadow: hovered
+                                ? "0 6px 24px rgba(0,0,0,0.3)"
+                                : "0 3px 12px rgba(0,0,0,0.2)",
+                            transform: hovered ? "scale(1.05)" : "scale(1)",
+                            cursor: "pointer",
+                        }}
+                    >
+                        {btnLabel}
+                    </button>
+                </a>
+            )}
         </div>
     );
 }

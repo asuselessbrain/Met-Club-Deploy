@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import bgImage from "../../../assets/images/chapter-bg.png";
+import bgImage from "../../../assets/images/start-journey-page-bg.jpeg";
 import { MatchQuestion, CategorizeQuestion } from "./DragDropMobile";
 import { Link, useLoaderData, useSearchParams } from "react-router";
 import TopNav from "../../../components/Shared/TopBar";
@@ -310,7 +310,7 @@ function FillBlanksQuestion({ q, answer, onChange }: FillBlanksQuestionProps) {
 
     // statement এ যেকোনো সংখ্যক _ (underscore) থাকলে সেটা দিয়ে parts বানাই
     const parts = q.statement.split(/_+/);
-    
+
     // বাক্যে যতবার ভাঙা হয়েছে, তার চেয়ে ১ কম হবে আমাদের আসল শূন্যস্থান সংখ্যা
     const expectedBlankCount = parts.length - 1;
 
@@ -323,12 +323,12 @@ function FillBlanksQuestion({ q, answer, onChange }: FillBlanksQuestionProps) {
     const isSingleWordForAllBlanks = originalCorrectLen === 1 && expectedBlankCount > 1;
 
     // correctAnswer থেকে উত্তর বের করি
-    let correctParts = Array.isArray(q.correctAnswer) 
-        ? q.correctAnswer 
+    let correctParts = Array.isArray(q.correctAnswer)
+        ? q.correctAnswer
         : typeof q.correctAnswer === "string"
             ? q.correctAnswer.split("-")
             : [];
-            
+
     // যদি একই শব্দ সব গ্যাপে বসে, তাহলে কোড নিজে থেকেই সেটাকে ডুপ্লিকেট করে নেবে
     if (isSingleWordForAllBlanks) {
         correctParts = Array(expectedBlankCount).fill(correctParts[0]);
@@ -444,7 +444,7 @@ function FillBlanksQuestion({ q, answer, onChange }: FillBlanksQuestionProps) {
                     // যদি একাধিক আলাদা গ্যাপ থাকে (যেমন সাধারণ প্রশ্ন), তবে একবার ব্যবহৃত অপশন হাইড বা হালকা করতে পারেন,
                     // কিন্তু আপনার এই প্রশ্নের জন্য অপশন সবসময় ক্লিকের যোগ্য থাকবে।
                     const isUsed = !isSingleWordForAllBlanks && selectedAnswers.includes(opt);
-                    
+
                     return (
                         <button
                             key={opt}
@@ -975,11 +975,10 @@ function PuzzleQuestion({ q, answer, onChange }: PuzzleQuestionProps) {
             {/* Feedback */}
             {allPlaced && (
                 <div
-                    className={`flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-medium border ${
-                        isCorrect
-                            ? "bg-green-50 border-green-200 text-green-700"
-                            : "bg-red-50 border-red-200 text-red-700"
-                    }`}
+                    className={`flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-medium border ${isCorrect
+                        ? "bg-green-50 border-green-200 text-green-700"
+                        : "bg-red-50 border-red-200 text-red-700"
+                        }`}
                     style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
                 >
                     <span>{isCorrect ? "✅" : "❌"}</span>
@@ -1359,9 +1358,6 @@ export default function Quiz({ onFinish }: QuizProps) {
                         answered={isAnswered}
                     />
                 )}
-
-                {/* Corner sparkle */}
-                <div className="absolute bottom-6 right-6 sparkle pointer-events-none z-10 text-2xl select-none" style={{ color: "#fca5a5" }}>✦</div>
             </div>
         </>
     );

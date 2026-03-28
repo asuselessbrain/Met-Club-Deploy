@@ -1,6 +1,6 @@
 import { use, useState } from "react";
 
-import bgImage from "../../../assets/images/chapter-bg.png";
+import bgImage from "../../../assets/images/start-journey-page-bg.jpeg";
 import { Link } from "react-router";
 
 export interface ChapterTopic {
@@ -97,7 +97,7 @@ export default function Chapter() {
           style={{
             color: "#b91c1c",
             textShadow:
-              "0 2px 0 rgba(185,28,28,0.16), 0 6px 24px rgba(220,38,38,0.18)",
+              "-1px -1px 0 rgba(255,255,255,0.96), 1px -1px 0 rgba(255,255,255,0.96), -1px 1px 0 rgba(255,255,255,0.96), 1px 1px 0 rgba(255,255,255,0.96), 0 2px 0 rgba(185,28,28,0.20), 0 8px 20px rgba(127,29,29,0.24)",
             animation: "titlePop 0.7s cubic-bezier(0.34,1.56,0.64,1) both",
             letterSpacing: "0.03em",
           }}

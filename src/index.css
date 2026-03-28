@@ -60,14 +60,14 @@ body {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #fca5a5;
-  /* আপনার কার্ডের বর্ডারের লাল কালার */
+  background-color: #93c5fd;
+  /* আপনার কার্ডের বর্ডারের নীল কালার */
   border-radius: 10px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background-color: #ef4444;
-  /* মাউস নিলে কালার একটু গাঢ় লাল হবে */
+  background-color: #60a5fa;
+  /* মাউস নিলে কালার একটু গাঢ় হবে */
 }
 
 @keyframes floatUpDown {

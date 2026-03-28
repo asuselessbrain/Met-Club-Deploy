@@ -1,133 +1,140 @@
-import { useState } from "react";
-import { useNavigate, useParams } from "react-router";
-import bgImage from "../../../assets/images/chapter-bg.png";
+import { Link, useParams } from "react-router";
+import bgImage from "../../../assets/images/start-journey-page-bg.jpeg";
 import TopNav from "../../../components/Shared/TopBar";
 
 export default function StartInterface() {
-    const [btnHover, setBtnHover] = useState(false);
-    const navigate = useNavigate();
     const { chapterId } = useParams();
 
-    const startQuiz = () => {
-        navigate(`/select-difficulty/${chapterId}`);
-    }
     return (
         <>
             <div
-                className="fixed inset-0 z-50 flex flex-col"
+                className="fixed inset-0 z-50 flex flex-col overflow-hidden"
                 style={{
                     backgroundImage: `url(${bgImage})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center bottom",
                 }}
             >
-                {/* Overlay */}
-                <div
-                    className="absolute inset-0 pointer-events-none"
-                    style={{
-                        background:
-                            "linear-gradient(to bottom, rgba(255,244,242,0.56) 0%, rgba(255,230,226,0.22) 55%, rgba(255,214,210,0.08) 100%)",
-                    }}
-                />
+                {/* ───────────────── TOP BAR ───────────────── */}
+                <div className="relative z-10">
+                    <TopNav />
+                </div>
 
-                {/* ── Top Bar ── */}
-                <TopNav />
+                {/* ───────────────── MAIN CONTENT ───────────────── */}
+                <div className="px-4 py-4 flex flex-col items-center justify-center flex-1 overflow-auto relative z-10">
 
-                <div className="px-4 py-4 flex flex-col items-center justify-start lg:justify-center min-h-[calc(100%-150px)] custom-scrollbar overflow-auto custom-scrollbar">
-                    <div className="flex flex-1 items-center justify-center w-full max-w-md sm:max-w-lg py-3 sm:py-5">
-                        {/* Card */}
+                    <div className="w-full max-w-md sm:max-w-lg">
+
+                        {/* 🧊 APPLE GLASS CARD (ONLY THIS HAS GLASS NOW) */}
                         <div
-                            className="rounded-2xl sm:rounded-3xl overflow-visible pt-12 sm:pt-16 w-full relative z-10 flex flex-col items-center justify-center"
+                            className="relative rounded-3xl overflow-hidden pt-14 sm:pt-16 flex flex-col items-center"
                             style={{
-                                background: "linear-gradient(160deg,#ffe4e6 0%,#ffe8e3 50%,#fff1ec 100%)",
-                                border: "3px solid rgba(255,255,255,0.9)",
-                                boxShadow: "0 20px 60px rgba(220,38,38,0.18), 0 4px 16px rgba(0,0,0,0.10), inset 0 0 0 1px rgba(255,255,255,0.6)",
+                                background: "rgba(255,255,255,0.16)",
+
+                                backdropFilter: "blur(30px) saturate(180%)",
+                                WebkitBackdropFilter: "blur(30px) saturate(180%)",
+
+                                border: "1px solid rgba(255,255,255,0.35)",
+
+                                boxShadow:
+                                    "0 30px 90px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.55)",
                             }}
                         >
-                            {/* ── Ribbon banner ── */}
-                            <div className="banner-pop relative flex items-center justify-center -mt-3 sm:-mt-4 mb-1 px-3 sm:px-4">
+
+                            {/* 🌟 glass shine */}
+                            <div
+                                className="absolute inset-0 pointer-events-none"
+                                style={{
+                                    background:
+                                        "linear-gradient(120deg, rgba(255,255,255,0.45), rgba(255,255,255,0.10), transparent 65%)",
+                                }}
+                            />
+
+                            {/* ───────── RIBBON ───────── */}
+                            <div className="relative z-10 -mt-5 mb-3">
                                 <div
-                                    className="relative px-5 sm:px-8 py-2.5 sm:py-3 rounded-2xl text-center"
+                                    className="relative px-6 py-3 rounded-2xl text-center"
                                     style={{
-                                        background: "linear-gradient(135deg,#f59e0b 0%,#fbbf24 40%,#f97316 100%)",
-                                        boxShadow: "0 6px 0 #b45309, 0 8px 20px rgba(245,158,11,0.40)",
-                                        border: "3px solid #fef3c7",
+                                        background:
+                                            "linear-gradient(135deg,#f59e0b,#fbbf24,#f97316)",
+                                        border: "1px solid rgba(255,255,255,0.4)",
+                                        boxShadow:
+                                            "0 12px 35px rgba(251,146,60,0.35), inset 0 1px 0 rgba(255,255,255,0.4)",
                                     }}
                                 >
-                                    {/* Ribbon tails */}
-                                    <div className="absolute -left-3 top-1/2 -translate-y-1/2 w-0 h-0"
-                                        style={{ borderTop: "18px solid transparent", borderBottom: "18px solid transparent", borderRight: "16px solid #d97706" }} />
-                                    <div className="absolute -right-3 top-1/2 -translate-y-1/2 w-0 h-0"
-                                        style={{ borderTop: "18px solid transparent", borderBottom: "18px solid transparent", borderLeft: "16px solid #d97706" }} />
-
-                                    <h1 className="font-bold text-white leading-tight text-2xl sm:text-[1.9rem]"
-                                        style={{ textShadow: "0 2px 4px rgba(0,0,0,0.20)", letterSpacing: "0.02em" }}>
+                                    <h1 className="font-bold text-white text-2xl sm:text-[1.9rem]">
                                         মজার মূল্যায়ন
                                     </h1>
                                 </div>
                             </div>
 
-                            {/* ── Body ── */}
-                            <div className="body-fade flex flex-col items-center gap-4 sm:gap-5 px-4 sm:px-7 py-4 sm:py-5">
+                            {/* ───────── BODY ───────── */}
+                            <div className="relative z-10 flex flex-col items-center gap-5 px-5 sm:px-7 py-6">
 
-                                {/* Description text */}
-                                <p className="text-center text-gray-700 leading-relaxed font-medium text-sm sm:text-[1.05rem]">
-                                    এখানে প্রতিটি প্রশ্ন সঠিক উত্তর দেওয়ার জন্য তুমি পাবে
+                                <p className="text-center text-gray-700 font-medium text-sm sm:text-base">
+                                    এখানে প্রতিটি প্রশ্ন সঠিক উত্তর দিলে তুমি পাবে
                                     <br />
-                                    <span className="font-bold text-gray-800">১০ পয়েন্ট!</span> আর ভুল উত্তর দিলে জিরো পয়েন্ট।
+                                    <span className="font-bold text-gray-900">১০ পয়েন্ট!</span> ভুল উত্তর = ০ পয়েন্ট
                                 </p>
 
-                                {/* Point pills */}
-                                <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 w-full">
-                                    {/* Correct pill */}
-                                    <div className="flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-bold text-xs sm:text-sm"
-                                        style={{ background: "#fee2e2", border: "2px solid #fca5a5", color: "#991b1b" }}>
-                                            <span className="w-6 h-6 flex items-center justify-center rounded-full bg-red-500 text-white text-xs font-black">✓</span>
-                                        <span className="coin-spin">🪙</span>
-                                        <span>+10 pts</span>
+                                <div className="flex gap-3 flex-wrap justify-center">
+                                    <div
+                                        className="flex items-center gap-2 px-4 py-2 rounded-full font-bold text-sm"
+                                        style={{
+                                            background: "rgba(254,226,226,0.6)",
+                                            border: "1px solid rgba(252,165,165,0.8)",
+                                        }}
+                                    >
+                                        <span className="w-6 h-6 flex items-center justify-center rounded-full bg-green-500 text-white text-xs font-black">
+                                            ✓
+                                        </span>
+                                        +10 pts
                                     </div>
-                                    {/* Wrong pill */}
-                                    <div className="flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-bold text-xs sm:text-sm"
-                                        style={{ background: "#fee2e2", border: "2px solid #f87171", color: "#991b1b" }}>
-                                        <span className="w-6 h-6 flex items-center justify-center rounded-full bg-red-500 text-white text-xs font-black">✗</span>
-                                        <span>0 pts</span>
+
+                                    <div
+                                        className="flex items-center gap-2 px-4 py-2 rounded-full font-bold text-sm"
+                                        style={{
+                                            background: "rgba(254,226,226,0.35)",
+                                            border: "1px solid rgba(248,113,113,0.6)",
+                                        }}
+                                    >
+                                        <span className="w-6 h-6 flex items-center justify-center rounded-full bg-red-500 text-white text-xs font-black">
+                                            ✗
+                                        </span>
+                                        0 pts
                                     </div>
                                 </div>
 
-                                {/* Champion text + trophy */}
-                                <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
-                                    <p className="text-center text-gray-700 font-medium leading-relaxed text-sm sm:text-base">
-                                        তোমার স্কোর যত বেশি হবে চ্যাম্পিয়ন
-                                        <br />হওয়ার সম্ভাবনা তত বেড়ে যাবে।
-                                    </p>
-                                </div>
-
-                                {/* Let's go text */}
-                                <p className="font-bold text-gray-600 text-sm sm:text-base">
-                                    দেখা যাক কি হয়!
+                                <p className="text-center text-gray-700 font-medium text-sm sm:text-base">
+                                    তোমার স্কোর যত বেশি হবে চ্যাম্পিয়ন হওয়ার সম্ভাবনা তত বেশি
                                 </p>
 
-                                {/* ── Start button ── */}
-                                <button
-                                    onClick={startQuiz}
-                                    onMouseEnter={() => setBtnHover(true)}
-                                    onMouseLeave={() => setBtnHover(false)}
-                                    className="w-full flex items-center justify-center gap-2 sm:gap-3 py-3 sm:py-4 rounded-2xl font-bold text-white text-base sm:text-xl transition-all duration-200 active:scale-95"
-                                    style={{
-                                        background: btnHover
-                                            ? "linear-gradient(135deg,#dc2626,#b91c1c)"
-                                            : "linear-gradient(135deg,#ef4444,#dc2626)",
-                                        boxShadow: btnHover
-                                            ? "0 3px 0 #7f1d1d, 0 6px 24px rgba(239,68,68,0.45)"
-                                            : "0 5px 0 #7f1d1d, 0 8px 28px rgba(239,68,68,0.35)",
-                                        transform: btnHover ? "translateY(2px)" : "translateY(0)",
-                                        border: "2px solid rgba(255,255,255,0.30)",
-                                        letterSpacing: "0.03em",
-                                    }}
-                                >
-                                    এখনই শুরু করুন
-                                    <span className="arrow-pulse font-black text-xl sm:text-2xl">›</span>
-                                </button>
+                                <p className="font-bold text-gray-600">দেখা যাক কি হয়!</p>
+                                <Link to={`/select-difficulty/${chapterId}`} className="w-full">
+                                    <button
+                                        className="w-full flex items-center justify-center gap-2 py-4 rounded-2xl font-bold text-white text-lg transition-all duration-300 active:scale-95 hover:scale-[1.02] cursor-pointer"
+                                        style={{
+                                            background: "rgba(239,68,68,0.85)",
+                                            border: "1px solid rgba(255,255,255,0.35)",
+                                            boxShadow: "0 10px 35px rgba(239,68,68,0.35)",
+                                        }}
+                                        onMouseEnter={(e) => {
+                                            e.currentTarget.style.boxShadow =
+                                                "0 15px 45px rgba(239,68,68,0.55)";
+                                            e.currentTarget.style.transform = "translateY(-2px) scale(1.02)";
+                                        }}
+                                        onMouseLeave={(e) => {
+                                            e.currentTarget.style.boxShadow =
+                                                "0 10px 35px rgba(239,68,68,0.35)";
+                                            e.currentTarget.style.transform = "translateY(0px) scale(1)";
+                                        }}
+                                    >
+                                        এখনই শুরু করুন
+                                        <span className="text-2xl font-black transition-transform duration-300 group-hover:translate-x-1">
+                                            ›
+                                        </span>
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     </div>

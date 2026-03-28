@@ -1,10 +1,11 @@
 import { useState, useRef, useEffect } from "react";
 import { FaPlay, FaPause } from "react-icons/fa";
-import bgImage from "../../../assets/images/chapter-bg.png";
+import bgImage from "../../../assets/images/start-journey-page-bg.jpeg";
 import { useLoaderData, useNavigate } from "react-router";
 import TopNav from "../../../components/Shared/TopBar";
 import BottomNav from "../../../components/Shared/BottomNav";
 import { useAudio, useAudioSync } from "../../../hooks/UseAudio";
+import CompletionModal from "../../../components/Modal/CompletionModal";
 
 
 export default function Section() {
@@ -106,20 +107,20 @@ export default function Section() {
         {/* ── Content Card ── */}
         <div className="px-4 py-4 flex flex-col items-center justify-start lg:justify-center min-h-[calc(100%-150px)] custom-scrollbar overflow-auto custom-scrollbar">
           <div
-            className={`relative z-10 w-full max-w-7xl mt-6 lg:max-h-100 rounded-2xl bg-white/82 backdrop-blur-md flex flex-col lg:flex-row items-stretch lg:overflow-hidden ${animating
+            className={`relative z-10 w-full max-w-5xl mt-6 lg:max-h-100 rounded-2xl bg-white/82 backdrop-blur-md flex flex-col lg:flex-row items-stretch lg:overflow-hidden ${animating
               ? animDir === "left"
                 ? "content-exit-left"
                 : "content-exit-right"
               : "content-enter"
               }`}
             style={{
-              border: "2.5px solid #fca5a5",
+              border: "1px solid #fca5a5",
               boxShadow: "0 8px 48px rgba(239,68,68,0.22), 0 2px 16px rgba(0,0,0,0.08)",
             }}
           >
             {/* ── Illustration (Left Half) ── */}
             {/* এখানে md:w-1/2 ব্যবহার করা হয়েছে যেন বড় স্ক্রিনে অর্ধেক জায়গা নেয় */}
-            <div className="w-full lg:w-[55%] relative overflow-hidden bg-red-50/55 shrink-0 rounded-t-2xl lg:rounded-t-none">
+            <div className="w-full lg:w-[50%] relative overflow-hidden bg-red-50/55 shrink-0 rounded-t-2xl lg:rounded-t-none">
 
               <img
                 src={section.image}
@@ -159,7 +160,7 @@ export default function Section() {
             </div>
             {/* ── Story Text Section (Right Half) ── */}
             {/* এখানেও md:w-1/2 ব্যবহার করা হয়েছে এবং টেক্সটগুলো মাঝ বরাবর রাখার জন্য flex যোগ করা হয়েছে */}
-            <div className="w-full lg:w-[45%] p-4 flex flex-col justify-start text-left overflow-y-auto custom-scrollbar">
+            <div className="w-full lg:w-[50%] p-4 flex flex-col justify-start text-left overflow-y-auto custom-scrollbar">
               {/* চেক করছি text-এর প্রথম আইটেম Array কি না (প্যারাগ্রাফ হাইলাইটের জন্য) */}
               {Array.isArray(section.text[0]) ? (
                 <div className="text-sm sm:text-base md:text-lg">
@@ -176,7 +177,7 @@ export default function Section() {
                               ref={isHighlighted ? activeWordRef : null}
                               className={`inline-block transition-all duration-150 px-0.5 ${isHighlighted
                                 ? "bg-yellow-300 text-black scale-105"
-                                : "bg-transparent text-red-900/90"
+                                : "bg-transparent text-slate-700"
                                 }`}
                             >
                               {item.word}{" "}
@@ -189,7 +190,7 @@ export default function Section() {
                 </div>
               ) : (
                 // সাধারণ টেক্সটের জন্য (Section 2, 3...)
-                <div className="text-xl text-red-900/90">
+                <div className="text-xl text-slate-700">
                   {section.text.map((paragraph: string, index: number) => (
                     <p key={index} className="mb-2">
                       {String(paragraph)}
@@ -212,45 +213,7 @@ export default function Section() {
         />
 
         {showModal && (
-          <div className="fixed inset-0 z-40 flex items-center justify-center px-4">
-            <div
-              className="absolute inset-0 bg-slate-900/45 backdrop-blur-[2px]"
-              onClick={() => setShowModal(false)}
-            />
-
-            <div
-              className="relative z-50 w-full max-w-md rounded-3xl border border-red-200 bg-white p-6 sm:p-7"
-              style={{ boxShadow: "0 18px 48px rgba(220,38,38,0.22)" }}
-            >
-              <div className="inline-flex rounded-full bg-red-100 px-3 py-1 text-xs font-black tracking-wider text-red-700">
-                CHAPTER COMPLETED
-              </div>
-
-              <h3 className="mt-3 text-2xl font-black text-red-900">
-                তুমি এই লেসন সম্পন্ন করেছো
-              </h3>
-
-              <p className="mt-2 text-sm leading-6 text-slate-600">
-                এখন তুমি চাইলে আবার লেসন দেখতে পারো অথবা সরাসরি কুইজে যেতে পারো।
-              </p>
-
-              <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
-                <button
-                  onClick={() => setShowModal(false)}
-                  className="rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-bold text-red-700 transition-all hover:bg-red-100 active:scale-[0.98]"
-                >
-                  লেসন চালিয়ে যাও
-                </button>
-
-                <button
-                  onClick={() => navigateToQuiz(`/start-quiz/${section.chapterId}`)}
-                  className="rounded-2xl bg-linear-to-r from-red-500 to-red-600 px-4 py-3 text-sm font-bold text-white shadow-[0_8px_20px_rgba(220,38,38,0.30)] transition-all hover:from-red-600 hover:to-red-700 active:scale-[0.98]"
-                >
-                  সরাসরি কুইজে যাও
-                </button>
-              </div>
-            </div>
-          </div>
+          <CompletionModal chapterId={section.chapterId} setShowModal={setShowModal} />
         )}
       </div>
     </>

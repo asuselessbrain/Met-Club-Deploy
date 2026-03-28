@@ -1,4 +1,4 @@
-import bgImage from "../../../assets/images/chapter-bg.png";
+import bgImage from "../../../assets/images/start-journey-page-bg.jpeg";
 import { Link, useParams } from "react-router";
 import { use, useEffect, useState } from "react";
 import type { ChapterTopic } from "../Index/Chapter";
@@ -107,7 +107,8 @@ export default function Deficulty() {
                     className="title-anim relative z-10 text-5xl md:text-6xl text-center mt-10 font-black"
                     style={{
                         color: "#b91c1c",
-                        textShadow: "0 2px 0 rgba(185,28,28,0.12), 0 4px 20px rgba(185,28,28,0.10)",
+                        textShadow:
+                            "-0.6px -0.6px 0 rgba(255,255,255,0.95), 0.6px -0.6px 0 rgba(255,255,255,0.95), -0.6px 0.6px 0 rgba(255,255,255,0.95), 0.6px 0.6px 0 rgba(255,255,255,0.95), 0 2px 8px rgba(127,29,29,0.18)",
                         letterSpacing: "0.04em",
                     }}
                 >
@@ -120,7 +121,8 @@ export default function Deficulty() {
                     style={{ letterSpacing: "0.06em" }}
                 >
                     কঠিনতার স্তর নির্বাচন করুন:&nbsp;
-                    <span style={{ color: "#b91c1c" }}>{topic?.title}</span>
+                    <span style={{ color: "#b91c1c", textShadow:
+                "-0.6px -0.6px 0 rgba(255,255,255,0.95), 0.6px -0.6px 0 rgba(255,255,255,0.95), -0.6px 0.6px 0 rgba(255,255,255,0.95), 0.6px 0.6px 0 rgba(255,255,255,0.95), 0 2px 8px rgba(127,29,29,0.18)", }}>{topic?.title}</span>
                 </p>
 
                 {/* ── Topic card ── */}
