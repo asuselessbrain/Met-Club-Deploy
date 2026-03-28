@@ -1,7 +1,7 @@
 import Hero from './components/Home/Hero'
 import Login from './components/Login/Login'
 import { useMemo, useEffect, useState } from 'react'
-import bgImage from './assets/images/bg.jpeg'
+import bgImage from './assets/images/bg.png'
 
 function App() {
   const [countdown, setCountdown] = useState(10)
@@ -277,9 +277,12 @@ function App() {
       }}
     >
 
-      {/* আধুনিক ওভারলে: হালকা কালো আস্তরণ এবং সামান্য ব্লার */}
+      {/* Premium glass overlay across full landing section */}
       <div
-        className="absolute inset-0 pointer-events-none z-0 bg-black/50 backdrop-blur-[3px]"
+        className="absolute inset-0 pointer-events-none z-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03)_42%,rgba(255,255,255,0.06))] backdrop-blur-[3px]"
+        style={{
+          boxShadow: 'inset 0 0 70px rgba(15, 23, 42, 0.12)'
+        }}
       />
 
       {/* মেইন কন্টেন্ট: z-10 দেওয়া হয়েছে যেন ওভারলে এর ওপরে থাকে */}

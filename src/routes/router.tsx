@@ -8,6 +8,7 @@ import Quiz from "../pages/LearnignZone/quiz/quiz";
 import Registration from "../pages/Registration/Registration";
 import LoginGuard from "../components/HomeRedirect/HomeRedirect";
 import App from "../App";
+import About from "../pages/About/About";
 
 type SectionData = {
   chapterId: number;
@@ -90,19 +91,11 @@ const router = createBrowserRouter([
 
       return filteredQuizData;
     }
+  },
+  {
+    path: "/about",
+    element: <About />,
   }
-  //   {
-  //     path: "/about",
-  //     element: <About />,
-  //   },
-  //   {
-  //     path: "/basicMap",
-  //     element: <Index />,
-  //   },
-  //   {
-  //     path: '/lesson/:id',
-  //     element: <Lesson />
-  //   }
 ]);
 
 export default router;

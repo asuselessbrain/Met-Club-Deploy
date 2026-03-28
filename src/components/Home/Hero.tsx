@@ -24,12 +24,12 @@ export default function Hero() {
 
                 <div className="space-y-4 font-semibold lg:ml-8 max-w-full lg:max-w-3xl xl:max-w-4xl">
                     <p className="whitespace-nowrap text-3xl md:text-6xl lg:text-3xl xl:text-5xl 2xl:text-6xl text-center lg:text-left font-bold">
-                        মেট ক্লাব গেমিফাইড ই-লার্নিং
+                        মেট ক্লাব ই-লার্নিং প্ল্যাটফর্ম
                     </p>
                     <p className="text-center lg:text-left md:text-xl lg:text-[16px] xl:text-xl">
                         এসো আবহাওয়া শিখি খেলতে খেলতে
                     </p>
-                    <Link to="/about" className="flex justify-center lg:justify-start mt-6 pointer-events-none opacity-50">
+                    <Link to="/about" className="flex justify-center lg:justify-start mt-6">
                         <button className="px-6 py-3 cursor-pointer bg-white/80 text-blue-700 font-semibold rounded-lg hover:bg-blue-50 transition">
                             মেট ক্লাব সম্পর্কে জানুন
                         </button>
