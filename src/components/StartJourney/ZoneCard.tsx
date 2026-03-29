@@ -26,6 +26,7 @@ export default function ZoneCard({
     btnBg,
     btnLabel,
     link,
+    disabled = false,
     description,
     blobColor,
     illustration,
@@ -37,6 +38,7 @@ export default function ZoneCard({
     btnShadow: string;
     btnLabel: string;
     link: string;
+    disabled?: boolean;
     description: React.ReactNode;
     blobColor: string;
     illustration: React.ReactNode;
@@ -138,21 +140,34 @@ export default function ZoneCard({
                     </button>
                 </Link>
             ) : (
-                <a href={link} target="_blank" rel="noopener noreferrer" className="z-10 inline-block cursor-pointer">
+                disabled ? (
                     <button
-                        className="z-10 px-8 py-3 rounded-full text-white font-medium text-base transition-all duration-200 active:scale-95 cursor-pointer"
+                        disabled
+                        className="z-10 px-8 py-3 rounded-full text-white font-medium text-base transition-all duration-200 active:scale-95 cursor-not-allowed opacity-60"
                         style={{
-                            background: btnBg,
-                            boxShadow: hovered
-                                ? "0 6px 24px rgba(0,0,0,0.3)"
-                                : "0 3px 12px rgba(0,0,0,0.2)",
-                            transform: hovered ? "scale(1.05)" : "scale(1)",
-                            cursor: "pointer",
+                            background: "linear-gradient(135deg, #cbd5e1, #94a3b8)",
+                            boxShadow: "0 3px 10px rgba(51,65,85,0.2)",
                         }}
                     >
                         {btnLabel}
                     </button>
-                </a>
+                ) : (
+                    <a href={link} target="_blank" rel="noopener noreferrer" className="z-10 inline-block cursor-pointer">
+                        <button
+                            className="z-10 px-8 py-3 rounded-full text-white font-medium text-base transition-all duration-200 active:scale-95 cursor-pointer"
+                            style={{
+                                background: btnBg,
+                                boxShadow: hovered
+                                    ? "0 6px 24px rgba(0,0,0,0.3)"
+                                    : "0 3px 12px rgba(0,0,0,0.2)",
+                                transform: hovered ? "scale(1.05)" : "scale(1)",
+                                cursor: "pointer",
+                            }}
+                        >
+                            {btnLabel}
+                        </button>
+                    </a>
+                )
             )}
         </div>
     );

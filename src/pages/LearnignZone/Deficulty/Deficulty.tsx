@@ -2,6 +2,7 @@ import bgImage from "../../../assets/images/start-journey-page-bg.jpeg";
 import { Link, useParams } from "react-router";
 import { use, useEffect, useState } from "react";
 import type { ChapterTopic } from "../Index/Chapter";
+import useAxios from "../../../hooks/useAxios";
 
 const DIFFICULTIES = [
     {
@@ -59,22 +60,16 @@ export default function Deficulty() {
 
     const [quizLevel, setQuizLevel] = useState<"easy" | "medium" | "hard" | null>(null);
 
+    const axios = useAxios();
+
     useEffect(() => {
         const quizLevel = async () => {
-            const res = await fetch("https://meet-club.vercel.app/api/v1/students/quiz-completion", {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `${localStorage.getItem("token")}`,
-                },
-            });
-            const resData = await res.json();
-
-            setQuizLevel(resData.data)
-        }
+            const res = await axios.get(`/user/quiz-level-info/${chapterId}`);
+            setQuizLevel(res.data.data);
+        };
         quizLevel();
 
-    }, [])
+    }, [axios, chapterId])
 
     const isLocked = (key: string) => {
         if (quizLevel === null) return key === "medium" || key === "hard";

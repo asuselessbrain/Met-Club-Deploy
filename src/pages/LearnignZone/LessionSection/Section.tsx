@@ -1,11 +1,12 @@
 import { useState, useRef, useEffect } from "react";
 import { FaPlay, FaPause } from "react-icons/fa";
 import bgImage from "../../../assets/images/start-journey-page-bg.jpeg";
-import { useLoaderData, useNavigate } from "react-router";
+import { useLoaderData, useNavigate, useParams } from "react-router";
 import TopNav from "../../../components/Shared/TopBar";
 import BottomNav from "../../../components/Shared/BottomNav";
 import { useAudio, useAudioSync } from "../../../hooks/UseAudio";
 import CompletionModal from "../../../components/Modal/CompletionModal";
+import useAxios from "../../../hooks/useAxios";
 
 
 export default function Section() {
@@ -15,19 +16,20 @@ export default function Section() {
   const [isPending, setIsPending] = useState(false);
   const SECTIONS = useLoaderData();
   const [showModal, setShowModal] = useState(false);
+  const axios = useAxios()
+
+  const { chapterId } = useParams();
+
 
   useEffect(() => {
     const isChapterFinished = async () => {
-      const res = await fetch('https://meet-club.vercel.app/api/v1/students/chapter-completion', {
-        headers: { "Content-Type": "application/json", "Authorization": `${localStorage.getItem("token")}` },
-      });
-      const resData = await res.json();
-      if (resData.data) {
+      const res = await axios.get(`/user/chapter-completion-status/${chapterId}`);
+      if (res.data.data) {
         setShowModal(true);
       }
     }
     isChapterFinished();
-  }, [])
+  }, [axios, chapterId])
 
   const TOTAL = SECTIONS.length;
 
@@ -78,12 +80,9 @@ export default function Section() {
     else {
       setIsPending(true);
       try {
-        const res = await fetch('https://meet-club.vercel.app/api/v1/students/chapter-finish', {
-          method: "PATCH",
-          headers: { "Content-Type": "application/json", "Authorization": `${localStorage.getItem("token")}` },
-        });
+        const res = await axios.patch(`/user/update-chapter-completion/${chapterId}`);
 
-        if (res.ok) {
+        if (res.data.success) {
           navigateToQuiz(`/start-quiz/${section.chapterId}`);
         }
       } finally {

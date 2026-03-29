@@ -1,24 +1,32 @@
 import Hero from './components/Home/Hero'
 import Login from './components/Login/Login'
-import { useMemo, useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import bgImage from './assets/images/bg.png'
+import bgImage2 from './assets/images/Unveling.png'
+
+// 🔊 Replace with your actual clap audio URL or import
+const CLAP_AUDIO_URL = 'YOUR_CLAP_AUDIO_URL_HERE'
+
+type ConfettiPiece = {
+  left: string
+  width: string
+  height: string
+  backgroundColor: string
+  borderRadius: string
+  animation: string
+  animationDelay: string
+  transform: string
+}
+
+const CONFETTI_COLORS = ['#FFD700', '#FF69B4', '#00CED1', '#FF6347', '#32CD32', '#FF1493', '#ffffff', '#FFA500']
 
 function App() {
   const [countdown, setCountdown] = useState(10)
   const [isCountdownStarted, setIsCountdownStarted] = useState(false)
   const [isUnveiling, setIsUnveiling] = useState(false)
   const [isRevealed, setIsRevealed] = useState(false)
-  const particles = useMemo(
-    () =>
-      Array.from({ length: 20 }, (_, i) => ({
-        id: i,
-        top: `${(i * 37) % 100}%`,
-        left: `${(i * 53) % 100}%`,
-        duration: `${5 + (i % 10)}s`,
-        delay: `${(i % 5) * 0.5}s`
-      })),
-    []
-  )
+  const [confettiPieces, setConfettiPieces] = useState<ConfettiPiece[]>([])
+  const audioRef = useRef<HTMLAudioElement | null>(null)
 
   useEffect(() => {
     if (!isCountdownStarted || isUnveiling || isRevealed || countdown <= 0) return
@@ -39,15 +47,35 @@ function App() {
 
   useEffect(() => {
     if (!isUnveiling) return
+
+    // 🔊 Play clap audio
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0
+      audioRef.current.play().catch(() => {})
+    }
+
     const timeoutId = window.setTimeout(() => {
       setIsRevealed(true)
       setIsUnveiling(false)
-    }, 2000)
+    }, 2200)
     return () => window.clearTimeout(timeoutId)
   }, [isUnveiling])
 
+  const generateConfettiPieces = () => {
+    return Array.from({ length: 80 }, () => ({
+      left: `${Math.random() * 100}%`,
+      width: `${6 + Math.random() * 10}px`,
+      height: `${6 + Math.random() * 10}px`,
+      backgroundColor: CONFETTI_COLORS[Math.floor(Math.random() * CONFETTI_COLORS.length)],
+      borderRadius: Math.random() > 0.5 ? '50%' : '2px',
+      animation: `confettiFall ${1.5 + Math.random() * 2.5}s linear forwards`,
+      animationDelay: `${Math.random() * 0.8}s`,
+      transform: `rotate(${Math.random() * 360}deg)`,
+    }))
+  }
+
   const handleStartUnveil = () => {
-    console.log('Button clicked!')
+    setConfettiPieces(generateConfettiPieces())
     setIsCountdownStarted(true)
   }
 
@@ -55,164 +83,154 @@ function App() {
     return (
       <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-black">
 
-        {/* Animated Grid Background */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_110%)] opacity-20" />
+        {/* 🔊 Hidden audio */}
+        <audio ref={audioRef} src={CLAP_AUDIO_URL} preload="auto" />
 
-        {/* Dynamic Gradient Orbs */}
-        <div className="absolute top-[20%] left-[10%] h-125 w-125 rounded-full bg-linear-to-r from-cyan-500 to-blue-600 opacity-30 blur-[100px] animate-pulse" />
-        <div className="absolute bottom-[10%] right-[10%] h-150 w-150 rounded-full bg-linear-to-r from-purple-600 to-pink-500 opacity-20 blur-[120px] animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-[50%] left-[50%] h-100 w-100 -translate-x-1/2 -translate-y-1/2 rounded-full bg-linear-to-r from-emerald-500 to-teal-500 opacity-25 blur-[90px] animate-pulse" style={{ animationDelay: '2s' }} />
-
-        {/* Floating Particles */}
-        {particles.map((particle) => (
+        {/* 
+          SHUTTER LAYER — the Unveiling image sits here.
+          Normally fully visible (translateY: 0).
+          When unveiling starts, it slides UP out of view (translateY: -100%)
+          like a shop shutter being rolled up.
+        */}
+        <div
+          className="absolute inset-0 z-20"
+          style={{
+            transform: isUnveiling ? 'translateY(-100%)' : 'translateY(0)',
+            transition: isUnveiling ? 'transform 2s cubic-bezier(0.4, 0, 0.2, 1)' : 'none',
+          }}
+        >
+          {/* The Unveiling background image */}
           <div
-            key={particle.id}
-            className="absolute w-1 h-1 bg-white rounded-full opacity-40"
+            className="absolute inset-0"
             style={{
-              top: particle.top,
-              left: particle.left,
-              animation: `float ${particle.duration} ease-in-out infinite`,
-              animationDelay: particle.delay
+              backgroundImage: `url(${bgImage2})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center center',
+              backgroundRepeat: 'no-repeat',
             }}
           />
-        ))}
 
-        {/* Top Curtain with Holographic Effect */}
-        <div
-          className={`absolute inset-x-0 top-0 z-50 h-1/2 origin-top backdrop-blur-sm transition-all duration-2000 ease-[cubic-bezier(0.87,0,0.13,1)] ${isUnveiling ? '-translate-y-full opacity-0' : 'translate-y-0 opacity-100'
-            }`}
-          style={{
-            background: 'linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(15,23,42,0.9) 50%, rgba(30,41,59,0.8) 100%)',
-            borderBottom: '2px solid rgba(34, 211, 238, 0.3)',
-            boxShadow: '0 10px 50px rgba(34, 211, 238, 0.2)'
-          }}
-        >
-          <div className="absolute inset-0 bg-linear-to-b from-cyan-500/5 to-transparent" />
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-3">
-            <div className="w-2 h-2 bg-cyan-400 rounded-full animate-ping" />
-            <span className="text-cyan-400/80 text-xs tracking-[0.5em] uppercase font-light">Encrypted</span>
-          </div>
-        </div>
+          {/* Subtle dark overlay for readability */}
+          <div className="absolute inset-0 bg-black/30" />
 
-        {/* Bottom Curtain with Holographic Effect */}
-        <div
-          className={`absolute inset-x-0 bottom-0 z-50 h-1/2 origin-bottom backdrop-blur-sm transition-all duration-2000 ease-[cubic-bezier(0.87,0,0.13,1)] ${isUnveiling ? 'translate-y-full opacity-0' : 'translate-y-0 opacity-100'
-            }`}
-          style={{
-            background: 'linear-gradient(0deg, rgba(0,0,0,0.95) 0%, rgba(15,23,42,0.9) 50%, rgba(30,41,59,0.8) 100%)',
-            borderTop: '2px solid rgba(34, 211, 238, 0.3)',
-            boxShadow: '0 -10px 50px rgba(34, 211, 238, 0.2)'
-          }}
-        >
-          <div className="absolute inset-0 bg-linear-to-t from-purple-500/5 to-transparent" />
-          <div className="absolute top-8 left-1/2 -translate-x-1/2 flex items-center gap-3">
-            <div className="w-2 h-2 bg-purple-400 rounded-full animate-ping" />
-            <span className="text-purple-400/80 text-xs tracking-[0.5em] uppercase font-light">System Ready</span>
-          </div>
-        </div>
-
-        {/* Main Content */}
-        <div className={`relative z-60 text-center transition-all duration-1000 ${isUnveiling ? 'scale-150 opacity-0 blur-xl' : 'scale-100 opacity-100 blur-0'
-          }`}>
-
-          {/* Glassmorphic Container */}
-          <div className="relative px-16 py-12 rounded-3xl backdrop-blur-xl bg-white/5 border border-white/10 shadow-[0_0_80px_rgba(34,211,238,0.3)]">
-
-            {/* Animated Corner Accents */}
-            <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-cyan-400 rounded-tl-3xl opacity-60" />
-            <div className="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-purple-400 rounded-tr-3xl opacity-60" />
-            <div className="absolute bottom-0 left-0 w-20 h-20 border-b-2 border-l-2 border-purple-400 rounded-bl-3xl opacity-60" />
-            <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-cyan-400 rounded-br-3xl opacity-60" />
-
-            {/* Logo/Title Section */}
-            <div className="relative mb-12">
-
-              {/* Glow Effect Behind Text */}
-              <div className="absolute top-1/2 left-1/2 h-25 w-75 -translate-x-1/2 -translate-y-1/2 bg-linear-to-r from-cyan-500 via-purple-500 to-pink-500 blur-[60px] opacity-50 animate-pulse" />
-
-              <h1 className="relative text-[clamp(3rem,8vw,5rem)] font-black uppercase tracking-[0.3em] mb-4">
-                <span className="bg-clip-text text-transparent bg-linear-to-r from-cyan-400 via-purple-400 to-pink-400 drop-shadow-[0_0_30px_rgba(34,211,238,0.8)] animate-gradient">
-                  Met Club
-                </span>
-              </h1>
-
-              {/* Animated Underline */}
-              <div className="relative h-1 w-32 mx-auto overflow-hidden rounded-full">
-                <div className="absolute inset-0 bg-linear-to-r from-transparent via-cyan-400 to-transparent animate-shimmer" />
-              </div>
-
-              {/* Subtitle */}
-              <p className="mt-4 text-sm text-white/60 tracking-[0.4em] uppercase font-light">
-                Interactive Learning Hub
-              </p>
+          {/* Animated Weather Icons — inside shutter so they scroll up with it */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-[8%] left-[8%] w-16 h-16 opacity-70 animate-float-slow">
+              <svg viewBox="0 0 100 100" fill="none" stroke="rgba(255,200,200,0.9)" strokeWidth="3">
+                <circle cx="50" cy="50" r="20" fill="none" />
+                <path d="M50 10L50 25M50 75L50 90M10 50L25 50M75 50L90 50" strokeLinecap="round" />
+                <path d="M20 20L30 30M70 70L80 80M80 20L70 30M30 70L20 80" strokeLinecap="round" />
+                <path d="M55 40L45 55L52 55L48 70" strokeWidth="2" fill="rgba(255,200,200,0.9)" />
+              </svg>
             </div>
 
-            {/* Button or Countdown */}
-            {!isCountdownStarted && !isUnveiling && (
-              <div className="relative">
+            <div className="absolute top-[5%] left-[20%] w-20 h-20 opacity-70 animate-float-medium">
+              <svg viewBox="0 0 100 100" fill="rgba(255,200,200,0.8)" stroke="rgba(255,200,200,0.9)" strokeWidth="2">
+                <path d="M30 40Q30 25 45 25Q50 15 60 20Q75 20 75 35Q85 35 85 50Q85 60 75 60L30 60Q18 60 18 48Q18 40 30 40Z" />
+                <path d="M35 65L32 75M45 65L42 75M55 65L52 75M65 65L62 75" stroke="rgba(255,200,200,0.9)" strokeWidth="2" fill="none" strokeLinecap="round" />
+              </svg>
+            </div>
+
+            <div className="absolute top-[3%] left-[38%] w-16 h-16 opacity-70 animate-spin-slow">
+              <svg viewBox="0 0 100 100" fill="none" stroke="rgba(255,200,200,0.9)" strokeWidth="2.5">
+                <circle cx="50" cy="30" r="12" />
+                <path d="M50 42Q60 50 50 58Q40 66 50 74Q60 82 50 92" strokeLinecap="round" fill="none" />
+              </svg>
+            </div>
+
+            <div className="absolute top-[10%] right-[25%] w-12 h-16 opacity-70 animate-pulse-slow">
+              <svg viewBox="0 0 100 100" fill="rgba(255,200,200,0.9)">
+                <path d="M55 10L35 50L50 50L40 90L75 45L58 45L75 10Z" />
+              </svg>
+            </div>
+
+            <div className="absolute top-[8%] right-[8%] w-20 h-20 opacity-70 animate-float-slow">
+              <svg viewBox="0 0 100 100" fill="rgba(255,200,200,0.8)" stroke="rgba(255,200,200,0.9)" strokeWidth="2">
+                <path d="M25 45Q25 30 40 30Q45 20 55 25Q70 25 70 40Q80 40 80 55Q80 65 70 65L25 65Q13 65 13 53Q13 45 25 45Z" />
+                <circle cx="45" cy="55" r="8" fill="rgba(255,200,200,0.6)" />
+              </svg>
+            </div>
+
+            <div className="absolute top-[35%] left-[5%] w-16 h-16 opacity-70 animate-float-medium">
+              <svg viewBox="0 0 100 100" fill="none" stroke="rgba(255,200,200,0.9)" strokeWidth="3">
+                <path d="M50 50Q70 50 70 30Q70 20 60 20" strokeLinecap="round" />
+                <path d="M50 50Q30 50 30 70Q30 80 40 80" strokeLinecap="round" />
+                <circle cx="50" cy="50" r="8" fill="rgba(255,200,200,0.3)" />
+              </svg>
+            </div>
+
+            <div className="absolute top-[55%] left-[10%] w-10 h-14 opacity-70 animate-pulse-slow" style={{ animationDelay: '1s' }}>
+              <svg viewBox="0 0 100 100" fill="rgba(255,200,200,0.9)">
+                <path d="M60 10L40 50L55 50L35 90L70 45L55 45Z" />
+              </svg>
+            </div>
+
+            <div className="absolute bottom-[20%] left-[8%] w-20 h-20 opacity-70 animate-spin-very-slow">
+              <svg viewBox="0 0 100 100" fill="none" stroke="rgba(255,200,200,0.9)" strokeWidth="2.5">
+                <circle cx="50" cy="50" r="35" /><circle cx="50" cy="50" r="25" /><circle cx="50" cy="50" r="15" />
+                <path d="M50 15L50 85M15 50L85 50" />
+              </svg>
+            </div>
+
+            <div className="absolute top-[20%] right-[12%] w-24 h-16 opacity-70 animate-float-medium">
+              <svg viewBox="0 0 120 80" fill="none" stroke="rgba(255,200,200,0.9)" strokeWidth="3">
+                <path d="M10 40Q30 20 60 40Q90 60 110 40" strokeLinecap="round" />
+                <path d="M10 50Q30 30 60 50Q90 70 110 50" strokeLinecap="round" opacity="0.6" />
+              </svg>
+            </div>
+
+            <div className="absolute top-[45%] right-[5%] w-20 h-20 opacity-70 animate-float-slow">
+              <svg viewBox="0 0 100 100" fill="rgba(255,200,200,0.8)" stroke="rgba(255,200,200,0.9)" strokeWidth="2">
+                <path d="M30 35Q30 20 45 20Q50 10 60 15Q75 15 75 30Q85 30 85 45Q85 55 75 55L30 55Q18 55 18 43Q18 35 30 35Z" />
+                <path d="M35 60L32 72M45 60L42 72M55 60L52 72M65 60L62 72M75 60L72 72" stroke="rgba(255,200,200,0.9)" strokeWidth="2" fill="none" strokeLinecap="round" />
+              </svg>
+            </div>
+
+            <div className="absolute bottom-[25%] right-[10%] w-20 h-20 opacity-70 animate-spin-very-slow" style={{ animationDelay: '2s' }}>
+              <svg viewBox="0 0 100 100" fill="none" stroke="rgba(255,200,200,0.9)" strokeWidth="2.5">
+                <path d="M50 10Q80 25 80 50Q80 75 50 90Q20 75 20 50Q20 25 50 10" strokeLinecap="round" />
+                <circle cx="50" cy="50" r="12" />
+              </svg>
+            </div>
+          </div>
+
+          {/* Button / Countdown — inside shutter */}
+          <div
+            className={`absolute inset-0 flex items-center justify-center z-10 transition-all duration-700 ${
+              isUnveiling ? 'opacity-0 scale-110' : 'opacity-100 scale-100'
+            }`}
+          >
+            {!isCountdownStarted && (
+              <div className="text-center">
+                <h2
+                  className="text-3xl md:text-4xl font-bold text-white mb-8 drop-shadow-lg"
+                  style={{ textShadow: '2px 2px 12px rgba(0,0,0,0.8)' }}
+                >
+                  Are You Ready for the Next Wave?
+                </h2>
                 <button
                   onClick={handleStartUnveil}
-                  className="relative overflow-hidden rounded-full px-12 py-5 text-base font-bold tracking-[0.3em] uppercase transition-all duration-300 hover:scale-105 active:scale-95 hover:shadow-[0_0_40px_rgba(34,211,238,0.6)] cursor-pointer"
-                  style={{
-                    background: 'linear-gradient(135deg, rgba(6,182,212,0.3) 0%, rgba(168,85,247,0.3) 100%)',
-                    border: '2px solid rgba(34,211,238,0.5)'
-                  }}
+                  className="px-12 py-4 text-lg font-bold text-white bg-linear-to-r from-red-600 to-red-700 rounded-full shadow-2xl hover:from-red-500 hover:to-red-600 hover:scale-105 transition-all duration-300 border-2 border-red-400 cursor-pointer"
+                  style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}
                 >
-                  <span className="relative z-10 bg-clip-text text-transparent bg-linear-to-r from-cyan-300 to-purple-300">
-                    Unveil Experience
-                  </span>
+                  Start Experience
                 </button>
               </div>
             )}
 
-            {isCountdownStarted && !isUnveiling && (
-              <div className="relative">
-                {/* Circular Progress */}
-                <div className="relative mt-12 w-48 h-48 mx-auto">
-                  <svg className="absolute inset-0 -rotate-90 w-full h-full">
-                    <circle
-                      cx="96"
-                      cy="96"
-                      r="90"
-                      stroke="rgba(255,255,255,0.1)"
-                      strokeWidth="3"
-                      fill="none"
-                    />
-                    <circle
-                      cx="96"
-                      cy="96"
-                      r="90"
-                      stroke="url(#gradient)"
-                      strokeWidth="3"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeDasharray={`${2 * Math.PI * 90}`}
-                      strokeDashoffset={`${2 * Math.PI * 90 * (countdown / 10)}`}
-                      className="transition-all duration-1000 ease-linear drop-shadow-[0_0_10px_rgba(34,211,238,0.8)]"
-                    />
-                    <defs>
-                      <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#06b6d4" />
-                        <stop offset="50%" stopColor="#a855f7" />
-                        <stop offset="100%" stopColor="#ec4899" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-
-                  {/* Center Percentage */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-white/80">
-                      {Math.round((10 - countdown) * 10)}%
-                    </span>
-                  </div>
+            {isCountdownStarted && (
+              <div className="text-center">
+                <div
+                  className="text-8xl font-bold text-white mb-4 drop-shadow-2xl animate-pulse"
+                  style={{ textShadow: '3px 3px 12px rgba(0,0,0,0.7)' }}
+                >
+                  {countdown}
                 </div>
-
-                {/* Loading Dots */}
-                <div className="mt-8 flex items-center justify-center gap-2">
+                <div className="flex items-center justify-center gap-2">
                   {[0, 1, 2].map((i) => (
                     <div
                       key={i}
-                      className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce"
+                      className="w-3 h-3 bg-white rounded-full animate-bounce"
                       style={{ animationDelay: `${i * 0.15}s` }}
                     />
                   ))}
@@ -222,70 +240,85 @@ function App() {
           </div>
         </div>
 
-        {/* Custom CSS for Animations */}
+        {/* 
+          CONFETTI — outside the shutter (z-50) so it stays on screen
+          even as the shutter slides up 
+        */}
+        {isUnveiling && (
+          <div className="absolute inset-0 overflow-hidden pointer-events-none z-50">
+            {confettiPieces.map((piece, i) => (
+              <div
+                key={i}
+                className="absolute"
+                style={{
+                  left: piece.left,
+                  top: `-5%`,
+                  width: piece.width,
+                  height: piece.height,
+                  backgroundColor: piece.backgroundColor,
+                  borderRadius: piece.borderRadius,
+                  animation: piece.animation,
+                  animationDelay: piece.animationDelay,
+                  transform: piece.transform,
+                  opacity: 0.9,
+                }}
+              />
+            ))}
+          </div>
+        )}
+
+        {/* Animations */}
         <style>{`
-          @keyframes float {
-            0%, 100% {
-              transform: translateY(0) translateX(0);
-              opacity: 0.4;
-            }
-            50% {
-              transform: translateY(-20px) translateX(10px);
-              opacity: 0.8;
-            }
+          @keyframes float-slow {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-15px) translateX(8px); }
           }
-          
-          @keyframes shimmer {
-            0% {
-              transform: translateX(-100%);
-            }
-            100% {
-              transform: translateX(100%);
-            }
+          @keyframes float-medium {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-10px) translateX(-8px); }
           }
-          
-          @keyframes gradient {
-            0%, 100% {
-              background-position: 0% 50%;
-            }
-            50% {
-              background-position: 100% 50%;
-            }
+          @keyframes pulse-slow {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
           }
-          
-          .animate-shimmer {
-            animation: shimmer 3s infinite;
+          @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
           }
-          
-          .animate-gradient {
-            background-size: 200% auto;
-            animation: gradient 3s ease infinite;
+          @keyframes spin-very-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
           }
+          @keyframes confettiFall {
+            0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 1; }
+            100% { transform: translateY(110vh) rotate(720deg) scale(0.5); opacity: 0.2; }
+          }
+          .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+          .animate-float-medium { animation: float-medium 5s ease-in-out infinite; }
+          .animate-pulse-slow { animation: pulse-slow 3s ease-in-out infinite; }
+          .animate-spin-slow { animation: spin-slow 8s linear infinite; }
+          .animate-spin-very-slow { animation: spin-very-slow 12s linear infinite; }
         `}</style>
       </div>
     )
   }
 
+  // ── Revealed / Main App ──────────────────────────────────────────────────────
   return (
     <div
-      className="relative min-h-screen" // relative দেওয়াটা খুব জরুরি
+      className="relative min-h-screen"
       style={{
         backgroundImage: `url(${bgImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center center",
-        backgroundRepeat: "no-repeat",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center',
+        backgroundRepeat: 'no-repeat',
       }}
     >
-
-      {/* Premium glass overlay across full landing section */}
       <div
         className="absolute inset-0 pointer-events-none z-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03)_42%,rgba(255,255,255,0.06))] backdrop-blur-[3px]"
-        style={{
-          boxShadow: 'inset 0 0 70px rgba(15, 23, 42, 0.12)'
-        }}
+        style={{ boxShadow: 'inset 0 0 70px rgba(15, 23, 42, 0.12)' }}
       />
 
-      {/* মেইন কন্টেন্ট: z-10 দেওয়া হয়েছে যেন ওভারলে এর ওপরে থাকে */}
       <div className="relative z-10 flex flex-col lg:flex-row items-center lg:items-center min-h-[calc(100vh-68px)] px-4 sm:px-8 md:px-16 py-6 gap-8">
         <div className="flex flex-col justify-between flex-1 w-full">
           <Hero />

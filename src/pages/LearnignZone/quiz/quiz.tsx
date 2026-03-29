@@ -6,6 +6,7 @@ import TopNav from "../../../components/Shared/TopBar";
 import BottomNav from "../../../components/Shared/BottomNav";
 import type { FillBlanksQuestionProps, HotspotQuestionProps, ImageSelectionQuestionProps, MCQQuestionProps, QuestionRendererProps, QuizAnswer, QuizAnswers, QuizProps, QuizQuestion, SequenceQuestionProps, TrueFalseQuestionProps, PuzzleQuestionProps } from "../../../types";
 import { QuestionHeader } from "../../../components/Quiz/QuestionHeader";
+import useAxios from "../../../hooks/useAxios";
 
 const isNonArrayObject = (
     value: QuizAnswer
@@ -1111,6 +1112,8 @@ export default function Quiz({ onFinish }: QuizProps) {
 
     const TOTAL = quizQuestions.length;
 
+    const axios = useAxios();
+
 
     const q = quizQuestions[current];
     const answer = answers[q.id] ?? null;
@@ -1128,13 +1131,8 @@ export default function Quiz({ onFinish }: QuizProps) {
             try {
                 const difficulty = quizQuestions[0]?.difficulty;
                 if (difficulty) {
-                    await fetch("https://meet-club.vercel.app/api/v1/students/quiz-completion", {
-                        method: "PATCH",
-                        headers: {
-                            "Content-Type": "application/json",
-                            Authorization: `${localStorage.getItem("token")}`,
-                        },
-                        body: JSON.stringify({ quizLevel: difficulty }),
+                    await axios.patch(`/user/update-quiz-level/${chapterId}`, {
+                        level: difficulty,
                     });
                 }
             } catch (err) {

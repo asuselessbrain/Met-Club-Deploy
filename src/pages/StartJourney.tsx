@@ -4,6 +4,7 @@ import storyImg from "../assets/images/learning-zone.png";
 import simulationImg from "../assets/images/practice-zone.png";
 import { useNavigate } from "react-router";
 import bgImage from "../assets/images/start-journey-page-bg.jpeg";
+import useAxios from "../hooks/useAxios";
 
 
 const user = {
@@ -52,10 +53,22 @@ export default function StartJourney() {
 
   const navigate = useNavigate()
 
+  const axios = useAxios();
+
+  const [isChapterOneCompleted, setIsChapterOneCompleted] = useState(false);
+
+  useEffect(() => {
+    const checkChapterOneCompletion = async () => {
+      const res = await axios.get("/user/chapter-one-completion-status");
+      setIsChapterOneCompleted(res.data.data);
+    }
+    checkChapterOneCompletion();
+  }, [axios]);
+
   const handleLogout = () => {
-  localStorage.removeItem("token");
-  navigate("/");
-}
+    localStorage.removeItem("token");
+    navigate("/");
+  }
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -69,10 +82,10 @@ export default function StartJourney() {
 
   return (
     <div className="relative min-h-screen flex flex-col overflow-x-hidden" style={{
-    backgroundImage: `url(${bgImage})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center"
-  }}>
+      backgroundImage: `url(${bgImage})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center"
+    }}>
 
       <div
         className="absolute inset-0 pointer-events-none z-0"
@@ -261,7 +274,7 @@ export default function StartJourney() {
               {/* Logout */}
               <div style={{ borderTop: "1.5px solid rgba(239,68,68,0.15)" }}>
                 <button
-                onClick={handleLogout}
+                  onClick={handleLogout}
                   className="w-full flex items-center gap-3 px-4 py-2.5 transition-colors duration-150"
                   style={{
                     color: "#b45309",
@@ -347,31 +360,32 @@ export default function StartJourney() {
           </div>
 
           <div className="card2">
-          <ZoneCard
-            title="স্টোরি সিচুয়েশন"
-            titleColor="#9a3412"
-            borderColor="#fb923c"
-            btnBg="linear-gradient(135deg, #fb923c, #f97316)"
-            btnShadow="rgba(249,115,22,0.42)"
-            btnLabel="সিমুলেশনে প্রবেশ করুন"
-            link="https://play.unity.com/en/games/3a2b8c05-a5e6-4a0e-98d5-e5f0e34ace11/disaster-management"
-            description={
-              <>
-                <strong>আপনার দক্ষতা পরীক্ষা করুন!</strong>
-                <br />
-                বাস্তব জীবনের সিমুলেশনে সিদ্ধান্ত নিন।
-              </>
-            }
-            blobColor="#fdba74"
-            illustration={
-              <img
-                src={simulationImg}
-                alt="Simulation Zone"
-                className="w-40 h-40 object-contain"
-              />
-            }
-          />
-        </div>
+            <ZoneCard
+              title="স্টোরি সিচুয়েশন"
+              titleColor="#9a3412"
+              borderColor="#fb923c"
+              btnBg="linear-gradient(135deg, #fb923c, #f97316)"
+              btnShadow="rgba(249,115,22,0.42)"
+              btnLabel={isChapterOneCompleted ? "সিমুলেশনে প্রবেশ করুন" : "প্রথম অধ্যায় সম্পন্ন করুন"}
+              disabled={!isChapterOneCompleted}
+              link="https://play.unity.com/en/games/3a2b8c05-a5e6-4a0e-98d5-e5f0e34ace11/disaster-management"
+              description={
+                <>
+                  <strong>আপনার দক্ষতা পরীক্ষা করুন!</strong>
+                  <br />
+                  বাস্তব জীবনের সিমুলেশনে সিদ্ধান্ত নিন।
+                </>
+              }
+              blobColor="#fdba74"
+              illustration={
+                <img
+                  src={simulationImg}
+                  alt="Simulation Zone"
+                  className="w-40 h-40 object-contain"
+                />
+              }
+            />
+          </div>
         </div>
       </div>
 
