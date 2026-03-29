@@ -231,7 +231,7 @@ function App() {
                 </h2>
                 <button
                   onClick={handleStartUnveil}
-                  className="px-12 py-4 text-lg font-bold text-white bg-gradient-to-r from-red-600 to-red-700 rounded-full shadow-2xl hover:from-red-500 hover:to-red-600 hover:scale-105 transition-all duration-300 border-2 border-red-400 cursor-pointer"
+                  className="px-12 py-4 text-lg font-bold text-white bg-linear-to-r from-red-600 to-red-700 rounded-full shadow-2xl hover:from-red-500 hover:to-red-600 hover:scale-105 transition-all duration-300 border-2 border-red-400 cursor-pointer"
                   style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}
                 >
                   Start Experience

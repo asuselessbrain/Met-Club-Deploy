@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useCallback, useEffect, useMemo, useRef } from "react";
 import type { CategorizeQuestionProps, MatchQuestionProps } from "../../../types";
 
 const stableHash = (text: string) => {
@@ -10,21 +10,196 @@ const stableHash = (text: string) => {
 };
 
 function useDragDrop(onDrop: (dragId: string, dropId: string) => void) {
+  // স্ক্রলিং এবং মাউসের পজিশন ট্র্যাক করার জন্য Ref
+  const requestRef = useRef<number | null>(null);
+  const mouseY = useRef<number | null>(null);
+  const isDragging = useRef<boolean>(false);
+  const scrollContainerRef = useRef<HTMLElement | null>(null);
+  const activeTouchDragId = useRef<string | null>(null);
+
+  const getScrollableParent = useCallback((node: EventTarget | null): HTMLElement | null => {
+    if (!(node instanceof HTMLElement)) return null;
+
+    let current: HTMLElement | null = node;
+    while (current && current !== document.body) {
+      const { overflowY } = window.getComputedStyle(current);
+      const canScroll =
+        (overflowY === "auto" || overflowY === "scroll" || overflowY === "overlay") &&
+        current.scrollHeight > current.clientHeight;
+
+      if (canScroll) return current;
+      current = current.parentElement;
+    }
+
+    return null;
+  }, []);
+
+  // স্মুথ স্ক্রলিং লুপ
+  const scrollLoop = useCallback(function loop() {
+    if (!isDragging.current || mouseY.current === null) return;
+
+    const scrollThreshold = 110;
+    const scrollSpeed = 10;
+    const activeContainer = scrollContainerRef.current;
+
+    if (activeContainer) {
+      const rect = activeContainer.getBoundingClientRect();
+      const distanceFromTop = mouseY.current - rect.top;
+      const distanceFromBottom = rect.bottom - mouseY.current;
+
+      if (distanceFromTop < scrollThreshold && activeContainer.scrollTop > 0) {
+        activeContainer.scrollBy({ top: -scrollSpeed, behavior: "auto" });
+      } else if (
+        distanceFromBottom < scrollThreshold &&
+        activeContainer.scrollTop + activeContainer.clientHeight < activeContainer.scrollHeight
+      ) {
+        activeContainer.scrollBy({ top: scrollSpeed, behavior: "auto" });
+      }
+    } else {
+      const windowHeight = window.innerHeight;
+
+      if (mouseY.current < scrollThreshold) {
+        window.scrollBy({ top: -scrollSpeed, behavior: "auto" });
+      } else if (windowHeight - mouseY.current < scrollThreshold) {
+        window.scrollBy({ top: scrollSpeed, behavior: "auto" });
+      }
+    }
+
+    // লুপ কন্টিনিউ রাখা
+    requestRef.current = requestAnimationFrame(loop);
+  }, []);
+
+  const startAutoScroll = useCallback(() => {
+    if (!isDragging.current) {
+      isDragging.current = true;
+      requestRef.current = requestAnimationFrame(scrollLoop);
+    }
+  }, [scrollLoop]);
+
+  const stopAutoScroll = useCallback(() => {
+    isDragging.current = false;
+    mouseY.current = null;
+    scrollContainerRef.current = null;
+    if (requestRef.current) {
+      cancelAnimationFrame(requestRef.current);
+      requestRef.current = null;
+    }
+  }, []);
+
+  // ড্র্যাগ করার সময় মাউসের পজিশন ট্র্যাক করার জন্য গ্লোবাল ইভেন্ট
+  useEffect(() => {
+    const handleGlobalDragOver = (e: DragEvent) => {
+      if (isDragging.current) {
+        mouseY.current = e.clientY;
+        const container = getScrollableParent(e.target);
+        if (container) {
+          scrollContainerRef.current = container;
+        }
+      }
+    };
+
+    window.addEventListener("dragover", handleGlobalDragOver);
+    return () => {
+      window.removeEventListener("dragover", handleGlobalDragOver);
+      if (requestRef.current) {
+        cancelAnimationFrame(requestRef.current);
+        requestRef.current = null;
+      }
+    };
+  }, [getScrollableParent]);
+
   const getDragProps = (id: string) => ({
     draggable: true,
     onDragStart: (event: React.DragEvent<HTMLElement>) => {
       event.dataTransfer.setData("text/plain", id);
       event.dataTransfer.effectAllowed = "move";
+      scrollContainerRef.current = getScrollableParent(event.currentTarget);
+      mouseY.current = event.clientY;
+
+      // ড্র্যাগ শুরু হলে অটো-স্ক্রল লুপ চালু করা
+      startAutoScroll();
+
+      // ড্র্যাগ শুরু হলে ঘোস্ট ইমেজ বা স্টাইল ঠিক রাখার জন্য
+      setTimeout(() => {
+        const target = event.target as HTMLElement;
+        target.style.opacity = "0.6";
+      }, 0);
+    },
+    onDragEnd: (event: React.DragEvent<HTMLElement>) => {
+      // ড্র্যাগ শেষ হলে অটো-স্ক্রল বন্ধ করা
+      stopAutoScroll();
+      const target = event.target as HTMLElement;
+      target.style.opacity = "1";
+    },
+    onTouchStart: (event: React.TouchEvent<HTMLElement>) => {
+      const touch = event.touches[0];
+      if (!touch) return;
+
+      activeTouchDragId.current = id;
+      scrollContainerRef.current = getScrollableParent(event.currentTarget);
+      mouseY.current = touch.clientY;
+      startAutoScroll();
+
+      const target = event.currentTarget as HTMLElement;
+      target.style.opacity = "0.6";
+    },
+    onTouchMove: (event: React.TouchEvent<HTMLElement>) => {
+      if (!activeTouchDragId.current) return;
+
+      const touch = event.touches[0];
+      if (!touch) return;
+
+      event.preventDefault();
+      mouseY.current = touch.clientY;
+
+      const nodeUnderFinger = document.elementFromPoint(touch.clientX, touch.clientY);
+      const container = getScrollableParent(nodeUnderFinger);
+      if (container) {
+        scrollContainerRef.current = container;
+      }
+    },
+    onTouchEnd: (event: React.TouchEvent<HTMLElement>) => {
+      const touch = event.changedTouches[0];
+      const dragId = activeTouchDragId.current;
+      activeTouchDragId.current = null;
+
+      stopAutoScroll();
+
+      const target = event.currentTarget as HTMLElement;
+      target.style.opacity = "1";
+
+      if (!touch || !dragId) return;
+
+      const elementAtPoint = document.elementFromPoint(touch.clientX, touch.clientY);
+      const dropZone = elementAtPoint instanceof HTMLElement
+        ? elementAtPoint.closest("[data-drop-id]")
+        : null;
+      const dropId = dropZone instanceof HTMLElement ? dropZone.dataset.dropId : undefined;
+
+      if (dropId) {
+        onDrop(dragId, dropId);
+      }
+    },
+    onTouchCancel: (event: React.TouchEvent<HTMLElement>) => {
+      activeTouchDragId.current = null;
+      stopAutoScroll();
+      const target = event.currentTarget as HTMLElement;
+      target.style.opacity = "1";
     },
   });
 
   const getDropProps = (dropId: string) => ({
+    "data-drop-id": dropId,
     onDragOver: (event: React.DragEvent<HTMLElement>) => {
       event.preventDefault();
       event.dataTransfer.dropEffect = "move";
+      // ড্রপ জোনের ওপরে মাউসের পজিশন আপডেট করা
+      mouseY.current = event.clientY;
     },
     onDrop: (event: React.DragEvent<HTMLElement>) => {
       event.preventDefault();
+      stopAutoScroll();
+      
       const dragId = event.dataTransfer.getData("text/plain");
       if (dragId) {
         onDrop(dragId, dropId);
