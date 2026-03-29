@@ -16,6 +16,7 @@ function useDragDrop(onDrop: (dragId: string, dropId: string) => void) {
   const isDragging = useRef<boolean>(false);
   const scrollContainerRef = useRef<HTMLElement | null>(null);
   const activeTouchDragId = useRef<string | null>(null);
+  const activeTouchElementRef = useRef<HTMLElement | null>(null);
 
   const getScrollableParent = useCallback((node: EventTarget | null): HTMLElement | null => {
     if (!(node instanceof HTMLElement)) return null;
@@ -130,6 +131,12 @@ function useDragDrop(onDrop: (dragId: string, dropId: string) => void) {
       const touch = e.changedTouches[0];
       const dragId = activeTouchDragId.current;
 
+      if (activeTouchElementRef.current) {
+        activeTouchElementRef.current.style.touchAction = "";
+        activeTouchElementRef.current.style.opacity = "1";
+      }
+      activeTouchElementRef.current = null;
+
       activeTouchDragId.current = null;
       stopAutoScroll();
 
@@ -185,6 +192,7 @@ function useDragDrop(onDrop: (dragId: string, dropId: string) => void) {
       if (!touch) return;
 
       activeTouchDragId.current = id;
+      activeTouchElementRef.current = event.currentTarget;
       scrollContainerRef.current = getScrollableParent(event.currentTarget);
       mouseY.current = touch.clientY;
       startAutoScroll();
@@ -209,15 +217,12 @@ function useDragDrop(onDrop: (dragId: string, dropId: string) => void) {
       }
     },
     onTouchEnd: (event: React.TouchEvent<HTMLElement>) => {
-      activeTouchDragId.current = null;
-      stopAutoScroll();
-
-      const target = event.currentTarget as HTMLElement;
-      target.style.touchAction = "";
-      target.style.opacity = "1";
+      // Global touchend listener handles drop detection and cleanup.
+      event.preventDefault();
     },
     onTouchCancel: (event: React.TouchEvent<HTMLElement>) => {
       activeTouchDragId.current = null;
+      activeTouchElementRef.current = null;
       stopAutoScroll();
       const target = event.currentTarget as HTMLElement;
       target.style.touchAction = "";
