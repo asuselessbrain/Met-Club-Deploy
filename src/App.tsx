@@ -81,17 +81,38 @@ function App() {
 
   if (!isRevealed) {
     return (
-      <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-black">
+      <div className="relative flex min-h-screen items-center justify-center overflow-hidden">
 
         {/* 🔊 Hidden audio */}
         <audio ref={audioRef} src={CLAP_AUDIO_URL} preload="auto" />
 
-        {/* 
-          SHUTTER LAYER — the Unveiling image sits here.
-          Normally fully visible (translateY: 0).
-          When unveiling starts, it slides UP out of view (translateY: -100%)
-          like a shop shutter being rolled up.
-        */}
+        {/* ── LAYER 1 (bottom): Main landing page — always visible underneath ── */}
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: `url(${bgImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center center',
+            backgroundRepeat: 'no-repeat',
+          }}
+        >
+          {/* Glass overlay — same as revealed state */}
+          <div
+            className="absolute inset-0 pointer-events-none bg-[linear-gradient(120deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03)_42%,rgba(255,255,255,0.06))] backdrop-blur-[3px]"
+            style={{ boxShadow: 'inset 0 0 70px rgba(15, 23, 42, 0.12)' }}
+          />
+          {/* Hero + Login rendered below, visible as shutter lifts */}
+          <div className="relative z-10 flex flex-col lg:flex-row items-center min-h-screen px-4 sm:px-8 md:px-16 py-6 gap-8">
+            <div className="flex flex-col justify-between flex-1 w-full">
+              <Hero />
+            </div>
+            <div className="w-full max-w-md lg:w-1/3 mt-6 lg:mt-0 flex justify-center lg:justify-start">
+              <Login />
+            </div>
+          </div>
+        </div>
+
+        {/* ── LAYER 2 (top): Shutter — slides UP when unveiling ── */}
         <div
           className="absolute inset-0 z-20"
           style={{
@@ -99,7 +120,7 @@ function App() {
             transition: isUnveiling ? 'transform 2s cubic-bezier(0.4, 0, 0.2, 1)' : 'none',
           }}
         >
-          {/* The Unveiling background image */}
+          {/* Unveiling background image */}
           <div
             className="absolute inset-0"
             style={{
@@ -113,7 +134,7 @@ function App() {
           {/* Subtle dark overlay for readability */}
           <div className="absolute inset-0 bg-black/30" />
 
-          {/* Animated Weather Icons — inside shutter so they scroll up with it */}
+          {/* Animated Weather Icons */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute top-[8%] left-[8%] w-16 h-16 opacity-70 animate-float-slow">
               <svg viewBox="0 0 100 100" fill="none" stroke="rgba(255,200,200,0.9)" strokeWidth="3">
@@ -210,7 +231,7 @@ function App() {
                 </h2>
                 <button
                   onClick={handleStartUnveil}
-                  className="px-12 py-4 text-lg font-bold text-white bg-linear-to-r from-red-600 to-red-700 rounded-full shadow-2xl hover:from-red-500 hover:to-red-600 hover:scale-105 transition-all duration-300 border-2 border-red-400 cursor-pointer"
+                  className="px-12 py-4 text-lg font-bold text-white bg-gradient-to-r from-red-600 to-red-700 rounded-full shadow-2xl hover:from-red-500 hover:to-red-600 hover:scale-105 transition-all duration-300 border-2 border-red-400 cursor-pointer"
                   style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}
                 >
                   Start Experience
@@ -240,10 +261,7 @@ function App() {
           </div>
         </div>
 
-        {/* 
-          CONFETTI — outside the shutter (z-50) so it stays on screen
-          even as the shutter slides up 
-        */}
+        {/* CONFETTI — z-50, above shutter, stays on screen as shutter slides up */}
         {isUnveiling && (
           <div className="absolute inset-0 overflow-hidden pointer-events-none z-50">
             {confettiPieces.map((piece, i) => (
