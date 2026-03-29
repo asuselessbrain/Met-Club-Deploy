@@ -368,7 +368,7 @@ export default function StartJourney() {
               btnShadow="rgba(249,115,22,0.42)"
               btnLabel={isChapterOneCompleted ? "সিমুলেশনে প্রবেশ করুন" : "প্রথম অধ্যায় সম্পন্ন করুন"}
               disabled={!isChapterOneCompleted}
-              link="https://play.unity.com/en/games/3a2b8c05-a5e6-4a0e-98d5-e5f0e34ace11/disaster-management"
+              link="http://119.15.153.74:8080"
               description={
                 <>
                   <strong>আপনার দক্ষতা পরীক্ষা করুন!</strong>
