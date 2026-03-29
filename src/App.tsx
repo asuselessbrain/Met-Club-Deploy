@@ -51,7 +51,7 @@ function App() {
     // 🔊 Play clap audio
     if (audioRef.current) {
       audioRef.current.currentTime = 0
-      audioRef.current.play().catch(() => {})
+      audioRef.current.play().catch(() => { })
     }
 
     const timeoutId = window.setTimeout(() => {
@@ -217,9 +217,8 @@ function App() {
 
           {/* Button / Countdown — inside shutter */}
           <div
-            className={`absolute inset-0 flex items-center justify-center z-10 transition-all duration-700 ${
-              isUnveiling ? 'opacity-0 scale-110' : 'opacity-100 scale-100'
-            }`}
+            className={`absolute inset-0 flex items-center justify-center z-10 transition-all duration-700 ${isUnveiling ? 'opacity-0 scale-110' : 'opacity-100 scale-100'
+              }`}
           >
             {!isCountdownStarted && (
               <div className="text-center">
@@ -338,12 +337,7 @@ function App() {
       />
 
       <div className="relative z-10 flex flex-col lg:flex-row items-center lg:items-center min-h-[calc(100vh-68px)] px-4 sm:px-8 md:px-16 py-6 gap-8">
-        <div className="flex flex-col justify-between flex-1 w-full">
-          <Hero />
-        </div>
-        <div className="w-full max-w-md lg:w-1/3 mt-6 lg:mt-0 flex justify-center lg:justify-start">
-          <Login />
-        </div>
+        <Hero />
       </div>
 
       <footer className="relative z-10 text-white py-6 text-sm text-center drop-shadow-md">

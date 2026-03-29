@@ -1,14 +1,15 @@
 import { Link } from "react-router";
-import logo from "../../assets/images/logo_original.png";
+import logo from "../../assets/images/white_logo.png";
+import Login from "../Login/Login";
 
 export default function Hero() {
     return (
-        <div className="text-white">
-            <div className="flex flex-col lg:flex-row lg:justify-start items-center justify-center">
+        <div className="text-white w-full">
+            <div className="grid grid-cols-1 lg:grid-cols-3 items-center w-full gap-8 lg:gap-10 xl:gap-12">
                 {/* Logo + Animated icons */}
-                <div className="relative">
+                <div className="relative flex justify-center">
                     <div className="animate-float">
-                        <img src={logo} alt="MET CLUB LOGO" className="w-157.5" />
+                        <img src={logo} alt="MET CLUB LOGO" className="w-80" />
                     </div>
 
                     <div className="absolute top-2 sm:top-4 md:top-8 -right-2 sm:-right-4 md:-right-8 lg:-right-4 xl:-right-8 text-6xl animate-float-delayed">
@@ -22,18 +23,21 @@ export default function Hero() {
                     </div>
                 </div>
 
-                <div className="space-y-4 font-semibold lg:ml-8 max-w-full lg:max-w-3xl xl:max-w-4xl">
-                    <p className="whitespace-nowrap text-3xl md:text-6xl lg:text-3xl xl:text-5xl 2xl:text-6xl text-center lg:text-left font-bold">
+                <div className="space-y-4 font-semibold max-w-full w-full lg:max-w-2xl justify-self-center">
+                    <p className="text-3xl md:text-6xl lg:text-3xl xl:text-5xl 2xl:text-6xl text-center font-bold leading-tight">
                         মেট ক্লাব ই-লার্নিং প্ল্যাটফর্ম
                     </p>
-                    <p className="text-center lg:text-left md:text-xl lg:text-[16px] xl:text-xl">
+                    <p className="text-center md:text-xl lg:text-[16px] xl:text-xl">
                         এসো আবহাওয়া শিখি খেলতে খেলতে
                     </p>
-                    <Link to="/about" className="flex justify-center lg:justify-start mt-6">
+                    <Link to="/about" className="flex justify-center mt-6">
                         <button className="px-6 py-3 cursor-pointer bg-white/85 text-red-700 font-semibold rounded-lg hover:bg-red-50 transition">
                             মেট ক্লাব সম্পর্কে জানুন
                         </button>
                     </Link>
+                </div>
+                <div className="w-full max-w-md lg:w-105 justify-self-center">
+                    <Login />
                 </div>
             </div>
         </div>
