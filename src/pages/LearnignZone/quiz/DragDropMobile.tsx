@@ -21,17 +21,19 @@ function useDragDrop(onDrop: (dragId: string, dropId: string) => void) {
     if (!(node instanceof HTMLElement)) return null;
 
     let current: HTMLElement | null = node;
-    while (current && current !== document.body) {
+    while (current) {
       const { overflowY } = window.getComputedStyle(current);
       const canScroll =
         (overflowY === "auto" || overflowY === "scroll" || overflowY === "overlay") &&
         current.scrollHeight > current.clientHeight;
 
       if (canScroll) return current;
+      if (current === document.body || current === document.documentElement) break;
       current = current.parentElement;
     }
 
-    return null;
+    const root = document.scrollingElement;
+    return root instanceof HTMLElement ? root : null;
   }, []);
 
   // স্মুথ স্ক্রলিং লুপ
@@ -42,7 +44,7 @@ function useDragDrop(onDrop: (dragId: string, dropId: string) => void) {
     const scrollSpeed = 10;
     const activeContainer = scrollContainerRef.current;
 
-    if (activeContainer) {
+    if (activeContainer && activeContainer !== document.body && activeContainer !== document.documentElement) {
       const rect = activeContainer.getBoundingClientRect();
       const distanceFromTop = mouseY.current - rect.top;
       const distanceFromBottom = rect.bottom - mouseY.current;
@@ -108,6 +110,53 @@ function useDragDrop(onDrop: (dragId: string, dropId: string) => void) {
     };
   }, [getScrollableParent]);
 
+  useEffect(() => {
+    const handleGlobalTouchMove = (e: TouchEvent) => {
+      if (!isDragging.current) return;
+      const touch = e.touches[0];
+      if (!touch) return;
+
+      mouseY.current = touch.clientY;
+      const container = getScrollableParent(document.elementFromPoint(touch.clientX, touch.clientY));
+      if (container) {
+        scrollContainerRef.current = container;
+      }
+
+      // Native page swipe/scroll block করে auto-scroll loop কে control দেই
+      e.preventDefault();
+    };
+
+    const handleGlobalTouchEnd = (e: TouchEvent) => {
+      const touch = e.changedTouches[0];
+      const dragId = activeTouchDragId.current;
+
+      activeTouchDragId.current = null;
+      stopAutoScroll();
+
+      if (!touch || !dragId) return;
+
+      const elementAtPoint = document.elementFromPoint(touch.clientX, touch.clientY);
+      const dropZone = elementAtPoint instanceof HTMLElement
+        ? elementAtPoint.closest("[data-drop-id]")
+        : null;
+      const dropId = dropZone instanceof HTMLElement ? dropZone.dataset.dropId : undefined;
+
+      if (dropId) {
+        onDrop(dragId, dropId);
+      }
+    };
+
+    window.addEventListener("touchmove", handleGlobalTouchMove, { passive: false });
+    window.addEventListener("touchend", handleGlobalTouchEnd);
+    window.addEventListener("touchcancel", handleGlobalTouchEnd);
+
+    return () => {
+      window.removeEventListener("touchmove", handleGlobalTouchMove);
+      window.removeEventListener("touchend", handleGlobalTouchEnd);
+      window.removeEventListener("touchcancel", handleGlobalTouchEnd);
+    };
+  }, [getScrollableParent, onDrop, stopAutoScroll]);
+
   const getDragProps = (id: string) => ({
     draggable: true,
     onDragStart: (event: React.DragEvent<HTMLElement>) => {
@@ -141,6 +190,7 @@ function useDragDrop(onDrop: (dragId: string, dropId: string) => void) {
       startAutoScroll();
 
       const target = event.currentTarget as HTMLElement;
+      target.style.touchAction = "none";
       target.style.opacity = "0.6";
     },
     onTouchMove: (event: React.TouchEvent<HTMLElement>) => {
@@ -159,31 +209,18 @@ function useDragDrop(onDrop: (dragId: string, dropId: string) => void) {
       }
     },
     onTouchEnd: (event: React.TouchEvent<HTMLElement>) => {
-      const touch = event.changedTouches[0];
-      const dragId = activeTouchDragId.current;
       activeTouchDragId.current = null;
-
       stopAutoScroll();
 
       const target = event.currentTarget as HTMLElement;
+      target.style.touchAction = "";
       target.style.opacity = "1";
-
-      if (!touch || !dragId) return;
-
-      const elementAtPoint = document.elementFromPoint(touch.clientX, touch.clientY);
-      const dropZone = elementAtPoint instanceof HTMLElement
-        ? elementAtPoint.closest("[data-drop-id]")
-        : null;
-      const dropId = dropZone instanceof HTMLElement ? dropZone.dataset.dropId : undefined;
-
-      if (dropId) {
-        onDrop(dragId, dropId);
-      }
     },
     onTouchCancel: (event: React.TouchEvent<HTMLElement>) => {
       activeTouchDragId.current = null;
       stopAutoScroll();
       const target = event.currentTarget as HTMLElement;
+      target.style.touchAction = "";
       target.style.opacity = "1";
     },
   });
