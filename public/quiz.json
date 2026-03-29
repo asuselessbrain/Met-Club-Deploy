@@ -41,7 +41,7 @@
             "মিথ্যা"
         ],
         "correctAnswer": "সত্য",
-        "image": "/assets/images/chapter1/E-1_Q-2.png",
+        "image": "/assets/images/chapter1/E-1_Q-2.jpeg",
         "audio": "/assets/audios/chapter-1/easyQuiz2.mp3"
     },
     {
@@ -59,7 +59,7 @@
             "তাপমাত্রা"
         ],
         "correctAnswer": "আবহাওয়া",
-        "image": "/assets/images/chapter1/E-1_Q-3.png",
+        "image": "/assets/images/chapter1/E-1_Q-3.jpeg",
         "audio": "/assets/audios/chapter-1/easyQuiz3.mp3"
     },
     {
@@ -74,12 +74,12 @@
             {
                 "id": "weather_image",
                 "label": "সূর্য সহ আলো",
-                "image": "/assets/images/chapter1/E-1_Q-4.1.png"
+                "image": "/assets/images/chapter1/E-1_Q-4.1.jpeg"
             },
             {
                 "id": "fruit_image",
                 "label": "রঙিন ফল",
-                "image": "/assets/images/chapter1/E-1_Q-4.2.png"
+                "image": "/assets/images/chapter1/E-1_Q-4.2.jpeg"
             }
         ],
         "correctAnswer": "weather_image",
@@ -98,22 +98,22 @@
             {
                 "id": "L1",
                 "label": "সূর্যের ছবি",
-                "image": "/assets/images/chapter1/E-1_Q-5.1.png"
+                "image": "/assets/images/chapter1/E-1_Q-5.1.jpeg"
             },
             {
                 "id": "L2",
                 "label": "মেঘের ছবি",
-                "image": "/assets/images/chapter1/E-1_Q-5.2.png"
+                "image": "/assets/images/chapter1/E-1_Q-5.2.jpeg"
             },
             {
                 "id": "L3",
                 "label": "বাতাসে দুলছে গাছের ছবি",
-                "image": "/assets/images/chapter1/E-1_Q-5.3.png"
+                "image": "/assets/images/chapter1/E-1_Q-5.3.jpeg"
             },
             {
                 "id": "L4",
                 "label": "থার্মোমিটারের ছবি",
-                "image": "/assets/images/chapter1/E-1_Q-5.4.png"
+                "image": "/assets/images/chapter1/E-1_Q-5.4.jpeg"
             }
         ],
         "rightItems": [
@@ -146,7 +146,7 @@
             "আজ বজ্রপাত হবে"
         ],
         "correctAnswer": "আজ প্রচণ্ড গরম পড়েছে",
-        "image": "/assets/images/chapter1/E-1_Q-6.png"
+        "image": "/assets/images/chapter1/E-1_Q-6.jpeg"
     },
     {
         "id": 7,
@@ -163,7 +163,7 @@
             "সাত-আবহাওয়া"
         ],
         "correctAnswer": "ছয়-জলবায়ু",
-        "image": "/assets/images/chapter1/E-1_Q-7.png"
+        "image": "/assets/images/chapter1/E-1_Q-7.jpeg"
     },
     {
         "id": 8,
@@ -178,7 +178,7 @@
             "মিথ্যা"
         ],
         "correctAnswer": "সত্য",
-        "image": "/assets/images/chapter1/E-1_Q-8.png"
+        "image": "/assets/images/chapter1/E-1_Q-8.jpeg"
     },
     {
         "id": 9,
@@ -193,19 +193,19 @@
                 "id": "A",
                 "text": "সকালে সূর্য ওঠা",
                 "emoji": "🌅",
-                "image": "/assets/images/chapter1/E-1_Q-9.1.png"
+                "image": "/assets/images/chapter1/E-1_Q-9.1.jpeg"
             },
             {
                 "id": "B",
                 "text": "দুপুরে তীব্র রোদ",
                 "emoji": "☀️",
-                "image": "/assets/images/chapter1/E-1_Q-9.2.png"
+                "image": "/assets/images/chapter1/E-1_Q-9.2.jpeg"
             },
             {
                 "id": "C",
                 "text": "বিকেলে বৃষ্টি",
                 "emoji": "🌧️",
-                "image": "/assets/images/chapter1/E-1_Q-9.3.png"
+                "image": "/assets/images/chapter1/E-1_Q-9.3.jpeg"
             }
         ],
         "correctAnswer": [
@@ -273,7 +273,7 @@
         "correctAnswer": [
             "storm"
         ],
-        "image": "/assets/images/chapter1/E-1_Q-11.png",
+        "image": "/assets/images/chapter1/E-1_Q-11.jpeg",
         "audio": "/assets/audios/chapter-1/medQuiz11.mp3"
     },
     {
@@ -291,7 +291,7 @@
             "৩০"
         ],
         "correctAnswer": "৩০",
-        "image": "/assets/images/chapter1/E-1_Q-12.png",
+        "image": "/assets/images/chapter1/E-1_Q-12.jpeg",
         "audio": "/assets/audios/chapter-1/medQuiz12.mp3"
     },
     {
@@ -307,7 +307,7 @@
             "মিথ্যা"
         ],
         "correctAnswer": "মিথ্যা",
-        "image": "/assets/images/chapter1/E-1_Q-13.png",
+        "image": "/assets/images/chapter1/E-1_Q-13.jpeg",
         "audio": "/assets/audios/chapter-1/medQuiz13.mp3"
     },
     {
@@ -360,7 +360,7 @@
             "শুধু শীতকাল"
         ],
         "correctAnswer": "ছয়টি ঋতু—এটাই বাংলাদেশের জলবায়ু",
-        "image": "/assets/images/chapter1/E-1_Q-15.png",
+        "image": "/assets/images/chapter1/E-1_Q-15.jpeg",
         "audio": "/assets/audios/chapter-1/medQuiz15.mp3"
     },
     {
@@ -413,7 +413,7 @@
             "বর্ষায় ছাতা নিয়ে যায়"
         ],
         "correctAnswer": "গরমে সুতি কাপড় ও শীতে সোয়েটার পরে",
-        "image": "/assets/images/chapter1/E-1_Q-17.png",
+        "image": "/assets/images/chapter1/E-1_Q-17.jpeg",
         "audio": "/assets/audios/chapter-1/medQuiz17.mp3"
     },
     {
@@ -429,7 +429,7 @@
             "মিথ্যা"
         ],
         "correctAnswer": "সত্য",
-        "image": "/assets/images/chapter1/E-1_Q-18.png",
+        "image": "/assets/images/chapter1/E-1_Q-18.jpeg",
         "audio": "/assets/audios/chapter-1/medQuiz18.mp3"
     },
     {
@@ -535,7 +535,7 @@
             "দুটোই জলবায়ু"
         ],
         "correctAnswer": "বাম দৃশ্য আবহাওয়া, ডান দৃশ্য জলবায়ু",
-        "image": "/assets/images/chapter1/E-1_Q-21.png",
+        "image": "/assets/images/chapter1/E-1_Q-21.jpeg",
         "audio": "/assets/audios/chapter-1/hardQuiz21.mp3"
     },
     {
@@ -551,7 +551,7 @@
             "মিথ্যা"
         ],
         "correctAnswer": "মিথ্যা",
-        "image": "/assets/images/chapter1/E-1_Q-22.png",
+        "image": "/assets/images/chapter1/E-1_Q-22.jpeg",
         "audio": "/assets/audios/chapter-1/hardQuiz22.mp3"
     },
     {
@@ -639,7 +639,7 @@
             "তাপমাত্রা-জলবায়ু"
         ],
         "correctAnswer": "আবহাওয়া-জলবায়ু",
-        "image": "/assets/images/chapter1/E-1_Q-25.png",
+        "image": "/assets/images/chapter1/E-1_Q-25.jpeg",
         "audio": "/assets/audios/chapter-1/hardQuiz25.mp3"
     },
     {
@@ -657,7 +657,7 @@
             "আজ বৃষ্টি হওয়াটা আবহাওয়া, কিন্তু জলবায়ু বদলাতে ১০০ বছর লাগে।"
         ],
         "correctAnswer": "একটি দিনের বৃষ্টিতে জলবায়ু বদলায় না।",
-        "image": "/assets/images/chapter1/E-1_Q-26.png",
+        "image": "/assets/images/chapter1/E-1_Q-26.jpeg",
         "audio": "/assets/audios/chapter-1/hardQuiz26.mp3"
     },
     {
@@ -720,7 +720,7 @@
             "শুধু গ্রীষ্মকাল বদলেছে, তাই এটি আবহাওয়ার পরিবর্তন।"
         ],
         "correctAnswer": "জলবায়ুর পরিবর্তন, কারণ এটি দীর্ঘ সময়ের ধারাবাহিক পরিবর্তন।",
-        "image": "/assets/images/chapter1/E-1_Q-28.png",
+        "image": "/assets/images/chapter1/E-1_Q-28.jpeg",
         "audio": "/assets/audios/chapter-1/hardQuiz28.mp3"
     },
     {
@@ -776,7 +776,7 @@
             "শুধু গত বছরের হিসাব দেখলেই চলবে।"
         ],
         "correctAnswer": "আবহাওয়ার তথ্য দেব, কারণ জলবায়ু বলে সাধারণত কখন বৃষ্টি হয়, কিন্তু এ বছর ঠিক কবে শুরু হবে তা জানতে আবহাওয়ার পূর্বাভাস দরকার।",
-        "image": "/assets/images/chapter1/E-1_Q-30.png",
+        "image": "/assets/images/chapter1/E-1_Q-30.jpeg",
         "audio": "/assets/audios/chapter-1/hardQuiz30.mp3"
     },
     {
@@ -2266,7 +2266,7 @@
         "correctAnswer": [
             "rain"
         ],
-        "image": "/assets/images/chapter3/Q-1.png",
+        "image": "/assets/images/chapter3/E-3_Q-1.jpeg",
         "audio": null
     },
     {
@@ -2282,7 +2282,7 @@
             "মিথ্যা"
         ],
         "correctAnswer": "মিথ্যা",
-        "image": "/assets/images/chapter3/Q-2.png",
+        "image": "/assets/images/chapter3/E-3_Q-2.jpeg",
         "audio": null
     },
     {
@@ -2300,7 +2300,7 @@
             "নাম"
         ],
         "correctAnswer": "দিক",
-        "image": "/assets/images/chapter3/Q-3.png",
+        "image": "/assets/images/chapter3/E-3_Q-3.jpeg",
         "audio": null
     },
     {
@@ -2315,12 +2315,12 @@
             {
                 "id": "img1",
                 "label": "বেলুন ফুলে আছে",
-                "image": "/assets/images/chapter3/Q-4.1.png"
+                "image": "/assets/images/chapter3/E-3_Q-4.1.jpeg"
             },
             {
                 "id": "img2",
                 "label": "বেলুন কুঁচকে গেছে",
-                "image": "/assets/images/chapter3/Q-4.2.png"
+                "image": "/assets/images/chapter3/E-3_Q-4.2.jpeg"
             }
         ],
         "correctAnswer": "img2",
@@ -2377,7 +2377,7 @@
             "পাহাড় থাকলে আবহাওয়া বদলায় না"
         ],
         "correctAnswer": "একই এলাকায় দুই রকম আবহাওয়া থাকতে পারে",
-        "image": "/assets/images/chapter3/Q-6.png",
+        "image": "/assets/images/chapter3/E-3_Q-6.jpeg",
         "audio": null
     },
     {
@@ -2395,7 +2395,7 @@
             "সূর্য"
         ],
         "correctAnswer": "পানি",
-        "image": "/assets/images/chapter3/Q-7.png",
+        "image": "/assets/images/chapter3/E-3_Q-7.jpeg",
         "audio": null
     },
     {
@@ -2411,7 +2411,7 @@
             "মিথ্যা"
         ],
         "correctAnswer": "মিথ্যা",
-        "image": "/assets/images/chapter3/Q-8.png",
+        "image": "/assets/images/chapter3/E-3_Q-8.jpeg",
         "audio": null
     },
     {
@@ -2426,17 +2426,17 @@
             {
                 "id": "A",
                 "text": "আকাশ পরিষ্কার, টুনটুনি মাঠে খেলছে",
-                "image": null
+                "image": "/assets/images/chapter3/E-3_Q-9.1.jpeg"
             },
             {
                 "id": "B",
                 "text": "বৃষ্টি শুরু হয়েছে, টুনটুনি দোকানের নিচে আশ্রয় নিয়েছে",
-                "image": null
+                "image": "/assets/images/chapter3/E-3_Q-9.2.jpeg"
             },
             {
                 "id": "C",
                 "text": "আকাশ কালো মেঘে ঢাকা",
-                "image": null
+                "image": "/assets/images/chapter3/E-3_Q-9.3.jpeg"
             }
         ],
         "correctAnswer": [
@@ -2501,7 +2501,7 @@
         "correctAnswer": [
             "everyone"
         ],
-        "image": "/assets/images/chapter3/Q-11.png",
+        "image": "/assets/images/chapter3/E-3_Q-11.jpeg",
         "audio": null
     },
     {
@@ -2519,7 +2519,7 @@
             "সহজ"
         ],
         "correctAnswer": "দুষ্টু",
-        "image": "/assets/images/chapter3/Q-12.png",
+        "image": "/assets/images/chapter3/E-3_Q-12.jpeg",
         "audio": null
     },
     {
@@ -2535,7 +2535,7 @@
             "মিথ্যা"
         ],
         "correctAnswer": "মিথ্যা",
-        "image": "/assets/images/chapter3/Q-13.png",
+        "image": "/assets/images/chapter3/E-3_Q-13.jpeg",
         "audio": null
     },
     {
@@ -2588,7 +2588,7 @@
             "বৃষ্টি হলে টিভি বন্ধ করে দিতে হয়"
         ],
         "correctAnswer": "আবহাওয়ার পূর্বাভাস মাঝে মাঝে ভুল হতে পারে",
-        "image": "/assets/images/chapter3/Q-15.png",
+        "image": "/assets/images/chapter3/E-3_Q-15.jpeg",
         "audio": null
     },
     {
@@ -2641,7 +2641,7 @@
             "নিয়ম"
         ],
         "correctAnswer": "খেলা",
-        "image": "/assets/images/chapter3/Q-17.png",
+        "image": "/assets/images/chapter3/E-3_Q-17.jpeg",
         "audio": null
     },
     {
@@ -2657,7 +2657,7 @@
             "মিথ্যা"
         ],
         "correctAnswer": "সত্য",
-        "image": "/assets/images/chapter3/Q-18.png",
+        "image": "/assets/images/chapter3/E-3_Q-18.jpeg",
         "audio": null
     },
     {
@@ -2762,7 +2762,7 @@
         "correctAnswer": [
             "fishermen"
         ],
-        "image": "/assets/images/chapter3/Q-21.png",
+        "image": "/assets/images/chapter3/E-3_Q-21.jpeg",
         "audio": null
     },
     {
@@ -2778,7 +2778,7 @@
             "মিথ্যা"
         ],
         "correctAnswer": "মিথ্যা",
-        "image": "/assets/images/chapter3/Q-22.png",
+        "image": "/assets/images/chapter3/E-3_Q-22.jpeg",
         "audio": null
     },
     {
@@ -2847,7 +2847,7 @@
             "প্যানেল ১-কারণ, প্যানেল ২-ব্যাখ্যা, প্যানেল ৩-অনিশ্চয়তা"
         ],
         "correctAnswer": "প্যানেল ১-শুরু, প্যানেল ২-অনিশ্চয়তা, প্যানেল ৩-কারণ ব্যাখ্যা",
-        "image": "/assets/images/chapter3/Q-24.png",
+        "image": null,
         "audio": null
     },
     {
@@ -2865,7 +2865,7 @@
             "বিরক্ত"
         ],
         "correctAnswer": "প্রস্তুত",
-        "image": "/assets/images/chapter3/Q-25.png",
+        "image": "/assets/images/chapter3/E-3_Q-25.jpeg",
         "audio": null
     },
     {
@@ -2883,7 +2883,7 @@
             "দুজনের কথাই ভুল"
         ],
         "correctAnswer": "দ্বিতীয়জনের কথা, কারণ আবহাওয়া হঠাৎ বদলাতে পারে",
-        "image": "/assets/images/chapter3/Q-26.png",
+        "image": "/assets/images/chapter3/E-3_Q-26.jpeg",
         "audio": null
     },
     {
@@ -2941,7 +2941,7 @@
             "শুধু আবহাওয়ার ওপর নির্ভর করা"
         ],
         "correctAnswer": "প্রস্তুতি নেওয়া—ছাতা, কভার, বিকল্প ব্যবস্থা রাখা, কিন্তু খেলা না বাতিল করা",
-        "image": "/assets/images/chapter3/Q-28.png",
+        "image": "/assets/images/chapter3/E-3_Q-28.jpeg",
         "audio": null
     },
     {
@@ -2989,7 +2989,7 @@
             "কারণ টুনটুনি ছাতা পছন্দ করে"
         ],
         "correctAnswer": "কারণ আবহাওয়া অনিশ্চিত, যে কোনো সময় বৃষ্টি আসতে পারে",
-        "image": "/assets/images/chapter3/Q-30.png",
+        "image": "/assets/images/chapter3/E-3_Q-30.jpeg",
         "audio": null
     }
 ]

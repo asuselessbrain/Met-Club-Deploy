@@ -1,15 +1,16 @@
 ﻿import { Target, Eye, Users, Award, MapPin, Heart, Shield, Sparkles, TrendingUp } from 'lucide-react';
 import logo from "../../assets/images/logo_original.png"
 import Partners from '../../components/Home/Partners';
+import bg from "../../assets/images/about-page-bg.png"
 
 export default function About() {
     return (
         <div className="min-h-screen bg-white">
-            <section className="relative h-screen flex items-center justify-center overflow-hidden">
+            <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
                 <div
                     className="absolute inset-0 z-0"
                     style={{
-                        backgroundImage: 'url(https://res.cloudinary.com/dwduymu1l/image/upload/v1759496842/Brown_Simple_Digital_Marketing_Presentation_g9igs2.png)',
+                        backgroundImage: `url(${bg})`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                     }}
