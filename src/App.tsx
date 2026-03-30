@@ -4,7 +4,7 @@ import bgImage from './assets/images/bg-image.webp'
 import bgImage2 from './assets/images/Unveling.png'
 
 // 🔊 Replace with your actual clap audio URL or import
-const CLAP_AUDIO_URL = 'YOUR_CLAP_AUDIO_URL_HERE'
+const CLAP_AUDIO_URL = './assets/audios/chapter-1/videoplayback.m4a'
 
 type ConfettiPiece = {
   left: string
