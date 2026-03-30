@@ -367,7 +367,7 @@ export default function StartJourney() {
               btnBg="linear-gradient(135deg, #fb923c, #f97316)"
               btnShadow="rgba(249,115,22,0.42)"
               btnLabel={isChapterOneCompleted ? "সিমুলেশনে প্রবেশ করুন" : "প্রথম অধ্যায় সম্পন্ন করুন"}
-              disabled={!isChapterOneCompleted}
+              // disabled={!isChapterOneCompleted}
               link="http://119.15.153.74:8080"
               description={
                 <>
