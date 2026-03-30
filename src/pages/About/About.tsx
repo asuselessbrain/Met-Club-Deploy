@@ -368,14 +368,14 @@ export default function About() {
                             <div className="relative mb-6">
                                 <MapPin className="w-24 h-24 mx-auto text-teal-500 group-hover:scale-110 transition-transform" />
                                 <div className="absolute -top-2 -right-2 bg-blue-500 text-white rounded-full px-3 py-1 text-sm font-bold">
-                                    শীঘ্রই
+                                    চালু
                                 </div>
                             </div>
                             <h3 className="text-3xl font-black text-gray-800 mb-3">পটুয়াখালী</h3>
-                            <p className="text-lg text-gray-600 font-semibold">শীঘ্রই চালু হবে</p>
+                            <p className="text-lg text-gray-600 font-semibold">বর্তমানে সক্রিয়</p>
                             <div className="mt-6 flex items-center justify-center space-x-2 text-blue-600">
-                                <Sparkles className="w-5 h-5" />
-                                <span className="font-semibold">প্রস্তুতি চলছে</span>
+                                <TrendingUp className="w-5 h-5" />
+                                <span className="font-semibold">৫০+ সদস্য</span>
                             </div>
                         </div>
 
@@ -383,14 +383,14 @@ export default function About() {
                             <div className="relative mb-6">
                                 <MapPin className="w-24 h-24 mx-auto text-green-500 group-hover:scale-110 transition-transform" />
                                 <div className="absolute -top-2 -right-2 bg-blue-500 text-white rounded-full px-3 py-1 text-sm font-bold">
-                                    শীঘ্রই
+                                    চালু
                                 </div>
                             </div>
                             <h3 className="text-3xl font-black text-gray-800 mb-3">গাইবান্ধা</h3>
-                            <p className="text-lg text-gray-600 font-semibold">শীঘ্রই চালু হবে</p>
+                            <p className="text-lg text-gray-600 font-semibold">বর্তমানে সক্রিয়</p>
                             <div className="mt-6 flex items-center justify-center space-x-2 text-blue-600">
-                                <Sparkles className="w-5 h-5" />
-                                <span className="font-semibold">প্রস্তুতি চলছে</span>
+                                <TrendingUp className="w-5 h-5" />
+                                <span className="font-semibold">৫০+ সদস্য</span>
                             </div>
                         </div>
                     </div>
@@ -439,7 +439,7 @@ export default function About() {
                 </div>
             </section>
 
-            <footer className="bg-gray-900 text-white pt-12 px-4">
+            <footer className="bg-gray-900 text-white py-12 px-4">
                 <div className="container mx-auto max-w-7xl text-center">
                     <div className="flex flex-col lg:flex-row items-center justify-center space-x-4">
                         <img src={logo} alt="MET CLUB LOGO" className='w-36 h-36' />

@@ -1,7 +1,6 @@
 import Hero from './components/Home/Hero'
-import Login from './components/Login/Login'
 import { useEffect, useState, useRef } from 'react'
-import bgImage from './assets/images/bg.png'
+import bgImage from './assets/images/bg-image.webp'
 import bgImage2 from './assets/images/Unveling.png'
 
 // 🔊 Replace with your actual clap audio URL or import
@@ -92,22 +91,19 @@ function App() {
           style={{
             backgroundImage: `url(${bgImage})`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center center',
+            backgroundPosition: 'center bottom',
             backgroundRepeat: 'no-repeat',
           }}
         >
           {/* Glass overlay — same as revealed state */}
           <div
-            className="absolute inset-0 pointer-events-none bg-[linear-gradient(120deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03)_42%,rgba(255,255,255,0.06))] backdrop-blur-[3px]"
-            style={{ boxShadow: 'inset 0 0 70px rgba(15, 23, 42, 0.12)' }}
+            className="absolute inset-0 pointer-events-none bg-[linear-gradient(120deg,rgba(255,255,255,0.025),rgba(255,255,255,0.01)_42%,rgba(255,255,255,0.02))] backdrop-blur-[1.5px]"
+            style={{ boxShadow: 'inset 0 0 36px rgba(15, 23, 42, 0.05)' }}
           />
-          {/* Hero + Login rendered below, visible as shutter lifts */}
+          {/* Landing content rendered below, visible as shutter lifts */}
           <div className="relative z-10 flex flex-col lg:flex-row items-center min-h-screen px-4 sm:px-8 md:px-16 py-6 gap-8">
             <div className="flex flex-col justify-between flex-1 w-full">
               <Hero />
-            </div>
-            <div className="w-full max-w-md lg:w-1/3 mt-6 lg:mt-0 flex justify-center lg:justify-start">
-              <Login />
             </div>
           </div>
         </div>
@@ -223,7 +219,7 @@ function App() {
             {!isCountdownStarted && (
               <div className="text-center">
                 <h2
-                  className="text-3xl md:text-4xl font-bold text-white mb-8 drop-shadow-lg"
+                  className="text-3xl md:text-5xl font-bold text-white mb-8 drop-shadow-lg"
                   style={{ textShadow: '2px 2px 12px rgba(0,0,0,0.8)' }}
                 >
                   Are You Ready for the Next Wave?
@@ -241,7 +237,7 @@ function App() {
             {isCountdownStarted && (
               <div className="text-center">
                 <div
-                  className="text-8xl font-bold text-white mb-4 drop-shadow-2xl animate-pulse"
+                  className="text-9xl font-bold text-white mb-4 drop-shadow-2xl animate-pulse"
                   style={{ textShadow: '3px 3px 12px rgba(0,0,0,0.7)' }}
                 >
                   {countdown}
@@ -327,14 +323,10 @@ function App() {
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center center',
+        backgroundPosition: 'center bottom',
         backgroundRepeat: 'no-repeat',
       }}
     >
-      <div
-        className="absolute inset-0 pointer-events-none z-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03)_42%,rgba(255,255,255,0.06))] backdrop-blur-[3px]"
-        style={{ boxShadow: 'inset 0 0 70px rgba(15, 23, 42, 0.12)' }}
-      />
 
       <div className="relative z-10 flex flex-col lg:flex-row items-center lg:items-center min-h-[calc(100vh-68px)] px-4 sm:px-8 md:px-16 py-6 gap-8">
         <Hero />
