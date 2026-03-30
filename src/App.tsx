@@ -2,9 +2,9 @@ import Hero from './components/Home/Hero'
 import { useEffect, useState, useRef } from 'react'
 import bgImage from './assets/images/bg-image.webp'
 import bgImage2 from './assets/images/Unveling.png'
+import unveilAudio from './assets/audios/chapter-1/videoplayback.m4a'
 
-// 🔊 Replace with your actual clap audio URL or import
-const CLAP_AUDIO_URL = './assets/audios/chapter-1/videoplayback.m4a'
+const CLAP_AUDIO_URL = unveilAudio
 
 type ConfettiPiece = {
   left: string
@@ -26,6 +26,20 @@ function App() {
   const [isRevealed, setIsRevealed] = useState(false)
   const [confettiPieces, setConfettiPieces] = useState<ConfettiPiece[]>([])
   const audioRef = useRef<HTMLAudioElement | null>(null)
+  const isAudioUnlockedRef = useRef(false)
+
+  const playTransitionAudio = () => {
+    const audio = audioRef.current
+    if (!audio) return
+
+    audio.currentTime = 0
+    audio.muted = false
+    void audio.play().catch(() => {
+      // Retry once after an explicit load in case the file was not ready yet.
+      audio.load()
+      void audio.play().catch(() => { })
+    })
+  }
 
   useEffect(() => {
     if (!isCountdownStarted || isUnveiling || isRevealed || countdown <= 0) return
@@ -47,11 +61,7 @@ function App() {
   useEffect(() => {
     if (!isUnveiling) return
 
-    // 🔊 Play clap audio
-    if (audioRef.current) {
-      audioRef.current.currentTime = 0
-      audioRef.current.play().catch(() => { })
-    }
+    playTransitionAudio()
 
     const timeoutId = window.setTimeout(() => {
       setIsRevealed(true)
@@ -74,6 +84,23 @@ function App() {
   }
 
   const handleStartUnveil = () => {
+    // Unlock audio playback on the user click so the unveil sound can play reliably later.
+    const audio = audioRef.current
+    if (audio && !isAudioUnlockedRef.current) {
+      audio.muted = true
+      audio.currentTime = 0
+      void audio.play()
+        .then(() => {
+          audio.pause()
+          audio.currentTime = 0
+          audio.muted = false
+          isAudioUnlockedRef.current = true
+        })
+        .catch(() => {
+          audio.muted = false
+        })
+    }
+
     setConfettiPieces(generateConfettiPieces())
     setIsCountdownStarted(true)
   }
@@ -83,7 +110,7 @@ function App() {
       <div className="relative flex min-h-screen items-center justify-center overflow-hidden">
 
         {/* 🔊 Hidden audio */}
-        <audio ref={audioRef} src={CLAP_AUDIO_URL} preload="auto" />
+        <audio ref={audioRef} src={CLAP_AUDIO_URL} preload="auto" playsInline />
 
         {/* ── LAYER 1 (bottom): Main landing page — always visible underneath ── */}
         <div
