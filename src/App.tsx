@@ -12,7 +12,6 @@ function App() {
         backgroundRepeat: 'no-repeat',
       }}
     >
-
       <div className="relative z-10 flex flex-col lg:flex-row items-center lg:items-center min-h-[calc(100vh-68px)] px-4 sm:px-8 md:px-16 py-6 gap-8">
         <Hero />
       </div>
