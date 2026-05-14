@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 
-export default function CompletionModal({ setShowModal, chapterId }: { setShowModal: React.Dispatch<React.SetStateAction<boolean>>, chapterId: string }) {
+export default function CompletionModal({ setShowModal, subChapterId }: { setShowModal: React.Dispatch<React.SetStateAction<boolean>>, subChapterId: string }) {
     return (
         <div className="fixed inset-0 z-40 flex items-center justify-center px-4">
 
@@ -63,7 +63,7 @@ export default function CompletionModal({ setShowModal, chapterId }: { setShowMo
                             📖 লেসন আবার দেখো
                         </button>
 
-                        <Link to={`/start-quiz/${chapterId}`} className="w-full">
+                        <Link to={`/start-quiz/${subChapterId}`} className="w-full">
                             <div
                                 className="rounded-2xl px-4 py-3 text-sm font-medium text-white text-center transition-all active:scale-[0.98]"
                                 style={{

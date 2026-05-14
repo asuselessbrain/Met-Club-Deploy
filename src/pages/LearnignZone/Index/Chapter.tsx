@@ -2,6 +2,7 @@ import { use, useState } from "react";
 
 import bgImage from "../../../assets/images/start-journey-page-bg.jpeg";
 import { Link } from "react-router";
+import TopNav from "../../../components/Shared/TopBar";
 
 export interface ChapterTopic {
   id: number;
@@ -18,6 +19,7 @@ const fetchChapters = async () => {
 };
 
 const chaptersPromise = fetchChapters();
+const CHAPTERS_PER_LARGE_ROW = 5;
 
 const redCardAccent = {
   border: "#fca5a5",
@@ -27,16 +29,12 @@ const redCardAccent = {
 
 function TopicCard({ topic, index }: { topic: ChapterTopic; index: number }) {
   const [hovered, setHovered] = useState(false);
-
-  const isDisabled = ![0, 1, 2, 3].includes(index);
   return (
-    <Link to={`/lesson/${topic.id}`} className={isDisabled ? "pointer-events-none opacity-50" : ""}>
+    <Link to={`/subchapters/${topic.id}`} className="block w-45">
       <div
-        className="relative flex flex-col items-center justify-between rounded-2xl bg-[linear-gradient(145deg,rgba(255,255,255,0.86),rgba(255,245,242,0.74))] backdrop-blur-md p-4 cursor-pointer transition-all duration-300 shrink-0"
+        className="relative flex flex-col items-center justify-between rounded-2xl w-45 min-h-45 md:min-h-47.5 bg-[linear-gradient(145deg,rgba(255,255,255,0.86),rgba(255,245,242,0.74))] backdrop-blur-md p-4 cursor-pointer transition-all duration-300"
         style={{
           border: `2.5px solid ${redCardAccent.border}`,
-          width: 160,
-          minHeight: 170,
           boxShadow: hovered
             ? `0 8px 32px ${redCardAccent.glow}, 0 2px 8px rgba(0,0,0,0.10)`
             : `0 2px 12px rgba(0,0,0,0.08)`,
@@ -49,16 +47,16 @@ function TopicCard({ topic, index }: { topic: ChapterTopic; index: number }) {
       >
         {/* Title */}
         <p
-          className="text-center font-bold text-red-900 leading-snug mb-3"
+          className="text-center font-bold text-red-900 leading-snug mb-3 line-clamp-2"
           style={{
-            fontSize: "0.95rem",
+            fontSize: "0.80rem",
           }}
         >
           {topic.title}
         </p>
 
         {/* Illustration emoji */}
-        <div>
+        <div className="flex-1 flex items-center justify-center">
           <img src={topic.image} alt={topic.title} className="w-24 h-24 object-contain" />
         </div>
       </div>
@@ -70,11 +68,19 @@ function TopicCard({ topic, index }: { topic: ChapterTopic; index: number }) {
 export default function Chapter() {
 
   const chapters = use(chaptersPromise);
+  const chapterRows = chapters.reduce<ChapterTopic[][]>((rows, topic, index) => {
+    const rowIndex = Math.floor(index / CHAPTERS_PER_LARGE_ROW);
+    if (!rows[rowIndex]) {
+      rows[rowIndex] = [];
+    }
+    rows[rowIndex].push(topic);
+    return rows;
+  }, []);
 
   return (
     <>
       <div
-        className="relative min-h-screen flex flex-col items-center justify-start sm:justify-center py-6 sm:py-10 px-4 sm:px-6 lg:px-12 overflow-hidden"
+        className="relative min-h-screen flex flex-col items-stretch justify-start sm:justify-center overflow-hidden"
         style={{
           backgroundImage: `url(${bgImage})`,
           backgroundSize: "cover",
@@ -82,6 +88,10 @@ export default function Chapter() {
           backgroundRepeat: "no-repeat",
         }}
       >
+        <div className="relative z-20 w-full self-stretch">
+          <TopNav title="লার্নিং জোন" />
+        </div>
+
         {/* Soft overlay so cards are readable over the bg */}
         <div
           className="absolute inset-0 pointer-events-none"
@@ -91,25 +101,32 @@ export default function Chapter() {
           }}
         />
 
-        {/* Title */}
-        <h1
-          className="relative z-10 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-center mb-6 sm:mb-8 md:mb-10 px-2"
-          style={{
-            color: "#b91c1c",
-            textShadow:
-              "-1px -1px 0 rgba(255,255,255,0.96), 1px -1px 0 rgba(255,255,255,0.96), -1px 1px 0 rgba(255,255,255,0.96), 1px 1px 0 rgba(255,255,255,0.96), 0 2px 0 rgba(185,28,28,0.20), 0 8px 20px rgba(127,29,29,0.24)",
-            animation: "titlePop 0.7s cubic-bezier(0.34,1.56,0.64,1) both",
-            letterSpacing: "0.03em",
-          }}
-        >
-          লার্নিং জোন
-        </h1>
+        <div className="relative z-10 flex flex-1 flex-col items-center justify-start sm:justify-center px-4 sm:px-6 lg:px-12 py-6 sm:py-10">
+          {/* Chapters Grid */}
+          <div className="w-full max-w-6xl mx-auto">
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 lg:hidden items-stretch">
+              {chapters.map((topic: ChapterTopic, index: number) => (
+                <TopicCard key={topic.id} topic={topic} index={index} />
+              ))}
+            </div>
 
-        {/* Chapters Grid */}
-        <div className="relative z-10 w-full max-w-6xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 md:gap-8 mx-auto">
-          {chapters.map((topic: ChapterTopic, index: number) => (
-            <TopicCard key={topic.id} topic={topic} index={index} />
-          ))}
+            <div className="hidden lg:flex lg:flex-col lg:gap-8">
+              {chapterRows.map((row, rowIndex) => (
+                <div
+                  key={rowIndex}
+                  className={`flex items-stretch gap-8 ${row.length === CHAPTERS_PER_LARGE_ROW ? "justify-between" : "justify-center"}`}
+                >
+                  {row.map((topic, colIndex) => (
+                    <TopicCard
+                      key={topic.id}
+                      topic={topic}
+                      index={rowIndex * CHAPTERS_PER_LARGE_ROW + colIndex}
+                    />
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 

@@ -1,19 +1,23 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL: "http://119.15.153.74/api/api/v1",
+    baseURL: "http://localhost:5000/api/v1",
 });
 
 instance.interceptors.request.use(
     (config) => {
         const token = localStorage.getItem("token");
-        console.log(token)
 
         if (token) {
             config.headers.Authorization = `Bearer ${token}`;
         }
 
-        config.headers["Content-Type"] = "application/json";
+        const isFormData = typeof FormData !== "undefined" && config.data instanceof FormData;
+        if (isFormData) {
+            delete config.headers["Content-Type"];
+        } else {
+            config.headers["Content-Type"] = "application/json";
+        }
 
         return config;
     },

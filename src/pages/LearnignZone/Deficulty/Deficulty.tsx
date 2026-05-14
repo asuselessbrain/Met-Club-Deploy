@@ -52,11 +52,11 @@ const chaptersPromise = fetchChapters();
 
 export default function Deficulty() {
 
-    const { chapterId } = useParams();
+    const { subchapterId } = useParams();
 
     const chapters = use(chaptersPromise);
 
-    const topic = chapters.find((c) => c.id === Number(chapterId));
+    const topic = chapters.find((c) => c.id === Number(subchapterId));
 
     const [quizLevel, setQuizLevel] = useState<"easy" | "medium" | "hard" | null>(null);
 
@@ -64,12 +64,12 @@ export default function Deficulty() {
 
     useEffect(() => {
         const quizLevel = async () => {
-            const res = await axios.get(`/user/quiz-level-info/${chapterId}`);
+            const res = await axios.get(`/user/quiz-level-info/${subchapterId}`);
             setQuizLevel(res.data.data);
         };
         quizLevel();
 
-    }, [axios, chapterId])
+    }, [axios, subchapterId])
 
     const isLocked = (key: string) => {
         if (quizLevel === null) return key === "medium" || key === "hard";
@@ -182,8 +182,7 @@ export default function Deficulty() {
                             <div key={d.key} className={`btn-${idx + 1}`}>
                                 {locked
                                     ? btn
-                                    : <Link to={`/quiz?chapterId=${chapterId}&difficulty=${d.key}`}>{btn}</Link>
-                                }
+                                    : <Link to={`/quiz?subchapterId=${subchapterId}&difficulty=${d.key}`}>{btn}</Link>}
                             </div>
                         );
                     })}

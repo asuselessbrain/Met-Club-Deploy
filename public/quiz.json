@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "chapterId": 1,
+        "subChapterId": 1,
         "difficulty": "easy",
         "type": "hotspot",
         "title": "প্রশ্ন ১: ছবিতে ক্লিক করো",
@@ -30,7 +30,7 @@
     },
     {
         "id": 2,
-        "chapterId": 1,
+        "subChapterId": 1,
         "difficulty": "easy",
         "type": "true_false",
         "title": "প্রশ্ন ২: সত্য না মিথ্যা বলো",
@@ -46,7 +46,7 @@
     },
     {
         "id": 3,
-        "chapterId": 1,
+        "subChapterId": 1,
         "difficulty": "easy",
         "type": "fill_in_the_blanks",
         "title": "প্রশ্ন ৩: খালি জায়গা পূরণ করো",
@@ -64,7 +64,7 @@
     },
     {
         "id": 4,
-        "chapterId": 1,
+        "subChapterId": 1,
         "difficulty": "easy",
         "type": "image_selection",
         "title": "প্রশ্ন ৪: ছবিতে ক্লিক করো",
@@ -88,7 +88,7 @@
     },
     {
         "id": 5,
-        "chapterId": 1,
+        "subChapterId": 1,
         "difficulty": "easy",
         "type": "match_the_following",
         "title": "প্রশ্ন ৫: টেনে আনো আর মেলাও",
@@ -133,7 +133,7 @@
     },
     {
         "id": 6,
-        "chapterId": 1,
+        "subChapterId": 1,
         "difficulty": "easy",
         "type": "mcq",
         "title": "প্রশ্ন ৬: ছবি দেখে খবর তৈরি করো",
@@ -150,7 +150,7 @@
     },
     {
         "id": 7,
-        "chapterId": 1,
+        "subChapterId": 1,
         "difficulty": "easy",
         "type": "fill_in_the_blanks",
         "title": "প্রশ্ন ৭: খালি জায়গা পূরণ করো",
@@ -167,7 +167,7 @@
     },
     {
         "id": 8,
-        "chapterId": 1,
+        "subChapterId": 1,
         "difficulty": "easy",
         "type": "true_false",
         "title": "প্রশ্ন ৮: সত্য না মিথ্যা বলো",
@@ -182,7 +182,7 @@
     },
     {
         "id": 9,
-        "chapterId": 1,
+        "subChapterId": 1,
         "difficulty": "easy",
         "type": "arrange_sequence",
         "title": "প্রশ্ন ৯: ঘটনা সাজাও",
@@ -217,7 +217,7 @@
     },
     {
         "id": 10,
-        "chapterId": 1,
+        "subChapterId": 1,
         "difficulty": "easy",
         "type": "drag_drop_categorize",
         "title": "প্রশ্ন ১০: টেনে আনো আর মেলাও",
@@ -254,7 +254,7 @@
     },
     {
         "id": 11,
-        "chapterId": 1,
+        "subChapterId": 1,
         "difficulty": "medium",
         "type": "hotspot",
         "title": "প্রশ্ন ১১: ছবিতে ক্লিক করো",
@@ -278,7 +278,7 @@
     },
     {
         "id": 12,
-        "chapterId": 1,
+        "subChapterId": 1,
         "difficulty": "medium",
         "type": "fill_in_the_blanks",
         "title": "প্রশ্ন ১২: খালি জায়গা পূরণ করো",
@@ -296,7 +296,7 @@
     },
     {
         "id": 13,
-        "chapterId": 1,
+        "subChapterId": 1,
         "difficulty": "medium",
         "type": "true_false",
         "title": "প্রশ্ন ১৩: সত্য না মিথ্যা বলো",
@@ -312,7 +312,7 @@
     },
     {
         "id": 14,
-        "chapterId": 1,
+        "subChapterId": 1,
         "difficulty": "medium",
         "type": "match_the_following",
         "title": "প্রশ্ন ১৪: টেনে আনো আর মেলাও",
@@ -347,7 +347,7 @@
     },
     {
         "id": 15,
-        "chapterId": 1,
+        "subChapterId": 1,
         "difficulty": "medium",
         "type": "mcq",
         "title": "প্রশ্ন ১৫: ছবি দেখে খবর তৈরি করো",
@@ -365,7 +365,7 @@
     },
     {
         "id": 16,
-        "chapterId": 1,
+        "subChapterId": 1,
         "difficulty": "medium",
         "type": "arrange_sequence",
         "title": "প্রশ্ন ১৬: ঘটনা সাজাও",
@@ -400,7 +400,7 @@
     },
     {
         "id": 17,
-        "chapterId": 1,
+        "subChapterId": 1,
         "difficulty": "medium",
         "type": "fill_in_the_blanks",
         "title": "প্রশ্ন ১৭: খালি জায়গা পূরণ করো",
@@ -418,7 +418,7 @@
     },
     {
         "id": 18,
-        "chapterId": 1,
+        "subChapterId": 1,
         "difficulty": "medium",
         "type": "true_false",
         "title": "প্রশ্ন ১৮: সত্য না মিথ্যা বলো",
@@ -434,7 +434,7 @@
     },
     {
         "id": 19,
-        "chapterId": 1,
+        "subChapterId": 1,
         "difficulty": "medium",
         "type": "drag_drop_categorize",
         "title": "প্রশ্ন ১৯: টেনে আনো আর মেলাও",
@@ -482,7 +482,7 @@
     },
     {
         "id": 20,
-        "chapterId": 1,
+        "subChapterId": 1,
         "difficulty": "medium",
         "type": "puzzle",
         "title": "প্রশ্ন ২০: পাজল সাজাও",
@@ -522,7 +522,7 @@
     },
     {
         "id": 21,
-        "chapterId": 1,
+        "subChapterId": 1,
         "difficulty": "hard",
         "type": "mcq",
         "title": "প্রশ্ন ২১: সঠিক দৃশ্য শনাক্ত করো",
@@ -540,7 +540,7 @@
     },
     {
         "id": 22,
-        "chapterId": 1,
+        "subChapterId": 1,
         "difficulty": "hard",
         "type": "true_false",
         "title": "প্রশ্ন ২২: সত্য না মিথ্যা বলো",
@@ -556,7 +556,7 @@
     },
     {
         "id": 23,
-        "chapterId": 1,
+        "subChapterId": 1,
         "difficulty": "hard",
         "type": "drag_drop_categorize",
         "title": "প্রশ্ন ২৩: টেনে আনো আর মেলাও",
@@ -609,7 +609,7 @@
     },
     {
         "id": 24,
-        "chapterId": 1,
+        "subChapterId": 1,
         "difficulty": "hard",
         "type": "mcq",
         "title": "প্রশ্ন ২৪: গল্পের ঘটনা শনাক্ত করো",
@@ -626,7 +626,7 @@
     },
     {
         "id": 25,
-        "chapterId": 1,
+        "subChapterId": 1,
         "difficulty": "hard",
         "type": "fill_in_the_blanks",
         "title": "প্রশ্ন ২৫: খালি জায়গা পূরণ করো",
@@ -644,7 +644,7 @@
     },
     {
         "id": 26,
-        "chapterId": 1,
+        "subChapterId": 1,
         "difficulty": "hard",
         "type": "mcq",
         "title": "প্রশ্ন ২৬: ভেবে উত্তর দাও (বিশ্লেষণ)",
@@ -662,7 +662,7 @@
     },
     {
         "id": 27,
-        "chapterId": 1,
+        "subChapterId": 1,
         "difficulty": "hard",
         "type": "puzzle",
         "title": "প্রশ্ন ২৭: পাজল সাজাও",
@@ -707,7 +707,7 @@
     },
     {
         "id": 28,
-        "chapterId": 1,
+        "subChapterId": 1,
         "difficulty": "hard",
         "type": "mcq",
         "title": "প্রশ্ন ২৮: ভেবে উত্তর দাও (প্রয়োগ)",
@@ -725,7 +725,7 @@
     },
     {
         "id": 29,
-        "chapterId": 1,
+        "subChapterId": 1,
         "difficulty": "hard",
         "type": "drag_drop_categorize",
         "title": "প্রশ্ন ২৯: ঘটনা সাজাও",
@@ -763,7 +763,7 @@
     },
     {
         "id": 30,
-        "chapterId": 1,
+        "subChapterId": 1,
         "difficulty": "hard",
         "type": "mcq",
         "title": "প্রশ্ন ৩০: ভেবে উত্তর দাও (যুক্তি)",
@@ -781,7 +781,7 @@
     },
     {
         "id": 31,
-        "chapterId": 14,
+        "subChapterId": 14,
         "difficulty": "easy",
         "type": "hotspot",
         "title": "প্রশ্ন ১: ছবিতে ক্লিক করো",
@@ -803,7 +803,7 @@
     },
     {
         "id": 32,
-        "chapterId": 14,
+        "subChapterId": 14,
         "difficulty": "easy",
         "type": "true_false",
         "title": "প্রশ্ন ২: সত্য না মিথ্যা বলো",
@@ -819,7 +819,7 @@
     },
     {
         "id": 33,
-        "chapterId": 14,
+        "subChapterId": 14,
         "difficulty": "easy",
         "type": "fill_in_the_blanks",
         "title": "প্রশ্ন ৩: খালি জায়গা পূরণ করো",
@@ -837,7 +837,7 @@
     },
     {
         "id": 34,
-        "chapterId": 14,
+        "subChapterId": 14,
         "difficulty": "easy",
         "type": "image_selection",
         "title": "প্রশ্ন ৪: ছবিতে ক্লিক করো",
@@ -860,7 +860,7 @@
     },
     {
         "id": 35,
-        "chapterId": 14,
+        "subChapterId": 14,
         "difficulty": "easy",
         "type": "match_the_following",
         "title": "প্রশ্ন ৫: টেনে আনো আর মেলাও",
@@ -905,7 +905,7 @@
     },
     {
         "id": 36,
-        "chapterId": 14,
+        "subChapterId": 14,
         "difficulty": "easy",
         "type": "mcq",
         "title": "প্রশ্ন ৬: ছবি দেখে খবর তৈরি করো",
@@ -923,7 +923,7 @@
     },
     {
         "id": 37,
-        "chapterId": 14,
+        "subChapterId": 14,
         "difficulty": "easy",
         "type": "fill_in_the_blanks",
         "title": "প্রশ্ন ৭: খালি জায়গা পূরণ করো",
@@ -941,7 +941,7 @@
     },
     {
         "id": 38,
-        "chapterId": 14,
+        "subChapterId": 14,
         "difficulty": "easy",
         "type": "true_false",
         "title": "প্রশ্ন ৮: সত্য না মিথ্যা বলো",
@@ -957,7 +957,7 @@
     },
     {
         "id": 39,
-        "chapterId": 14,
+        "subChapterId": 14,
         "difficulty": "easy",
         "type": "arrange_sequence",
         "title": "প্রশ্ন ৯: ঘটনা সাজাও",
@@ -989,7 +989,7 @@
     },
     {
         "id": 40,
-        "chapterId": 14,
+        "subChapterId": 14,
         "difficulty": "easy",
         "type": "drag_drop_categorize",
         "title": "প্রশ্ন ১০: টেনে আনো আর মেলাও",
@@ -1026,7 +1026,7 @@
     },
     {
         "id": 41,
-        "chapterId": 14,
+        "subChapterId": 14,
         "difficulty": "medium",
         "type": "hotspot",
         "title": "প্রশ্ন ১১: ছবিতে ক্লিক করো",
@@ -1048,7 +1048,7 @@
     },
     {
         "id": 42,
-        "chapterId": 14,
+        "subChapterId": 14,
         "difficulty": "medium",
         "type": "fill_in_the_blanks",
         "title": "প্রশ্ন ১২: খালি জায়গা পূরণ করো",
@@ -1066,7 +1066,7 @@
     },
     {
         "id": 43,
-        "chapterId": 14,
+        "subChapterId": 14,
         "difficulty": "medium",
         "type": "true_false",
         "title": "প্রশ্ন ১৩: সত্য না মিথ্যা বলো",
@@ -1082,7 +1082,7 @@
     },
     {
         "id": 44,
-        "chapterId": 14,
+        "subChapterId": 14,
         "difficulty": "medium",
         "type": "match_the_following",
         "title": "প্রশ্ন ১৪: টেনে আনো আর মেলাও",
@@ -1119,7 +1119,7 @@
     },
     {
         "id": 45,
-        "chapterId": 14,
+        "subChapterId": 14,
         "difficulty": "medium",
         "type": "mcq",
         "title": "প্রশ্ন ১৫: ছবি দেখে খবর তৈরি করো",
@@ -1137,7 +1137,7 @@
     },
     {
         "id": 46,
-        "chapterId": 14,
+        "subChapterId": 14,
         "difficulty": "medium",
         "type": "arrange_sequence",
         "title": "প্রশ্ন ১৬: ঘটনা সাজাও",
@@ -1172,7 +1172,7 @@
     },
     {
         "id": 47,
-        "chapterId": 14,
+        "subChapterId": 14,
         "difficulty": "medium",
         "type": "fill_in_the_blanks",
         "title": "প্রশ্ন ১৭: খালি জায়গা পূরণ করো",
@@ -1190,7 +1190,7 @@
     },
     {
         "id": 48,
-        "chapterId": 14,
+        "subChapterId": 14,
         "difficulty": "medium",
         "type": "true_false",
         "title": "প্রশ্ন ১৮: সত্য না মিথ্যা বলো",
@@ -1206,7 +1206,7 @@
     },
     {
         "id": 49,
-        "chapterId": 14,
+        "subChapterId": 14,
         "difficulty": "medium",
         "type": "drag_drop_categorize",
         "title": "প্রশ্ন ১৯: টেনে আনো আর মেলাও",
@@ -1256,7 +1256,7 @@
     },
     {
         "id": 50,
-        "chapterId": 14,
+        "subChapterId": 14,
         "difficulty": "medium",
         "type": "puzzle",
         "title": "প্রশ্ন ২০: পাজল সাজাও",
@@ -1286,7 +1286,7 @@
     },
     {
         "id": 51,
-        "chapterId": 14,
+        "subChapterId": 14,
         "difficulty": "hard",
         "type": "image_selection",
         "title": "প্রশ্ন ২১: ছবিতে ক্লিক করো",
@@ -1312,7 +1312,7 @@
     },
     {
         "id": 52,
-        "chapterId": 14,
+        "subChapterId": 14,
         "difficulty": "hard",
         "type": "true_false",
         "title": "প্রশ্ন ২২: সত্য না মিথ্যা বলো",
@@ -1328,7 +1328,7 @@
     },
     {
         "id": 53,
-        "chapterId": 14,
+        "subChapterId": 14,
         "difficulty": "hard",
         "type": "drag_drop_categorize",
         "title": "প্রশ্ন ২৩: টেনে আনো আর মেলাও",
@@ -1386,7 +1386,7 @@
     },
     {
         "id": 54,
-        "chapterId": 14,
+        "subChapterId": 14,
         "difficulty": "hard",
         "type": "mcq",
         "title": "প্রশ্ন ২৪: গল্পের ঘটনা শনাক্ত করো",
@@ -1403,7 +1403,7 @@
     },
     {
         "id": 55,
-        "chapterId": 14,
+        "subChapterId": 14,
         "difficulty": "hard",
         "type": "fill_in_the_blanks",
         "title": "প্রশ্ন ২৫: খালি জায়গা পূরণ করো",
@@ -1421,7 +1421,7 @@
     },
     {
         "id": 56,
-        "chapterId": 14,
+        "subChapterId": 14,
         "difficulty": "hard",
         "type": "mcq",
         "title": "প্রশ্ন ২৬: ক্রিটিকাল থিংকিং - বিশ্লেষণধর্মী",
@@ -1440,7 +1440,7 @@
     },
     {
         "id": 57,
-        "chapterId": 14,
+        "subChapterId": 14,
         "difficulty": "hard",
         "type": "arrange_sequence",
         "title": "প্রশ্ন ২৭: পাজল সাজাও",
@@ -1474,7 +1474,7 @@
     },
     {
         "id": 58,
-        "chapterId": 14,
+        "subChapterId": 14,
         "difficulty": "hard",
         "type": "mcq",
         "title": "প্রশ্ন ২৮: ক্রিটিকাল থিংকিং - প্রয়োগমূলক",
@@ -1492,7 +1492,7 @@
     },
     {
         "id": 59,
-        "chapterId": 14,
+        "subChapterId": 14,
         "difficulty": "hard",
         "type": "arrange_sequence",
         "title": "প্রশ্ন ২৯: ঘটনা সাজাও",
@@ -1525,7 +1525,7 @@
     },
     {
         "id": 60,
-        "chapterId": 14,
+        "subChapterId": 14,
         "difficulty": "hard",
         "type": "mcq",
         "title": "প্রশ্ন ৩০: ক্রিটিকাল থিংকিং - যুক্তিভিত্তিক",
@@ -1543,7 +1543,7 @@
     },
     {
         "id": 61,
-        "chapterId": 15,
+        "subChapterId": 15,
         "difficulty": "easy",
         "type": "hotspot",
         "title": "প্রশ্ন ১: ছবির রহস্য উদঘাটন করো",
@@ -1572,7 +1572,7 @@
     },
     {
         "id": 62,
-        "chapterId": 15,
+        "subChapterId": 15,
         "difficulty": "easy",
         "type": "true_false",
         "title": "প্রশ্ন ২: সত্যি নাকি মিথ্যা?",
@@ -1587,7 +1587,7 @@
     },
     {
         "id": 63,
-        "chapterId": 15,
+        "subChapterId": 15,
         "difficulty": "easy",
         "type": "fill_in_the_blanks",
         "title": "প্রশ্ন ৩: খালি জায়গায় কী বসবে?",
@@ -1604,7 +1604,7 @@
     },
     {
         "id": 64,
-        "chapterId": 15,
+        "subChapterId": 15,
         "difficulty": "easy",
         "type": "image_selection",
         "title": "প্রশ্ন ৪: সঠিক ছবিটি বেছে নাও",
@@ -1628,7 +1628,7 @@
     },
     {
         "id": 65,
-        "chapterId": 15,
+        "subChapterId": 15,
         "difficulty": "easy",
         "type": "match_the_following",
         "title": "প্রশ্ন ৫: সংকেত ও কাজ মেলাও",
@@ -1663,7 +1663,7 @@
     },
     {
         "id": 66,
-        "chapterId": 15,
+        "subChapterId": 15,
         "difficulty": "easy",
         "type": "mcq",
         "title": "প্রশ্ন ৬: খলিলের বাবা কী করছেন?",
@@ -1681,7 +1681,7 @@
     },
     {
         "id": 67,
-        "chapterId": 15,
+        "subChapterId": 15,
         "difficulty": "easy",
         "type": "mcq",
         "title": "প্রশ্ন ৭: বিশেষ ব্যাগটার নাম কী?",
@@ -1699,7 +1699,7 @@
     },
     {
         "id": 68,
-        "chapterId": 15,
+        "subChapterId": 15,
         "difficulty": "easy",
         "type": "true_false",
         "title": "প্রশ্ন ৮: ঠিক বলেছে কি?",
@@ -1714,7 +1714,7 @@
     },
     {
         "id": 69,
-        "chapterId": 15,
+        "subChapterId": 15,
         "difficulty": "easy",
         "type": "arrange_sequence",
         "title": "প্রশ্ন ৯: ঘটনাগুলো সঠিক ক্রমে সাজাও",
@@ -1744,7 +1744,7 @@
     },
     {
         "id": 70,
-        "chapterId": 15,
+        "subChapterId": 15,
         "difficulty": "easy",
         "type": "mcq",
         "title": "প্রশ্ন ১০: রহস্যময় সময়ের নাম কী?",
@@ -1762,7 +1762,7 @@
     },
     {
         "id": 71,
-        "chapterId": 15,
+        "subChapterId": 15,
         "difficulty": "medium",
         "type": "hotspot",
         "title": "প্রশ্ন ১১: ছবিতে চোখ খুঁজে বের করো",
@@ -1790,7 +1790,7 @@
     },
     {
         "id": 72,
-        "chapterId": 15,
+        "subChapterId": 15,
         "difficulty": "medium",
         "type": "fill_in_the_blanks",
         "title": "প্রশ্ন ১২: খালি জায়গায় কী বসবে?",
@@ -1807,7 +1807,7 @@
     },
     {
         "id": 73,
-        "chapterId": 15,
+        "subChapterId": 15,
         "difficulty": "medium",
         "type": "true_false",
         "title": "প্রশ্ন ১৩: ঠিক না ভুল?",
@@ -1822,7 +1822,7 @@
     },
     {
         "id": 74,
-        "chapterId": 15,
+        "subChapterId": 15,
         "difficulty": "medium",
         "type": "match_the_following",
         "title": "প্রশ্ন ১৪: সময়ের সঙ্গে কাজ মেলাও",
@@ -1857,7 +1857,7 @@
     },
     {
         "id": 75,
-        "chapterId": 15,
+        "subChapterId": 15,
         "difficulty": "medium",
         "type": "mcq",
         "title": "প্রশ্ন ১৫: এই চার্টটা কীসের?",
@@ -1875,7 +1875,7 @@
     },
     {
         "id": 76,
-        "chapterId": 15,
+        "subChapterId": 15,
         "difficulty": "medium",
         "type": "arrange_sequence",
         "title": "প্রশ্ন ১৬: ক্রম ঠিক করো",
@@ -1910,7 +1910,7 @@
     },
     {
         "id": 77,
-        "chapterId": 15,
+        "subChapterId": 15,
         "difficulty": "medium",
         "type": "mcq",
         "title": "প্রশ্ন ১৭: প্রথমে কী দেখতে হবে?",
@@ -1926,7 +1926,7 @@
     },
     {
         "id": 78,
-        "chapterId": 15,
+        "subChapterId": 15,
         "difficulty": "medium",
         "type": "true_false",
         "title": "প্রশ্ন ১৮: ঠিক না ভুল?",
@@ -1941,7 +1941,7 @@
     },
     {
         "id": 79,
-        "chapterId": 15,
+        "subChapterId": 15,
         "difficulty": "medium",
         "type": "match_the_following",
         "title": "প্রশ্ন ১৯: দূরত্বের সঙ্গে মেলাও",
@@ -1976,7 +1976,7 @@
     },
     {
         "id": 80,
-        "chapterId": 15,
+        "subChapterId": 15,
         "difficulty": "medium",
         "type": "puzzle",
         "title": "প্রশ্ন ২০: পাজল সমাধান করো",
@@ -2011,7 +2011,7 @@
     },
     {
         "id": 81,
-        "chapterId": 15,
+        "subChapterId": 15,
         "difficulty": "hard",
         "type": "mcq",
         "title": "প্রশ্ন ২১: তিন দৃশ্যের রহস্য ভেদ করো",
@@ -2029,7 +2029,7 @@
     },
     {
         "id": 82,
-        "chapterId": 15,
+        "subChapterId": 15,
         "difficulty": "hard",
         "type": "mcq",
         "title": "প্রশ্ন ২২: ভুলটা ধরো",
@@ -2046,7 +2046,7 @@
     },
     {
         "id": 83,
-        "chapterId": 15,
+        "subChapterId": 15,
         "difficulty": "hard",
         "type": "drag_drop_categorize",
         "title": "প্রশ্ন ২৩: কাজগুলোকে সঠিক বাক্সে রাখো",
@@ -2096,7 +2096,7 @@
     },
     {
         "id": 84,
-        "chapterId": 15,
+        "subChapterId": 15,
         "difficulty": "hard",
         "type": "mcq",
         "title": "প্রশ্ন ২৪: গল্পের তিনটি প্যানেলের রহস্য",
@@ -2113,7 +2113,7 @@
     },
     {
         "id": 85,
-        "chapterId": 15,
+        "subChapterId": 15,
         "difficulty": "hard",
         "type": "fill_in_the_blanks",
         "title": "প্রশ্ন ২৫: খালি জায়গা পূরণ করো",
@@ -2130,7 +2130,7 @@
     },
     {
         "id": 86,
-        "chapterId": 15,
+        "subChapterId": 15,
         "difficulty": "hard",
         "type": "mcq",
         "title": "প্রশ্ন ২৬: বন্ধুটির কথায় ভুলটা কী?",
@@ -2148,7 +2148,7 @@
     },
     {
         "id": 87,
-        "chapterId": 15,
+        "subChapterId": 15,
         "difficulty": "hard",
         "type": "puzzle",
         "title": "প্রশ্ন ২৭: পাজল সমাধান করো",
@@ -2183,7 +2183,7 @@
     },
     {
         "id": 88,
-        "chapterId": 15,
+        "subChapterId": 15,
         "difficulty": "hard",
         "type": "mcq",
         "title": "প্রশ্ন ২৮: ইরতেজার বাবা কী উত্তর দেবেন?",
@@ -2201,7 +2201,7 @@
     },
     {
         "id": 89,
-        "chapterId": 15,
+        "subChapterId": 15,
         "difficulty": "hard",
         "type": "arrange_sequence",
         "title": "প্রশ্ন ২৯: ঘটনাগুলো সঠিক ক্রমে সাজাও",
@@ -2231,7 +2231,7 @@
     },
     {
         "id": 90,
-        "chapterId": 15,
+        "subChapterId": 15,
         "difficulty": "hard",
         "type": "mcq",
         "title": "প্রশ্ন ৩০: খলিল কেন এমন সিদ্ধান্ত নিল?",
@@ -2249,7 +2249,7 @@
     },
     {
         "id": 91,
-        "chapterId": 3,
+        "subChapterId": 3,
         "difficulty": "easy",
         "type": "hotspot",
         "title": "প্রশ্ন ১: ছবিতে ক্লিক করো",
@@ -2271,7 +2271,7 @@
     },
     {
         "id": 92,
-        "chapterId": 3,
+        "subChapterId": 3,
         "difficulty": "easy",
         "type": "true_false",
         "title": "প্রশ্ন ২: সত্য না মিথ্যা বলো",
@@ -2287,7 +2287,7 @@
     },
     {
         "id": 93,
-        "chapterId": 3,
+        "subChapterId": 3,
         "difficulty": "easy",
         "type": "fill_in_the_blanks",
         "title": "প্রশ্ন ৩: খালি জায়গা পূরণ করো",
@@ -2305,7 +2305,7 @@
     },
     {
         "id": 94,
-        "chapterId": 3,
+        "subChapterId": 3,
         "difficulty": "easy",
         "type": "image_selection",
         "title": "প্রশ্ন ৪: ছবিতে ক্লিক করো",
@@ -2329,7 +2329,7 @@
     },
     {
         "id": 95,
-        "chapterId": 3,
+        "subChapterId": 3,
         "difficulty": "easy",
         "type": "match_the_following",
         "title": "প্রশ্ন ৫: টেনে আনো আর মেলাও",
@@ -2364,7 +2364,7 @@
     },
     {
         "id": 96,
-        "chapterId": 3,
+        "subChapterId": 3,
         "difficulty": "easy",
         "type": "mcq",
         "title": "প্রশ্ন ৬: ছবি দেখে খবর তৈরি করো",
@@ -2382,7 +2382,7 @@
     },
     {
         "id": 97,
-        "chapterId": 3,
+        "subChapterId": 3,
         "difficulty": "easy",
         "type": "fill_in_the_blanks",
         "title": "প্রশ্ন ৭: খালি জায়গা পূরণ করো",
@@ -2400,7 +2400,7 @@
     },
     {
         "id": 98,
-        "chapterId": 3,
+        "subChapterId": 3,
         "difficulty": "easy",
         "type": "true_false",
         "title": "প্রশ্ন ৮: সত্য না মিথ্যা বলো",
@@ -2416,7 +2416,7 @@
     },
     {
         "id": 99,
-        "chapterId": 3,
+        "subChapterId": 3,
         "difficulty": "easy",
         "type": "arrange_sequence",
         "title": "প্রশ্ন ৯: ঘটনা সাজাও",
@@ -2449,7 +2449,7 @@
     },
     {
         "id": 100,
-        "chapterId": 3,
+        "subChapterId": 3,
         "difficulty": "easy",
         "type": "match_the_following",
         "title": "প্রশ্ন ১০: টেনে আনো আর মেলাও",
@@ -2484,7 +2484,7 @@
     },
     {
         "id": 101,
-        "chapterId": 3,
+        "subChapterId": 3,
         "difficulty": "medium",
         "type": "hotspot",
         "title": "প্রশ্ন ১১: ছবিতে ক্লিক করো",
@@ -2506,7 +2506,7 @@
     },
     {
         "id": 102,
-        "chapterId": 3,
+        "subChapterId": 3,
         "difficulty": "medium",
         "type": "fill_in_the_blanks",
         "title": "প্রশ্ন ১২: খালি জায়গা পূরণ করো",
@@ -2524,7 +2524,7 @@
     },
     {
         "id": 103,
-        "chapterId": 3,
+        "subChapterId": 3,
         "difficulty": "medium",
         "type": "true_false",
         "title": "প্রশ্ন ১৩: সত্য না মিথ্যা বলো",
@@ -2540,7 +2540,7 @@
     },
     {
         "id": 104,
-        "chapterId": 3,
+        "subChapterId": 3,
         "difficulty": "medium",
         "type": "match_the_following",
         "title": "প্রশ্ন ১৪: টেনে আনো আর মেলাও",
@@ -2575,7 +2575,7 @@
     },
     {
         "id": 105,
-        "chapterId": 3,
+        "subChapterId": 3,
         "difficulty": "medium",
         "type": "mcq",
         "title": "প্রশ্ন ১৫: ছবি দেখে খবর তৈরি করো",
@@ -2593,7 +2593,7 @@
     },
     {
         "id": 106,
-        "chapterId": 3,
+        "subChapterId": 3,
         "difficulty": "medium",
         "type": "arrange_sequence",
         "title": "প্রশ্ন ১৬: ঘটনা সাজাও",
@@ -2628,7 +2628,7 @@
     },
     {
         "id": 107,
-        "chapterId": 3,
+        "subChapterId": 3,
         "difficulty": "medium",
         "type": "fill_in_the_blanks",
         "title": "প্রশ্ন ১৭: খালি জায়গা পূরণ করো",
@@ -2646,7 +2646,7 @@
     },
     {
         "id": 108,
-        "chapterId": 3,
+        "subChapterId": 3,
         "difficulty": "medium",
         "type": "true_false",
         "title": "প্রশ্ন ১৮: সত্য না মিথ্যা বলো",
@@ -2662,7 +2662,7 @@
     },
     {
         "id": 109,
-        "chapterId": 3,
+        "subChapterId": 3,
         "difficulty": "medium",
         "type": "drag_drop_categorize",
         "title": "প্রশ্ন ১৯: টেনে আনো আর মেলাও",
@@ -2710,7 +2710,7 @@
     },
     {
         "id": 110,
-        "chapterId": 3,
+        "subChapterId": 3,
         "difficulty": "medium",
         "type": "puzzle",
         "title": "প্রশ্ন ২০: পাজল সাজাও",
@@ -2745,7 +2745,7 @@
     },
     {
         "id": 111,
-        "chapterId": 3,
+        "subChapterId": 3,
         "difficulty": "hard",
         "type": "hotspot",
         "title": "প্রশ্ন ২১: ছবিতে ক্লিক করো",
@@ -2767,7 +2767,7 @@
     },
     {
         "id": 112,
-        "chapterId": 3,
+        "subChapterId": 3,
         "difficulty": "hard",
         "type": "true_false",
         "title": "প্রশ্ন ২২: সত্য না মিথ্যা বলো",
@@ -2783,7 +2783,7 @@
     },
     {
         "id": 113,
-        "chapterId": 3,
+        "subChapterId": 3,
         "difficulty": "hard",
         "type": "drag_drop_categorize",
         "title": "প্রশ্ন ২৩: টেনে আনো আর মেলাও",
@@ -2834,7 +2834,7 @@
     },
     {
         "id": 114,
-        "chapterId": 3,
+        "subChapterId": 3,
         "difficulty": "hard",
         "type": "mcq",
         "title": "প্রশ্ন ২৪: গল্পের ঘটনা শনাক্ত করো",
@@ -2852,7 +2852,7 @@
     },
     {
         "id": 115,
-        "chapterId": 3,
+        "subChapterId": 3,
         "difficulty": "hard",
         "type": "fill_in_the_blanks",
         "title": "প্রশ্ন ২৫: খালি জায়গা পূরণ করো",
@@ -2870,7 +2870,7 @@
     },
     {
         "id": 116,
-        "chapterId": 3,
+        "subChapterId": 3,
         "difficulty": "hard",
         "type": "mcq",
         "title": "প্রশ্ন ২৬: ক্রিটিকাল থিংকিং - বিশ্লেষণধর্মী",
@@ -2888,7 +2888,7 @@
     },
     {
         "id": 117,
-        "chapterId": 3,
+        "subChapterId": 3,
         "difficulty": "hard",
         "type": "puzzle",
         "title": "প্রশ্ন ২৭: পাজল সাজাও",
@@ -2928,7 +2928,7 @@
     },
     {
         "id": 118,
-        "chapterId": 3,
+        "subChapterId": 3,
         "difficulty": "hard",
         "type": "mcq",
         "title": "প্রশ্ন ২৮: ক্রিটিকাল থিংকিং - প্রয়োগমূলক",
@@ -2946,7 +2946,7 @@
     },
     {
         "id": 119,
-        "chapterId": 3,
+        "subChapterId": 3,
         "difficulty": "hard",
         "type": "arrange_sequence",
         "title": "প্রশ্ন ২৯: ঘটনা সাজাও",
@@ -2976,7 +2976,7 @@
     },
     {
         "id": 120,
-        "chapterId": 3,
+        "subChapterId": 3,
         "difficulty": "hard",
         "type": "mcq",
         "title": "প্রশ্ন ৩০: ক্রিটিকাল থিংকিং - যুক্তিভিত্তিক",

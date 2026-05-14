@@ -2,10 +2,12 @@
 import logo from "../../assets/images/logo_original.png"
 import Partners from '../../components/Home/Partners';
 import bg from "../../assets/images/about-page-bg.png"
+import TopNav from "../../components/Shared/TopBar";
 
 export default function About() {
     return (
         <div className="min-h-screen bg-white">
+            <TopNav title="আমাদের সম্পর্কে" />
             <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
                 <div
                     className="absolute inset-0 z-0"

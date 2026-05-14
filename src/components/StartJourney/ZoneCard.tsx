@@ -47,7 +47,7 @@ export default function ZoneCard({
 
     return (
         <div
-            className="relative flex flex-col items-center rounded-2xl p-6 cursor-pointer select-none transition-all duration-300 overflow-hidden"
+            className="relative flex h-full flex-col items-center justify-between rounded-2xl p-6 cursor-pointer select-none transition-all duration-300 overflow-hidden"
             style={{
                 background: hovered
                     ? "rgba(255, 255, 255, 0.25)"
@@ -126,7 +126,7 @@ export default function ZoneCard({
             {title === "লার্নিং জোন" ? (
                 <Link to={link} className="z-10 inline-block cursor-pointer">
                     <button
-                        className="z-10 px-8 py-3 rounded-full text-white font-medium text-base transition-all duration-200 active:scale-95 cursor-pointer"
+                        className="z-10 px-8 py-3 rounded-full text-white font-medium text-sm md:text-base transition-all duration-200 active:scale-95 cursor-pointer"
                         style={{
                             background: btnBg,
                             boxShadow: hovered
@@ -143,7 +143,7 @@ export default function ZoneCard({
                 disabled ? (
                     <button
                         disabled
-                        className="z-10 px-8 py-3 rounded-full text-white font-medium text-base transition-all duration-200 active:scale-95 cursor-not-allowed opacity-60"
+                        className="z-10 px-8 py-3 rounded-full text-white font-medium text-sm md:text-base transition-all duration-200 active:scale-95 cursor-not-allowed opacity-60"
                         style={{
                             background: "linear-gradient(135deg, #cbd5e1, #94a3b8)",
                             boxShadow: "0 3px 10px rgba(51,65,85,0.2)",
@@ -154,7 +154,7 @@ export default function ZoneCard({
                 ) : (
                     <a href={link} target="_blank" rel="noopener noreferrer" className="z-10 inline-block cursor-pointer">
                         <button
-                            className="z-10 px-8 py-3 rounded-full text-white font-medium text-base transition-all duration-200 active:scale-95 cursor-pointer"
+                            className="z-10 px-8 py-3 rounded-full text-white font-medium text-sm md:text-base transition-all duration-200 active:scale-95 cursor-pointer"
                             style={{
                                 background: btnBg,
                                 boxShadow: hovered

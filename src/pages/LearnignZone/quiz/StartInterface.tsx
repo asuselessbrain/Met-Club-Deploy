@@ -3,7 +3,7 @@ import bgImage from "../../../assets/images/start-journey-page-bg.jpeg";
 import TopNav from "../../../components/Shared/TopBar";
 
 export default function StartInterface() {
-    const { chapterId } = useParams();
+    const { subchapterId } = useParams();
 
     return (
         <>
@@ -110,7 +110,7 @@ export default function StartInterface() {
                                 </p>
 
                                 <p className="font-bold text-gray-600">দেখা যাক কি হয়!</p>
-                                <Link to={`/select-difficulty/${chapterId}`} className="w-full">
+                                <Link to={`/select-difficulty/${subchapterId}`} className="w-full">
                                     <button
                                         className="w-full flex items-center justify-center gap-2 py-4 rounded-2xl font-bold text-white text-lg transition-all duration-300 active:scale-95 hover:scale-[1.02] cursor-pointer"
                                         style={{

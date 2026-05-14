@@ -104,95 +104,97 @@ export default function BottomNav({
         }}
       />
 
-      {/* ── Previous ── */}
-      <button
-        onClick={onPrev}
-        disabled={current === 0}
-        className={btnBase}
-        style={{
-          ...prevStyle,
-          backdropFilter: "blur(14px)",
-          WebkitBackdropFilter: "blur(14px)",
-          boxShadow:
-            current > 0
-              ? "0 6px 18px rgba(0,0,0,0.12)"
-              : "none",
-        }}
-      >
-        <span className="sm:hidden">{labels.prevShort}</span>
-        <span className="hidden sm:inline">{labels.prevFull}</span>
-      </button>
-
-      {/* ── Progress ── */}
-      <div className="flex flex-col items-center gap-1 shrink min-w-0 relative z-10">
-        <span
-          className="text-xs font-semibold"
-          style={{ color: isSectionTone ? "#7f1d1d" : "#1e3a8a" }}
+      <div className="relative z-10 mx-auto flex w-full max-w-6xl items-center justify-between gap-2">
+        {/* ── Previous ── */}
+        <button
+          onClick={onPrev}
+          disabled={current === 0}
+          className={btnBase}
+          style={{
+            ...prevStyle,
+            backdropFilter: "blur(14px)",
+            WebkitBackdropFilter: "blur(14px)",
+            boxShadow:
+              current > 0
+                ? "0 6px 18px rgba(0,0,0,0.12)"
+                : "none",
+          }}
         >
-          {current + 1} / {total}
-        </span>
+          <span className="sm:hidden">{labels.prevShort}</span>
+          <span className="hidden sm:inline">{labels.prevFull}</span>
+        </button>
 
-        <div className="flex gap-1 sm:gap-1.5">
-          {Array.from({ length: total }).map((_, i) => (
-            <div
-              key={i}
-              className="rounded-full transition-all duration-300"
-              style={{
-                width: i === current ? 18 : 6,
-                height: 6,
+        {/* ── Progress ── */}
+        <div className="flex flex-col items-center gap-1 shrink min-w-0 relative z-10">
+          <span
+            className="text-xs font-semibold"
+            style={{ color: isSectionTone ? "#7f1d1d" : "#1e3a8a" }}
+          >
+            {current + 1} / {total}
+          </span>
 
-                background:
-                  i < current
-                    ? isSectionTone
-                      ? "linear-gradient(135deg,#f87171,#ef4444)"
-                      : "linear-gradient(135deg,#f87171,#ef4444)"
-                    : i === current
+          <div className="flex gap-1 sm:gap-1.5">
+            {Array.from({ length: total }).map((_, i) => (
+              <div
+                key={i}
+                className="rounded-full transition-all duration-300"
+                style={{
+                  width: i === current ? 18 : 6,
+                  height: 6,
+
+                  background:
+                    i < current
                       ? isSectionTone
-                        ? "linear-gradient(135deg,#dc2626,#b91c1c)"
-                        : "linear-gradient(135deg,#dc2626,#b91c1c)"
-                      : isSectionTone
-                        ? "rgba(248,113,113,0.35)"
-                        : "rgba(248,113,113,0.35)",
+                        ? "linear-gradient(135deg,#f87171,#ef4444)"
+                        : "linear-gradient(135deg,#f87171,#ef4444)"
+                      : i === current
+                        ? isSectionTone
+                          ? "linear-gradient(135deg,#dc2626,#b91c1c)"
+                          : "linear-gradient(135deg,#dc2626,#b91c1c)"
+                        : isSectionTone
+                          ? "rgba(248,113,113,0.35)"
+                          : "rgba(248,113,113,0.35)",
 
-                boxShadow:
-                  i === current
-                    ? isSectionTone
-                      ? "0 2px 10px rgba(220,38,38,0.38)"
-                      : "0 2px 10px rgba(220,38,38,0.38)"
-                    : "none",
-              }}
-            />
-          ))}
+                  boxShadow:
+                    i === current
+                      ? isSectionTone
+                        ? "0 2px 10px rgba(220,38,38,0.38)"
+                        : "0 2px 10px rgba(220,38,38,0.38)"
+                      : "none",
+                }}
+              />
+            ))}
+          </div>
         </div>
+
+        {/* ── Next ── */}
+        <button
+          onClick={onNext}
+          disabled={!answered || isPending}
+          className={btnBase}
+          style={{
+            ...nextStyle,
+            backdropFilter: "blur(14px)",
+            WebkitBackdropFilter: "blur(14px)",
+
+            boxShadow: answered
+              ? "0 8px 24px rgba(0,0,0,0.18)"
+              : "none",
+          }}
+        >
+          {isPending ? (
+            <>
+              <span className="h-4 w-4 rounded-full border-2 border-white border-t-transparent animate-spin" />
+              <span className="hidden sm:inline">লোড হচ্ছে...</span>
+            </>
+          ) : (
+            <>
+              <span className="sm:hidden">{labels.nextShort}</span>
+              <span className="hidden sm:inline">{labels.nextFull}</span>
+            </>
+          )}
+        </button>
       </div>
-
-      {/* ── Next ── */}
-      <button
-        onClick={onNext}
-        disabled={!answered || isPending}
-        className={btnBase}
-        style={{
-          ...nextStyle,
-          backdropFilter: "blur(14px)",
-          WebkitBackdropFilter: "blur(14px)",
-
-          boxShadow: answered
-            ? "0 8px 24px rgba(0,0,0,0.18)"
-            : "none",
-        }}
-      >
-        {isPending ? (
-          <>
-            <span className="h-4 w-4 rounded-full border-2 border-white border-t-transparent animate-spin" />
-            <span className="hidden sm:inline">লোড হচ্ছে...</span>
-          </>
-        ) : (
-          <>
-            <span className="sm:hidden">{labels.nextShort}</span>
-            <span className="hidden sm:inline">{labels.nextFull}</span>
-          </>
-        )}
-      </button>
     </div>
   );
 }

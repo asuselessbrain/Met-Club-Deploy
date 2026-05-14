@@ -3,6 +3,7 @@ import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router";
 import bgImage from "../../assets/images/bg.png";
 import useAxios from "../../hooks/useAxios";
+import TopNav from "../../components/Shared/TopBar";
 
 export interface IUser {
     fullName: string;
@@ -72,7 +73,11 @@ export default function Registration() {
                 <div className="absolute bottom-0 left-1/3 h-64 w-64 rounded-full bg-orange-100/20 blur-3xl" />
             </div>
 
-            <div className="relative z-10 flex min-h-screen items-center justify-center px-4 py-8 sm:px-8 md:px-12">
+            <div className="relative z-10 px-4 pt-4 sm:px-8 md:px-12">
+                <TopNav title="নিবন্ধন" />
+            </div>
+
+            <div className="relative z-10 flex min-h-[calc(100vh-88px)] items-center justify-center px-4 py-8 sm:px-8 md:px-12">
                 <div
                     className="relative w-full max-w-3xl rounded-4xl p-6 sm:p-8 md:p-10 text-white backdrop-blur-2xl overflow-hidden"
                     style={{
