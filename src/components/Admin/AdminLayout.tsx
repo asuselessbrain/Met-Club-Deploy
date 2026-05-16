@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { Outlet, useLocation, useNavigate } from "react-router";
+import { Link, Outlet, useLocation } from "react-router";
 import Sidebar from "./Sidebar";
 import bgImage from "../../assets/images/start-journey-page-bg.jpeg";
-import { FiMenu, FiPlus, FiX } from "react-icons/fi";
+import { FiHome, FiMenu, FiX } from "react-icons/fi";
 import { FiGrid, FiBook, FiLayers, FiFileText, FiPlusCircle, FiPlayCircle } from "react-icons/fi";
 import { NavLink } from "react-router";
 
@@ -19,7 +19,6 @@ const sidebarLinks = [
 export default function AdminLayout() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
 
   // Determine current page title from URL
   const currentLink = sidebarLinks.find(link => location.pathname.includes(link.path));
@@ -130,28 +129,16 @@ export default function AdminLayout() {
           </div>
 
           {/* Universal Add Button */}
-          <button
-            onClick={() => {
-              if (location.pathname.includes("/admin/tutorial")) {
-                if (location.pathname !== "/admin/create-tutorial") {
-                  navigate("/admin/create-tutorial");
-                }
-                return;
-              }
-
-              if(location.pathname !== '/admin/create-content') {
-                navigate('/admin/create-content');
-              }
-            }}
-            className="flex items-center gap-2 px-4 py-2 rounded-xl font-bold text-white transition-transform hover:scale-105"
+          <Link to="/"
+            className="flex items-center cursor-pointer gap-2 px-4 py-2 rounded-xl font-bold text-white transition-transform hover:scale-105"
             style={{
               background: "linear-gradient(135deg, #ef4444, #f97316)",
               boxShadow: "0 4px 14px rgba(220,38,38,0.28)",
             }}
           >
-            <FiPlus className="w-5 h-5" />
-            <span className="hidden sm:inline">{location.pathname.includes("/admin/tutorial") ? "টিউটোরিয়াল যোগ করুন" : "কন্টেন্ট যোগ করুন"}</span>
-          </button>
+            <FiHome className="w-5 h-5" />
+            <span className="hidden sm:inline">হোম</span>
+          </Link>
         </header>
 
         {/* Page Content Outlet */}

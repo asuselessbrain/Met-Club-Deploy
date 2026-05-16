@@ -35,11 +35,11 @@ export default function Subchapter() {
         backgroundPosition: "center bottom",
       }}
     >
-      <div className="relative z-10">
+      <div className="relative z-40">
         <TopNav title={chapter.title} tone="red" />
       </div>
 
-      <div className="relative z-10 flex-1 overflow-auto px-4 py-6 sm:px-6 lg:px-10">
+      <div className="relative z-0 flex-1 overflow-auto px-4 py-6 sm:px-6 lg:px-10">
         <div className="mx-auto w-full max-w-6xl h-full flex items-center justify-center">
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 mx-auto items-stretch">
             {subchapters.map((subchapter) => {

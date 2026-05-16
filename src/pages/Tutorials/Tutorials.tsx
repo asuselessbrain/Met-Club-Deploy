@@ -17,7 +17,7 @@ type Tutorial = {
 const resolveImageUrl = (value: string) => {
     if (!value) return "";
     if (value.startsWith("http")) return value;
-    return ("http://localhost:5000" + value).replace("/api/v1", "");
+    return ("http://119.15.153.74/api" + value).replace("/api/v1", "");
 };
 
 const getYoutubeEmbedUrl = (input: string) => {
@@ -97,7 +97,7 @@ export default function Tutorials() {
             <TopNav title="টিউটোরিয়াল ভিডিও" />
 
         <div className="px-4 py-8 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-7xl">
+            <div className="mx-auto max-w-6xl">
 
                 {isLoading ? (
                     <div className="rounded-3xl border border-slate-200 bg-white p-10 text-center text-slate-500 shadow-sm">

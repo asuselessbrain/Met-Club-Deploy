@@ -1,10 +1,8 @@
 import { Link, NavLink } from "react-router";
-import { FiGrid, FiBook, FiLayers, FiFileText, FiPlusCircle, FiPlayCircle } from "react-icons/fi";
+import { FiGrid, FiFileText, FiPlusCircle, FiPlayCircle } from "react-icons/fi";
 
 const sidebarLinks = [
   { name: "ওভারভিউ", path: "/admin/overview", icon: FiGrid },
-  { name: "অধ্যায় পরিচালনা", path: "/admin/chapters", icon: FiBook },
-  { name: "সাব-অধ্যায় পরিচালনা", path: "/admin/subchapters", icon: FiLayers },
   { name: "কন্টেন্ট পরিচালনা", path: "/admin/content", icon: FiFileText },
   { name: "কন্টেন্ট তৈরি করুন", path: "/admin/create-content", icon: FiPlusCircle },
   { name: "টিউটোরিয়াল পরিচালনা", path: "/admin/tutorials", icon: FiPlayCircle },

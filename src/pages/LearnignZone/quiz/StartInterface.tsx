@@ -16,12 +16,12 @@ export default function StartInterface() {
                 }}
             >
                 {/* ───────────────── TOP BAR ───────────────── */}
-                <div className="relative z-10">
+                <div className="relative z-40">
                     <TopNav />
                 </div>
 
                 {/* ───────────────── MAIN CONTENT ───────────────── */}
-                <div className="px-4 py-4 flex flex-col items-center justify-center flex-1 overflow-auto relative z-10">
+                <div className="px-4 py-4 flex flex-col items-center justify-center flex-1 overflow-auto relative z-0">
 
                     <div className="w-full max-w-md sm:max-w-lg">
 

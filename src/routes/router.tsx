@@ -1,25 +1,29 @@
 import { createBrowserRouter } from "react-router";
-import StartJourney from "../pages/StartJourney";
-import Chapter from "../pages/LearnignZone/Index/Chapter";
-import Subchapter from "../pages/LearnignZone/Subchapter/Subchapter";
-import Deficulty from "../pages/LearnignZone/Deficulty/Deficulty";
-import StartInterface from "../pages/LearnignZone/quiz/StartInterface";
-import Quiz from "../pages/LearnignZone/quiz/quiz";
-import Registration from "../pages/Registration/Registration";
+import { lazy } from "react";
 import LoginGuard from "../components/HomeRedirect/HomeRedirect";
 import App from "../App";
-import About from "../pages/About/About";
-import Profile from "../pages/Profile/Profile";
-import AdminLayout from "../components/Admin/AdminLayout";
-import Overview from "../pages/Admin/Overview";
-import ManageChapters from "../pages/Admin/ManageChapters";
-import ManageSubchapters from "../pages/Admin/ManageSubchapters";
-import CreateContent from "../pages/Admin/CreateContent";
-import ManageContent from "../pages/Admin/ManageContent";
-import ManageTutorials from "../pages/Admin/ManageTutorials";
-import CreateTutorial from "../pages/Admin/CreateTutorial";
-import Section from "../pages/LearnignZone/LessionSection/Section";
-import Tutorials from "../pages/Tutorials/Tutorials";
+import { SuspenseWrapper } from "./SuspenseWrapper";
+
+// Lazy load page components
+const StartJourney = lazy(() => import("../pages/StartJourney"));
+const Chapter = lazy(() => import("../pages/LearnignZone/Index/Chapter"));
+const Subchapter = lazy(() => import("../pages/LearnignZone/Subchapter/Subchapter"));
+const Deficulty = lazy(() => import("../pages/LearnignZone/Deficulty/Deficulty"));
+const StartInterface = lazy(() => import("../pages/LearnignZone/quiz/StartInterface"));
+const Quiz = lazy(() => import("../pages/LearnignZone/quiz/quiz"));
+const Registration = lazy(() => import("../pages/Registration/Registration"));
+const About = lazy(() => import("../pages/About/About"));
+const Profile = lazy(() => import("../pages/Profile/Profile"));
+const AdminLayout = lazy(() => import("../components/Admin/AdminLayout"));
+const Overview = lazy(() => import("../pages/Admin/Overview"));
+const ManageChapters = lazy(() => import("../pages/Admin/ManageChapters"));
+const ManageSubchapters = lazy(() => import("../pages/Admin/ManageSubchapters"));
+const CreateContent = lazy(() => import("../pages/Admin/CreateContent"));
+const ManageContent = lazy(() => import("../pages/Admin/ManageContent"));
+const ManageTutorials = lazy(() => import("../pages/Admin/ManageTutorials"));
+const CreateTutorial = lazy(() => import("../pages/Admin/CreateTutorial"));
+const Section = lazy(() => import("../pages/LearnignZone/LessionSection/Section"));
+const Tutorials = lazy(() => import("../pages/Tutorials/Tutorials"));
 
 
 type QuizRouteData = {
@@ -39,19 +43,19 @@ const router = createBrowserRouter([
   },
   {
     path: "/start-journey",
-    element: <StartJourney />,
+    element: <SuspenseWrapper><StartJourney /></SuspenseWrapper>,
   },
   {
     path: "/registration",
-    element: <Registration />,
+    element: <SuspenseWrapper><Registration /></SuspenseWrapper>,
   },
   {
     path: "/learning-zone",
-    element: <Chapter />
+    element: <SuspenseWrapper><Chapter /></SuspenseWrapper>
   },
   {
     path: "/subchapters/:chapterId",
-    element: <Subchapter />,
+    element: <SuspenseWrapper><Subchapter /></SuspenseWrapper>,
     loader: async ({ params }) => {
       const chapterIdParam = params.chapterId;
       if (!chapterIdParam) {
@@ -92,19 +96,19 @@ const router = createBrowserRouter([
   },
   {
     path: "/lesson/:subchapterId?",
-    element: <Section />,
+    element: <SuspenseWrapper><Section /></SuspenseWrapper>,
   },
   {
     path: '/start-quiz/:subchapterId',
-    element: <StartInterface />
+    element: <SuspenseWrapper><StartInterface /></SuspenseWrapper>
   },
   {
     path: "/select-difficulty/:subchapterId",
-    element: <Deficulty />
+    element: <SuspenseWrapper><Deficulty /></SuspenseWrapper>
   },
   {
     path: "/quiz",
-    element: <Quiz />,
+    element: <SuspenseWrapper><Quiz /></SuspenseWrapper>,
     loader: async ({ request }) => {
       const url = new URL(request.url);
       const subchapterId = url.searchParams.get('subchapterId');
@@ -123,51 +127,51 @@ const router = createBrowserRouter([
   },
   {
     path: "/about",
-    element: <About />,
+    element: <SuspenseWrapper><About /></SuspenseWrapper>,
   },
   {
     path: "/tutorials",
-    element: <Tutorials />,
+    element: <SuspenseWrapper><Tutorials /></SuspenseWrapper>,
   },
   {
     path: "/profile",
-    element: <Profile />,
+    element: <SuspenseWrapper><Profile /></SuspenseWrapper>,
   },
   {
     path: "/admin",
-    element: <AdminLayout />,
+    element: <SuspenseWrapper><AdminLayout /></SuspenseWrapper>,
     children: [
       {
         index: true,
-        element: <Overview />,
+        element: <SuspenseWrapper><Overview /></SuspenseWrapper>,
       },
       {
         path: "overview",
-        element: <Overview />,
+        element: <SuspenseWrapper><Overview /></SuspenseWrapper>,
       },
       {
         path: "chapters",
-        element: <ManageChapters />,
+        element: <SuspenseWrapper><ManageChapters /></SuspenseWrapper>,
       },
       {
         path: "subchapters",
-        element: <ManageSubchapters />,
+        element: <SuspenseWrapper><ManageSubchapters /></SuspenseWrapper>,
       },
       {
         path: "content",
-        element: <ManageContent />,
+        element: <SuspenseWrapper><ManageContent /></SuspenseWrapper>,
       },
       {
         path: "create-content",
-        element: <CreateContent />,
+        element: <SuspenseWrapper><CreateContent /></SuspenseWrapper>,
       },
       {
         path: "tutorials",
-        element: <ManageTutorials />,
+        element: <SuspenseWrapper><ManageTutorials /></SuspenseWrapper>,
       },
       {
         path: "create-tutorial",
-        element: <CreateTutorial />,
+        element: <SuspenseWrapper><CreateTutorial /></SuspenseWrapper>,
       },
     ],
   }
