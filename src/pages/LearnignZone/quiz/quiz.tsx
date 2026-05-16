@@ -1108,7 +1108,7 @@ export default function Quiz({ onFinish }: QuizProps) {
     const quizQuestions = useLoaderData() as QuizQuestion[];
     const [searchParams] = useSearchParams();
 
-    const chapterId = searchParams.get("chapterId");
+    const chapterId = searchParams.get("subchapterId");
 
     const TOTAL = quizQuestions.length;
 

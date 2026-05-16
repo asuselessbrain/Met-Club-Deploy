@@ -20,6 +20,8 @@ export default function BottomNav({
 
   const isLast = current === total - 1;
   const isSectionTone = variant === "section";
+  // Use section's button colors for quiz as well per UX request
+  const useSectionToneForButtons = variant === "section" || variant === "quiz";
 
   /* ── Label sets per variant ───────────────────────────────── */
   const labels = {
@@ -40,20 +42,20 @@ export default function BottomNav({
   /* ── Button styles ────────────────────────────────────────── */
   const prevStyle: React.CSSProperties = {
     background: current === 0
-      ? (isSectionTone ? "rgba(254,226,226,0.7)" : "rgba(209,250,229,0.5)")
-      : (isSectionTone ? "linear-gradient(135deg,#fee2e2,#fecaca)" : "linear-gradient(135deg,#d1fae5,#a7f3d0)"),
-    border: isSectionTone ? "2.5px solid #fca5a5" : "2.5px solid #6ee7b7",
-    color: isSectionTone ? "#991b1b" : "#065f46",
-    boxShadow: current > 0 ? (isSectionTone ? "0 4px 16px rgba(239,68,68,0.23)" : "0 4px 16px rgba(110,231,183,0.30)") : "none",
+      ? (useSectionToneForButtons ? "rgba(254,226,226,0.7)" : "rgba(209,250,229,0.5)")
+      : (useSectionToneForButtons ? "linear-gradient(135deg,#fee2e2,#fecaca)" : "linear-gradient(135deg,#d1fae5,#a7f3d0)"),
+    border: useSectionToneForButtons ? "2.5px solid #fca5a5" : "2.5px solid #6ee7b7",
+    color: useSectionToneForButtons ? "#991b1b" : "#065f46",
+    boxShadow: current > 0 ? (useSectionToneForButtons ? "0 4px 16px rgba(239,68,68,0.23)" : "0 4px 16px rgba(110,231,183,0.30)") : "none",
   };
 
   const nextStyle: React.CSSProperties = {
     background: answered
-      ? (isSectionTone ? "linear-gradient(135deg,#ef4444,#dc2626)" : "linear-gradient(135deg,#0ea5e9,#0284c7)")
-      : (isSectionTone ? "linear-gradient(135deg,#fee2e2,#fecaca)" : "linear-gradient(135deg,#e0f2fe,#bae6fd)"),
-    border: isSectionTone ? "2.5px solid #f87171" : "2.5px solid #38bdf8",
-    color: answered ? "#fff" : (isSectionTone ? "#fca5a5" : "#7dd3fc"),
-    boxShadow: answered ? (isSectionTone ? "0 4px 16px rgba(239,68,68,0.33)" : "0 4px 16px rgba(14,165,233,0.35)") : "none",
+      ? (useSectionToneForButtons ? "linear-gradient(135deg,#ef4444,#dc2626)" : "linear-gradient(135deg,#0ea5e9,#0284c7)")
+      : (useSectionToneForButtons ? "linear-gradient(135deg,#fee2e2,#fecaca)" : "linear-gradient(135deg,#e0f2fe,#bae6fd)"),
+    border: useSectionToneForButtons ? "2.5px solid #f87171" : "2.5px solid #38bdf8",
+    color: answered ? "#fff" : (useSectionToneForButtons ? "#fca5a5" : "#7dd3fc"),
+    boxShadow: answered ? (useSectionToneForButtons ? "0 4px 16px rgba(239,68,68,0.33)" : "0 4px 16px rgba(14,165,233,0.35)") : "none",
   };
 
   /* ── Shared button classes ────────────────────────────────── */
