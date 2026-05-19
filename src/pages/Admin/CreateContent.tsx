@@ -5,6 +5,8 @@ import { FiPlus, FiTrash2, FiImage } from "react-icons/fi";
 import useAxios from "../../hooks/useAxios";
 import { useSearchParams } from "react-router";
 import { resolveMediaUrl } from "../../utils/media";
+import toast from "react-hot-toast";
+import axios from "axios";
 
 interface Section {
   id: number;
@@ -168,13 +170,18 @@ export default function CreateContent() {
 
     try {
       setIsSubmitting(true);
-      await axiosInstance.post("/content", form, {
+      const res =await axiosInstance.post("/content", form, {
         headers: { "Content-Type": "multipart/form-data" },
       });
-      alert("কন্টেন্ট সফলভাবে সংরক্ষণ করা হয়েছে");
+      console.log(res.data);
+      toast.success("কন্টেন্ট সফলভাবে সংরক্ষণ করা হয়েছে");
     } catch (err) {
-      console.error(err);
-      alert("কন্টেন্ট সংরক্ষণ করা যায়নি");
+      if (axios.isAxiosError(err)) {
+        toast.error(err.response?.data.errorMessage);
+      }
+      else {
+        toast.error("কন্টেন্ট সংরক্ষণ করা যায়নি");
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -192,8 +199,8 @@ export default function CreateContent() {
   const quillFormats = ["bold", "italic", "underline", "list", "bullet", "link"];
   const filteredSubchapters = chapter
     ? subchapters
-        .filter((s) => String(s.chapterId) === chapter)
-        .sort((a, b) => a.order - b.order)
+      .filter((s) => String(s.chapterId) === chapter)
+      .sort((a, b) => a.order - b.order)
     : [];
 
   return (

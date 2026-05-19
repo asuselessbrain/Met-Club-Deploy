@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import logo from "../../assets/images/white_logo.png";
 import Login from "../Login/Login";
 
@@ -29,11 +30,11 @@ export default function Hero() {
                     <p className="text-center md:text-xl lg:text-[16px] xl:text-xl">
                         এসো আবহাওয়া শিখি খেলতে খেলতে
                     </p>
-                    <a href="/about" target="_blank" className="flex justify-center mt-6">
+                    <Link to="/about" className="flex justify-center mt-6">
                         <button className="px-6 py-3 cursor-pointer bg-white/85 text-red-700 font-semibold rounded-lg hover:bg-red-50 transition">
                             মেট ক্লাব সম্পর্কে জানুন
                         </button>
-                    </a>
+                    </Link>
                 </div>
                 <div className="w-full max-w-md lg:w-105 justify-self-center">
                     <Login />

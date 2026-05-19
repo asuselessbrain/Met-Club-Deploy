@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router";
 import useAxios from "../../hooks/useAxios";
 import { FiImage } from "react-icons/fi";
+import toast from "react-hot-toast";
 
 type TutorialForm = {
   id?: number;
@@ -66,7 +67,7 @@ export default function CreateTutorial() {
     if (!form.thumbnailImage) return null;
     if (typeof form.thumbnailImage === "string") {
       if (form.thumbnailImage.startsWith("http")) return form.thumbnailImage;
-      return ("http://119.15.153.74/api" + form.thumbnailImage).replace("/api/v1", "");
+      return ("http://localhost:5000" + form.thumbnailImage).replace("/api/v1", "");
     }
     return URL.createObjectURL(form.thumbnailImage);
   };
@@ -75,12 +76,12 @@ export default function CreateTutorial() {
     e.preventDefault();
 
     if (!form.tutorialNumber || !form.name || !form.title || !form.videoLink) {
-      alert("সব তথ্য পূরণ করুন");
+      toast.error("সব তথ্য পূরণ করুন");
       return;
     }
 
     if (!form.thumbnailImage) {
-      alert("thumbnail image দিতে হবে");
+      toast.error("thumbnail image দিতে হবে");
       return;
     }
 
@@ -103,11 +104,11 @@ export default function CreateTutorial() {
       } else {
         await axios.post("/tutorials", payload);
       }
-      alert(form.id ? "Tutorial updated" : "Tutorial created");
+      toast.success(form.id ? "Tutorial updated" : "Tutorial created");
       navigate("/admin/tutorials");
     } catch (error) {
       console.error(error);
-      alert("Tutorial save করা যায়নি");
+      toast.error("Tutorial save করা যায়নি");
     } finally {
       setIsSubmitting(false);
     }

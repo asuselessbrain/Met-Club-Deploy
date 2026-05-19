@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import metClubLogo from "../../assets/images/logo_original.png";
 import { FiPlay } from "react-icons/fi";
+import useAxios from "../../hooks/useAxios";
+import toast from "react-hot-toast";
 
 interface TopNavProps {
     title?: string;
@@ -31,15 +33,26 @@ const menuItems = [
         icon: <FiPlay />,
     },
     {
-        label: "আমার অগ্রগতি",
-        href: "/progress",
+        label: "মেট ক্লাব সম্পর্কে জানুন",
+        href: "/about",
         icon: (
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
-                <polyline points="9 11 12 14 22 4" />
-                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 16v-4" />
+                <path d="M12 8h.01" />
             </svg>
         ),
     },
+    // {
+    //     label: "আমার অগ্রগতি",
+    //     href: "/progress",
+    //     icon: (
+    //         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
+    //             <polyline points="9 11 12 14 22 4" />
+    //             <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+    //         </svg>
+    //     ),
+    // },
 ];
 
 export default function TopNav({ title, tone = "default" }: TopNavProps) {
@@ -47,10 +60,18 @@ export default function TopNav({ title, tone = "default" }: TopNavProps) {
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
     const navigate = useNavigate();
+    const axios = useAxios();
 
-    const handleLogout = () => {
-        localStorage.removeItem("token");
-        navigate("/");
+    const handleLogout = async () => {
+        const res = await axios("/auth/logout");
+        if (res.data.success) {
+            toast.success("সফলভাবে লগআউট হয়েছে!");
+            localStorage.removeItem("token");
+            navigate("/");
+        }
+        else{
+            toast.error("লগআউট করতে সমস্যা হয়েছে, আবার চেষ্টা করুন!");
+        }
     };
 
     useEffect(() => {
@@ -251,9 +272,9 @@ export default function TopNav({ title, tone = "default" }: TopNavProps) {
 
                                 <div className="py-1.5">
                                     {menuItems.map((item) => (
-                                        <a
+                                        <Link
                                             key={item.label}
-                                            href={item.href}
+                                            to={item.href}
                                             className="flex items-center gap-3 px-4 py-2.5 transition-colors duration-150"
                                             style={{
                                                 color: "#7f1d1d",
@@ -268,7 +289,7 @@ export default function TopNav({ title, tone = "default" }: TopNavProps) {
                                         >
                                             <span style={{ color: "#ef4444" }}>{item.icon}</span>
                                             {item.label}
-                                        </a>
+                                        </Link>
                                     ))}
                                 </div>
 

@@ -77,7 +77,7 @@ export default function Registration() {
                 <TopNav title="নিবন্ধন" />
             </div>
 
-            <div className="relative z-10 flex min-h-[calc(100vh-88px)] items-center justify-center px-4 py-8 sm:px-8 md:px-12">
+            <div className="relative flex min-h-[calc(100vh-88px)] items-center justify-center px-4 py-8 sm:px-8 md:px-12">
                 <div
                     className="relative w-full max-w-3xl rounded-4xl p-6 sm:p-8 md:p-10 text-white backdrop-blur-2xl overflow-hidden"
                     style={{
