@@ -7,6 +7,7 @@ import { resolveMediaUrl } from "../../utils/media";
 import toast from "react-hot-toast";
 import axios from "axios";
 import axiosProtected from "../../hooks/axiosProtected";
+import { useNavigate } from "react-router";
 
 interface Section {
   id: number;
@@ -29,6 +30,7 @@ interface Chapter {
 
 export default function CreateContent() {
   const axiosInstance = axiosProtected();
+  const navigate = useNavigate();
   const nextSectionIdRef = useRef(2);
   const [searchParams] = useSearchParams();
   const [chapter, setChapter] = useState("");
@@ -100,26 +102,40 @@ export default function CreateContent() {
   }, [searchParams, subchapters]);
 
   useEffect(() => {
-    if (!subchapter) return;
+    // reset to empty template when no subchapter selected
+    if (!subchapter) {
+      setSections([{ id: 1, image: null, content: "" }]);
+      nextSectionIdRef.current = 2;
+      return;
+    }
 
     let cancelled = false;
     (async () => {
       try {
         const resp = await axiosInstance.get(`/content/subchapter/${subchapter}`);
         const data = resp.data?.data;
-        if (!data || cancelled) return;
+        if (cancelled) return;
 
-        const loadedSections: Section[] = (data.sections || []).map(
-          (s: { image?: string | null; content?: string }) => ({
-            id: nextSectionIdRef.current++,
-            image: s.image || null,
-            content: s.content || "",
-          })
-        );
+        const sectionsFromDb: Array<{ image?: string | null; content?: string }> = data?.sections || [];
 
-        if (loadedSections.length > 0) setSections(loadedSections);
+        if (!data || sectionsFromDb.length === 0) {
+          // no content for this subchapter — show empty template
+          setSections([{ id: 1, image: null, content: "" }]);
+          nextSectionIdRef.current = 2;
+          return;
+        }
+
+        const loadedSections: Section[] = sectionsFromDb.map((s) => ({
+          id: nextSectionIdRef.current++,
+          image: s.image || null,
+          content: s.content || "",
+        }));
+
+        setSections(loadedSections);
       } catch (err) {
         console.error("Failed to load content:", err);
+        setSections([{ id: 1, image: null, content: "" }]);
+        nextSectionIdRef.current = 2;
       }
     })();
 
@@ -170,11 +186,13 @@ export default function CreateContent() {
 
     try {
       setIsSubmitting(true);
-      const res =await axiosInstance.post("/content", form, {
+      const res = await axiosInstance.post("/content", form, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       console.log(res.data.message);
-      toast.success(res.data.message || "কন্টেন্ট সফলভাবে সংরক্ষণ করা হয়েছে", {id: "error"});
+      toast.success(res.data.message || "কন্টেন্ট সফলভাবে সংরক্ষণ করা হয়েছে", { id: "error" });
+      // redirect to manage content list after successful create
+      navigate("/admin/content");
     } catch (err) {
       if (axios.isAxiosError(err)) {
         toast.error(err.response?.data.errorMessage, {id: "error"});

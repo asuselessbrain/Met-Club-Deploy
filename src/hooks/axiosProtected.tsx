@@ -7,12 +7,12 @@ const handleLogout = async () => {
         withCredentials: true,
     });
     if (res.data.success) {
-        toast.success("সফলভাবে লগআউট হয়েছে!", {id: "error"});
+        toast.success("সফলভাবে লগআউট হয়েছে!", { id: "error" });
         localStorage.removeItem("token");
         window.location.href = "/";
     }
     else {
-        toast.error("লগআউট করতে সমস্যা হয়েছে, আবার চেষ্টা করুন!", {id: "error"});
+        toast.error("লগআউট করতে সমস্যা হয়েছে, আবার চেষ্টা করুন!", { id: "error" });
     }
 };
 
@@ -49,6 +49,7 @@ instance.interceptors.response.use(
 
         const isRefreshRequest = originalRequest.url.includes("/auth/refresh-token");
 
+        console.log(error.response?.status);
         if (error.response?.status === 401) {
 
             if (isRefreshRequest) {
@@ -58,6 +59,8 @@ instance.interceptors.response.use(
 
             if (!originalRequest._retry) {
                 originalRequest._retry = true;
+
+                console.log(originalRequest._retry);
 
 
                 const response = await instance("/auth/refresh-token")
