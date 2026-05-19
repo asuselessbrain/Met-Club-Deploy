@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import metClubLogo from "../../assets/images/logo_original.png";
 import { FiPlay } from "react-icons/fi";
-import useAxios from "../../hooks/useAxios";
 import toast from "react-hot-toast";
+import axiosPublic from "../../hooks/axiosPublic";
 
 interface TopNavProps {
     title?: string;
@@ -60,17 +60,17 @@ export default function TopNav({ title, tone = "default" }: TopNavProps) {
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
     const navigate = useNavigate();
-    const axios = useAxios();
+    const axios = axiosPublic();
 
     const handleLogout = async () => {
         const res = await axios("/auth/logout");
         if (res.data.success) {
-            toast.success("সফলভাবে লগআউট হয়েছে!");
+            toast.success("সফলভাবে লগআউট হয়েছে!", {id: "error"});
             localStorage.removeItem("token");
             navigate("/");
         }
         else{
-            toast.error("লগআউট করতে সমস্যা হয়েছে, আবার চেষ্টা করুন!");
+            toast.error("লগআউট করতে সমস্যা হয়েছে, আবার চেষ্টা করুন!", {id: "error"});
         }
     };
 

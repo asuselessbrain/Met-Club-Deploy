@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { FiEdit2, FiTrash2, FiEye, FiX } from "react-icons/fi";
 import { useNavigate } from "react-router";
-import useAxios from "../../hooks/useAxios";
 import { resolveMediaUrl } from "../../utils/media";
+import axiosProtected from "../../hooks/axiosProtected";
 
 type Chapter = {
   id: number;
@@ -35,7 +35,7 @@ type EnrichedContent = LearningContent & {
 };
 
 export default function ManageContent() {
-  const axios = useAxios();
+  const axios = axiosProtected();
   const navigate = useNavigate();
   const [contents, setContents] = useState<EnrichedContent[]>([]);
   const [query, setQuery] = useState("");

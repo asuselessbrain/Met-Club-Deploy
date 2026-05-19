@@ -3,8 +3,8 @@ import ZoneCard from "../components/StartJourney/ZoneCard";
 import storyImg from "../assets/images/learning-zone.png";
 import simulationImg from "../assets/images/practice-zone.png";
 import bgImage from "../assets/images/start-journey-page-bg.jpeg";
-import useAxios from "../hooks/useAxios";
 import TopNav from "../components/Shared/TopBar";
+import axiosProtected from "../hooks/axiosProtected";
 
 
 
@@ -13,7 +13,7 @@ export default function StartJourney() {
 
   
 
-  const axios = useAxios();
+  const axios = axiosProtected();
 
   const [isChapterOneCompleted, setIsChapterOneCompleted] = useState(false);
 

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router";
-import useAxios from "../../hooks/useAxios";
 import { FiImage } from "react-icons/fi";
 import toast from "react-hot-toast";
+import axiosProtected from "../../hooks/axiosProtected";
 
 type TutorialForm = {
   id?: number;
@@ -14,7 +14,7 @@ type TutorialForm = {
 };
 
 export default function CreateTutorial() {
-  const axios = useAxios();
+  const axios = axiosProtected();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -76,12 +76,12 @@ export default function CreateTutorial() {
     e.preventDefault();
 
     if (!form.tutorialNumber || !form.name || !form.title || !form.videoLink) {
-      toast.error("সব তথ্য পূরণ করুন");
+      toast.error("সব তথ্য পূরণ করুন", {id: "error"});
       return;
     }
 
     if (!form.thumbnailImage) {
-      toast.error("thumbnail image দিতে হবে");
+      toast.error("thumbnail image দিতে হবে", {id: "error"});
       return;
     }
 
@@ -104,11 +104,11 @@ export default function CreateTutorial() {
       } else {
         await axios.post("/tutorials", payload);
       }
-      toast.success(form.id ? "Tutorial updated" : "Tutorial created");
+      toast.success(form.id ? "Tutorial updated" : "Tutorial created", {id: "error"});
       navigate("/admin/tutorials");
     } catch (error) {
       console.error(error);
-      toast.error("Tutorial save করা যায়নি");
+      toast.error("Tutorial save করা যায়নি", {id: "error"});
     } finally {
       setIsSubmitting(false);
     }

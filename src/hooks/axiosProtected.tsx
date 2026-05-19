@@ -7,12 +7,12 @@ const handleLogout = async () => {
         withCredentials: true,
     });
     if (res.data.success) {
-        toast.success("সফলভাবে লগআউট হয়েছে!");
+        toast.success("সফলভাবে লগআউট হয়েছে!", {id: "error"});
         localStorage.removeItem("token");
         window.location.href = "/";
     }
     else {
-        toast.error("লগআউট করতে সমস্যা হয়েছে, আবার চেষ্টা করুন!");
+        toast.error("লগআউট করতে সমস্যা হয়েছে, আবার চেষ্টা করুন!", {id: "error"});
     }
 };
 
@@ -80,8 +80,8 @@ instance.interceptors.response.use(
     }
 );
 
-const useAxios = () => {
+const axiosProtected = () => {
     return instance;
 };
 
-export default useAxios;
+export default axiosProtected;

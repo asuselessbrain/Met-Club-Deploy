@@ -1,7 +1,8 @@
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router";
-import useAxios from "../../hooks/useAxios";
+import axiosPublic from "../../hooks/axiosPublic";
+import axios from "axios";
 
 type LoginFormValues = {
     email: string;
@@ -10,7 +11,7 @@ type LoginFormValues = {
 
 export default function Login() {
     const navigate = useNavigate();
-    const axios = useAxios();
+    const axiosInstance = axiosPublic();
     const {
         register,
         handleSubmit,
@@ -18,13 +19,18 @@ export default function Login() {
     } = useForm<LoginFormValues>();
 
     const onSubmit = async (data: LoginFormValues) => {
-        const res = await axios.post("/auth/login", data);
-        if (res.data.success) {
+        try {
+            const res = await axiosInstance.post("/auth/login", data);
             localStorage.setItem("token", res.data.data);
-            toast.success("লগইন সফল! এখন যাত্রা শুরু করুন।");
+            toast.success(res.data.message || "লগইন সফল! এখন যাত্রা শুরু করুন।", {id: "error"});
             navigate("/start-journey");
-        } else {
-            toast.error(res.data.errorMessage || "লগইন ব্যর্থ হয়েছে।");
+        } catch (error) {
+            if(axios.isAxiosError(error)) {
+                toast.error(error.response?.data.errorMessage, {id: "error"});
+            }
+            else {
+                toast.error("লগইন ব্যর্থ হয়েছে।", {id: "error"});
+            }
         }
     };
 

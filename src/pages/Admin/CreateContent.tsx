@@ -2,11 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import ReactQuill from "react-quill-new";
 import "react-quill-new/dist/quill.snow.css";
 import { FiPlus, FiTrash2, FiImage } from "react-icons/fi";
-import useAxios from "../../hooks/useAxios";
 import { useSearchParams } from "react-router";
 import { resolveMediaUrl } from "../../utils/media";
 import toast from "react-hot-toast";
 import axios from "axios";
+import axiosProtected from "../../hooks/axiosProtected";
 
 interface Section {
   id: number;
@@ -28,7 +28,7 @@ interface Chapter {
 }
 
 export default function CreateContent() {
-  const axiosInstance = useAxios();
+  const axiosInstance = axiosProtected();
   const nextSectionIdRef = useRef(2);
   const [searchParams] = useSearchParams();
   const [chapter, setChapter] = useState("");
@@ -173,14 +173,14 @@ export default function CreateContent() {
       const res =await axiosInstance.post("/content", form, {
         headers: { "Content-Type": "multipart/form-data" },
       });
-      console.log(res.data);
-      toast.success("কন্টেন্ট সফলভাবে সংরক্ষণ করা হয়েছে");
+      console.log(res.data.message);
+      toast.success(res.data.message || "কন্টেন্ট সফলভাবে সংরক্ষণ করা হয়েছে", {id: "error"});
     } catch (err) {
       if (axios.isAxiosError(err)) {
-        toast.error(err.response?.data.errorMessage);
+        toast.error(err.response?.data.errorMessage, {id: "error"});
       }
       else {
-        toast.error("কন্টেন্ট সংরক্ষণ করা যায়নি");
+        toast.error("কন্টেন্ট সংরক্ষণ করা যায়নি", {id: "error"});
       }
     } finally {
       setIsSubmitting(false);

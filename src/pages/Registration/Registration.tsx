@@ -2,8 +2,8 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router";
 import bgImage from "../../assets/images/bg.png";
-import useAxios from "../../hooks/useAxios";
 import TopNav from "../../components/Shared/TopBar";
+import axiosPublic from "../../hooks/axiosPublic";
 
 export interface IUser {
     fullName: string;
@@ -22,7 +22,7 @@ type RegistrationFormValues = IUser & {
 
 export default function Registration() {
     const navigate = useNavigate();
-    const axios = useAxios()
+    const axios = axiosPublic()
 
     const {
         register,
@@ -44,10 +44,10 @@ export default function Registration() {
         const res = await axios.post("/user", payload)
         if (res.data.success) {
             navigate("/start-journey");
-            toast.success("নিবন্ধন সফল! এখন যাত্রা শুরু করুন।");
+            toast.success("নিবন্ধন সফল! এখন যাত্রা শুরু করুন।", {id: "error"});
             localStorage.setItem("token", res.data.data.accessToken)
         } else {
-            toast.error(res.data.errorMessage || "নিবন্ধন ব্যর্থ হয়েছে।");
+            toast.error(res.data.errorMessage || "নিবন্ধন ব্যর্থ হয়েছে।", {id: "error"});
         }
     };
 
