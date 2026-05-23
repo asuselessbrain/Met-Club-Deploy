@@ -6,8 +6,8 @@ import { useSearchParams } from "react-router";
 import { resolveMediaUrl } from "../../utils/media";
 import toast from "react-hot-toast";
 import axios from "axios";
-import axiosProtected from "../../hooks/axiosProtected";
 import { useNavigate } from "react-router";
+import useAxiosProtected from "../../hooks/axiosProtected";
 
 interface Section {
   id: number;
@@ -29,7 +29,7 @@ interface Chapter {
 }
 
 export default function CreateContent() {
-  const axiosInstance = axiosProtected();
+  const axiosInstance = useAxiosProtected();
   const navigate = useNavigate();
   const nextSectionIdRef = useRef(2);
   const [searchParams] = useSearchParams();
@@ -147,7 +147,7 @@ export default function CreateContent() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!chapter || !subchapter) {
-      alert("অধ্যায় এবং সাব-অধ্যায় নির্বাচন করুন");
+      toast.error("অধ্যায় এবং সাব-অধ্যায় নির্বাচন করুন", {id: "error"});
       return;
     }
 
@@ -251,7 +251,6 @@ export default function CreateContent() {
                 setSubchapter("");
               }}
               className="w-full px-4 py-3 rounded-xl border border-white/50 bg-white/60 focus:outline-none focus:ring-2 focus:ring-red-400"
-              required
             >
               <option value="">-- অধ্যায় বেছে নিন --</option>
               {chapters.map((c) => (
@@ -272,7 +271,6 @@ export default function CreateContent() {
                 "w-full px-4 py-3 rounded-xl border border-white/50 bg-white/60 focus:outline-none focus:ring-2 focus:ring-red-400 " +
                 (!chapter ? "opacity-60 cursor-not-allowed" : "")
               }
-              required
               disabled={!chapter}
             >
               <option value="">-- সাব-অধ্যায় বেছে নিন --</option>

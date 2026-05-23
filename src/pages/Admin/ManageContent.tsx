@@ -2,7 +2,10 @@ import { useEffect, useMemo, useState } from "react";
 import { FiEdit2, FiTrash2, FiEye, FiX } from "react-icons/fi";
 import { useNavigate } from "react-router";
 import { resolveMediaUrl } from "../../utils/media";
-import axiosProtected from "../../hooks/axiosProtected";
+import Swal from "sweetalert2";
+import toast from "react-hot-toast";
+import axios from "axios";
+import useAxiosProtected from "../../hooks/axiosProtected";
 
 type Chapter = {
   id: number;
@@ -35,7 +38,7 @@ type EnrichedContent = LearningContent & {
 };
 
 export default function ManageContent() {
-  const axios = axiosProtected();
+  const axiosInstance = useAxiosProtected();
   const navigate = useNavigate();
   const [contents, setContents] = useState<EnrichedContent[]>([]);
   const [query, setQuery] = useState("");
@@ -51,7 +54,7 @@ export default function ManageContent() {
         const [chapterResponse, subchapterResponse, contentResponse] = await Promise.all([
           fetch("/chapter.json"),
           fetch("/subChapter.json"),
-          axios.get("/content"),
+          axiosInstance.get("/content"),
         ]);
 
         const chapterData = (await chapterResponse.json()) as Chapter[];
@@ -85,7 +88,7 @@ export default function ManageContent() {
     return () => {
       cancelled = true;
     };
-  }, [axios]);
+  }, [axiosInstance]);
 
   const filteredContents = useMemo(() => {
     const normalized = query.trim().toLowerCase();
@@ -102,19 +105,48 @@ export default function ManageContent() {
   }, [contents, query]);
 
   const handleDelete = async (subchapterId: number) => {
-    const confirmed = window.confirm("এই কন্টেন্ট মুছে ফেলতে চান?");
-    if (!confirmed) return;
-
-    try {
-      await axios.delete(`/content/${subchapterId}`);
-      setContents((prev) => prev.filter((item) => item.subchapterId !== subchapterId));
-      if (selectedContent?.subchapterId === subchapterId) {
-        setSelectedContent(null);
+    const swalWithTailwindButtons = Swal.mixin({
+      customClass: {
+        actions: "gap-3",
+        confirmButton: "bg-red-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400",
+        cancelButton: "bg-gray-200 text-gray-800 px-4 py-2 rounded-lg font-semibold hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400"
+      },
+      buttonsStyling: false
+    });
+    swalWithTailwindButtons.fire({
+      title: "এই কন্টেন্ট মুছে ফেলতে চান?",
+      text: "মুছে ফেলার পর এটি পুনরুদ্ধার করা যাবে না!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "হ্যাঁ, মুছে ফেলুন!",
+      cancelButtonText: "না, বাতিল করুন!",
+      reverseButtons: true
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        try {
+          const res = await axiosInstance.delete(`/content/${subchapterId}`);
+          setContents((prev) => prev.filter((item) => item.subchapterId !== subchapterId));
+          if (selectedContent?.subchapterId === subchapterId) {
+            setSelectedContent(null);
+          }
+          swalWithTailwindButtons.fire({
+            title: "মুছে ফেলা হয়েছে!",
+            text: `${res.data.message || "কন্টেন্ট সফলভাবে মুছে ফেলা হয়েছে।"}`,
+            icon: "success"
+          })
+        } catch (error) {
+          if (axios.isAxiosError(error)) {
+            toast.error(error.response?.data?.errorMessage);
+          }
+          toast.error("কন্টেন্ট মুছে ফেলা যায়নি");
+        }
       }
-    } catch (error) {
-      console.error("Failed to delete content:", error);
-      alert("কন্টেন্ট মুছে ফেলা যায়নি");
-    }
+      else if (result.dismiss === Swal.DismissReason.cancel) swalWithTailwindButtons.fire({
+        title: "বাতিল করা হয়েছে",
+        text: "আপনার কন্টেন্ট নিরাপদ আছে।",
+        icon: "error"
+      });
+    });
   };
 
   const goToEdit = (subchapterId: number) => {
@@ -166,7 +198,6 @@ export default function ManageContent() {
         <table className="w-full text-left border-collapse">
           <thead>
             <tr className="border-b border-gray-300/50">
-              <th className="p-3 font-semibold text-gray-700">শিরোনাম</th>
               <th className="p-3 font-semibold text-gray-700">অধ্যায়</th>
               <th className="p-3 font-semibold text-gray-700">সাব-অধ্যায়</th>
               <th className="p-3 font-semibold text-gray-700">বিভাগ</th>
@@ -189,13 +220,8 @@ export default function ManageContent() {
               </tr>
             ) : (
               filteredContents.map((content) => {
-                const title = content.sections[0]?.content
-                  ? content.sections[0].content.replace(/<[^>]*>/g, "").slice(0, 40)
-                  : `Subchapter ${content.subchapterId}`;
-
                 return (
                   <tr key={content.id} className="border-b border-gray-300/20 hover:bg-white/20 transition-colors align-top">
-                    <td className="p-3 font-medium text-gray-900">{title}</td>
                     <td className="p-3 text-gray-700">{content.chapterTitle}</td>
                     <td className="p-3 text-gray-700">{content.subchapterTitle}</td>
                     <td className="p-3 text-gray-700">{content.sections.length} টি</td>

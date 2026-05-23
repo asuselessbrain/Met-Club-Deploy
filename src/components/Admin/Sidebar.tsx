@@ -1,5 +1,7 @@
 import { Link, NavLink } from "react-router";
 import { FiGrid, FiFileText, FiPlusCircle, FiPlayCircle } from "react-icons/fi";
+import { LogOut } from "lucide-react";
+import useLogout from "../../hooks/useLogout";
 
 const sidebarLinks = [
   { name: "ওভারভিউ", path: "/admin/overview", icon: FiGrid },
@@ -10,9 +12,10 @@ const sidebarLinks = [
 ];
 
 export default function Sidebar() {
+  const logOut = useLogout()
   return (
     <aside
-      className="w-64 h-screen fixed left-0 top-0 hidden lg:flex flex-col z-20"
+      className="w-72 h-screen fixed left-0 top-0 hidden lg:flex flex-col z-20"
       style={{
         background: "rgba(255,255,255,0.15)",
         backdropFilter: "blur(28px) saturate(180%)",
@@ -61,8 +64,7 @@ export default function Sidebar() {
               key={link.name}
               to={link.path}
               className={({ isActive }) =>
-                `flex items-center gap-3 px-4 py-3 rounded-xl font-semibold transition-all duration-200 ${
-                  isActive ? "text-white" : ""
+                `flex items-center gap-3 px-4 py-3 rounded-xl font-semibold transition-all duration-200 ${isActive ? "text-white" : ""
                 }`
               }
               style={({ isActive }) => ({
@@ -78,23 +80,21 @@ export default function Sidebar() {
           );
         })}
       </nav>
-      
+
       {/* Footer link back to app */}
       <div className="p-4 border-t" style={{ borderTopColor: "rgba(255,255,255,0.25)" }}>
-        <Link 
-          to="/learning-zone" 
-          className="flex items-center gap-2 px-4 py-2.5 rounded-lg transition-colors font-medium hover:bg-white/30"
+        <button 
+          onClick={logOut}
+          className="flex items-center gap-2 px-4 py-2.5 rounded-lg transition-colors font-medium hover:bg-white/30 w-full cursor-pointer"
           style={{
             color: "#fff",
-            background: "rgba(255,255,255,0.2)",
+            background: "#ef4444",
             textShadow: "0 1px 2px rgba(0,0,0,0.3)",
           }}
         >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
-            <path d="M15 18l-6-6 6-6" />
-          </svg>
-          অ্যাপে ফিরে যান
-        </Link>
+          <LogOut className="w-4 h-4" />
+          লগ আউট
+        </button>
       </div>
     </aside>
   );

@@ -56,7 +56,7 @@ export default function AdminLayout() {
             onClick={() => setMobileMenuOpen(false)}
           ></div>
           <aside
-            className="relative w-64 h-full flex flex-col z-50 animate-in slide-in-from-left duration-300"
+            className="relative w-72 h-full flex flex-col z-50 animate-in slide-in-from-left duration-300"
             style={{
               background: "rgba(255,255,255,0.85)",
               backdropFilter: "blur(28px) saturate(180%)",
@@ -97,7 +97,7 @@ export default function AdminLayout() {
       )}
 
       {/* Main Content */}
-      <div className="lg:ml-64 flex flex-col min-h-screen relative z-10">
+      <div className="lg:ml-72 flex flex-col min-h-screen relative z-10">
         {/* Top Header */}
         <header
           className="flex items-center justify-between px-4 sm:px-6 shrink-0 sticky top-0 z-30"

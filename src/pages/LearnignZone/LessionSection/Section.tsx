@@ -4,8 +4,8 @@ import { useNavigate, useParams } from "react-router";
 import TopNav from "../../../components/Shared/TopBar";
 import BottomNav from "../../../components/Shared/BottomNav";
 import CompletionModal from "../../../components/Modal/CompletionModal";
-import useAxios from "../../../hooks/useAxios";
 import { resolveMediaUrl } from "../../../utils/media";
+import useAxiosProtected from "../../../hooks/axiosProtected";
 
 type LessonSection = {
   id: number;
@@ -24,7 +24,7 @@ export default function Section() {
   const [sections, setSections] = useState<LessonSection[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
-  const axios = useAxios();
+  const axios = useAxiosProtected();
   const navigateToQuiz = useNavigate();
   const { subchapterId } = useParams();
   useEffect(() => {

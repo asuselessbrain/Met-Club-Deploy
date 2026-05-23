@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router";
 import { FiImage } from "react-icons/fi";
 import toast from "react-hot-toast";
-import axiosProtected from "../../hooks/axiosProtected";
+import axios from "axios";
+import useAxiosProtected from "../../hooks/axiosProtected";
 
 type TutorialForm = {
   id?: number;
@@ -14,7 +15,7 @@ type TutorialForm = {
 };
 
 export default function CreateTutorial() {
-  const axios = axiosProtected();
+  const axiosInstance = useAxiosProtected();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -35,7 +36,7 @@ export default function CreateTutorial() {
 
     const loadTutorial = async () => {
       try {
-        const response = await axios.get(`/tutorials/${tutorialIdFromQuery}`);
+        const response = await axiosInstance.get(`/tutorials/${tutorialIdFromQuery}`);
         const data = response.data?.data;
         if (!data || cancelled) return;
 
@@ -57,7 +58,7 @@ export default function CreateTutorial() {
     return () => {
       cancelled = true;
     };
-  }, [axios, tutorialIdFromQuery]);
+  }, [axiosInstance, tutorialIdFromQuery]);
 
   const handleChange = (field: keyof TutorialForm, value: string | File | null) => {
     setForm((prev) => ({ ...prev, [field]: value }));
@@ -100,14 +101,17 @@ export default function CreateTutorial() {
     try {
       setIsSubmitting(true);
       if (form.id) {
-        await axios.patch(`/tutorials/${form.id}`, payload);
+        const res = await axiosInstance.patch(`/tutorials/${form.id}`, payload);
+        toast.success(res.data.message || "Tutorial updated", {id: "error"});
       } else {
-        await axios.post("/tutorials", payload);
+        const res = await axiosInstance.post("/tutorials", payload);
+        toast.success(res.data.message || "Tutorial created", {id: "error"});
       }
-      toast.success(form.id ? "Tutorial updated" : "Tutorial created", {id: "error"});
       navigate("/admin/tutorials");
     } catch (error) {
-      console.error(error);
+      if(axios.isAxiosError(error)) {
+        toast.error(error.response?.data.errorMessage, {id: "error"});
+      }
       toast.error("Tutorial save করা যায়নি", {id: "error"});
     } finally {
       setIsSubmitting(false);

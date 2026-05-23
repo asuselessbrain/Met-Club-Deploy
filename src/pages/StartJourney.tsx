@@ -4,7 +4,7 @@ import storyImg from "../assets/images/learning-zone.png";
 import simulationImg from "../assets/images/practice-zone.png";
 import bgImage from "../assets/images/start-journey-page-bg.jpeg";
 import TopNav from "../components/Shared/TopBar";
-import axiosProtected from "../hooks/axiosProtected";
+import useAxiosProtected from "../hooks/axiosProtected";
 
 
 
@@ -13,7 +13,7 @@ export default function StartJourney() {
 
   
 
-  const axios = axiosProtected();
+  const axios = useAxiosProtected();
 
   const [isChapterOneCompleted, setIsChapterOneCompleted] = useState(false);
 
@@ -44,7 +44,7 @@ export default function StartJourney() {
       <TopNav />
 
       {/* ── Main Content ── */}
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 pt-24 pb-12">
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 pt-12 pb-12">
         {/* Header */}
         <div className="header-anim text-center mb-10">
           <h1

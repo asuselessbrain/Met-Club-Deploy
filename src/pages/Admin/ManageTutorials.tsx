@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
 import { FiEdit2, FiTrash2, FiEye, FiX } from "react-icons/fi";
 import { useNavigate } from "react-router";
-import useAxios from "../../hooks/useAxios";
+import Swal from "sweetalert2";
+import toast from "react-hot-toast";
+import useAxiosProtected from "../../hooks/axiosProtected";
 
 type Tutorial = {
   id: number;
@@ -21,7 +23,7 @@ const resolveImageUrl = (value: string) => {
 };
 
 export default function ManageTutorials() {
-  const axios = useAxios();
+  const axios = useAxiosProtected();
   const navigate = useNavigate();
   const [tutorials, setTutorials] = useState<Tutorial[]>([]);
   const [query, setQuery] = useState("");
@@ -69,19 +71,49 @@ export default function ManageTutorials() {
   }, [query, tutorials]);
 
   const handleDelete = async (tutorialId: number) => {
-    const confirmed = window.confirm("এই tutorial মুছে ফেলতে চান?");
-    if (!confirmed) return;
+    const swalWithTailwindButtons = Swal.mixin({
+      customClass: {
+        actions: "gap-3",
+        confirmButton: "bg-red-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400",
+        cancelButton: "bg-gray-200 text-gray-800 px-4 py-2 rounded-lg font-semibold hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400"
+      },
+      buttonsStyling: false
+    });
 
-    try {
-      await axios.delete(`/tutorials/${tutorialId}`);
-      setTutorials((prev) => prev.filter((item) => item.id !== tutorialId));
-      if (selectedTutorial?.id === tutorialId) {
-        setSelectedTutorial(null);
+    swalWithTailwindButtons.fire({
+      title: "এই tutorial মুছে ফেলতে চান?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Yes, delete it!",
+      cancelButtonText: "No, cancel!",
+      reverseButtons: true
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        try {
+          await axios.delete(`/tutorials/${tutorialId}`);
+          setTutorials((prev) => prev.filter((item) => item.id !== tutorialId));
+          if (selectedTutorial?.id === tutorialId) {
+            setSelectedTutorial(null);
+          }
+
+          swalWithTailwindButtons.fire({
+            title: "Deleted!",
+            text: "Tutorial deleted successfully.",
+            icon: "success"
+          });
+        } catch (error) {
+          console.error("Failed to delete tutorial:", error);
+          toast.error("Tutorial মুছে ফেলা যায়নি");
+        }
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        swalWithTailwindButtons.fire({
+          title: "Cancelled",
+          text: "Your tutorial is safe :)",
+          icon: "error"
+        });
       }
-    } catch (error) {
-      console.error("Failed to delete tutorial:", error);
-      alert("Tutorial মুছে ফেলা যায়নি");
-    }
+    });
   };
 
   const goToEdit = (tutorialId: number) => {

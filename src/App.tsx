@@ -2,6 +2,8 @@ import Hero from './components/Home/Hero'
 import bgImage from './assets/images/bg-image.webp'
 
 function App() {
+
+
   return (
     <div
       className="relative min-h-screen"

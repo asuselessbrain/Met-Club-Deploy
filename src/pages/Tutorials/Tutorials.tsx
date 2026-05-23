@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { FiPlay, FiX } from "react-icons/fi";
-import useAxios from "../../hooks/useAxios";
 import TopNav from "../../components/Shared/TopBar";
 import bgImage from "../../assets/images/start-journey-page-bg.jpeg";
+import axiosPublic from "../../hooks/axiosPublic";
 
 
 type Tutorial = {
@@ -45,7 +45,7 @@ const getYoutubeEmbedUrl = (input: string) => {
 };
 
 export default function Tutorials() {
-    const axios = useAxios();
+    const axios = axiosPublic();
     const [tutorials, setTutorials] = useState<Tutorial[]>([]);
     const [selectedTutorial, setSelectedTutorial] = useState<Tutorial | null>(null);
     const [isLoading, setIsLoading] = useState(true);
