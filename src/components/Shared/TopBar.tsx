@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import metClubLogo from "../../assets/images/logo_original.png";
 import { FiPlay } from "react-icons/fi";
 import useLogout from "../../hooks/useLogout";
+import { getLocalizedPath, getStoredLocale, setStoredLocale, type AppLocale } from "../../utils/language";
 
 interface TopNavProps {
     title?: string;
@@ -58,13 +59,20 @@ export default function TopNav({ title, tone = "default" }: TopNavProps) {
     void tone;
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
+    const [langOpen, setLangOpen] = useState(false);
+    const langRef = useRef<HTMLDivElement>(null);
     const navigate = useNavigate();
+    const location = useLocation();
+    const [locale, setLocale] = useState<AppLocale>(() => getStoredLocale());
     const handleLogout = useLogout();
 
     useEffect(() => {
         const handleClickOutside = (e: MouseEvent) => {
             if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
                 setDropdownOpen(false);
+            }
+            if (langRef.current && !langRef.current.contains(e.target as Node)) {
+                setLangOpen(false);
             }
         };
 
@@ -114,7 +122,7 @@ export default function TopNav({ title, tone = "default" }: TopNavProps) {
 
                 <div className="relative z-10 mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-0">
                     {/* LEFT LOGO */}
-                    <Link to="/" className="relative z-10 shrink-0">
+                    <Link to={getLocalizedPath("/", locale)} className="relative z-10 shrink-0">
                         <div className="flex items-center gap-2 group">
 
                             <img src={metClubLogo} alt="মেট ক্লাব লোগো" className="h-12 w-12 object-contain" />
@@ -147,9 +155,83 @@ export default function TopNav({ title, tone = "default" }: TopNavProps) {
                     </span>
 
                     {/* RIGHT USER */}
-                    <div className="relative z-30 shrink-0" ref={dropdownRef}>
+                    <div className="relative z-30 shrink-0 flex items-center gap-2" ref={dropdownRef}>
+                        <div className="relative" ref={langRef}>
+                            <button
+                                onClick={() => {
+                                    setDropdownOpen(false);
+                                    setLangOpen((p) => !p);
+                                }}
+                                className="flex items-center gap-1.5 rounded-2xl px-3 py-1.5 font-semibold transition-all duration-200 select-none"
+                                style={{
+                                    background: "rgba(255,255,255,0.30)",
+                                    border: "1.5px solid rgba(255,255,255,0.45)",
+                                    boxShadow: "0 4px 14px rgba(185,28,28,0.12)",
+                                    backdropFilter: "blur(14px)",
+                                    WebkitBackdropFilter: "blur(14px)",
+                                    cursor: "pointer",
+                                    color: "#7f1d1d",
+                                }}
+                                aria-label="Open language menu"
+                            >
+                                <span>{locale === "en" ? "English" : "বাংলা"}</span>
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2.5"
+                                    className="w-4 h-4 transition-transform duration-200"
+                                    style={{ transform: langOpen ? "rotate(180deg)" : "rotate(0deg)" }}
+                                >
+                                    <polyline points="6 9 12 15 18 9" />
+                                </svg>
+                            </button>
+
+                            {langOpen && (
+                                <div
+                                    className="absolute right-0 top-full mt-2 rounded-xl overflow-hidden z-50"
+                                    style={{
+                                        width: 160,
+                                        background: "linear-gradient(120deg, rgba(255,237,234,0.98), rgba(255,223,215,0.9))",
+                                        boxShadow: "0 10px 30px rgba(185,28,28,0.14)",
+                                        border: "1.5px solid rgba(255,255,255,0.44)",
+                                        backdropFilter: "blur(12px)",
+                                        WebkitBackdropFilter: "blur(12px)",
+                                    }}
+                                >
+                                    <button
+                                        onClick={() => {
+                                            const next: AppLocale = "en";
+                                            setStoredLocale(next);
+                                            setLocale(next);
+                                            setLangOpen(false);
+                                            navigate(getLocalizedPath(location.pathname, next));
+                                        }}
+                                        className={`w-full text-left px-3 py-2 rounded transition ${locale === "en" ? "bg-red-100 text-red-800" : "hover:bg-red-50"}`}
+                                    >
+                                        English {locale === "en" && <span className="ml-2 font-bold">✓</span>}
+                                    </button>
+
+                                    <button
+                                        onClick={() => {
+                                            const next: AppLocale = "bn";
+                                            setStoredLocale(next);
+                                            setLocale(next);
+                                            setLangOpen(false);
+                                            navigate(getLocalizedPath(location.pathname, next));
+                                        }}
+                                        className={`w-full text-left px-3 py-2 rounded transition ${locale === "bn" ? "bg-red-100 text-red-800" : "hover:bg-red-50"}`}
+                                    >
+                                        বাংলা {locale === "bn" && <span className="ml-2 font-bold">✓</span>}
+                                    </button>
+                                </div>
+                            )}
+                        </div>
                         <button
-                            onClick={() => setDropdownOpen((prev) => !prev)}
+                            onClick={() => {
+                                setLangOpen(false);
+                                setDropdownOpen((prev) => !prev);
+                            }}
                             className="flex items-center gap-2 rounded-2xl px-3 py-1.5 transition-all duration-200 select-none"
                             style={{
                                 background: dropdownOpen ? "rgba(255,255,255,0.42)" : "rgba(255,255,255,0.30)",
@@ -194,7 +276,7 @@ export default function TopNav({ title, tone = "default" }: TopNavProps) {
 
                         {dropdownOpen && (
                             <div
-                                className="absolute right-0 mt-3 rounded-2xl overflow-hidden z-50"
+                                className="absolute right-0 top-full mt-3 rounded-2xl overflow-hidden z-50"
                                 style={{
                                     width: 230,
                                     background: "linear-gradient(120deg, rgba(255,237,234,0.88), rgba(255,223,215,0.78))",
@@ -232,6 +314,8 @@ export default function TopNav({ title, tone = "default" }: TopNavProps) {
                                     </div>
                                 </div>
 
+                                
+
                                 <button
                                     onClick={() => {
                                         setDropdownOpen(false);
@@ -261,7 +345,7 @@ export default function TopNav({ title, tone = "default" }: TopNavProps) {
                                     {menuItems.map((item) => (
                                         <Link
                                             key={item.label}
-                                            to={item.href}
+                                            to={getLocalizedPath(item.href, locale)}
                                             className="flex items-center gap-3 px-4 py-2.5 transition-colors duration-150"
                                             style={{
                                                 color: "#7f1d1d",

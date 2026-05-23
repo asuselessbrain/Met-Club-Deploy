@@ -1,7 +1,9 @@
 import Hero from './components/Home/Hero'
 import bgImage from './assets/images/bg-image.webp'
+import { useLocaleRouteSync } from './hooks/useLocaleRouteSync'
 
 function App() {
+  useLocaleRouteSync("/", "/en")
 
 
   return (

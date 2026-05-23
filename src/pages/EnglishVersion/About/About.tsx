@@ -1,12 +1,12 @@
-﻿import { Target, Eye, Users, Award, MapPin, Heart, Shield, Sparkles, TrendingUp } from 'lucide-react';
-import logo from "../../assets/images/logo_original.png"
-import Partners from '../../components/Home/Partners';
-import homeBg from "../../assets/images/about-page-bg.png"
-import startJourneyBg from "../../assets/images/start-journey-page-bg.jpeg"
-import aboutBg from "../../assets/images/about-page-bg.png"
-import chapterBg from "../../assets/images/chapter-bg.png"
-import TopNav from "../../components/Shared/TopBar";
-import { useLocaleRouteSync } from "../../hooks/useLocaleRouteSync";
+import { Target, Eye, Users, Award, MapPin, Heart, Shield, Sparkles, TrendingUp } from 'lucide-react';
+import logo from "../../../assets/images/logo_original.png";
+import Partners from '../../../components/Home/Partners';
+import homeBg from "../../../assets/images/about-page-bg.png";
+import startJourneyBg from "../../../assets/images/start-journey-page-bg.jpeg";
+import aboutBg from "../../../assets/images/about-page-bg.png";
+import chapterBg from "../../../assets/images/chapter-bg.png";
+import TopNav from "../../../components/Shared/TopBar";
+import { useLocaleRouteSync } from "../../../hooks/useLocaleRouteSync";
 
 const titleShadow = "-1px -1px 0 rgba(255,255,255,0.96), 1px -1px 0 rgba(255,255,255,0.96), -1px 1px 0 rgba(255,255,255,0.96), 1px 1px 0 rgba(255,255,255,0.96), 0 2px 0 rgba(185,28,28,0.20), 0 8px 20px rgba(127,29,29,0.24)";
 const subtitleShadow = "0 1px 6px rgba(255,255,255,0.28)";
@@ -16,30 +16,30 @@ export default function About() {
 
     return (
         <div className="relative min-h-screen flex flex-col overflow-x-hidden -mt-18.5 bg-gray-50">
-            <TopNav title="আমাদের সম্পর্কে" />
+            <TopNav title="About Us" />
 
             {/* Hero Section */}
             <section className="relative z-10 min-h-screen flex items-center justify-center pt-24 pb-24 bg-cover bg-bottom bg-no-repeat" style={{ backgroundImage: `url(${homeBg})` }}>
                 <div className="relative z-20 text-center px-4 max-w-6xl mx-auto header-anim">
                     <div
-                        className="text-3xl md:text-5xl font-bold mb-6 animate-slide-up delay-100"
+                        className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 animate-slide-up delay-100"
                         style={{ color: "#b91c1c", textShadow: titleShadow }}
                     >
-                        আবহাওয়া চক্র
+                        Weather Cycle
                     </div>
 
                     <p
-                        className="text-xl md:text-3xl font-semibold mb-8 animate-slide-up delay-200"
+                        className="text-xl md:text-3xl font-semibold mb-4 md:mb-6 lg:mb-8 animate-slide-up delay-200"
                         style={{ color: "#ffffff", textShadow: subtitleShadow }}
                     >
-                        "তরুণ মন, শক্তিশালী সতর্কতা"
+                        "Young Minds, Stronger Warnings"
                     </p>
 
                     <div
-                        className="text-lg max-w-3xl mx-auto leading-relaxed animate-slide-up delay-300 font-semibold"
+                        className="text-[16px] md:text-lg max-w-3xl mx-auto leading-relaxed animate-slide-up delay-300 font-normal"
                         style={{ color: "#ffffff", textShadow: subtitleShadow }}
                     >
-                        একটি যুব-চালিত প্ল্যাটফর্ম যেখানে শিশুরা আবহাওয়া পর্যবেক্ষণ এবং দুর্যোগ সতর্কতার মাধ্যমে তাদের সম্প্রদায়কে নিরাপদ রাখতে শিখে
+                        A youth-led platform where children learn weather observation and disaster warnings to help keep their communities safe.
                     </div>
                 </div>
 
@@ -64,14 +64,14 @@ export default function About() {
                                 <div className="w-20 h-20 bg-linear-to-br from-red-400 to-orange-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform">
                                     <Eye className="w-10 h-10 text-white" />
                                 </div>
-                                <h3 className="text-3xl md:text-4xl font-black" style={{ color: "#b91c1c", textShadow: titleShadow }}>ভিশন</h3>
+                                <h3 className="text-3xl md:text-4xl font-black" style={{ color: "#b91c1c", textShadow: titleShadow }}>Vision</h3>
                             </div>
                             <p className="text-lg text-gray-800 font-semibold leading-relaxed">
-                                একটি নিরাপদ ও সচেতন সমাজ গড়ে তুলতে শিশুদের আবহাওয়া পর্যবেক্ষণ, পূর্বাভাস এবং আগাম সতর্কতার শিক্ষা প্রদান করা।
+                                To educate children about weather observation, forecasting, and early warning so that they can help build a safer and more aware society.
                             </p>
                             <div className="mt-6 flex items-center space-x-2 text-red-700 font-bold">
                                 <Sparkles className="w-5 h-5" />
-                                <span>একটি নিরাপদ ভবিষ্যৎ</span>
+                                <span>A Safer Future</span>
                             </div>
                         </div>
 
@@ -87,40 +87,40 @@ export default function About() {
                                 <div className="w-20 h-20 bg-linear-to-br from-red-500 to-red-700 rounded-2xl flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform">
                                     <Target className="w-10 h-10 text-white" />
                                 </div>
-                                <h3 className="text-3xl md:text-4xl font-black" style={{ color: "#b91c1c", textShadow: titleShadow }}>মিশন</h3>
+                                <h3 className="text-3xl md:text-4xl font-black" style={{ color: "#b91c1c", textShadow: titleShadow }}>Mission</h3>
                             </div>
                             <p className="text-lg text-gray-800 font-semibold leading-relaxed">
-                                একটি প্ল্যাটফর্ম যেখানে শিশুরা দুর্যোগের পূর্বাভাস এবং আগাম সতর্কতা সম্পর্কে জেনে নিজের পরিবার, জীবন এবং সম্পদ রক্ষা করতে পারবে।
+                                To create a platform where children can learn about disaster forecasting and early warnings so they can protect their families, lives, and resources.
                             </p>
                             <div className="mt-6 flex items-center space-x-2 text-red-700 font-bold">
                                 <Heart className="w-5 h-5" />
-                                <span>সম্প্রদায় সুরক্ষা</span>
+                                <span>Community Protection</span>
                             </div>
                         </div>
                     </div>
 
                     <div className="py-12">
                         <div className="text-center mb-10">
-                            <h3 className="text-4xl md:text-5xl font-black mb-4" style={{ color: "#b91c1c", textShadow: titleShadow }}>মেট ক্লাব কী?</h3>
+                            <h3 className="text-4xl md:text-5xl font-black mb-4" style={{ color: "#b91c1c", textShadow: titleShadow }}>What is Met Club?</h3>
                             <div className="w-24 h-1 bg-red-500 mx-auto mb-6"></div>
                         </div>
                         <div className="grid md:grid-cols-2 gap-8 items-center">
                             <div className="text-center md:text-left">
                                 <p className="text-xl font-semibold text-gray-800 leading-relaxed mb-6">
-                                    "মেট ক্লাব – আবহাওয়া চক্র" একটি যুব-চালিত প্ল্যাটফর্ম যা শিশু এবং তরুণদের দ্বারা পরিচালিত হয়।
+                                    "Met Club - Weather Cycle" is a youth-led platform run by children and young people.
                                 </p>
                                 <div className="space-y-4">
                                     <div className="flex items-center space-x-3 bg-red-50 rounded-xl p-4 border border-red-200">
                                         <div className="text-3xl">📚</div>
-                                        <span className="text-lg font-bold text-red-900">আবহাওয়া শিক্ষা ও প্রশিক্ষণ</span>
+                                        <span className="text-lg font-bold text-red-900">Weather education and training</span>
                                     </div>
                                     <div className="flex items-center space-x-3 bg-red-50 rounded-xl p-4 border border-red-200">
                                         <div className="text-3xl">⚠️</div>
-                                        <span className="text-lg font-bold text-red-900">আগাম সতর্কীকরণ ব্যবস্থা</span>
+                                        <span className="text-lg font-bold text-red-900">Early warning systems</span>
                                     </div>
                                     <div className="flex items-center space-x-3 bg-red-50 rounded-xl p-4 border border-red-200">
                                         <div className="text-3xl">🦸</div>
-                                        <span className="text-lg font-bold text-red-900">দুর্যোগ প্রস্তুতি</span>
+                                        <span className="text-lg font-bold text-red-900">Disaster preparedness</span>
                                     </div>
                                 </div>
                             </div>
@@ -142,20 +142,20 @@ export default function About() {
                 <div className="absolute inset-0 bg-white/40 pointer-events-none backdrop-blur-[1px]"></div>
                 <div className="container mx-auto max-w-6xl relative z-10">
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ color: "#b91c1c", textShadow: titleShadow }}>আমাদের উদ্দেশ্য</h2>
+                        <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ color: "#b91c1c", textShadow: titleShadow }}>Our Objectives</h2>
                         <p className="text-lg md:text-xl font-semibold" style={{ color: "#1f2937", textShadow: subtitleShadow }}>
-                            শিশুদের জীবন রক্ষাকারী দক্ষতা প্রদান এবং দুর্যোগ প্রস্তুতিতে তাদের ক্ষমতায়ন
+                            Providing children with life-saving skills and empowering them in disaster preparedness
                         </p>
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-8">
                         {[
-                            { icon: '🌡️', title: 'আবহাওয়া পর্যবেক্ষণের জ্ঞান প্রদান' },
-                            { icon: '⚠️', title: 'আগাম সতর্কীকরণ ব্যবস্থার অনিশ্চয়তা সম্পর্কে জানানো' },
-                            { icon: '🛡️', title: 'নিজেকে এবং অন্যকে নিরাপদ রাখতে শেখানো' },
-                            { icon: '💡', title: 'শিশুদের মাঝে সচেতনতা গড়ে তোলা' },
-                            { icon: '✍️', title: 'হাতে কলমে প্রশিক্ষণ দেওয়া' },
-                            { icon: '🦸', title: 'দুর্যোগ মোকাবেলায় শিশুদের সক্রিয় ভূমিকা রাখতে অনুপ্রাণিত করা' }
+                            { icon: '🌡️', title: 'Providing knowledge about weather observation' },
+                            { icon: '⚠️', title: 'Explaining uncertainty in early warning systems' },
+                            { icon: '🛡️', title: 'Teaching children how to keep themselves and others safe' },
+                            { icon: '💡', title: 'Building awareness among children' },
+                            { icon: '✍️', title: 'Giving hands-on training' },
+                            { icon: '🦸', title: 'Inspiring children to take an active role in disaster response' }
                         ].map((objective, index) => (
                             <div
                                     key={index}
@@ -184,8 +184,8 @@ export default function About() {
             <section id="structure" className="relative z-10 min-h-screen py-20 lg:py-30 px-4 bg-linear-to-br from-orange-50 to-red-50">
                 <div className="container mx-auto max-w-6xl">
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ color: "#b91c1c", textShadow: titleShadow }}>সংগঠন কাঠামো</h2>
-                        <p className="text-lg md:text-xl font-semibold" style={{ color: "#1f2937", textShadow: subtitleShadow }}>যুব নেতৃত্ব এবং সহযোগিতার মাধ্যমে শক্তিশালী</p>
+                        <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ color: "#b91c1c", textShadow: titleShadow }}>Organizational Structure</h2>
+                        <p className="text-lg md:text-xl font-semibold" style={{ color: "#1f2937", textShadow: subtitleShadow }}>Strengthened through youth leadership and collaboration</p>
                     </div>
 
                     <div className="max-w-6xl mx-auto">
@@ -194,8 +194,8 @@ export default function About() {
                                 <div className="w-full max-w-md">
                                     <div className="bg-linear-to-r from-red-600 to-red-500 text-white rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition-transform">
                                         <Users className="w-12 h-12 mx-auto mb-3" />
-                                        <h3 className="text-2xl font-bold">কারিগরি উপদেষ্টা</h3>
-                                        <p className="text-sm mt-2 opacity-90 font-semibold">পেশাদার নির্দেশনা প্রদান</p>
+                                        <h3 className="text-2xl font-bold">Technical Advisors</h3>
+                                        <p className="text-sm mt-2 opacity-90 font-semibold">Providing professional guidance</p>
                                     </div>
                                 </div>
 
@@ -206,13 +206,13 @@ export default function About() {
                                 <div className="grid md:grid-cols-2 gap-6 w-full">
                                     <div className="bg-linear-to-br from-orange-500 to-red-500 text-white rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition-transform">
                                         <Award className="w-10 h-10 mx-auto mb-3" />
-                                        <h3 className="text-xl font-bold">প্রধান নির্বাহী</h3>
-                                        <p className="text-3xl font-black mt-2 text-white">৪ জন</p>
+                                        <h3 className="text-xl font-bold">Chief Executives</h3>
+                                        <p className="text-3xl font-black mt-2 text-white">4 people</p>
                                     </div>
                                     <div className="bg-linear-to-br from-red-400 to-orange-500 text-white rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition-transform">
                                         <Users className="w-10 h-10 mx-auto mb-3" />
-                                        <h3 className="text-xl font-bold">কার্যনির্বাহী সদস্য</h3>
-                                        <p className="text-3xl font-black mt-2 text-white">৭ জন</p>
+                                        <h3 className="text-xl font-bold">Executive Members</h3>
+                                        <p className="text-3xl font-black mt-2 text-white">7 people</p>
                                     </div>
                                 </div>
 
@@ -223,8 +223,8 @@ export default function About() {
                                 <div className="w-full max-w-md">
                                     <div className="bg-linear-to-r from-red-500 to-red-600 text-white rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition-transform">
                                         <Heart className="w-12 h-12 mx-auto mb-3" />
-                                        <h3 className="text-2xl font-bold">সাধারণ সদস্য</h3>
-                                        <p className="text-sm mt-2 opacity-90 font-semibold">৭ম-৯ম শ্রেণির সকল শিক্ষার্থী</p>
+                                        <h3 className="text-2xl font-bold">General Members</h3>
+                                        <p className="text-sm mt-2 opacity-90 font-semibold">All students from class 7 to 9</p>
                                     </div>
                                 </div>
                             </div>
@@ -237,17 +237,17 @@ export default function About() {
             <section id="activities" className="relative z-10 min-h-screen py-20 lg:py-30 px-4 bg-cover bg-center bg-fixed" style={{ backgroundImage: `url(${aboutBg})` }}>
                 <div className="container mx-auto max-w-6xl relative z-10">
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ color: "#b91c1c", textShadow: titleShadow }}>আমাদের কার্যক্রম</h2>
-                        <p className="text-lg md:text-xl font-semibold" style={{ color: "#ffffff", textShadow: subtitleShadow }}>হাতে-কলমে শিক্ষা এবং সম্প্রদায় সম্পৃক্ততা</p>
+                        <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ color: "#b91c1c", textShadow: titleShadow }}>Our Activities</h2>
+                        <p className="text-lg md:text-xl font-semibold" style={{ color: "#ffffff", textShadow: subtitleShadow }}>Hands-on learning and community engagement</p>
                     </div>
 
                     <div className="grid md:grid-cols-5 gap-6 mb-12">
                         {[
-                            { icon: '👥', title: 'ক্লাব সভা' },
-                            { icon: '🌤️', title: 'আবহাওয়া পর্যবেক্ষণ' },
-                            { icon: '📚', title: 'ওয়ার্কশপ ও প্রশিক্ষণ' },
-                            { icon: '📢', title: 'সচেতনতা ক্যাম্পেইন' },
-                            { icon: '📅', title: 'ইভেন্ট উদ্যাপন' }
+                            { icon: '👥', title: 'Club meetings' },
+                            { icon: '🌤️', title: 'Weather observation' },
+                            { icon: '📚', title: 'Workshops and training' },
+                            { icon: '📢', title: 'Awareness campaigns' },
+                            { icon: '📅', title: 'Event celebrations' }
                         ].map((activity, index) => (
                             <div
                                 key={index}
@@ -279,12 +279,12 @@ export default function About() {
                         <div className="flex items-center justify-center space-x-4 mb-6">
                             <img src={logo} alt="MET CLUB LOGO" className='w-40 h-40' />
                         </div>
-                        <h2 className="text-4xl md:text-5xl font-black mb-6" style={{ color: "#b91c1c", textShadow: titleShadow }}>তরুণ মন, শক্তিশালী সতর্কতা</h2>
+                        <h2 className="text-4xl md:text-5xl font-black mb-6" style={{ color: "#b91c1c", textShadow: titleShadow }}>Young Minds, Stronger Warnings</h2>
                         <p className="text-xl md:text-2xl font-bold mb-8 text-red-800">
-                            আবহাওয়ার পূর্বাভাস বুঝে গড়ি আমাদের নিরাপদের পথ
+                            We build a safer path by understanding weather forecasts.
                         </p>
                         <div className="max-w-4xl mx-auto text-lg leading-relaxed font-semibold text-gray-800">
-                            আমরা বিশ্বাস করি যে শিশুরা পরিবর্তনের শক্তিশালী এজেন্ট। মেট ক্লাবের মাধ্যমে, আমরা তাদের জ্ঞান, দক্ষতা এবং আত্মবিশ্বাস দিয়ে সজ্জিত করি যাতে তারা তাদের পরিবার এবং সম্প্রদায়কে আবহাওয়াজনিত দুর্যোগ থেকে রক্ষা করতে পারে।
+                            We believe children are powerful agents of change. Through Met Club, we equip them with knowledge, skills, and confidence so they can protect their families and communities from weather-related disasters.
                         </div>
                     </div>
                 </div>
@@ -294,12 +294,12 @@ export default function About() {
             <section id="locations" className="relative z-10 min-h-screen py-20 lg:py-30 px-4 bg-cover bg-center bg-fixed" style={{ backgroundImage: `url(${chapterBg})` }}>
                 <div className="container mx-auto max-w-6xl relative z-10">
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ color: "#b91c1c", textShadow: titleShadow }}>কার্যক্রমের এলাকা</h2>
-                        <p className="text-lg md:text-xl font-semibold" style={{ color: "#1f2937", textShadow: subtitleShadow }}>বাংলাদেশ জুড়ে সম্প্রসারণ</p>
+                        <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ color: "#b91c1c", textShadow: titleShadow }}>Activity Areas</h2>
+                        <p className="text-lg md:text-xl font-semibold" style={{ color: "#1f2937", textShadow: subtitleShadow }}>Expansion across Bangladesh</p>
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-8">
-                        {['চট্টগ্রাম', 'পটুয়াখালী', 'গাইবান্ধা'].map((location, idx) => (
+                        {['Chattogram', 'Patuakhali', 'Gaibandha'].map((location, idx) => (
                             <div key={idx} className="group rounded-3xl shadow-xl p-10 text-center hover:scale-105 transition-all duration-500" style={{
                                 background: "rgba(255,255,255,0.22)",
                                 border: "1.5px solid #fca5a599",
@@ -310,14 +310,14 @@ export default function About() {
                                 <div className="relative mb-6">
                                     <MapPin className="w-20 h-20 mx-auto text-red-500 group-hover:scale-110 transition-transform" />
                                     <div className="absolute -top-2 right-1/4 bg-red-600 text-white rounded-full px-3 py-1 text-xs font-bold shadow-md">
-                                        চালু
+                                        Active
                                     </div>
                                 </div>
                                 <h3 className="text-3xl font-black mb-3" style={{ color: "#b91c1c", textShadow: titleShadow }}>{location}</h3>
-                                <p className="text-lg text-gray-800 font-semibold">বর্তমানে সক্রিয়</p>
+                                <p className="text-lg text-gray-800 font-semibold">Currently active</p>
                                 <div className="mt-6 flex items-center justify-center space-x-2 text-red-700">
                                     <TrendingUp className="w-5 h-5" />
-                                    <span className="font-bold">৫০+ সদস্য</span>
+                                    <span className="font-bold">50+ members</span>
                                 </div>
                             </div>
                         ))}
@@ -329,17 +329,17 @@ export default function About() {
             <section id="values" className="relative z-10 min-h-screen py-20 lg:py-30 px-4 bg-linear-to-br from-red-50 to-orange-50">
                 <div className="container mx-auto max-w-6xl">
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ color: "#b91c1c", textShadow: titleShadow }}>আমাদের মূল্যবোধ</h2>
-                        <p className="text-lg md:text-xl font-semibold" style={{ color: "#1f2937", textShadow: subtitleShadow }}>শিশু সুরক্ষা এবং অন্তর্ভুক্তিতে প্রতিশ্রুতিবদ্ধ</p>
+                        <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ color: "#b91c1c", textShadow: titleShadow }}>Our Values</h2>
+                        <p className="text-lg md:text-xl font-semibold" style={{ color: "#1f2937", textShadow: subtitleShadow }}>Committed to child protection and inclusion</p>
                     </div>
 
                     <div className="grid md:grid-cols-5 gap-6 mb-12">
                         {[
-                            { icon: '👥', title: 'ক্লাব সভা', color: 'from-teal-400 to-cyan-500' },
-                            { icon: '🌤️', title: 'আবহাওয়া পর্যবেক্ষণ', color: 'from-blue-400 to-indigo-500' },
-                            { icon: '📚', title: 'ওয়ার্কশপ ও প্রশিক্ষণ', color: 'from-orange-400 to-red-500' },
-                            { icon: '📢', title: 'সচেতনতা ক্যাম্পেইন', color: 'from-pink-400 to-purple-500' },
-                            { icon: '📅', title: 'ইভেন্ট/দিবস উদ্যাপন', color: 'from-yellow-400 to-orange-500' }
+                            { icon: '👥', title: 'Club meetings', color: 'from-teal-400 to-cyan-500' },
+                            { icon: '🌤️', title: 'Weather observation', color: 'from-blue-400 to-indigo-500' },
+                            { icon: '📚', title: 'Workshops and training', color: 'from-orange-400 to-red-500' },
+                            { icon: '📢', title: 'Awareness campaigns', color: 'from-pink-400 to-purple-500' },
+                            { icon: '📅', title: 'Event / day celebrations', color: 'from-yellow-400 to-orange-500' }
                         ].map((activity, index) => (
                             <div
                                 key={index}
@@ -364,9 +364,9 @@ export default function About() {
 
                     <div className="mt-16 text-center">
                         <Shield className="w-16 h-16 mx-auto mb-6 text-red-600" />
-                        <h3 className="text-3xl md:text-4xl font-black mb-6" style={{ color: "#b91c1c", textShadow: titleShadow }}>শিশু সুরক্ষা নীতি</h3>
+                        <h3 className="text-3xl md:text-4xl font-black mb-6" style={{ color: "#b91c1c", textShadow: titleShadow }}>Child Protection Policy</h3>
                         <p className="text-lg font-semibold text-gray-800 leading-relaxed max-w-4xl mx-auto">
-                            মেট ক্লাব সকল শিশুর সুরক্ষা এবং কল্যাণে প্রতিশ্রুতিবদ্ধ। আমরা একটি নিরাপদ, সহায়ক এবং অন্তর্ভুক্তিমূলক পরিবেশ নিশ্চিত করি যেখানে প্রতিটি শিশু শিখতে এবং বৃদ্ধি পেতে পারে। আমাদের কঠোর সুরক্ষা নীতি এবং প্রক্রিয়া রয়েছে যা আন্তর্জাতিক মান অনুসরণ করে।
+                            Met Club is committed to the safety and well-being of all children. We ensure a safe, supportive, and inclusive environment where every child can learn and grow. We follow strict safeguarding policies and procedures aligned with international standards.
                         </p>
                     </div>
                 </div>
@@ -377,10 +377,10 @@ export default function About() {
                     <div className="flex flex-col lg:flex-row items-center justify-center space-x-4">
                         <img src={logo} alt="MET CLUB LOGO" className='w-32 h-32' />
                         <div>
-                            <h3 className="text-2xl font-black text-red-500" style={{ textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}>মেট ক্লাব</h3>
-                            <p className="text-sm text-gray-300 font-semibold mt-1">আবহাওয়া চক্র</p>
+                            <h3 className="text-2xl font-black text-red-500" style={{ textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}>Met Club</h3>
+                            <p className="text-sm text-gray-300 font-semibold mt-1">Weather Cycle</p>
                             <p className="text-red-200 my-4 font-semibold italic">
-                                "তরুণ মন, শক্তিশালী সতর্কতা"
+                                "Young Minds, Stronger Warnings"
                             </p>
                         </div>
                     </div>
@@ -391,5 +391,5 @@ export default function About() {
                 </div>
             </footer>
         </div>
-    )
+    );
 }

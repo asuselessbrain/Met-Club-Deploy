@@ -24,6 +24,8 @@ const ManageTutorials = lazy(() => import("../pages/Admin/ManageTutorials"));
 const CreateTutorial = lazy(() => import("../pages/Admin/CreateTutorial"));
 const Section = lazy(() => import("../pages/LearnignZone/LessionSection/Section"));
 const Tutorials = lazy(() => import("../pages/Tutorials/Tutorials"));
+const EnglishHome = lazy(() => import("../pages/EnglishVersion/Home"));
+const EnglishAbout = lazy(() => import("../pages/EnglishVersion/About/About"));
 
 
 type QuizRouteData = {
@@ -38,6 +40,14 @@ const router = createBrowserRouter([
     element:
       <LoginGuard>
         <App />
+      </LoginGuard>
+    ,
+  },
+  {
+    path: "/en",
+    element:
+      <LoginGuard>
+        <SuspenseWrapper><EnglishHome /></SuspenseWrapper>
       </LoginGuard>
     ,
   },
@@ -128,6 +138,10 @@ const router = createBrowserRouter([
   {
     path: "/about",
     element: <SuspenseWrapper><About /></SuspenseWrapper>,
+  },
+  {
+    path: "/en/about",
+    element: <SuspenseWrapper><EnglishAbout /></SuspenseWrapper>,
   },
   {
     path: "/tutorials",

@@ -1,8 +1,11 @@
 import { Link } from "react-router";
 import logo from "../../assets/images/white_logo.png";
 import Login from "../Login/Login";
+import { getLocalizedPath, getStoredLocale } from "../../utils/language";
 
 export default function Hero() {
+    const locale = getStoredLocale();
+
     return (
         <div className="text-white w-full">
             <div className="grid grid-cols-1 lg:grid-cols-3 items-center w-full gap-8 lg:gap-10 xl:gap-12">
@@ -24,13 +27,13 @@ export default function Hero() {
                 </div>
 
                 <div className="space-y-4 font-semibold max-w-full w-full lg:max-w-2xl justify-self-center">
-                    <p className="text-3xl md:text-6xl lg:text-3xl xl:text-5xl 2xl:text-6xl text-center font-bold leading-tight">
+                    <p className="text-3xl md:text-6xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-center font-bold leading-tight">
                         মেট ক্লাব ই-লার্নিং প্ল্যাটফর্ম
                     </p>
-                    <p className="text-center md:text-xl lg:text-[16px] xl:text-xl">
+                    <p className="text-center md:text-xl lg:text-[16px]">
                         এসো আবহাওয়া শিখি খেলতে খেলতে
                     </p>
-                    <Link to="/about" className="flex justify-center mt-6">
+                    <Link to={getLocalizedPath("/about", locale)} className="flex justify-center mt-6">
                         <button className="px-6 py-3 cursor-pointer bg-white/85 text-red-700 font-semibold rounded-lg hover:bg-red-50 transition">
                             মেট ক্লাব সম্পর্কে জানুন
                         </button>
