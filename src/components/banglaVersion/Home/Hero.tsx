@@ -1,7 +1,7 @@
 import { Link } from "react-router";
-import logo from "../../assets/images/white_logo.png";
+import logo from "../../../assets/images/white_logo.png";
 import Login from "../Login/Login";
-import { getLocalizedPath, getStoredLocale } from "../../utils/language";
+import { getLocalizedPath, getStoredLocale } from "../../../utils/language";
 
 export default function Hero() {
     const locale = getStoredLocale();

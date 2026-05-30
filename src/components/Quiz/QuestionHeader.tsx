@@ -2,7 +2,7 @@ import { FaPause, FaPlay } from "react-icons/fa";
 import { useAudio, useAudioSync } from "../../hooks/UseAudio";
 import type { QuestionHeaderProps } from "../../types";
 
-export function QuestionHeader({ title, qNum, total, audioUrl }: QuestionHeaderProps) {
+export function QuestionHeader({ title, qNum, total, audioUrl, text  }: QuestionHeaderProps) {
     const { toggle, isThisSrcPlaying } = useAudio();
     useAudioSync(audioUrl);
     const isPlaying = !!audioUrl && isThisSrcPlaying(audioUrl);
@@ -23,7 +23,7 @@ export function QuestionHeader({ title, qNum, total, audioUrl }: QuestionHeaderP
                 className="font-bold leading-snug flex-1 min-w-0
                    text-sm sm:text-base md:text-lg lg:text-xl
                    line-clamp-2 sm:line-clamp-none"
-                style={{ color: "#991b1b", fontFamily: "'Hind Siliguri',sans-serif" }}
+                style={{ color: "#991b1b" }}
             >
                 {title}
             </h2>
@@ -64,7 +64,7 @@ export function QuestionHeader({ title, qNum, total, audioUrl }: QuestionHeaderP
                 >
                     {/* xs: "৩/১০", sm+: "প্রশ্ন ৩ / ১০" */}
                     <span className="sm:hidden">{qNum}/{total}</span>
-                    <span className="hidden sm:inline">প্রশ্ন {qNum} / {total}</span>
+                    <span className="hidden sm:inline">{text} {qNum} / {total}</span>
                 </span>
             </div>
         </div>

@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import logo from "../../assets/images/white_logo.png";
 import bgImage from "../../assets/images/bg-image.webp";
-import Login from "../../components/Login/Login";
+import Login from "../../components/banglaVersion/Login/Login";
 import { useLocaleRouteSync } from "../../hooks/useLocaleRouteSync";
 import { getLocalizedPath, getStoredLocale } from "../../utils/language";
 

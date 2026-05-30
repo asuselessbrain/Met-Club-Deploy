@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router";
 import { FiGrid, FiFileText, FiPlusCircle, FiPlayCircle } from "react-icons/fi";
 import { LogOut } from "lucide-react";
-import useLogout from "../../hooks/useLogout";
+import useLogout from "../../../hooks/useLogout";
 
 const sidebarLinks = [
   { name: "ওভারভিউ", path: "/admin/overview", icon: FiGrid },

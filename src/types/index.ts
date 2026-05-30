@@ -146,6 +146,7 @@ export interface QuestionHeaderProps {
     qNum: number;
     total: number;
     audioUrl?: string;
+    text: string
 }
 
 export interface QuestionRendererProps {

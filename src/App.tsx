@@ -1,4 +1,4 @@
-import Hero from './components/Home/Hero'
+import Hero from './components/banglaVersion/Home/Hero'
 import bgImage from './assets/images/bg-image.webp'
 import { useLocaleRouteSync } from './hooks/useLocaleRouteSync'
 

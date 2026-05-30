@@ -123,7 +123,7 @@ export default function ZoneCard({
             </p>
 
             {/* Button */}
-            {title === "লার্নিং জোন" ? (
+            {title === "লার্নিং জোন" || title === "Learning Zone" ? (
                 <Link to={link} className="z-10 inline-block cursor-pointer">
                     <button
                         className="z-10 px-8 py-3 rounded-full text-white font-medium text-sm md:text-base transition-all duration-200 active:scale-95 cursor-pointer"

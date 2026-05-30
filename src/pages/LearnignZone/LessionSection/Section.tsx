@@ -3,7 +3,7 @@ import bgImage from "../../../assets/images/start-journey-page-bg.jpeg";
 import { useNavigate, useParams } from "react-router";
 import TopNav from "../../../components/Shared/TopBar";
 import BottomNav from "../../../components/Shared/BottomNav";
-import CompletionModal from "../../../components/Modal/CompletionModal";
+import CompletionModal from "../../../components/banglaVersion/Modal/CompletionModal";
 import { resolveMediaUrl } from "../../../utils/media";
 import useAxiosProtected from "../../../hooks/axiosProtected";
 

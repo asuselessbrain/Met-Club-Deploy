@@ -1,6 +1,6 @@
 ﻿import { Target, Eye, Users, Award, MapPin, Heart, Shield, Sparkles, TrendingUp } from 'lucide-react';
 import logo from "../../assets/images/logo_original.png"
-import Partners from '../../components/Home/Partners';
+import Partners from '../../components/Shared/Partners';
 import homeBg from "../../assets/images/about-page-bg.png"
 import startJourneyBg from "../../assets/images/start-journey-page-bg.jpeg"
 import aboutBg from "../../assets/images/about-page-bg.png"

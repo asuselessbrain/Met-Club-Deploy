@@ -14,7 +14,7 @@ const Quiz = lazy(() => import("../pages/LearnignZone/quiz/quiz"));
 const Registration = lazy(() => import("../pages/Registration/Registration"));
 const About = lazy(() => import("../pages/About/About"));
 const Profile = lazy(() => import("../pages/Profile/Profile"));
-const AdminLayout = lazy(() => import("../components/Admin/AdminLayout"));
+const AdminLayout = lazy(() => import("../components/banglaVersion/Admin/AdminLayout"));
 const Overview = lazy(() => import("../pages/Admin/Overview"));
 const ManageChapters = lazy(() => import("../pages/Admin/ManageChapters"));
 const ManageSubchapters = lazy(() => import("../pages/Admin/ManageSubchapters"));
