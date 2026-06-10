@@ -16,7 +16,7 @@ export default function About() {
 
     return (
         <div className="relative min-h-screen flex flex-col overflow-x-hidden -mt-18.5 bg-gray-50">
-            <TopNav title="About Us" />
+            <TopNav title="About Us" brandName="Met Club" />
 
             {/* Hero Section */}
             <section className="relative z-10 min-h-screen flex items-center justify-center pt-24 pb-24 bg-cover bg-bottom bg-no-repeat" style={{ backgroundImage: `url(${homeBg})` }}>

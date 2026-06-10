@@ -1,0 +1,2995 @@
+[
+    {
+        "id": 1,
+        "subChapterId": 1,
+        "difficulty": "easy",
+        "type": "hotspot",
+        "title": "Question 1: Click on the picture.",
+        "description": "Look at the picture carefully.",
+        "question": "Which parts of the picture help you understand that today's weather is very hot? Click on the correct spots and put a tick mark.",
+        "hotspots": [
+            {
+                "id": "sun",
+                "label": "Scorching Sun",
+                "x": 25,
+                "y": 30
+            },
+            {
+                "id": "sweat",
+                "label": "Sweat on the forehead",
+                "x": 42,
+                "y": 33
+            }
+        ],
+        "correctAnswer": [
+            "sun",
+            "sweat"
+        ],
+        "image": "/assets/images/chapter1/quiz1.png",
+        "audio": "/assets/audios/chapter-1/easyQuiz1.mp3"
+    },
+    {
+        "id": 2,
+        "subChapterId": 1,
+        "difficulty": "easy",
+        "type": "true_false",
+        "title": "Question 2: True or False",
+        "description": "An image is given. In the image, a weatherman is standing, holding a thermometer and a notebook.",
+        "question": "\"The weatherman tells the daily news. He sees how the sky, wind, rain and snow are today.\"",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correctAnswer": "True",
+        "image": "/assets/images/chapter1/E-1_Q-2.jpeg",
+        "audio": "/assets/audios/chapter-1/easyQuiz2.mp3"
+    },
+    {
+        "id": 3,
+        "subChapterId": 1,
+        "difficulty": "easy",
+        "type": "fill_in_the_blanks",
+        "title": "Question 3: Fill in the blanks",
+        "description": "An image is given. In the image, there are three scenes—sunrise, midday heat, and evening rain.",
+        "statement": "The morning weather, the hot midday, and the evening clouds—these are all part of the ____.",
+        "options": [
+            "weather",
+            "climate",
+            "season",
+            "temperature"
+        ],
+        "correctAnswer": "weather",
+        "image": "/assets/images/chapter1/E-1_Q-3.jpeg",
+        "audio": "/assets/audios/chapter-1/easyQuiz3.mp3"
+    },
+    {
+        "id": 4,
+        "subChapterId": 1,
+        "difficulty": "easy",
+        "type": "image_selection",
+        "title": "Question 4: Click on the picture",
+        "description": "Two pictures will be given side by side. One picture shows the sun with light. The other picture shows a colorful fruit.",
+        "question": "Which picture shows the weather? Click on the correct image.",
+        "options": [
+            {
+                "id": "weather_image",
+                "label": "Sun with light",
+                "image": "/assets/images/chapter1/E-1_Q-4.1.jpeg"
+            },
+            {
+                "id": "fruit_image",
+                "label": "Colorful fruit",
+                "image": "/assets/images/chapter1/E-1_Q-4.2.jpeg"
+            }
+        ],
+        "correctAnswer": "weather_image",
+        "image": null,
+        "audio": "/assets/audios/chapter-1/easyQuiz4.mp3"
+    },
+    {
+        "id": 5,
+        "subChapterId": 1,
+        "difficulty": "easy",
+        "type": "match_the_following",
+        "title": "Question 5: Match the following",
+        "description": "On the left side, there are four images and on the right side, there are four words.",
+        "question": "Which image matches which word? Drag and drop to match.",
+        "leftItems": [
+            {
+                "id": "L1",
+                "label": "Sun image",
+                "image": "/assets/images/chapter1/E-1_Q-5.1.jpeg"
+            },
+            {
+                "id": "L2",
+                "label": "Cloud image",
+                "image": "/assets/images/chapter1/E-1_Q-5.2.jpeg"
+            },
+            {
+                "id": "L3",
+                "label": "Tree swaying in the wind image",
+                "image": "/assets/images/chapter1/E-1_Q-5.3.jpeg"
+            },
+            {
+                "id": "L4",
+                "label": "Thermometer image",
+                "image": "/assets/images/chapter1/E-1_Q-5.4.jpeg"
+            }
+        ],
+        "rightItems": [
+            "the sun",
+            "the sky",
+            "the wind",
+            "the temperature"
+        ],
+        "correctAnswer": {
+            "L1": "the sun",
+            "L2": "the sky",
+            "L3": "the wind",
+            "L4": "the temperature"
+        },
+        "image": null,
+        "audio": "/assets/audios/chapter-1/easyQuiz5.mp3"
+    },
+    {
+        "id": 6,
+        "subChapterId": 1,
+        "difficulty": "easy",
+        "type": "mcq",
+        "title": "Question 6: Create a news story by looking at the pictures.",
+        "description": "There is a picture. In the picture, the view outside the window—blue sky, bright sun, not a cloud anywhere. Tuni is standing by the window, sweat on her face.",
+        "question": "What would you say about today's weather based on this picture?",
+        "options": [
+            "It will rain today",
+            "It is extremely hot today",
+            "It is cold today",
+            "There will be lightning today"
+        ],
+        "correctAnswer": "It is extremely hot today",
+        "image": "/assets/images/chapter1/E-1_Q-6.jpeg"
+    },
+    {
+        "id": 7,
+        "subChapterId": 1,
+        "difficulty": "easy",
+        "type": "fill_in_the_blanks",
+        "title": "Question 7: Fill in the blanks",
+        "description": "An image is provided. In the image, a climate magician is showing pictures of the six seasons with their magic wand.",
+        "statement": "There are ____ seasons in Bangladesh. This is Bangladesh's ____.",
+        "options": [
+            "four-weather",
+            "five-climate",
+            "six-climate",
+            "seven-weather"
+        ],
+        "correctAnswer": "six-climate",
+        "image": "/assets/images/chapter1/E-1_Q-7.jpeg"
+    },
+    {
+        "id": 8,
+        "subChapterId": 1,
+        "difficulty": "easy",
+        "type": "true_false",
+        "title": "Question 8: True or False",
+        "description": "An image is provided. In the image, Tuni's mother is giving Tuni an umbrella, and dark clouds are visible in the sky.",
+        "question": "In the morning, Tuni's mother told her, 'Today is a cloudy day, take an umbrella with you.' Tuni's mother was actually giving her that day's weather update.",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correctAnswer": "True",
+        "image": "/assets/images/chapter1/E-1_Q-8.jpeg"
+    },
+    {
+        "id": 9,
+        "subChapterId": 1,
+        "difficulty": "easy",
+        "type": "arrange_sequence",
+        "title": "Question 9: Arrange the events",
+        "description": "Three images are provided in random order.",
+        "question": "Arrange the weather changes from morning to afternoon in the correct order.",
+        "options": [
+            {
+                "id": "A",
+                "text": "Sunrise in the morning",
+                "emoji": "🌅",
+                "image": "/assets/images/chapter1/E-1_Q-9.1.jpeg"
+            },
+            {
+                "id": "B",
+                "text": "Strong sunlight at noon",
+                "emoji": "☀️",
+                "image": "/assets/images/chapter1/E-1_Q-9.2.jpeg"
+            },
+            {
+                "id": "C",
+                "text": "Rain in the afternoon",
+                "emoji": "🌧️",
+                "image": "/assets/images/chapter1/E-1_Q-9.3.jpeg"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C"
+        ],
+        "image": null
+    },
+    {
+        "id": 10,
+        "subChapterId": 1,
+        "difficulty": "easy",
+        "type": "drag_drop_categorize",
+        "title": "Question 10: Drag and Match",
+        "description": "Three events are given on the left side and two boxes are given on the right side.",
+        "question": "Which event goes into which box? Drag and match.",
+        "itemsToCategorize": [
+            {
+                "id": "1",
+                "text": "It is raining today"
+            },
+            {
+                "id": "2",
+                "text": "It rains every year in June-July"
+            },
+            {
+                "id": "3",
+                "text": "Yesterday was extremely hot"
+            }
+        ],
+        "categories": [
+            "Weather",
+            "Climate"
+        ],
+        "correctAnswer": {
+            "Weather": [
+                "1",
+                "3"
+            ],
+            "Climate": [
+                "2"
+            ]
+        },
+        "image": null
+    },
+    {
+        "id": 11,
+        "subChapterId": 1,
+        "difficulty": "medium",
+        "type": "hotspot",
+        "title": "Question 11: Click on the image",
+        "description": "Two scenes are visible on a screen created by the light of the magic wand.",
+        "question": "The story mentions, 'In Patuakhali, storms occur every year in April-May.' Which part of the Patuakhali scene represents the cyclone and clouds? Click on it.",
+        "hotspots": [
+            {
+                "id": "storm",
+                "label": "Cyclone and dark clouds",
+                "x": 72,
+                "y": 30,
+                "width": 35,
+                "height": 60
+            }
+        ],
+        "correctAnswer": [
+            "storm"
+        ],
+        "image": "/assets/images/chapter1/E-1_Q-11.jpeg",
+        "audio": "/assets/audios/chapter-1/medQuiz11.mp3"
+    },
+    {
+        "id": 12,
+        "subChapterId": 1,
+        "difficulty": "medium",
+        "type": "fill_in_the_blanks",
+        "title": "Question 12: Fill in the blanks",
+        "description": "The climate magician is showing Tuni a calendar representing 30 years of rainfall.",
+        "statement": "The average weather of a region over a long period of ____ years is called climate.",
+        "options": [
+            "5",
+            "10",
+            "20",
+            "30"
+        ],
+        "correctAnswer": "30",
+        "image": "/assets/images/chapter1/E-1_Q-12.jpeg",
+        "audio": "/assets/audios/chapter-1/medQuiz12.mp3"
+    },
+    {
+        "id": 13,
+        "subChapterId": 1,
+        "difficulty": "medium",
+        "type": "true_false",
+        "title": "Question 13: True or False",
+        "description": "The image shows a scene of Patuakhali—coconut trees are leaning, dark clouds are in the sky, and a cyclone shelter is visible in the distance.",
+        "question": "\"Cyclones occur in Patuakhali—this is Patuakhali's weather.\"—Is this statement true or false?",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correctAnswer": "False",
+        "image": "/assets/images/chapter1/E-1_Q-13.jpeg",
+        "audio": "/assets/audios/chapter-1/medQuiz13.mp3"
+    },
+    {
+        "id": 14,
+        "subChapterId": 1,
+        "difficulty": "medium",
+        "type": "match_the_following",
+        "title": "Question 14: Drag and Match",
+        "description": "Three region names are given on the left side, and three climatological characteristics are given on the right side.",
+        "question": "Which characteristic matches with which region? Drag and match.",
+        "leftItems": [
+            {
+                "id": "L1",
+                "label": "Chattogram"
+            },
+            {
+                "id": "L2",
+                "label": "Gaibandha"
+            },
+            {
+                "id": "L3",
+                "label": "Patuakhali"
+            }
+        ],
+        "rightItems": [
+            "It rains heavily during the monsoon season",
+            "Floods occur every year",
+            "Cyclones occur every year"
+        ],
+        "correctAnswer": {
+            "L1": "It rains heavily during the monsoon season",
+            "L2": "Floods occur every year",
+            "L3": "Cyclones occur every year"
+        },
+        "image": null,
+        "audio": "/assets/audios/chapter-1/medQuiz14.mp3"
+    },
+    {
+        "id": 15,
+        "subChapterId": 1,
+        "difficulty": "medium",
+        "type": "mcq",
+        "title": "Question 15: Create a news story by looking at the pictures.",
+        "description": "The magician is showing the characteristics of the six seasons (mango, kadam flower, kash flower, rice harvest, pitha and palash) on the wind.",
+        "question": "What identity of Bangladesh do these pictures portray?",
+        "options": [
+            "Daily Weather",
+            "Six Seasons—This is Bangladesh's Climate",
+            "Only Summer",
+            "Only Winter"
+        ],
+        "correctAnswer": "Six Seasons—This is Bangladesh's Climate",
+        "image": "/assets/images/chapter1/E-1_Q-15.jpeg",
+        "audio": "/assets/audios/chapter-1/medQuiz15.mp3"
+    },
+    {
+        "id": 16,
+        "subChapterId": 1,
+        "difficulty": "medium",
+        "type": "arrange_sequence",
+        "title": "Question 16: Arrange the Events",
+        "description": "The four steps of climate determination are given in a random order.",
+        "question": "Arrange the correct steps of climate determination in order.",
+        "options": [
+            {
+                "id": "A",
+                "text": "Collect daily weather information"
+            },
+            {
+                "id": "B",
+                "text": "Accumulate data for 30 years"
+            },
+            {
+                "id": "C",
+                "text": "Calculate average"
+            },
+            {
+                "id": "D",
+                "text": "Determine climate"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "image": null,
+        "audio": "/assets/audios/chapter-1/medQuiz16.mp3"
+    },
+    {
+        "id": 17,
+        "subChapterId": 1,
+        "difficulty": "medium",
+        "type": "fill_in_the_blanks",
+        "title": "Question 17: Fill in the Blanks",
+        "description": "The weather forecaster and the climatologist are showing examples of how people in Dhaka city dress according to weather and climate.",
+        "statement": "People in Dhaka city generally dress according to the influence of weather and climate ____.",
+        "options": [
+            "Wear sweaters in summer",
+            "Wear cotton clothes in winter",
+            "Wear cotton clothes in summer and sweaters in winter",
+            "Carry an umbrella in the rain"
+        ],
+        "correctAnswer": "Wear cotton clothes in summer and sweaters in winter",
+        "image": "/assets/images/chapter1/E-1_Q-17.jpeg",
+        "audio": "/assets/audios/chapter-1/medQuiz17.mp3"
+    },
+    {
+        "id": 18,
+        "subChapterId": 1,
+        "difficulty": "medium",
+        "type": "true_false",
+        "title": "Question 18: True or False",
+        "description": "A grandfather is telling his grandson—'We didn't have such hot weather when we were young'—meaning long-term change.",
+        "question": "If the grandfather says, 'We didn't have such hot weather before,' then he is talking about climate change. Is this statement true?",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correctAnswer": "True",
+        "image": "/assets/images/chapter1/E-1_Q-18.jpeg",
+        "audio": "/assets/audios/chapter-1/medQuiz18.mp3"
+    },
+    {
+        "id": 19,
+        "subChapterId": 1,
+        "difficulty": "medium",
+        "type": "drag_drop_categorize",
+        "title": "Question 19: Drag and Drop",
+        "description": "Five statements and two boxes (Weather and Climate) are given.",
+        "question": "Which statement is about weather and which is about climate? Drag and drop into the correct box.",
+        "itemsToCategorize": [
+            {
+                "id": "1",
+                "text": "It is raining today"
+            },
+            {
+                "id": "2",
+                "text": "There are six seasons in Bangladesh"
+            },
+            {
+                "id": "3",
+                "text": "It was extremely hot yesterday"
+            },
+            {
+                "id": "4",
+                "text": "Deserts are hot during the day and cold at night"
+            },
+            {
+                "id": "5",
+                "text": "Cyclones occur in April and May"
+            }
+        ],
+        "categories": [
+            "Weather",
+            "Climate"
+        ],
+        "correctAnswer": {
+            "Weather": [
+                "1",
+                "3"
+            ],
+            "Climate": [
+                "2",
+                "4",
+                "5"
+            ]
+        },
+        "image": null,
+        "audio": "/assets/audios/chapter-1/medQuiz19.mp3"
+    },
+    {
+        "id": 20,
+        "subChapterId": 1,
+        "difficulty": "medium",
+        "type": "puzzle",
+        "title": "Question 20: Puzzle",
+        "description": "Below are some words in pieces.",
+        "question": "Arrange the pieces correctly to form a meaningful sentence.",
+        "options": [
+            {
+                "id": "P1",
+                "text": "30"
+            },
+            {
+                "id": "P2",
+                "text": "years"
+            },
+            {
+                "id": "P3",
+                "text": "average weather"
+            },
+            {
+                "id": "P4",
+                "text": "climate"
+            },
+            {
+                "id": "P5",
+                "text": "says"
+            }
+        ],
+        "correctAnswer": [
+            "P1",
+            "P2",
+            "P3",
+            "P4",
+            "P5"
+        ],
+        "image": null,
+        "audio": "/assets/audios/chapter-1/medQuiz20.mp3"
+    },
+    {
+        "id": 21,
+        "subChapterId": 1,
+        "difficulty": "hard",
+        "type": "mcq",
+        "title": "Question 21: Identify the Correct Scene",
+        "description": "A screen created from the light of the magic wand shows two scenes side by side. The left scene has the text: 'It is raining in Chittagong today' and the right scene has the text: 'Cyclones occur in Potuakhali every year'.",
+        "question": "Which scene is about weather and which is about climate? Identify and select the correct answer.",
+        "options": [
+            "Left scene is weather, right scene is climate",
+            "Left scene is climate, right scene is weather",
+            "Both are weather",
+            "Both are climate"
+        ],
+        "correctAnswer": "Left scene is weather, right scene is climate",
+        "image": "/assets/images/chapter1/E-1_Q-21.jpeg",
+        "audio": "/assets/audios/chapter-1/hardQuiz21.mp3"
+    },
+    {
+        "id": 22,
+        "subChapterId": 1,
+        "difficulty": "hard",
+        "type": "true_false",
+        "title": "Question 22: True or False",
+        "description": "There are two messages written on the image— the first message: 'It is 35 degrees today', the second message: 'In summer, the temperature is usually 35-40 degrees'.",
+        "question": "'The first message refers to weather and the second message refers to climate.'—Is this statement true or false?",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correctAnswer": "False",
+        "image": "/assets/images/chapter1/E-1_Q-22.jpeg",
+        "audio": "/assets/audios/chapter-1/hardQuiz22.mp3"
+    },
+    {
+        "id": 23,
+        "subChapterId": 1,
+        "difficulty": "hard",
+        "type": "drag_drop_categorize",
+        "title": "Question 23: Drag and Drop",
+        "description": "Six statements and two boxes (Weather and Climate) are given.",
+        "question": "Which of these belong to weather and which belong to climate? Drag and drop them into the correct boxes.",
+        "itemsToCategorize": [
+            {
+                "id": "1",
+                "text": "It is raining in Chittagong today"
+            },
+            {
+                "id": "2",
+                "text": "There are six seasons in Bangladesh"
+            },
+            {
+                "id": "3",
+                "text": "It was extremely hot yesterday"
+            },
+            {
+                "id": "4",
+                "text": "In the desert, it is hot during the day and cold at night"
+            },
+            {
+                "id": "5",
+                "text": "It is thundering in this month"
+            },
+            {
+                "id": "6",
+                "text": "In April-May, cyclones occur"
+            }
+        ],
+        "categories": [
+            "Weather",
+            "Climate"
+        ],
+        "correctAnswer": {
+            "Weather": [
+                "1",
+                "3",
+                "5"
+            ],
+            "Climate": [
+                "2",
+                "4",
+                "6"
+            ]
+        },
+        "image": null,
+        "audio": "/assets/audios/chapter-1/hardQuiz23.mp3"
+    },
+    {
+        "id": 24,
+        "subChapterId": 1,
+        "difficulty": "hard",
+        "type": "mcq",
+        "title": "Question 24: Identify the Scene",
+        "description": "Three panels from a story. Panel 1: Tuni looking out the window and saying 'Wow! It's so hot!' Panel 2: Weatherman saying 'I can tell if it will rain today.' Panel 3: Climate magician saying 'I know when it usually rains in Bangladesh.'.",
+        "question": "Which panel refers to weather and which panel refers to climate?",
+        "options": [
+            "Panel 1-Weather, Panel 2-Climate, Panel 3-Weather",
+            "Panel 1-Weather, Panel 2-Weather, Panel 3-Climate",
+            "Panel 1-Climate, Panel 2-Weather, Panel 3-Climate",
+            "Panel 1-Climate, Panel 2-Climate, Panel 3-Weather"
+        ],
+        "correctAnswer": "Panel 1-Weather, Panel 2-Weather, Panel 3-Climate",
+        "audio": "/assets/audios/chapter-1/hardQuiz24.mp3"
+    },
+    {
+        "id": 25,
+        "subChapterId": 1,
+        "difficulty": "hard",
+        "type": "fill_in_the_blanks",
+        "title": "Question 25: Fill in the Blanks",
+        "description": "In the image, there is a clock (representing short-term time) on the left and a calendar (representing long-term time) on the right.",
+        "statement": "____ is the short-term condition, for example, it is hot today and you put on a half-sleeve shirt. ____ is the long-term average condition, for example, people in Dhaka usually wear light clothing in the heat.",
+        "options": [
+            "Weather-Climate",
+            "Climate-Weather",
+            "Season-Weather",
+            "Temperature-Climate"
+        ],
+        "correctAnswer": "Weather-Climate",
+        "image": "/assets/images/chapter1/E-1_Q-25.jpeg",
+        "audio": "/assets/audios/chapter-1/hardQuiz25.mp3"
+    },
+    {
+        "id": 26,
+        "subChapterId": 1,
+        "difficulty": "hard",
+        "type": "mcq",
+        "title": "Question 26: Think and Answer (Analysis)",
+        "description": "In the image, two friends are talking. One says, 'It rained today, so Bangladesh's climate has changed! From now on, it might rain all year long.'.",
+        "question": "What is wrong with the friend's statement? Choose the correct answer.",
+        "options": [
+            "A single day's rain does not change the climate.",
+            "The friend's statement is correct, because rain always changes the climate.",
+            "Rain always changes the climate.",
+            "Today's rain is weather, but it takes 100 years to change the climate."
+        ],
+        "correctAnswer": "A single day's rain does not change the climate.",
+        "image": "/assets/images/chapter1/E-1_Q-26.jpeg",
+        "audio": "/assets/audios/chapter-1/hardQuiz26.mp3"
+    },
+    {
+        "id": 27,
+        "subChapterId": 1,
+        "difficulty": "hard",
+        "type": "puzzle",
+        "title": "Question 27: Arrange the Puzzle",
+        "description": "Below are some words arranged randomly.",
+        "question": "Arrange the pieces correctly to form a meaningful sentence.",
+        "options": [
+            {
+                "id": "P1",
+                "text": "Weather"
+            },
+            {
+                "id": "P2",
+                "text": "Quickly"
+            },
+            {
+                "id": "P3",
+                "text": "Changes,"
+            },
+            {
+                "id": "P4",
+                "text": "Climate"
+            },
+            {
+                "id": "P5",
+                "text": "Slowly"
+            },
+            {
+                "id": "P6",
+                "text": "Changes"
+            }
+        ],
+        "correctAnswer": [
+            "P1",
+            "P2",
+            "P3",
+            "P4",
+            "P5",
+            "P6"
+        ],
+        "image": null,
+        "audio": "/assets/audios/chapter-1/hardQuiz27.mp3"
+    },
+    {
+        "id": 28,
+        "subChapterId": 1,
+        "difficulty": "hard",
+        "type": "mcq",
+        "title": "Question 28: Think and Answer (Application)",
+        "description": "A graph showing temperature changes over 15 years in a particular region is displayed. Compared to previous years, the summer is getting hotter, there is less rainfall during the monsoon season, and the winter is not as cold as it used to be.",
+        "question": "Is this a weather change or a climate change? Choose the correct answer.",
+        "options": [
+            "Weather change, because it feels hot today.",
+            "Climate change, because it is a long-term, continuous change.",
+            "It is a common thing, nothing has changed.",
+            "Only the summer has changed, so it is a weather change."
+        ],
+        "correctAnswer": "Climate change, because it is a long-term, continuous change.",
+        "image": "/assets/images/chapter1/E-1_Q-28.jpeg",
+        "audio": "/assets/audios/chapter-1/hardQuiz28.mp3"
+    },
+    {
+        "id": 29,
+        "subChapterId": 1,
+        "difficulty": "hard",
+        "type": "drag_drop_categorize",
+        "title": "Question 29: Categorize the Events",
+        "description": "Three events are given randomly.",
+        "question": "Which one is Weather and which one is Climate? Arrange them in the correct boxes.",
+        "itemsToCategorize": [
+            {
+                "id": "A",
+                "text": "It is raining in Chittagong today"
+            },
+            {
+                "id": "B",
+                "text": "It rains in Chittagong every year during the monsoon season"
+            },
+            {
+                "id": "C",
+                "text": "It rained in Chittagong yesterday"
+            }
+        ],
+        "categories": [
+            "Weather",
+            "Climate"
+        ],
+        "correctAnswer": {
+            "Weather": [
+                "A",
+                "C"
+            ],
+            "Climate": [
+                "B"
+            ]
+        },
+        "image": null,
+        "audio": "/assets/audios/chapter-1/hardQuiz29.mp3"
+    },
+    {
+        "id": 30,
+        "subChapterId": 1,
+        "difficulty": "hard",
+        "type": "mcq",
+        "title": "Question 30: Think and Answer (Application)",
+        "description": "A farmer is standing in his paddy field, looking towards the sky. He wants to know when the rain will start this year, so he can prepare the soil and plant the seedlings.",
+        "question": "Should he be given weather information or climate information? Why? Choose the correct answer.",
+        "options": [
+            "Climate information, because climate refers to the typical weather conditions in a place over a long period.",
+            "Weather information, because climate refers to the typical weather conditions in a place over a long period, but he needs to know when it will rain this year.",
+            "No information is needed, the farmer will know by himself.",
+            "Just checking the previous year's records will be enough."
+        ],
+        "correctAnswer": "Weather information, because climate refers to the typical weather conditions in a place over a long period, but he needs to know when it will rain this year.",
+        "image": "/assets/images/chapter1/E-1_Q-30.jpeg",
+        "audio": "/assets/audios/chapter-1/hardQuiz30.mp3"
+    },
+    {
+        "id": 31,
+        "subChapterId": 14,
+        "difficulty": "easy",
+        "type": "hotspot",
+        "title": "Question 1: Click on the Image",
+        "description": "An image is given. In the image, the Tista River can be seen. On one side, the river is calm, and on the other side, the water is spilling over the banks.",
+        "question": "Which part of the image shows that a flood is occurring? Click on the correct location.",
+        "hotspots": [
+            {
+                "id": "flood_water",
+                "label": "Water spilling over the banks",
+                "x": 65,
+                "y": 55
+            }
+        ],
+        "correctAnswer": [
+            "flood_water"
+        ],
+        "image": "/assets/images/chapter14/E-14_Q-1.png",
+        "audio": "/assets/audios/chapter-14/easyQuiz-1.mp3"
+    },
+    {
+        "id": 32,
+        "subChapterId": 14,
+        "difficulty": "easy",
+        "type": "true_false",
+        "title": "Question 2: True or False",
+        "description": "An image is given. In the image, a man is looking towards the TV screen. The TV shows the text 'Heavy rainfall is occurring in the area. The Tista River water level is rising.'",
+        "question": "After seeing the news on the TV, the man's father started to move his belongings to a higher place.",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correctAnswer": "True",
+        "image": "/assets/images/chapter14/E-14_Q-2.png",
+        "audio": "/assets/audios/chapter-14/easyQuiz-2.mp3"
+    },
+    {
+        "id": 33,
+        "subChapterId": 14,
+        "difficulty": "easy",
+        "type": "fill_in_the_blanks",
+        "title": "Question 3: Fill in the Blanks",
+        "description": "An image is given. In the image, rain is falling from the sky. A bird is flying back home.",
+        "statement": "Floods are mainly caused by ____.",
+        "options": [
+            "Drought",
+            "Heavy rainfall",
+            "Winter",
+            "Snowfall"
+        ],
+        "correctAnswer": "Heavy rainfall",
+        "image": "/assets/images/chapter14/E-14_Q-3.png",
+        "audio": "/assets/audios/chapter-14/easyQuiz-3.mp3"
+    },
+    {
+        "id": 34,
+        "subChapterId": 14,
+        "difficulty": "easy",
+        "type": "image_selection",
+        "title": "Question 4: Click on the Image",
+        "description": "Two images will be given side by side. One image shows a river in a calm state. The other image shows the river's water spilling over the banks.",
+        "question": "Which image shows a flood? Click on the correct image.",
+        "options": [
+            {
+                "id": "calm_river",
+                "label": "Calm River",
+                "image": "/assets/images/chapter14/E-14_Q-4.1.png"
+            },
+            {
+                "id": "flood_river",
+                "label": "Flooded River",
+                "image": "/assets/images/chapter14/E-14_Q-4.2.png"
+            }
+        ],
+        "correctAnswer": "flood_river",
+        "audio": "/assets/audios/chapter-14/easyQuiz-4.mp3"
+    },
+    {
+        "id": 35,
+        "subChapterId": 14,
+        "difficulty": "easy",
+        "type": "match_the_following",
+        "title": "Question 5: Match the Following",
+        "description": "Four images will be given on the left side and four words on the right side.",
+        "question": "Which image matches which word? Drag and drop to match.",
+        "leftItems": [
+            {
+                "id": "L1",
+                "label": "Image of heavy rainfall",
+                "image": "/assets/images/chapter14/E-14_Q-5.1.png"
+            },
+            {
+                "id": "L2",
+                "label": "Image of a river",
+                "image": "/assets/images/chapter14/E-14_Q-5.2.png"
+            },
+            {
+                "id": "L3",
+                "label": "Image of water rising",
+                "image": "/assets/images/chapter14/E-14_Q-5.3.png"
+            },
+            {
+                "id": "L4",
+                "label": "Image of a flooded area",
+                "image": "/assets/images/chapter14/E-14_Q-5.4.png"
+            }
+        ],
+        "rightItems": [
+            "the rain",
+            "the river",
+            "rising water",
+            "a flood"
+        ],
+        "correctAnswer": {
+            "L1": "the rain",
+            "L2": "the river",
+            "L3": "rising water",
+            "L4": "a flood"
+        },
+        "image": "/assets/images/chapter14/quiz5.png",
+        "audio": "/assets/audios/chapter-14/easyQuiz-5.mp3"
+    },
+    {
+        "id": 36,
+        "subChapterId": 14,
+        "difficulty": "easy",
+        "type": "mcq",
+        "title": "Question 6: Look at the Image and Create a News Story",
+        "description": "An image is given. In the image, a TV screen shows a news anchor saying, 'The river water has exceeded its danger level. People in low-lying areas should prepare.'",
+        "question": "What can you infer from this image?",
+        "options": [
+            "It will not rain today",
+            "A flood is coming",
+            "It will snow today",
+            "It will be hot today"
+        ],
+        "correctAnswer": "A flood is coming",
+        "image": "/assets/images/chapter14/E-14_Q-6.png",
+        "audio": "/assets/audios/chapter-14/easyQuiz-6.mp3"
+    },
+    {
+        "id": 37,
+        "subChapterId": 14,
+        "difficulty": "easy",
+        "type": "fill_in_the_blanks",
+        "title": "Question 7: Fill in the Blanks",
+        "description": "An image is given. In the image, a girl is packing her favorite books, school notebooks, and a birthday card in a plastic bag.",
+        "statement": "Before a flood, important items should be kept in a ____ place.",
+        "options": [
+            "low",
+            "high",
+            "wet",
+            "dirty"
+        ],
+        "correctAnswer": "high",
+        "image": "/assets/images/chapter14/E-14_Q-7.png",
+        "audio": "/assets/audios/chapter-14/easyQuiz-7.mp3"
+    },
+    {
+        "id": 38,
+        "subChapterId": 14,
+        "difficulty": "easy",
+        "type": "true_false",
+        "title": "Question 8: True or False",
+        "description": "An image is given. In the image, Maya's mother is putting all the spices, oil, and rice in a high place.",
+        "question": "Is it necessary to store dry food in a high place before a flood?",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correctAnswer": "True",
+        "image": "/assets/images/chapter14/E-14_Q-8.png",
+        "audio": "/assets/audios/chapter-14/easyQuiz-8.mp3"
+    },
+    {
+        "id": 39,
+        "subChapterId": 14,
+        "difficulty": "easy",
+        "type": "arrange_sequence",
+        "title": "Question 9: Arrange the Events",
+        "description": "Three images are given in a random order.",
+        "question": "Arrange the events in the correct order of a flood occurring.",
+        "options": [
+            {
+                "id": "A",
+                "text": "Dark clouds in the sky and heavy rain",
+                "image": "/assets/images/chapter14/E-14_Q-9.1.png"
+            },
+            {
+                "id": "B",
+                "text": "River water rises and water enters homes",
+                "image": "/assets/images/chapter14/E-14_Q-9.2.png"
+            },
+            {
+                "id": "C",
+                "text": "TV shows a warning signal",
+                "image": "/assets/images/chapter14/E-14_Q-9.3.png"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "C",
+            "B"
+        ],
+        "audio": "/assets/audios/chapter-14/easyQuiz-9.mp3"
+    },
+    {
+        "id": 40,
+        "subChapterId": 14,
+        "difficulty": "easy",
+        "type": "drag_drop_categorize",
+        "title": "Question 10: Drag and Drop",
+        "description": "Three tasks are given on the left side and two boxes are given on the right side.",
+        "question": "Which task belongs to which box? Drag and drop accordingly.",
+        "itemsToCategorize": [
+            {
+                "id": "1",
+                "text": "Lifting household items"
+            },
+            {
+                "id": "2",
+                "text": "Creating an emergency bag"
+            },
+            {
+                "id": "3",
+                "text": "Moving to a safe shelter"
+            }
+        ],
+        "categories": [
+            "Before a Flood",
+            "During a Flood"
+        ],
+        "correctAnswer": {
+            "Before a Flood": [
+                "1",
+                "2"
+            ],
+            "During a Flood": [
+                "3"
+            ]
+        },
+        "audio": "/assets/audios/chapter-14/easyQuiz-10.mp3"
+    },
+    {
+        "id": 41,
+        "subChapterId": 14,
+        "difficulty": "medium",
+        "type": "hotspot",
+        "title": "Question 11: Click on the Image",
+        "description": "An image is given. In the image, heavy rain is falling in the upstream of the Tista River. The water level in the river is rising. The village of Mayna is located on the banks of the Tista River.",
+        "question": "Which part of the image indicates that the village of Mayna will be affected by a flood? Click on the correct location.",
+        "hotspots": [
+            {
+                "id": "upstream_rain",
+                "label": "Heavy rain in the upstream",
+                "x": 30,
+                "y": 25
+            }
+        ],
+        "correctAnswer": [
+            "upstream_rain"
+        ],
+        "image": "/assets/images/chapter14/E-14_Q-11.png",
+        "audio": "/assets/audios/chapter-14/mediumQuiz-1.mp3"
+    },
+    {
+        "id": 42,
+        "subChapterId": 14,
+        "difficulty": "medium",
+        "type": "fill_in_the_blanks",
+        "title": "Question 12: Fill in the Blanks",
+        "description": "An image is given. In the image, the TV screen shows the text 'River water has exceeded the danger level. A ______ signal has been issued.'",
+        "statement": "Before a flood, a ______ signal is shown on the TV.",
+        "options": [
+            "warning",
+            "cold",
+            "গরম",
+            "বৃষ্টি"
+        ],
+        "correctAnswer": "warning",
+        "image": "/assets/images/chapter14/E-14_Q-12.png",
+        "audio": "/assets/audios/chapter-14/mediumQuiz-2.mp3"
+    },
+    {
+        "id": 43,
+        "subChapterId": 14,
+        "difficulty": "medium",
+        "type": "true_false",
+        "title": "Question 13: True or False",
+        "description": "An image is given. In the image, Rahim Mia is looking towards the river. He says, 'This time it seems a big flood will happen.'",
+        "question": "Elderly people can often predict the onset of a flood by observing the behavior of the river.",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correctAnswer": "True",
+        "image": "/assets/images/chapter14/E-14_Q-13.png",
+        "audio": "/assets/audios/chapter-14/mediumQuiz-3.mp3"
+    },
+    {
+        "id": 44,
+        "subChapterId": 14,
+        "difficulty": "medium",
+        "type": "match_the_following",
+        "title": "Question 14: Match the Following",
+        "description": "On the left side, three causes of floods are given, and on the right side, three images are given.",
+        "question": "Which cause matches which image? Drag and drop to match.",
+        "leftItems": [
+            {
+                "id": "L1",
+                "label": "Heavy rain in the upstream",
+                "image": "/assets/images/chapter14/E-14_Q-14.1.png"
+            },
+            {
+                "id": "L2",
+                "label": "Rising water level in the river",
+                "image": "/assets/images/chapter14/E-14_Q-14.2.png"
+            },
+            {
+                "id": "L3",
+                "label": "Dam breaking",
+                "image": "/assets/images/chapter14/E-14_Q-14.3.png"
+            }
+        ],
+        "rightItems": [
+            "Picture of rain in the mountains",
+            "Picture of rising water level in the river",
+            "Picture of a broken dam"
+        ],
+        "correctAnswer": {
+            "L1": "Picture of rain in the mountains",
+            "L2": "Picture of rising water level in the river",
+            "L3": "Picture of a broken dam"
+        },
+        "audio": "/assets/audios/chapter-14/mediumQuiz-4.mp3"
+    },
+    {
+        "id": 45,
+        "subChapterId": 14,
+        "difficulty": "medium",
+        "type": "mcq",
+        "title": "Question 15: Look at the Image and Create a Story",
+        "description": "An image is given. In the image, Monu is holding his emergency bag. Inside the bag, dry food, a water bottle, a torch, batteries, and a candle are visible.",
+        "question": "Why did Monu create this bag?",
+        "options": [
+            "For going to school",
+            "For going to the market",
+            "For going to a safe shelter during a flood",
+            "For playing"
+        ],
+        "correctAnswer": "For going to a safe shelter during a flood",
+        "image": "/assets/images/chapter14/E-14_Q-15.png",
+        "audio": "/assets/audios/chapter-14/mediumQuiz-5.mp3"
+    },
+    {
+        "id": 46,
+        "subChapterId": 14,
+        "difficulty": "medium",
+        "type": "arrange_sequence",
+        "title": "Question 16: Arrange the Events",
+        "description": "Four events are given in a random order.",
+        "question": "Arrange the events in the correct order of occurrence during a flood.",
+        "options": [
+            {
+                "id": "A",
+                "text": "Heavy rain in the upstream"
+            },
+            {
+                "id": "B",
+                "text": "Rising water level in the river"
+            },
+            {
+                "id": "C",
+                "text": "Warning signal issued"
+            },
+            {
+                "id": "D",
+                "text": "Water flooding low-lying areas"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "image": "/assets/images/chapter14/quiz16.png",
+        "audio": "/assets/audios/chapter-14/mediumQuiz-6.mp3"
+    },
+    {
+        "id": 47,
+        "subChapterId": 14,
+        "difficulty": "medium",
+        "type": "fill_in_the_blanks",
+        "title": "Question 17: Fill in the Blanks",
+        "description": "An image is given. In the image, Monu's father is turning off the main switch and gas connection before leaving the house.",
+        "statement": "During a flood, before leaving the house, you should turn off _____ and _____.",
+        "options": [
+            "water-valve",
+            "electricity-gas",
+            "TV-fan",
+            "light-bulb"
+        ],
+        "correctAnswer": "electricity-gas",
+        "image": "/assets/images/chapter14/E-14_Q-17.png",
+        "audio": "/assets/audios/chapter-14/mediumQuiz-7.mp3"
+    },
+    {
+        "id": 48,
+        "subChapterId": 14,
+        "difficulty": "medium",
+        "type": "true_false",
+        "title": "Question 18: True or False",
+        "description": "An image is given. In the image, Monu's family is walking away from the floodwaters towards a safe shelter. The father is carrying the baby on his shoulders.",
+        "question": "During a flood, small children should be carried on shoulders or placed in high places.",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correctAnswer": "True",
+        "image": "/assets/images/chapter14/E-14_Q-18.png",
+        "audio": "/assets/audios/chapter-14/mediumQuiz-8.mp3"
+    },
+    {
+        "id": 49,
+        "subChapterId": 14,
+        "difficulty": "medium",
+        "type": "drag_drop_categorize",
+        "title": "Question 19: Drag and Drop",
+        "description": "Five tasks are given on the left side and three boxes are given on the right side.",
+        "question": "Which task belongs in which box? Drag and drop accordingly.",
+        "itemsToCategorize": [
+            {
+                "id": "1",
+                "text": "Stock up on dry food"
+            },
+            {
+                "id": "2",
+                "text": "Move belongings to a higher location"
+            },
+            {
+                "id": "3",
+                "text": "Watch for warning signals on the TV"
+            },
+            {
+                "id": "4",
+                "text": "Move to a safe shelter"
+            },
+            {
+                "id": "5",
+                "text": "Clean up the house after the flood"
+            }
+        ],
+        "categories": [
+            "before the flood",
+            "during the flood",
+            "after the flood"
+        ],
+        "correctAnswer": {
+            "before the flood": [
+                "1",
+                "2",
+                "3"
+            ],
+            "during the flood": [
+                "4"
+            ],
+            "after the flood": [
+                "5"
+            ]
+        },
+        "audio": "/assets/audios/chapter-14/mediumQuiz-9.mp3"
+    },
+    {
+        "id": 50,
+        "subChapterId": 14,
+        "difficulty": "medium",
+        "type": "puzzle",
+        "title": "Question 20: Puzzle",
+        "description": "Some words are given below.",
+        "question": "Arrange the pieces to form a meaningful sentence.",
+        "options": [
+            {
+                "id": "P1",
+                "text": "of the flood"
+            },
+            {
+                "id": "P2",
+                "text": "because"
+            },
+            {
+                "id": "P3",
+                "text": "heavy rain"
+            }
+        ],
+        "correctAnswer": [
+            "P3",
+            "P1",
+            "P2"
+        ],
+        "image": null,
+        "audio": "/assets/audios/chapter-14/mediumQuiz-10.mp3"
+    },
+    {
+        "id": 51,
+        "subChapterId": 14,
+        "difficulty": "hard",
+        "type": "image_selection",
+        "title": "Question 21: Click on the Image",
+        "description": "An image is given. In the image, two scenes are shown side by side. On the left: Monu's family is walking away from the floodwaters towards a safe shelter. On the right: Monu's family is cleaning up the debris after the flood.",
+        "question": "Which scene shows what happens during the flood and which shows what happens after the flood? Identify the correct scenes.",
+        "options": [
+            {
+                "id": "during_flood",
+                "label": "during the flood — the family is walking away from the floodwaters towards a safe shelter",
+                "image": "/assets/images/chapter14/E-14_Q-21.1.png"
+            },
+            {
+                "id": "after_flood",
+                "label": "after the flood — the family is cleaning up the debris",
+                "image": "/assets/images/chapter14/E-14_Q-21.2.png"
+            }
+        ],
+        "correctAnswer": [
+            "during_flood",
+            "after_flood"
+        ],
+        "audio": "/assets/audios/chapter-14/hardQuiz-1.mp3"
+    },
+    {
+        "id": 52,
+        "subChapterId": 14,
+        "difficulty": "hard",
+        "type": "true_false",
+        "title": "Question 22: True or False",
+        "description": "An image is given. In the image, Monu's father is looking for the broken electrical wire and checking the gas line.",
+        "question": "First, check the broken electrical wire and the gas line when you return home. Then, enter the house.",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correctAnswer": "True",
+        "image": "/assets/images/chapter14/E-14_Q-22.png",
+        "audio": "/assets/audios/chapter-14/hardQuiz-2.mp3"
+    },
+    {
+        "id": 53,
+        "subChapterId": 14,
+        "difficulty": "hard",
+        "type": "drag_drop_categorize",
+        "title": "Question 23: Drag and Drop",
+        "description": "On the left side, six statements are given, and on the right side, four boxes are given.",
+        "question": "Which statement belongs in which box? Drag and drop accordingly.",
+        "itemsToCategorize": [
+            {
+                "id": "1",
+                "text": "heavy rain is falling"
+            },
+            {
+                "id": "2",
+                "text": "store dry food"
+            },
+            {
+                "id": "3",
+                "text": "floodwaters have risen"
+            },
+            {
+                "id": "4",
+                "text": "open all windows in the house"
+            },
+            {
+                "id": "5",
+                "text": "drink boiled water."
+            },
+            {
+                "id": "6",
+                "text": "walk to a safe shelter"
+            }
+        ],
+        "categories": [
+            "cause of flooding",
+            "pre-flood actions",
+            "during flood actions",
+            "post-flood actions"
+        ],
+        "correctAnswer": {
+            "cause of flooding": [
+                "1"
+            ],
+            "pre-flood actions": [
+                "2"
+            ],
+            "during flood actions": [
+                "3",
+                "6"
+            ],
+            "post-flood actions": [
+                "4",
+                "5"
+            ]
+        },
+        "audio": "/assets/audios/chapter-14/hardQuiz-3.mp3"
+    },
+    {
+        "id": 54,
+        "subChapterId": 14,
+        "difficulty": "hard",
+        "type": "mcq",
+        "title": "Question 24: Identify the Event",
+        "description": "Three panels of a story are shown. Panel 1: News about the flood on TV. Panel 2: Monu's father is lifting belongings to a higher place. Panel 3: Monu's family is walking through floodwater to a safe shelter.",
+        "question": "Which panel shows the cause of the flood, which shows pre-flood actions, and which shows actions during the flood?",
+        "options": [
+            "Panel 1 - Cause, Panel 2 - Pre-flood, Panel 3 - During Flood",
+            "Panel 1 - Pre-flood, Panel 2 - Cause, Panel 3 - During Flood",
+            "Panel 1 - During Flood, Panel 2 - Pre-flood, Panel 3 - Cause",
+            "Panel 1 - Cause, Panel 2 - During Flood, Panel 3 - Pre-flood"
+        ],
+        "correctAnswer": "Panel 1 - Cause, Panel 2 - Pre-flood, Panel 3 - During Flood",
+        "audio": "/assets/audios/chapter-14/hardQuiz-4.mp3"
+    },
+    {
+        "id": 55,
+        "subChapterId": 14,
+        "difficulty": "hard",
+        "type": "fill_in_the_blanks",
+        "title": "Question 25: Fill in the Blanks",
+        "description": "A picture is given. In the picture, Monu is giving boiled water to Rashid. Rashid says, 'The flood water needs to be boiled before drinking. The live electrical wires should not be touched.' ",
+        "statement": "After the flood, ____ water should be drunk and ____ electrical wires should not be touched.",
+        "options": [
+            "boiled-live",
+            "cold-broken",
+            "hot-hanging",
+            "sweet-cut"
+        ],
+        "correctAnswer": "boiled-live",
+        "image": "/assets/images/chapter14/E-14_Q-25.png",
+        "audio": "/assets/audios/chapter-14/hardQuiz25.mp3"
+    },
+    {
+        "id": 56,
+        "subChapterId": 14,
+        "difficulty": "hard",
+        "type": "mcq",
+        "title": "Question 26: Critical Thinking - Analysis",
+        "description": "A picture is given. In the picture, two friends are talking. One says, 'Today our house is flooded, so we are in a flood!'",
+        "question": "What is the mistake in the friend's statement? Choose the correct answer.",
+        "options": [
+            "A day with water rising does not mean a flood",
+            "The friend's statement is correct, water rising means a flood",
+            "Water rising does not always mean a flood",
+            "A little water rising means a flood"
+        ],
+        "correctAnswer": "A day with water rising does not mean a flood",
+        "explanation": "A flood means a large area being submerged for an extended period.",
+        "image": "/assets/images/chapter14/E-14_Q-26.png",
+        "audio": "/assets/audios/chapter-14/hardQuiz26.mp3"
+    },
+    {
+        "id": 57,
+        "subChapterId": 14,
+        "difficulty": "hard",
+        "type": "arrange_sequence",
+        "title": "Question 27: Arrange the Puzzle",
+        "description": "Four pieces are given.",
+        "question": "Arrange the pieces to form a meaningful sentence.",
+        "options": [
+            {
+                "id": "A",
+                "text": "flood"
+            },
+            {
+                "id": "B",
+                "text": "water"
+            },
+            {
+                "id": "C",
+                "text": "boiled"
+            },
+            {
+                "id": "D",
+                "text": "should be"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "audio": "/assets/audios/chapter-2/hardQuiz27.mp3"
+    },
+    {
+        "id": 58,
+        "subChapterId": 14,
+        "difficulty": "hard",
+        "type": "mcq",
+        "title": "Question 28: Critical Thinking - Application",
+        "description": "A picture is given. In the picture, Monu is explaining flood safety measures to his neighbor Khalamani. Khalamani is alone, and he has no children.",
+        "question": "Why is Monu teaching Khalamani about flood safety?",
+        "options": [
+            "Khalamani likes Monu and wants to please him",
+            "People who are alone need more help during floods",
+            "Monu wants to finish his household chores",
+            "Khalamani will give Monu sweets"
+        ],
+        "correctAnswer": "People who are alone need more help during floods",
+        "image": "/assets/images/chapter14/E-14_Q-28.png",
+        "audio": "/assets/audios/chapter-14/hardQuiz28.mp3"
+    },
+    {
+        "id": 59,
+        "subChapterId": 14,
+        "difficulty": "hard",
+        "type": "arrange_sequence",
+        "title": "Question 29: Arrange the Events",
+        "description": "Three events are given in a random order.",
+        "question": "Arrange them in the correct sequence.",
+        "options": [
+            {
+                "id": "A",
+                "text": "Monu teaches three families about flood safety measures",
+                "emoji": "👨‍👩‍👧"
+            },
+            {
+                "id": "B",
+                "text": "Monu becomes a flood hero",
+                "emoji": "🏅"
+            },
+            {
+                "id": "C",
+                "text": "Monu's sister tells him about being a flood hero",
+                "emoji": "👩‍🏫"
+            }
+        ],
+        "correctAnswer": [
+            "C",
+            "A",
+            "B"
+        ],
+        "image": "/assets/images/chapter2/quiz29.png",
+        "audio": "/assets/audios/chapter-2/hardQuiz29.mp3"
+    },
+    {
+        "id": 60,
+        "subChapterId": 14,
+        "difficulty": "hard",
+        "type": "mcq",
+        "title": "Question 30: Critical Thinking - Reasoning",
+        "description": "A picture is given. In the picture, Monu is looking out of the window before sleeping. The Tista river is calm. He is thinking, 'You are calm today, but we will always be ready.'",
+        "question": "Why does Monu want to always be ready?",
+        "options": [
+            "He is afraid of the river",
+            "He knows that floods can happen at any time",
+            "He wants to catch fish in the river",
+            "He likes to look at the river"
+        ],
+        "correctAnswer": "He knows that floods can happen at any time",
+        "image": "/assets/images/chapter14/E-14_Q-30.png",
+        "audio": "/assets/audios/chapter-14/hardQuiz30.mp3"
+    },
+    {
+        "id": 61,
+        "subChapterId": 15,
+        "difficulty": "easy",
+        "type": "hotspot",
+        "title": "Question 1: Discover the Secret of the Image",
+        "description": "In the image, Khalil and Irtaza are sitting on the seashore. The sky far away is covered with black clouds. The sea water is unstable.",
+        "question": "Which part of the image tells you that a cyclone might be coming? Click on the correct location.",
+        "hotspots": [
+            {
+                "id": "sky",
+                "label": "Black Sky",
+                "x": 50,
+                "y": 20
+            },
+            {
+                "id": "water",
+                "label": "Unstable Sea Water",
+                "x": 50,
+                "y": 60
+            }
+        ],
+        "correctAnswer": [
+            "sky",
+            "water"
+        ],
+        "image": "/assets/images/chapter15/E-15_Q-1.png",
+        "audio": "/assets/audios/chapter-15/easyQuiz1.mp3"
+    },
+    {
+        "id": 62,
+        "subChapterId": 15,
+        "difficulty": "easy",
+        "type": "true_false",
+        "title": "Question 2: True or False?",
+        "description": "Khalil said, 'When a cyclone is about to form, the first requirement is cool seawater.'",
+        "question": "Is Khalil's statement correct?",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correctAnswer": "False",
+        "audio": "/assets/audios/chapter-15/easyQuiz2.mp3"
+    },
+    {
+        "id": 63,
+        "subChapterId": 15,
+        "difficulty": "easy",
+        "type": "fill_in_the_blanks",
+        "title": "Question 3: What Goes in the Blank?",
+        "description": "Khalil's father said, 'The calm area in the center of a cyclone is called ____.'",
+        "statement": "The calm area in the center of a cyclone is called ____.",
+        "options": [
+            "wind",
+            "eye",
+            "mouth",
+            "stomach"
+        ],
+        "correctAnswer": "eye",
+        "audio": "/assets/audios/chapter-15/easyQuiz3.mp3"
+    },
+    {
+        "id": 64,
+        "subChapterId": 15,
+        "difficulty": "easy",
+        "type": "image_selection",
+        "title": "Question 4: Choose the Correct Image",
+        "description": "Two images are given side by side. In the first image, the sea is calm. In the second image, the sea has a huge wave and a cyclone.",
+        "question": "Which image shows the time of a cyclone?",
+        "options": [
+            {
+                "id": "calm",
+                "label": "Calm Sea",
+                "image": "/assets/images/chapter15/E-15_Q-4.1.png"
+            },
+            {
+                "id": "storm",
+                "label": "Huge Wave and Cyclone",
+                "image": "/assets/images/chapter15/E-15_Q-4.2.png"
+            }
+        ],
+        "correctAnswer": "storm",
+        "image": null,
+        "audio": "/assets/audios/chapter-15/easyQuiz4.mp3"
+    },
+    {
+        "id": 65,
+        "subChapterId": 15,
+        "difficulty": "easy",
+        "type": "match_the_following",
+        "title": "Question 5: Match the Signal with the Action",
+        "description": "On the left side, there are three signals—No. 1, No. 5, No. 10\nOn the right side, there are three actions—Stay alert, Prepare, Take shelter",
+        "question": "Which signal matches which action?",
+        "leftItems": [
+            {
+                "id": "S1",
+                "label": "Signal No. 1"
+            },
+            {
+                "id": "S5",
+                "label": "Signal No. 5"
+            },
+            {
+                "id": "S10",
+                "label": "Signal No. 10"
+            }
+        ],
+        "rightItems": [
+            "Stay alert",
+            "Prepare",
+            "Take shelter"
+        ],
+        "correctAnswer": {
+            "S1": "be careful",
+            "S5": "Prepare",
+            "S10": "Take shelter"
+        },
+        "image": null,
+        "audio": "/assets/audios/chapter-15/easyQuiz5.mp3"
+    },
+    {
+        "id": 66,
+        "subChapterId": 15,
+        "difficulty": "easy",
+        "type": "mcq",
+        "title": "Question 6: What is Khalil's father doing?",
+        "description": "An image is given. In the image, Khalil's father is cutting a large branch from a tree. Khalil is helping him.",
+        "question": "Why is Khalil's father cutting the tree branch?",
+        "options": [
+            "For firewood",
+            "To clean the house",
+            "To prevent the branch from falling on the house during a storm",
+            "To make the tree smaller"
+        ],
+        "correctAnswer": "To prevent the branch from falling on the house during a storm",
+        "image": "/assets/images/chapter15/E-15_Q-6.png",
+        "audio": "/assets/audios/chapter-15/easyQuiz6.mp3"
+    },
+    {
+        "id": 67,
+        "subChapterId": 15,
+        "difficulty": "easy",
+        "type": "mcq",
+        "title": "Question 7: What is the special name of this bag?",
+        "description": "An image is given. In the image, Irtaza is keeping dry food, water, a torch, and batteries in one place with her mother.",
+        "question": "What is the special name of this bag?",
+        "options": [
+            "School bag",
+            "Go-bag",
+            "Shopping bag",
+            "Travel bag"
+        ],
+        "correctAnswer": "Go-bag",
+        "image": "/assets/images/chapter15/E-15_Q-7.png",
+        "audio": "/assets/audios/chapter-15/easyQuiz7.mp3"
+    },
+    {
+        "id": 68,
+        "subChapterId": 15,
+        "difficulty": "easy",
+        "type": "true_false",
+        "title": "Question 8: Is the statement correct?",
+        "description": "Irtaza said, 'If you receive signal number 10, you should not delay and go to a safe shelter.'",
+        "question": "Is Irtaza's statement correct?",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correctAnswer": "True",
+        "audio": "/assets/audios/chapter-15/easyQuiz8.mp3"
+    },
+    {
+        "id": 69,
+        "subChapterId": 15,
+        "difficulty": "easy",
+        "type": "arrange_sequence",
+        "title": "Question 9: Arrange the Events in the Correct Order",
+        "description": "Three events are given in a random order—",
+        "question": "What is the correct order of events in cyclone formation?",
+        "options": [
+            {
+                "id": "A",
+                "text": "Sea water warming up"
+            },
+            {
+                "id": "B",
+                "text": "Water vapor spinning and forming a cyclone"
+            },
+            {
+                "id": "C",
+                "text": "Water vapor rising up and cooling down to form clouds"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "C",
+            "B"
+        ],
+        "image": null,
+        "audio": "/assets/audios/chapter-15/easyQuiz9.mp3"
+    },
+    {
+        "id": 70,
+        "subChapterId": 15,
+        "difficulty": "easy",
+        "type": "mcq",
+        "title": "Question 10: What is the special name of this time?",
+        "description": "An image is given. In the image, Khalil and Irtaza are sitting inside a shelter. It is raining outside. Suddenly, everything becomes quiet for a while.",
+        "question": "What is the special name of this quiet time during a cyclone?",
+        "options": [
+            "Cyclone's sleep",
+            "Cyclone's eye",
+            "Calm Cyclone",
+            "Cyclone's Break"
+        ],
+        "correctAnswer": "Cyclone's eye",
+        "image": "/assets/images/chapter15/E-15_Q-10.png",
+        "audio": "/assets/audios/chapter-15/easyQuiz10.mp3"
+    },
+    {
+        "id": 71,
+        "subChapterId": 15,
+        "difficulty": "medium",
+        "type": "hotspot",
+        "title": "Question 11: Find the Eye in the Image",
+        "description": "An image is given. In the image, different parts of a cyclone are shown. There is a calm area in the center. The surroundings are spinning.",
+        "question": "In which part of the cyclone is the eye located?",
+        "hotspots": [
+            {
+                "id": "edge",
+                "label": "Spinning surroundings",
+                "x": 80,
+                "y": 50
+            },
+            {
+                "id": "center",
+                "label": "Calm center",
+                "x": 50,
+                "y": 50
+            }
+        ],
+        "correctAnswer": [
+            "center"
+        ],
+        "image": "/assets/images/chapter15/cyclone_eye.png",
+        "audio": "/assets/audios/chapter-15/mediumQuiz11.mp3"
+    },
+    {
+        "id": 72,
+        "subChapterId": 15,
+        "difficulty": "medium",
+        "type": "fill_in_the_blanks",
+        "title": "Question 12: What should go in the blank?",
+        "description": "Khalil said, 'During a cyclone, the sea water rises 3-6 meters high.'",
+        "statement": "During a cyclone, the sea water rises 3-6 meters high. This is called ____.",
+        "options": [
+            "Flood",
+            "Storm surge",
+            " tsunami",
+            "Tide"
+        ],
+        "correctAnswer": "Storm surge",
+        "audio": "/assets/audios/chapter-15/mediumQuiz12.mp3"
+    },
+    {
+        "id": 73,
+        "subChapterId": 15,
+        "difficulty": "medium",
+        "type": "true_false",
+        "title": "Question 13: True or False?",
+        "description": "The number 7 signal means reinforcing the house and cutting down tree branches.",
+        "question": "Is this statement true?",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correctAnswer": "True",
+        "audio": "/assets/audios/chapter-15/mediumQuiz13.mp3"
+    },
+    {
+        "id": 74,
+        "subChapterId": 15,
+        "difficulty": "medium",
+        "type": "match_the_following",
+        "title": "Question 14: Match the Time with the Action",
+        "description": "On the left side, there are three times—before, during, after\nOn the right side, there are three actions—making a go-bag, going to a shelter, cleaning the house",
+        "question": "Which time matches which action?",
+        "leftItems": [
+            {
+                "id": "T1",
+                "label": "Before"
+            },
+            {
+                "id": "T2",
+                "label": "During"
+            },
+            {
+                "id": "T3",
+                "label": "After"
+            }
+        ],
+        "rightItems": [
+            "Making a go-bag",
+            "Going to a shelter",
+            "Cleaning the house"
+        ],
+        "correctAnswer": {
+            "T1": "Making a go-bag",
+            "T2": "Going to a shelter",
+            "T3": "Cleaning the house"
+        },
+        "image": null,
+        "audio": "/assets/audios/chapter-15/mediumQuiz14.mp3"
+    },
+    {
+        "id": 75,
+        "subChapterId": 15,
+        "difficulty": "medium",
+        "type": "mcq",
+        "title": "Question 15: What is this chart for?",
+        "description": "A picture is given. In the picture, Khalil's father is showing a chart. The chart shows: 1-2: Be alert, 3-4: Bring the boat to the harbor, 5-6: Prepare, 7 red: Strengthen the house, 8-9: Be ready, 10: Go to shelter immediately.",
+        "question": "What is this chart for?",
+        "options": [
+            "For scheduling prayers",
+            "For remembering cyclone warning signals",
+            "For school timetable",
+            "For grocery shopping list"
+        ],
+        "correctAnswer": "For remembering cyclone warning signals",
+        "image": "/assets/images/chapter15/E-15_Q-15.png",
+        "audio": "/assets/audios/chapter-15/mediumQuiz15.mp3"
+    },
+    {
+        "id": 76,
+        "subChapterId": 15,
+        "difficulty": "medium",
+        "type": "arrange_sequence",
+        "title": "Question 16: Arrange the Sequence",
+        "description": "Four events are given in a random order—",
+        "question": "Which is the correct sequence?",
+        "options": [
+            {
+                "id": "A",
+                "text": "Receiving the 5th signal"
+            },
+            {
+                "id": "B",
+                "text": "Stocking up on dry food and water"
+            },
+            {
+                "id": "C",
+                "text": "Receiving the 10th signal"
+            },
+            {
+                "id": "D",
+                "text": "Going to a shelter immediately"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ],
+        "image": null,
+        "audio": "/assets/audios/chapter-15/mediumQuiz16.mp3"
+    },
+    {
+        "id": 77,
+        "subChapterId": 15,
+        "difficulty": "medium",
+        "type": "mcq",
+        "title": "Question 17: What should be checked first?",
+        "question": "After a cyclone, when returning home, what should be checked first?",
+        "options": [
+            "Water accumulation",
+            "Electrical wires down",
+            "Food spoilage",
+            "Door damaged"
+        ],
+        "correctAnswer": "Electrical wires down",
+        "audio": "/assets/audios/chapter-15/mediumQuiz17.mp3"
+    },
+    {
+        "id": 78,
+        "subChapterId": 15,
+        "difficulty": "medium",
+        "type": "true_false",
+        "title": "Question 18: True or False?",
+        "description": "After a cyclone, it is not necessary to look for neighbors, because there is a lot of work to do for oneself. Is this statement true?",
+        "question": "Is this statement true?",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correctAnswer": "False",
+        "audio": "/assets/audios/chapter-15/mediumQuiz18.mp3"
+    },
+    {
+        "id": 79,
+        "subChapterId": 15,
+        "difficulty": "medium",
+        "type": "match_the_following",
+        "title": "Question 19: Match the Distance",
+        "description": "On the left side, there are three signals—3rd, 7th, and 9th.\nOn the right side, there are three distances—400 km, 200 km, and near the coast.",
+        "question": "Which signal matches which distance?",
+        "leftItems": [
+            {
+                "id": "S3",
+                "label": "Signal number 3"
+            },
+            {
+                "id": "S7",
+                "label": "Signal number 7"
+            },
+            {
+                "id": "S9",
+                "label": "Signal number 9"
+            }
+        ],
+        "rightItems": [
+            "400 km",
+            "200 km",
+            "near the coast"
+        ],
+        "correctAnswer": {
+            "S3": "near the coast",
+            "S7": "400 km",
+            "S9": "200 km"
+        },
+        "image": null,
+        "audio": "/assets/audios/chapter-15/mediumQuiz19.mp3"
+    },
+    {
+        "id": 80,
+        "subChapterId": 15,
+        "difficulty": "medium",
+        "type": "puzzle",
+        "title": "Question 20: Solve the Puzzle",
+        "description": "Below are some word fragments.",
+        "question": "Arrange the fragments to form a meaningful sentence.",
+        "options": [
+            {
+                "id": "P1",
+                "text": "10th signal means"
+            },
+            {
+                "id": "P2",
+                "text": "Signal"
+            },
+            {
+                "id": "P3",
+                "text": "means"
+            },
+            {
+                "id": "P4",
+                "text": "disaster"
+            }
+        ],
+        "correctAnswer": [
+            "P1",
+            "P2",
+            "P3",
+            "P4"
+        ],
+        "image": null,
+        "audio": "/assets/audios/chapter-15/mediumQuiz20.mp3"
+    },
+    {
+        "id": 81,
+        "subChapterId": 15,
+        "difficulty": "hard",
+        "type": "mcq",
+        "title": "Question 21: Uncover the Mystery of Three Scenes",
+        "description": "An image is given. In the image, there are three scenes—\nLeft: A person cutting a tree branch\nMiddle: A person making a backpack\nRight: A person sitting in a shelter",
+        "question": "Which scene represents the 5th signal's action, which represents the 7th signal, and which represents the 10th signal?",
+        "options": [
+            "Left → 5th signal, Middle → 7th signal, Right → 10th signal",
+            "Left → 7th signal, Middle → 5th signal, Right → 10th signal",
+            "Left → 10th signal, Middle → 7th signal, Right → 5th signal",
+            "Left → 5th signal, Middle → 10th signal, Right → 7th signal"
+        ],
+        "correctAnswer": "Left → 7th signal, Middle → 5th signal, Right → 10th signal",
+        "image": "/assets/images/chapter15/E-15_Q-21.1.png",
+        "audio": "/assets/audios/chapter-15/hardQuiz21.mp3"
+    },
+    {
+        "id": 82,
+        "subChapterId": 15,
+        "difficulty": "hard",
+        "type": "mcq",
+        "title": "Question 22: Spot the Mistake",
+        "description": "\"The meaning of the 7th signal is to move to shelter immediately.\"",
+        "question": "Is this sentence correct? If not, what is the correct statement?",
+        "options": [
+            "It is correct.",
+            "It is wrong. The 7th signal means reinforcing the house, cutting tree branches, and preparing for the disaster. The 10th signal means moving to shelter.",
+            "It is wrong. The 7th signal means doing nothing.",
+            "It is wrong. The 7th signal means just keeping informed."
+        ],
+        "correctAnswer": "It is wrong. The 7th signal means reinforcing the house, cutting tree branches, and preparing for the disaster. The 10th signal means moving to shelter.",
+        "audio": "/assets/audios/chapter-15/hardQuiz22.mp3"
+    },
+    {
+        "id": 83,
+        "subChapterId": 15,
+        "difficulty": "hard",
+        "type": "drag_drop_categorize",
+        "title": "Question 23: Place the Tasks in the Correct Boxes",
+        "description": "On the left side, five tasks are given, and on the right side, three boxes are given—Before, During, After",
+        "question": "Which task belongs in which box?",
+        "itemsToCategorize": [
+            {
+                "id": "1",
+                "text": "Store dry food and water"
+            },
+            {
+                "id": "2",
+                "text": "Move to shelter immediately"
+            },
+            {
+                "id": "3",
+                "text": "Stay away from the area"
+            },
+            {
+                "id": "4",
+                "text": "Cut tree branches and reinforce the house"
+            },
+            {
+                "id": "5",
+                "text": "Drink boiled water and check for electrical hazards"
+            }
+        ],
+        "categories": [
+            "Before",
+            "Time",
+            "After"
+        ],
+        "correctAnswer": {
+            "আগে": [
+                "1",
+                "4"
+            ],
+            "সময়": [
+                "2"
+            ],
+            "পরে": [
+                "3",
+                "5"
+            ]
+        },
+        "audio": "/assets/audios/chapter-15/hardQuiz23.mp3"
+    },
+    {
+        "id": 84,
+        "subChapterId": 15,
+        "difficulty": "hard",
+        "type": "mcq",
+        "title": "Question 24: The Mystery of the Three Panels",
+        "description": "The story is depicted in three panels—\nPanel 1: Khalil and Irtaza are sitting on the beach. The sky is dark. The sea is turbulent.\nPanel 2: Khalil's father is cutting tree branches. Khalil is making a go-bag.\nPanel 3: Everyone is sitting in the shelter. It's raining outside. For a moment, everything is calm.",
+        "question": "Which panel shows the signs of the beginning of a cyclone, which shows the previous actions, and which shows the eye of the cyclone?",
+        "options": [
+            "Panel 1 - Signs of beginning, Panel 2 - Previous actions, Panel 3 - Eye of the cyclone",
+            "Panel 1 - Previous actions, Panel 2 - Signs of beginning, Panel 3 - Eye of the cyclone",
+            "Panel 1 - Eye of the cyclone, Panel 2 - Previous actions, Panel 3 - Signs of beginning",
+            "Panel 1 - Signs of beginning, Panel 2 - Eye of the cyclone, Panel 3 - Previous actions"
+        ],
+        "correctAnswer": "Panel 1 - Signs of beginning, Panel 2 - Previous actions, Panel 3 - Eye of the cyclone",
+        "audio": "/assets/audios/chapter-15/hardQuiz24.mp3"
+    },
+    {
+        "id": 85,
+        "subChapterId": 15,
+        "difficulty": "hard",
+        "type": "fill_in_the_blanks",
+        "title": "Question 25: Fill in the Blanks",
+        "description": "Khalil's father said, 'If we had ___, we would have been stuck on the road. Hearing the number 10 signal without ___ is the work of a wise person.' Here, the same word will fit in two places. What is the word?",
+        "statement": "If we had ___, we would have been stuck on the road. Hearing the number 10 signal without ___ is the work of a wise person.",
+        "options": [
+            "Delay",
+            "Preparation",
+            "Fear",
+            "Caution"
+        ],
+        "correctAnswer": "Delay",
+        "audio": "/assets/audios/chapter-15/hardQuiz25.mp3"
+    },
+    {
+        "id": 86,
+        "subChapterId": 15,
+        "difficulty": "hard",
+        "type": "mcq",
+        "title": "Question 26: What is the mistake in the friend's words?",
+        "description": "A picture is given. In the picture, two friends are talking. One of them says, 'There is a number 7 signal in our area. We should go to the shelter immediately.'",
+        "question": "What is the mistake in the friend's words? Choose the correct answer.",
+        "options": [
+            "A number 7 signal means preparation, and we don't need to go to the shelter immediately. We should go to the shelter only when we receive a number 10 signal.",
+            "The friend is right, a number 7 signal means we should go to the shelter.",
+            "A number 7 signal means we don't need to do anything.",
+            "A number 7 signal means we should just keep informed."
+        ],
+        "correctAnswer": "A number 7 signal means preparation, and we don't need to go to the shelter immediately. We should go to the shelter only when we receive a number 10 signal.",
+        "image": "/assets/images/chapter15/E-15_Q-26.png",
+        "audio": "/assets/audios/chapter-15/hardQuiz26.mp3"
+    },
+    {
+        "id": 87,
+        "subChapterId": 15,
+        "difficulty": "hard",
+        "type": "puzzle",
+        "title": "Question 27: Solve the Puzzle",
+        "description": "Below are some pieces of words.",
+        "question": "Arrange the pieces to form a meaningful sentence.",
+        "options": [
+            {
+                "id": "P1",
+                "text": "Storm surge"
+            },
+            {
+                "id": "P2",
+                "text": "Cyclone"
+            },
+            {
+                "id": "P3",
+                "text": "brings along"
+            },
+            {
+                "id": "P4",
+                "text": "with it"
+            }
+        ],
+        "correctAnswer": [
+            "P2",
+            "P4",
+            "P3",
+            "P1"
+        ],
+        "image": null,
+        "audio": "/assets/audios/chapter-15/hardQuiz27.mp3"
+    },
+    {
+        "id": 88,
+        "subChapterId": 15,
+        "difficulty": "hard",
+        "type": "mcq",
+        "title": "Question 28: What would the father of Irtaza say?",
+        "description": "A picture is given. In the picture, Irtaza is asking his father, 'Father, why did the storm stop for a while at night?'",
+        "question": "What would Irtaza's father say?",
+        "options": [
+            "The storm was tired and needed a break",
+            "It was the eye of the cyclone. It remains calm for a short while at the center of a cyclone. Then the storm starts again.",
+            "The sea had become calm",
+            "The wind had stopped"
+        ],
+        "correctAnswer": "It was the eye of the cyclone. It remains calm for a short while at the center of a cyclone. Then the storm starts again.",
+        "image": "/assets/images/chapter15/E-15_Q-28.png",
+        "audio": "/assets/audios/chapter-15/hardQuiz28.mp3"
+    },
+    {
+        "id": 89,
+        "subChapterId": 15,
+        "difficulty": "hard",
+        "type": "arrange_sequence",
+        "title": "Question 29: Arrange the Events in the Correct Order",
+        "description": "Three events are given in a random order—",
+        "question": "Arrange them in the correct order (which one happened first, which one happened later).",
+        "options": [
+            {
+                "id": "A",
+                "text": "Irtaza makes a raincoat from a plastic sheet"
+            },
+            {
+                "id": "B",
+                "text": "Khalil's father cuts a tree branch to prevent it from falling on the house during the storm"
+            },
+            {
+                "id": "C",
+                "text": "Khalil and Irtaza learn about warning signals from Khalil's father"
+            }
+        ],
+        "correctAnswer": [
+            "C",
+            "A",
+            "B"
+        ],
+        "image": null,
+        "audio": "/assets/audios/chapter-15/hardQuiz29.mp3"
+    },
+    {
+        "id": 90,
+        "subChapterId": 15,
+        "difficulty": "hard",
+        "type": "mcq",
+        "title": "Question 30: Why did Khalil make such a decision?",
+        "description": "A picture is given. In the picture, Khalil is writing in his diary: 'I have made a decision, I will teach my friends these warning signals. My father said, awareness is the strongest weapon.'",
+        "question": "Why does Khalil want to teach his friends the warning signals?",
+        "options": [
+            "His friends will give him sweets",
+            "If people are aware, they can save themselves during a cyclone and not be afraid.",
+            "Students have to eat snacks at school",
+            "His father is forcing him to do so"
+        ],
+        "correctAnswer": "If people are aware, they can save themselves during a cyclone and not be afraid.",
+        "image": "/assets/images/chapter15/E-15_Q-30.png",
+        "audio": "/assets/audios/chapter-15/hardQuiz30.mp3"
+    },
+    {
+        "id": 91,
+        "subChapterId": 3,
+        "difficulty": "easy",
+        "type": "hotspot",
+        "title": "Question 1: Click on the Image",
+        "description": "A picture is given. In the picture, you can see— in the morning, the sky is clear, and Tuntuni is playing in the field. Right next to it is another picture— the sky is covered with black clouds, it is raining, and Tuntuni is taking shelter under the shop.",
+        "question": "Which part of the image tells you that the weather has suddenly changed? Click on the correct place.",
+        "hotspots": [
+            {
+                "id": "rain",
+                "label": "Black clouds and rain",
+                "x": 75,
+                "y": 50
+            }
+        ],
+        "correctAnswer": [
+            "rain"
+        ],
+        "image": "/assets/images/chapter3/E-3_Q-1.jpeg",
+        "audio": null
+    },
+    {
+        "id": 92,
+        "subChapterId": 3,
+        "difficulty": "easy",
+        "type": "true_false",
+        "title": "Question 2: True or False",
+        "description": "A picture is given. In the picture, Tuntuni is saying, \"Weather can be predicted correctly at all times, because it never changes.\"",
+        "question": "Is Tuntuni's statement correct?",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correctAnswer": "False",
+        "image": "/assets/images/chapter3/E-3_Q-2.jpeg",
+        "audio": null
+    },
+    {
+        "id": 93,
+        "subChapterId": 3,
+        "difficulty": "easy",
+        "type": "fill_in_the_blanks",
+        "title": "Question 3: Fill in the Blanks",
+        "description": "A picture is given. In the picture, you can see a flying bird. There is wind on its wings.",
+        "statement": "Wind is not always in the same place. It suddenly changes its ______.",
+        "options": [
+            "color",
+            "direction",
+            "weight",
+            "name"
+        ],
+        "correctAnswer": "direction",
+        "image": "/assets/images/chapter3/E-3_Q-3.jpeg",
+        "audio": null
+    },
+    {
+        "id": 94,
+        "subChapterId": 3,
+        "difficulty": "easy",
+        "type": "image_selection",
+        "title": "Question 4: Click on the Image",
+        "description": "Two pictures are given. In the first picture, the weatherman is smiling, and his balloon is inflated. In the second picture, the weatherman's balloon has deflated, and he looks worried.",
+        "question": "Which picture shows that the atmospheric pressure has decreased? Click on the correct image.",
+        "options": [
+            {
+                "id": "img1",
+                "label": "Balloon is inflated",
+                "image": "/assets/images/chapter3/E-3_Q-4.1.jpeg"
+            },
+            {
+                "id": "img2",
+                "label": "Balloon has deflated",
+                "image": "/assets/images/chapter3/E-3_Q-4.2.jpeg"
+            }
+        ],
+        "correctAnswer": "img2",
+        "image": null,
+        "audio": null
+    },
+    {
+        "id": 95,
+        "subChapterId": 3,
+        "difficulty": "easy",
+        "type": "match_the_following",
+        "title": "Question 5: Match the Following",
+        "description": "On the left side, three causes and on the right side, three effects are given.",
+        "question": "Which cause matches with which effect? Drag and drop to match.",
+        "leftItems": [
+            {
+                "id": "L1",
+                "label": "Change in wind direction"
+            },
+            {
+                "id": "L2",
+                "label": "Decrease in atmospheric pressure"
+            },
+            {
+                "id": "L3",
+                "label": "Cloud formation"
+            }
+        ],
+        "rightItems": [
+            "It may rain",
+            "Rain or storm may come",
+            "Rain may come"
+        ],
+        "correctAnswer": {
+            "L1": "It may rain",
+            "L2": "Rain or storm may come",
+            "L3": "Rain may come"
+        },
+        "image": null,
+        "audio": null
+    },
+    {
+        "id": 96,
+        "subChapterId": 3,
+        "difficulty": "easy",
+        "type": "mcq",
+        "title": "Question 6: Look at the Image and Create a Forecast",
+        "description": "A picture is given. In the picture, you can see the hills of Chittagong. On one side of the hills, it is raining, and on the other side, it is sunny.",
+        "question": "What does the image show?",
+        "options": [
+            "Weather is the same in all places",
+            "Same area can have two different types of weather",
+            "Chittagong never rains",
+            "Hills prevent weather changes"
+        ],
+        "correctAnswer": "Same area can have two different types of weather",
+        "image": "/assets/images/chapter3/E-3_Q-6.jpeg",
+        "audio": null
+    },
+    {
+        "id": 97,
+        "subChapterId": 3,
+        "difficulty": "easy",
+        "type": "fill_in_the_blanks",
+        "title": "Question 7: Fill in the Blanks",
+        "description": "A picture is given. In the picture, the moisture meter is saying, \"I will check how much water is in the air.\"",
+        "statement": "I will check how much ______ is in the air.",
+        "options": [
+            "air",
+            "water",
+            "cloud",
+            "sun"
+        ],
+        "correctAnswer": "water",
+        "image": "/assets/images/chapter3/E-3_Q-7.jpeg",
+        "audio": null
+    },
+    {
+        "id": 98,
+        "subChapterId": 3,
+        "difficulty": "easy",
+        "type": "true_false",
+        "title": "Question 8: True or False",
+        "description": "A picture is given. In the picture, Tuntuni is saying, \"What the weather office says, that is always right. Because the weather office knows everything.\"",
+        "question": "Is Tuntuni's statement correct?",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correctAnswer": "False",
+        "image": "/assets/images/chapter3/E-3_Q-8.jpeg",
+        "audio": null
+    },
+    {
+        "id": 99,
+        "subChapterId": 3,
+        "difficulty": "easy",
+        "type": "arrange_sequence",
+        "title": "Question 9: Arrange the Events",
+        "description": "Three images are given in a random order. In the first image, the sky is clear, and Tuntuni is playing in the field. In the second image, the sky is covered with black clouds. In the third image, it is raining, and Tuntuni is taking shelter under the shop.",
+        "question": "Arrange the events in the correct order. (Which one happened first, which one happened later).",
+        "options": [
+            {
+                "id": "A",
+                "text": "Sky is clear, Tuntuni is playing in the field",
+                "image": "/assets/images/chapter3/E-3_Q-9.1.jpeg"
+            },
+            {
+                "id": "B",
+                "text": "It has started raining, Tuntuni is taking shelter under the shop",
+                "image": "/assets/images/chapter3/E-3_Q-9.2.jpeg"
+            },
+            {
+                "id": "C",
+                "text": "Sky is covered with black clouds",
+                "image": "/assets/images/chapter3/E-3_Q-9.3.jpeg"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "C",
+            "B"
+        ],
+        "image": null,
+        "audio": null
+    },
+    {
+        "id": 100,
+        "subChapterId": 3,
+        "difficulty": "easy",
+        "type": "match_the_following",
+        "title": "Question 10: Match the Following",
+        "description": "On the left side, three place names are given, and on the right side, three characteristics are given.",
+        "question": "Which place matches which characteristic? Drag and drop to match.",
+        "leftItems": [
+            {
+                "id": "L1",
+                "label": "Chittagong"
+            },
+            {
+                "id": "L2",
+                "label": "Potuakhali"
+            },
+            {
+                "id": "L3",
+                "label": "Roddurpur (Tun Tuni's village)"
+            }
+        ],
+        "rightItems": [
+            "Near the sea, the weather changes rapidly during a cyclone",
+            "Mountains and sea together, the weather changes very quickly",
+            "A small village"
+        ],
+        "correctAnswer": {
+            "L1": "Mountains and sea together, the weather changes very quickly",
+            "L2": "Near the sea, the weather changes rapidly during a cyclone",
+            "L3": "A small village"
+        },
+        "image": null,
+        "audio": null
+    },
+    {
+        "id": 101,
+        "subChapterId": 3,
+        "difficulty": "medium",
+        "type": "hotspot",
+        "title": "Question 11: Click on the Image",
+        "description": "A image is given. In the image, you can see—Weather Man standing. Around him are Wind, Air Pressure Brother, Humidity Sister, Cloudy Man—all of them.",
+        "question": "Which part of the image shows you that they all come together to create weather? Click on the correct place.",
+        "hotspots": [
+            {
+                "id": "everyone",
+                "label": "Everyone is in the picture together",
+                "x": 50,
+                "y": 50
+            }
+        ],
+        "correctAnswer": [
+            "everyone"
+        ],
+        "image": "/assets/images/chapter3/E-3_Q-11.jpeg",
+        "audio": null
+    },
+    {
+        "id": 102,
+        "subChapterId": 3,
+        "difficulty": "medium",
+        "type": "fill_in_the_blanks",
+        "title": "Question 12: Fill in the Blanks",
+        "description": "A image is given. In the image, you can see—Tuntuni and his friends standing under the shop. It is raining. Tuntuni says, \"This morning I saw the sky was clear! Where did this rain come from?\"",
+        "statement": "This is indeed a ______ weather game!",
+        "options": [
+            "Regular",
+            "Naughty",
+            "Beautiful",
+            "Easy"
+        ],
+        "correctAnswer": "Naughty",
+        "image": "/assets/images/chapter3/E-3_Q-12.jpeg",
+        "audio": null
+    },
+    {
+        "id": 103,
+        "subChapterId": 3,
+        "difficulty": "medium",
+        "type": "true_false",
+        "title": "Question 13: True or False",
+        "description": "A image is given. In the image, you can see—Air Pressure Brother saying, \"I can definitely say when it will rain.\"",
+        "question": "Is the Air Pressure Brother's statement correct?",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correctAnswer": "False",
+        "image": "/assets/images/chapter3/E-3_Q-13.jpeg",
+        "audio": null
+    },
+    {
+        "id": 104,
+        "subChapterId": 3,
+        "difficulty": "medium",
+        "type": "match_the_following",
+        "title": "Question 14: Match the Following",
+        "description": "On the left side, three causes are given, and on the right side, three effects are given.",
+        "question": "Which cause matches with which effect? Drag and drop to match.",
+        "leftItems": [
+            {
+                "id": "L1",
+                "label": "Change in wind direction"
+            },
+            {
+                "id": "L2",
+                "label": "Decrease in air pressure"
+            },
+            {
+                "id": "L3",
+                "label": "Cloud moving to another place"
+            }
+        ],
+        "rightItems": [
+            "It was predicted to rain but it didn't",
+            "It was predicted not to rain but it did",
+            "Light rain was predicted but it rained heavily"
+        ],
+        "correctAnswer": {
+            "L1": "It was predicted not to rain but it did",
+            "L2": "Light rain was predicted but it rained heavily",
+            "L3": "It was predicted to rain but it didn't"
+        },
+        "image": null,
+        "audio": null
+    },
+    {
+        "id": 105,
+        "subChapterId": 3,
+        "difficulty": "medium",
+        "type": "mcq",
+        "title": "Question 15: Look at the Image and Create a News Report",
+        "description": "A image is given. In the image, you can see—Weather news on the TV screen. The announcer says, \"It will rain all day today.\" But looking out of the window, you can see heavy rain.",
+        "question": "What does the image convey?",
+        "options": [
+            "Weather reports are always correct",
+            "Weather forecasts can be wrong sometimes",
+            "You should never listen to TV news",
+            "You should turn off the TV when it rains"
+        ],
+        "correctAnswer": "Weather forecasts can be wrong sometimes",
+        "image": "/assets/images/chapter3/E-3_Q-15.jpeg",
+        "audio": null
+    },
+    {
+        "id": 106,
+        "subChapterId": 3,
+        "difficulty": "medium",
+        "type": "arrange_sequence",
+        "title": "Question 16: Arrange the Events",
+        "description": "Four events are given in a random order.",
+        "question": "Arrange the events in the correct sequence. (Which one happened first, which one happened later).",
+        "options": [
+            {
+                "id": "A",
+                "text": "Tuntuni wakes up from sleep and sees the sky is clear"
+            },
+            {
+                "id": "B",
+                "text": "Suddenly, it starts to rain"
+            },
+            {
+                "id": "C",
+                "text": "Tuntuni goes to the field to play"
+            },
+            {
+                "id": "D",
+                "text": "Tuntuni takes shelter under the shop"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "C",
+            "B",
+            "D"
+        ],
+        "image": null,
+        "audio": null
+    },
+    {
+        "id": 107,
+        "subChapterId": 3,
+        "difficulty": "medium",
+        "type": "fill_in_the_blanks",
+        "title": "Question 17: Fill in the Blanks",
+        "description": "A image is given. In the image, you can see—A place with heavy rain, and another place one kilometer away with no rain.",
+        "statement": "One place has rain, and another place has no rain—this is the nature of clouds ______。",
+        "options": [
+            "khela",
+            "kaj",
+            "dāyitv",
+            "niyom"
+        ],
+        "correctAnswer": "khela",
+        "image": "/assets/images/chapter3/E-3_Q-17.jpeg",
+        "audio": null
+    },
+    {
+        "id": 108,
+        "subChapterId": 3,
+        "difficulty": "medium",
+        "type": "true_false",
+        "title": "Question 18: True or False",
+        "description": "A image is given. In the image, you can see—Tuntuni putting an umbrella in his bag.",
+        "question": "\"Weather forecasts are uncertain, so it's good to keep an umbrella with you all the time.\"",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correctAnswer": "True",
+        "image": "/assets/images/chapter3/E-3_Q-18.jpeg",
+        "audio": null
+    },
+    {
+        "id": 109,
+        "subChapterId": 3,
+        "difficulty": "medium",
+        "type": "drag_drop_categorize",
+        "title": "Question 19: Drag and Drop",
+        "description": "Five statements are given on the left side and two boxes are given on the right side.",
+        "question": "Which statement belongs in which box? Drag and drop.",
+        "itemsToCategorize": [
+            {
+                "id": "1",
+                "text": "Weather changes when the wind direction shifts"
+            },
+            {
+                "id": "2",
+                "text": "When air pressure decreases, rain or storm comes"
+            },
+            {
+                "id": "3",
+                "text": "When humidity is high, it feels muggy and hot"
+            },
+            {
+                "id": "4",
+                "text": "When clouds gather, it may rain"
+            },
+            {
+                "id": "5",
+                "text": "Two different places in the same city can have different weather"
+            }
+        ],
+        "categories": [
+            "Weather Causes",
+            "Weather Characteristics"
+        ],
+        "correctAnswer": {
+            "Weather Causes": [
+                "1",
+                "2",
+                "3",
+                "4"
+            ],
+            "Weather Characteristics": [
+                "5"
+            ]
+        },
+        "image": null,
+        "audio": null
+    },
+    {
+        "id": 110,
+        "subChapterId": 3,
+        "difficulty": "medium",
+        "type": "puzzle",
+        "title": "Question 20: Puzzle Sort",
+        "description": "Four pieces are given.",
+        "question": "Arrange the pieces to create a meaningful sentence.",
+        "options": [
+            {
+                "id": "P1",
+                "text": "Weather"
+            },
+            {
+                "id": "P2",
+                "text": "Naughty"
+            },
+            {
+                "id": "P3",
+                "text": "Like a child"
+            },
+            {
+                "id": "P4",
+                "text": "Changes suddenly"
+            }
+        ],
+        "correctAnswer": [
+            "P1",
+            "P2",
+            "P3",
+            "P4"
+        ],
+        "image": null,
+        "audio": null
+    },
+    {
+        "id": 111,
+        "subChapterId": 3,
+        "difficulty": "hard",
+        "type": "hotspot",
+        "title": "Question 21: Click on the Image",
+        "description": "An image is given. In the image, you can see—Tuntuni putting an umbrella in his bag.",
+        "question": "Which part of the image shows you that the fishermen are already alert? Click on the correct location.",
+        "hotspots": [
+            {
+                "id": "fishermen",
+                "label": "Fishermen are preparing their boats",
+                "x": 60,
+                "y": 70
+            }
+        ],
+        "correctAnswer": [
+            "fishermen"
+        ],
+        "image": "/assets/images/chapter3/E-3_Q-21.jpeg",
+        "audio": null
+    },
+    {
+        "id": 112,
+        "subChapterId": 3,
+        "difficulty": "hard",
+        "type": "true_false",
+        "title": "Question 22: True or False",
+        "description": "An image is given. In the image, Tuntuni is saying, \"We know the causes of weather, so we can be sure about when and what will happen.\"",
+        "question": "Is Tuntuni's statement correct?",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correctAnswer": "False",
+        "image": "/assets/images/chapter3/E-3_Q-22.jpeg",
+        "audio": null
+    },
+    {
+        "id": 113,
+        "subChapterId": 3,
+        "difficulty": "hard",
+        "type": "drag_drop_categorize",
+        "title": "Question 23: Drag and Drop",
+        "description": "Five statements are given on the left side, and three boxes are given on the right side.",
+        "question": "Which statement belongs in which box? Drag and drop.",
+        "itemsToCategorize": [
+            {
+                "id": "1",
+                "text": "In the morning it was said on TV that it wouldn't rain, but it rained at noon"
+            },
+            {
+                "id": "2",
+                "text": "Light rain was predicted, but it was sunny all day"
+            },
+            {
+                "id": "3",
+                "text": "Heavy torrential rain in one place, while there is no rain another kilometer away"
+            },
+            {
+                "id": "4",
+                "text": "Rain on one side of the mountain, sun on the other side"
+            },
+            {
+                "id": "5",
+                "text": "Sunny in the morning, cloudy at noon, and raining in the afternoon in Chattogram"
+            }
+        ],
+        "categories": [
+            "Due to wind",
+            "Due to clouds",
+            "Based on location"
+        ],
+        "correctAnswer": {
+            "Due to wind": [
+                "1",
+                "2"
+            ],
+            "Due to clouds": [
+                "3"
+            ],
+            "Based on location": [
+                "4",
+                "5"
+            ]
+        },
+        "image": null,
+        "audio": null
+    },
+    {
+        "id": 114,
+        "subChapterId": 3,
+        "difficulty": "hard",
+        "type": "mcq",
+        "title": "Question 24: Identify the Event",
+        "description": "Three panels of a story are shown— Panel 1: Tuntuni is playing football in the field, the sky is clear. Panel 2: Suddenly it starts raining, Tuntuni takes shelter under the shop. Panel 3: Uncle Weather and his friends surround Tuntuni, explaining the reasons for the weather.",
+        "question": "In which panel is the uncertainty of weather shown, and in which panel are the reasons explained?",
+        "options": [
+            "Panel 1-uncertainty, Panel 2-reason, Panel 3-outcome",
+            "Panel 1-reason, Panel 2-uncertainty, Panel 3-explanation",
+            "Panel 1-start, Panel 2-uncertainty, Panel 3-reason explanation",
+            "Panel 1-reason, Panel 2-explanation, Panel 3-uncertainty"
+        ],
+        "correctAnswer": "Panel 1-uncertainty, Panel 2-reason, Panel 3-outcome",
+        "image": null,
+        "audio": null
+    },
+    {
+        "id": 115,
+        "subChapterId": 3,
+        "difficulty": "hard",
+        "type": "fill_in_the_blanks",
+        "title": "Question 25: Fill in the Blanks",
+        "description": "An image is given. In the image, Uncle Weather is telling Tuntuni, \"We know the reasons for the weather, but we cannot be certain all the time. That is why we should always be prepared.\"",
+        "statement": "We know the reasons for the weather, but we cannot be certain all the time. That is why we should always be ______.",
+        "options": [
+            "afraid",
+            "worried",
+            "prepared",
+            "annoyed"
+        ],
+        "correctAnswer": "prepared",
+        "image": "/assets/images/chapter3/E-3_Q-25.jpeg",
+        "audio": null
+    },
+    {
+        "id": 116,
+        "subChapterId": 3,
+        "difficulty": "hard",
+        "type": "mcq",
+        "title": "Question 26: Critical Thinking - Analytical",
+        "description": "An image is given. In the image, two friends are talking. One says, \"The weather forecast says it will rain, and that's the truth. After all, scientists know everything.\" The other says, \"That's not true. Weather forecasts are sometimes wrong.\"",
+        "question": "Who has the more logical argument? Why?",
+        "options": [
+            "The first person's argument, because scientists know everything",
+            "The second person's argument, because weather can change suddenly",
+            "Both people's arguments are correct",
+            "Both people's arguments are wrong"
+        ],
+        "correctAnswer": "The second person's argument, because weather can change suddenly",
+        "image": "/assets/images/chapter3/E-3_Q-26.jpeg",
+        "audio": null
+    },
+    {
+        "id": 117,
+        "subChapterId": 3,
+        "difficulty": "hard",
+        "type": "puzzle",
+        "title": "Question 27: Arrange the Puzzle",
+        "description": "Five pieces are given.",
+        "question": "Arrange the pieces correctly to form a meaningful sentence.",
+        "options": [
+            {
+                "id": "P1",
+                "text": "Direction of the wind"
+            },
+            {
+                "id": "P2",
+                "text": "Atmospheric pressure"
+            },
+            {
+                "id": "P3",
+                "text": "Humidity"
+            },
+            {
+                "id": "P4",
+                "text": "Cloud behavior"
+            },
+            {
+                "id": "P5",
+                "text": "These are the causes of weather"
+            }
+        ],
+        "correctAnswer": [
+            "P1",
+            "P2",
+            "P3",
+            "P4",
+            "P5"
+        ],
+        "image": null,
+        "audio": null
+    },
+    {
+        "id": 118,
+        "subChapterId": 3,
+        "difficulty": "hard",
+        "type": "mcq",
+        "title": "Question 28: Critical Thinking - Applied",
+        "description": "An image is given. In the image, a large event is scheduled for tomorrow afternoon. Thousands of people will attend. The weather forecast says there is a chance of rain, but it is not certain.",
+        "question": "What should the organizers do?",
+        "options": [
+            "Cancel the event",
+            "Do nothing, let things happen as they are",
+            "Prepare—bring umbrellas, covers, alternative arrangements, but don't cancel the event",
+            "Rely solely on the weather forecast and decide on the day of the event"
+        ],
+        "correctAnswer": "Prepare—bring umbrellas, covers, alternative arrangements, but don't cancel the event",
+        "image": "/assets/images/chapter3/E-3_Q-28.jpeg",
+        "audio": null
+    },
+    {
+        "id": 119,
+        "subChapterId": 3,
+        "difficulty": "hard",
+        "type": "arrange_sequence",
+        "title": "Question 29: Arrange the Sequence",
+        "description": "Three events are given in a random order.",
+        "question": "Arrange the events in the correct order. (Which one happened first, which one happened later).",
+        "options": [
+            {
+                "id": "A",
+                "text": "Tuntuni learned the causes of weather"
+            },
+            {
+                "id": "B",
+                "text": "Tuntuni understood why weather forecasts are sometimes wrong"
+            },
+            {
+                "id": "C",
+                "text": "Tuntuni decided to always stay prepared"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C"
+        ],
+        "image": null,
+        "audio": null
+    },
+    {
+        "id": 120,
+        "subChapterId": 3,
+        "difficulty": "hard",
+        "type": "mcq",
+        "title": "Question 30: Critical Thinking - Reasoning",
+        "description": "An image is given. In the image, Tuntuni is writing in his diary—\"Weather man said, weather plays tricks, so we should be cautious too. From today I will always keep an umbrella.\"",
+        "question": "Why is Tuntuni's decision logical?",
+        "options": [
+            "Because keeping an umbrella will prevent him from getting wet in the rain",
+            "Because he can use the umbrella for shade even on sunny days",
+            "Because the weather is uncertain, and it could rain at any time",
+            "Because Tuntuni likes to carry an umbrella"
+        ],
+        "correctAnswer": "Because the weather is uncertain, and it could rain at any time",
+        "image": "/assets/images/chapter3/E-3_Q-30.jpeg",
+        "audio": null
+    }
+]

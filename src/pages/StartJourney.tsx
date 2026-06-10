@@ -5,12 +5,13 @@ import simulationImg from "../assets/images/practice-zone.png";
 import bgImage from "../assets/images/start-journey-page-bg.jpeg";
 import TopNav from "../components/Shared/TopBar";
 import useAxiosProtected from "../hooks/axiosProtected";
+import { useLocaleRouteSync } from "../hooks/useLocaleRouteSync";
 
 
 
 export default function StartJourney() {
   
-
+  useLocaleRouteSync("/start-journey", "/en/start-journey");
   
 
   const axios = useAxiosProtected();
@@ -41,7 +42,7 @@ export default function StartJourney() {
         }}
       />
 
-      <TopNav />
+      <TopNav brandName="মেট ক্লাব" />
 
       {/* ── Main Content ── */}
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 pt-12 pb-12">

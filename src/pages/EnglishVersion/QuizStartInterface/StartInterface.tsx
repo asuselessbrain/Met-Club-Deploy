@@ -1,9 +1,13 @@
 import { Link, useParams } from "react-router";
 import bgImage from "../../../assets/images/start-journey-page-bg.jpeg";
 import TopNav from "../../../components/Shared/TopBar";
+import { getLocalizedPath, getStoredLocale } from "../../../utils/language";
+import { useLocaleRouteSync } from "../../../hooks/useLocaleRouteSync";
 
 export default function StartInterface() {
     const { subchapterId } = useParams();
+    const locale = getStoredLocale();
+    useLocaleRouteSync("/start-quiz", "/en/start-quiz");
 
     return (
         <>
@@ -17,7 +21,7 @@ export default function StartInterface() {
             >
                 {/* ───────────────── TOP BAR ───────────────── */}
                 <div className="relative z-40">
-                    <TopNav brandName="মেট ক্লাব" />
+                    <TopNav brandName="Met Club" />
                 </div>
 
                 {/* ───────────────── MAIN CONTENT ───────────────── */}
@@ -63,7 +67,7 @@ export default function StartInterface() {
                                     }}
                                 >
                                     <h1 className="font-bold text-white text-2xl sm:text-[1.9rem]">
-                                        মজার মূল্যায়ন
+                                        Fun Assessment
                                     </h1>
                                 </div>
                             </div>
@@ -72,9 +76,9 @@ export default function StartInterface() {
                             <div className="relative z-10 flex flex-col items-center gap-5 px-5 sm:px-7 py-6">
 
                                 <p className="text-center text-gray-700 font-medium text-sm sm:text-base">
-                                    এখানে প্রতিটি প্রশ্ন সঠিক উত্তর দিলে তুমি পাবে
+                                    For every correct answer, you will get
                                     <br />
-                                    <span className="font-bold text-gray-900">১০ পয়েন্ট!</span> ভুল উত্তর = ০ পয়েন্ট
+                                    <span className="font-bold text-gray-900">10 points!</span> Wrong answer = 0 points
                                 </p>
 
                                 <div className="flex gap-3 flex-wrap justify-center">
@@ -106,11 +110,11 @@ export default function StartInterface() {
                                 </div>
 
                                 <p className="text-center text-gray-700 font-medium text-sm sm:text-base">
-                                    তোমার স্কোর যত বেশি হবে চ্যাম্পিয়ন হওয়ার সম্ভাবনা তত বেশি
+                                    The higher your score, the greater your chance of becoming the champion
                                 </p>
 
-                                <p className="font-bold text-gray-600">দেখা যাক কি হয়!</p>
-                                <Link to={`/select-difficulty/${subchapterId}`} className="w-full">
+                                <p className="font-bold text-gray-600">Let’s see what happens!</p>
+                                <Link to={getLocalizedPath(`/select-difficulty/${subchapterId}`, locale)} className="w-full">
                                     <button
                                         className="w-full flex items-center justify-center gap-2 py-4 rounded-2xl font-bold text-white text-lg transition-all duration-300 active:scale-95 hover:scale-[1.02] cursor-pointer"
                                         style={{
@@ -129,7 +133,7 @@ export default function StartInterface() {
                                             e.currentTarget.style.transform = "translateY(0px) scale(1)";
                                         }}
                                     >
-                                        এখনই শুরু করুন
+                                        Start Now
                                         <span className="text-2xl font-black transition-transform duration-300 group-hover:translate-x-1">
                                             ›
                                         </span>

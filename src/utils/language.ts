@@ -20,12 +20,35 @@ export function setStoredLocale(locale: AppLocale) {
 }
 
 export function getLocalizedPath(pathname: string, locale: AppLocale) {
-    if (pathname === "/" || pathname === "/en") {
-        return locale === "en" ? "/en" : "/";
-    }
+    const localizedPaths: Array<{ bn: string; en: string }> = [
+        { bn: "/", en: "/en" },
+        { bn: "/about", en: "/en/about" },
+        { bn: "/start-journey", en: "/en/start-journey" },
+        { bn: "/learning-zone", en: "/en/learning-zone" },
+        { bn: "/subchapters", en: "/en/subchapters" },
+        { bn: "/select-difficulty", en: "/en/select-difficulty" },
+    ];
 
-    if (pathname === "/about" || pathname === "/en/about") {
-        return locale === "en" ? "/en/about" : "/about";
+    for (const item of localizedPaths) {
+        // exact match
+        if (pathname === item.bn || pathname === item.en) {
+            return locale === "en" ? item.en : item.bn;
+        }
+
+        // skip root entry for prefix matching
+        if (item.bn === "/") continue;
+
+        // if path starts with the bn variant (e.g. /subchapters/1), map to en keeping suffix
+        if (pathname === item.bn || pathname.startsWith(item.bn + "/")) {
+            const suffix = pathname.slice(item.bn.length);
+            return (locale === "en" ? item.en : item.bn) + suffix;
+        }
+
+        // if path starts with the en variant (e.g. /en/subchapters/1), map to bn keeping suffix
+        if (pathname === item.en || pathname.startsWith(item.en + "/")) {
+            const suffix = pathname.slice(item.en.length);
+            return (locale === "en" ? item.en : item.bn) + suffix;
+        }
     }
 
     return pathname;

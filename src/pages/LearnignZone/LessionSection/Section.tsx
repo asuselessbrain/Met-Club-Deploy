@@ -183,7 +183,7 @@ export default function Section() {
           }}
         />
 
-        <TopNav title={lessonTitle || section.title || "Lesson"} tone="red" />
+        <TopNav title={lessonTitle || section.title || "Lesson"} tone="red" brandName="মেট ক্লাব" />
 
         <div className="px-4 py-4 flex flex-col items-center justify-start lg:justify-center min-h-[calc(100%-150px)] custom-scrollbar overflow-auto custom-scrollbar">
           <div

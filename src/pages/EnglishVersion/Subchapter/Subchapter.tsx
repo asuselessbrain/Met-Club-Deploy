@@ -26,9 +26,7 @@ interface LoaderData {
 
 export default function Subchapter() {
   const { chapter, subchapters } = useLoaderData() as LoaderData;
-
-    useLocaleRouteSync("/subchapters", "/en/subchapters");
-  
+  useLocaleRouteSync("/subchapters", "/en/subchapters");
 
   return (
     <div
@@ -40,7 +38,7 @@ export default function Subchapter() {
       }}
     >
       <div className="relative z-40">
-        <TopNav title={chapter.title} tone="red" brandName="মেট ক্লাব" />
+        <TopNav title={chapter.title} tone="red" brandName="Met Club" />
       </div>
 
       <div className="relative z-0 flex-1 overflow-auto px-4 py-6 sm:px-6 lg:px-10">

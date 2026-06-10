@@ -6,7 +6,12 @@ import TopNav from "../../../components/Shared/TopBar";
 import BottomNav from "../../../components/Shared/BottomNav";
 import type { FillBlanksQuestionProps, HotspotQuestionProps, ImageSelectionQuestionProps, MCQQuestionProps, QuestionRendererProps, QuizAnswer, QuizAnswers, QuizProps, QuizQuestion, SequenceQuestionProps, TrueFalseQuestionProps, PuzzleQuestionProps } from "../../../types";
 import { QuestionHeader } from "../../../components/Quiz/QuestionHeader";
-import useAxios from "../../../hooks/useAxios";
+import useAxiosProtected from "../../../hooks/axiosProtected";
+import { getStoredLocale } from "../../../utils/language";
+
+// simple translator helper for this file — read stored locale on each call
+const locale = getStoredLocale();
+const t = (bn: string, en: string) => (getStoredLocale() === "en" ? en : bn);
 
 const isNonArrayObject = (
     value: QuizAnswer
@@ -32,8 +37,7 @@ const isStringArrayRecord = (value: QuizAnswer): value is Record<string, string[
 // Description card
 function DescriptionBox({ text }: { text: string }) {
     return (
-        <p className="text-sm leading-relaxed text-gray-600 px-1"
-            style={{ fontFamily: "'Hind Siliguri',sans-serif" }}>
+        <p className="text-sm leading-relaxed text-gray-600 px-1">
             {text}
         </p>
     );
@@ -134,7 +138,7 @@ export function HotspotQuestion({ q, answer, onChange }: HotspotQuestionProps) {
                 ) : (
                     <div className="w-full aspect-video flex flex-col items-center justify-center bg-gray-100">
                         <span style={{ fontSize: 80, opacity: 0.1 }}>🏠☀️👧</span>
-                        <p className="text-gray-400 mt-4">ছবি লোড হচ্ছে...</p>
+                        <p className="text-gray-400 mt-4">{t("ছবি লোড হচ্ছে...", "Image loading...")}</p>
                     </div>
                 )}
 
@@ -192,7 +196,7 @@ export function HotspotQuestion({ q, answer, onChange }: HotspotQuestionProps) {
             </div>
 
             {/* ── নতুন: limit পূর্ণ হলে feedback banner ── */}
-            {isFull && (
+                    {isFull && (
                 <div
                     className={`flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-medium border ${allCorrect
                         ? "bg-green-50 border-green-200 text-green-700"
@@ -201,7 +205,7 @@ export function HotspotQuestion({ q, answer, onChange }: HotspotQuestionProps) {
                     style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
                 >
                     <span className="text-base">{allCorrect ? "✅" : "❌"}</span>
-                    {allCorrect ? "সঠিক হয়েছে! চমৎকার!" : "ভুল হয়েছে! সঠিক জায়গায় ক্লিক করোনি।"}
+                    {allCorrect ? t("সঠিক হয়েছে! চমৎকার!", "Correct! Well done!") : t("ভুল হয়েছে! সঠিক জায়গায় ক্লিক করোনি।", "Incorrect! You didn't click the correct spot.")}
                 </div>
             )}
         </div>
@@ -252,8 +256,11 @@ export function TrueFalseQuestion({ q, answer, onChange }: TrueFalseQuestionProp
 
                 <div className="grid grid-cols-2 gap-4">
                     {[...q.options].reverse().map((opt) => {
-                        const isTrue = opt === "সত্য";
+                        const isTrue = opt === "সত্য" || opt === "True";
                         const selected = selectedAnswer === opt;
+                        const label = isTrue
+                            ? (locale === "en" ? "✅ True" : "✅ সত্য")
+                            : (locale === "en" ? "❌ False" : "❌ মিথ্যা");
 
                         return (
                             <button
@@ -275,14 +282,14 @@ export function TrueFalseQuestion({ q, answer, onChange }: TrueFalseQuestionProp
                                     boxShadow: selected ? "0 8px 20px rgba(0,0,0,0.15)" : "0 2px 6px rgba(0,0,0,0.04)",
                                     opacity: selectedAnswer && !selected ? 0.45 : 1,
                                 }}>
-                                {isTrue ? "✅ সত্য" : "❌ মিথ্যা"}
+                                {label}
                             </button>
                         );
                     })}
                 </div>
 
                 {/* ── Feedback banner ── */}
-                {selectedAnswer && (
+                        {selectedAnswer && (
                     <div
                         className={`flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-medium border ${isCorrect
                             ? "bg-green-50 border-green-200 text-green-700"
@@ -292,8 +299,8 @@ export function TrueFalseQuestion({ q, answer, onChange }: TrueFalseQuestionProp
                     >
                         <span className="text-base">{isCorrect ? "✅" : "❌"}</span>
                         {isCorrect
-                            ? "সঠিক উত্তর! চমৎকার!"
-                            : `ভুল হয়েছে!`
+                            ? t("সঠিক উত্তর! চমৎকার!", "Correct answer! Well done!")
+                            : t("ভুল হয়েছে!", "Incorrect!")
                         }
                     </div>
                 )}
@@ -478,8 +485,8 @@ function FillBlanksQuestion({ q, answer, onChange }: FillBlanksQuestionProps) {
                 >
                     <span className="text-base">{isCorrect ? "✅" : "❌"}</span>
                     {isCorrect
-                        ? "সঠিক উত্তর! চমৎকার!"
-                        : `ভুল হয়েছে!`
+                        ? t("সঠিক উত্তর! চমৎকার!", "Correct answer! Well done!")
+                        : t("ভুল হয়েছে!", "Incorrect!")
                     }
                 </div>
             )}
@@ -561,7 +568,7 @@ function ImageSelectionQuestion({ q, answer, onChange }: ImageSelectionQuestionP
                     style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
                 >
                     <span className="text-base">{isCorrect ? "✅" : "❌"}</span>
-                    {isCorrect ? "সঠিক উত্তর! চমৎকার!" : "ভুল হয়েছে!"}
+                    {isCorrect ? t("সঠিক উত্তর! চমৎকার!", "Correct answer! Well done!") : t("ভুল হয়েছে!", "Incorrect!")}
                 </div>
             )}
         </div>
@@ -679,8 +686,8 @@ function MCQQuestion({ q, answer, onChange }: MCQQuestionProps) {
                 >
                     <span className="text-base">{isCorrect ? "✅" : "❌"}</span>
                     {isCorrect
-                        ? "সঠিক উত্তর! চমৎকার!"
-                        : `ভুল হয়েছে!`
+                        ? t("সঠিক উত্তর! চমৎকার!", "Correct answer! Well done!")
+                        : t("ভুল হয়েছে!", "Incorrect!")
                     }
                 </div>
             )}
@@ -828,7 +835,7 @@ function SequenceQuestion({ q, answer, onChange }: SequenceQuestionProps) {
 
             {!isCorrectOrder && (
                 <p className="text-[10px] text-gray-400 text-center italic">
-                    সঠিক ক্রম সাজাতে তীর চিহ্নগুলো ব্যবহার করো
+                    {t("সঠিক ক্রম সাজাতে তীর চিহ্নগুলো ব্যবহার করো", "Use the arrow buttons to arrange into the correct order")}
                 </p>
             )}
 
@@ -838,7 +845,7 @@ function SequenceQuestion({ q, answer, onChange }: SequenceQuestionProps) {
                     style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
                 >
                     <span className="text-base">✅</span>
-                    সঠিক ক্রম! চমৎকার!
+                    {t("সঠিক ক্রম! চমৎকার!", "Correct order! Well done!")}
                 </div>
             )}
         </div>
@@ -920,7 +927,7 @@ function PuzzleQuestion({ q, answer, onChange }: PuzzleQuestionProps) {
                 }}
             >
                 {placedIds.length === 0 && (
-                    <span className="text-blue-300 text-sm italic">এখানে শব্দ সাজাও...</span>
+                    <span className="text-blue-300 text-sm italic">{t("এখানে শব্দ সাজাও...", "Arrange words here...")}</span>
                 )}
                 {placedIds.map((id, idx) => {
                     const item = q.options.find((o) => o.id === id);
@@ -983,7 +990,7 @@ function PuzzleQuestion({ q, answer, onChange }: PuzzleQuestionProps) {
                     style={{ fontFamily: "'Hind Siliguri', sans-serif" }}
                 >
                     <span>{isCorrect ? "✅" : "❌"}</span>
-                    {isCorrect ? "সঠিক বাক্য! চমৎকার!" : "ভুল হয়েছে!"}
+                    {isCorrect ? t("সঠিক বাক্য! চমৎকার!", "Correct sentence! Well done!") : t("ভুল হয়েছে!", "Incorrect!")}
                 </div>
             )}
         </div>
@@ -1063,26 +1070,26 @@ const getQuestionPrompt = (question: QuizQuestion) => {
 
 const formatAnswerText = (q: QuizQuestion, ans: QuizAnswer) => {
     if (!ans || (Array.isArray(ans) && ans.length === 0) || (isNonArrayObject(ans) && Object.keys(ans).length === 0)) {
-        return "উত্তর দেওয়া হয়নি";
+        return t("উত্তর দেওয়া হয়নি", "No answer given");
     }
 
     switch (q.type) {
         case "hotspot":
             return Array.isArray(ans)
                 ? ans.map((id) => q.hotspots.find((h) => h.id === id)?.label || id).join(", ")
-                : "উত্তর দেওয়া হয়নি";
+                : t("উত্তর দেওয়া হয়নি", "No answer given");
         case "image_selection":
-            return typeof ans === "string" ? q.options.find((o) => o.id === ans)?.label || ans : "উত্তর দেওয়া হয়নি";
+            return typeof ans === "string" ? q.options.find((o) => o.id === ans)?.label || ans : t("উত্তর দেওয়া হয়নি", "No answer given");
         case "arrange_sequence":
             return Array.isArray(ans)
                 ? ans.map((id) => q.options.find((o) => o.id === id)?.text || id).join(" ➔ ")
-                : "উত্তর দেওয়া হয়নি";
+                : t("উত্তর দেওয়া হয়নি", "No answer given");
         case "match_the_following":
             return isStringRecord(ans)
                 ? Object.entries(ans)
                     .map(([k, v]) => `${q.leftItems.find((l) => l.id === k)?.label || k} ➔ ${v}`)
                     .join(" | ")
-                : "উত্তর দেওয়া হয়নি";
+                : t("উত্তর দেওয়া হয়নি", "No answer given");
         case "drag_drop_categorize":
             return isStringArrayRecord(ans)
                 ? Object.entries(ans)
@@ -1107,23 +1114,32 @@ export default function Quiz({ onFinish }: QuizProps) {
 
     const quizQuestions = useLoaderData() as QuizQuestion[];
     const [searchParams] = useSearchParams();
+    const axios = useAxiosProtected();
+
+    // stable setter that doesn't depend on the current question object
+    const handleAnswer = useCallback((questionId: number, val: QuizAnswer) => {
+        setAnswers((prev) => ({ ...prev, [questionId]: val }));
+    }, []);
+
+    // If loader returns no questions (can happen during locale redirect or missing params),
+    // avoid accessing `q.id` and render a friendly message instead of crashing.
+    if (!quizQuestions || !Array.isArray(quizQuestions) || quizQuestions.length === 0) {
+        return (
+            <div className="min-h-[40vh] flex items-center justify-center p-6">
+                <p className="text-gray-700 text-center">{t("কোন প্রশ্ন পাওয়া যায়নি — সাবচ্যাপ্টার বা ডিফিকালটি সঠিক আছে কিনা পরীক্ষা করুন।", "No quiz found — please check subchapter and difficulty parameters.")}</p>
+            </div>
+        );
+    }
 
     const chapterId = searchParams.get("subchapterId");
 
     const TOTAL = quizQuestions.length;
-
-    const axios = useAxios();
-
 
     const q = quizQuestions[current];
     const answer = answers[q.id] ?? null;
     const isAnswered = answer !== null && answer !== undefined &&
         !(Array.isArray(answer) && answer.length === 0) &&
         !(isNonArrayObject(answer) && Object.keys(answer).length === 0);
-
-    const handleAnswer = useCallback((val: QuizAnswer) => {
-        setAnswers((prev) => ({ ...prev, [q.id]: val }));
-    }, [q.id]);
 
     const goNext = async () => {
         if (current === TOTAL - 1) {
@@ -1185,7 +1201,7 @@ export default function Quiz({ onFinish }: QuizProps) {
 
                 {/* Top nav */}
                 <TopNav
-                    title="আবহাওয়া আঙ্কেল আর টুনির গল্প" />
+                    title="আবহাওয়া আঙ্কেল আর টুনির গল্প" brandName="মেট ক্লাব" />
 
                 {/* Scrollable body */}
                 <div className="relative z-10 flex-1 overflow-y-auto custom-scrollbar">
@@ -1199,10 +1215,10 @@ export default function Quiz({ onFinish }: QuizProps) {
                                         border: "2.5px solid #fecaca", boxShadow: "0 12px 48px rgba(239,68,68,0.15)"
                                     }}>
                                     <div className="flex justify-between items-center border-b pb-4">
-                                        <h2 className="text-2xl font-bold text-red-800">ভুল উত্তরগুলো মিলিয়ে নাও</h2>
+                                        <h2 className="text-2xl font-bold text-red-800">{t("ভুল উত্তরগুলো মিলিয়ে নাও", "Review incorrect answers")}</h2>
                                         <button onClick={() => setShowReview(false)}
                                             className="px-4 py-2 bg-gray-200 text-gray-700 rounded-xl font-bold hover:bg-gray-300">
-                                            ← ফিরে যাও
+                                            {t("← ফিরে যাও", "← Go back")}
                                         </button>
                                     </div>
 
@@ -1221,14 +1237,14 @@ export default function Quiz({ onFinish }: QuizProps) {
 
                                                     <div className="flex flex-col gap-2 text-sm font-medium">
                                                         <div className="p-3 bg-white rounded-xl border border-red-100 shadow-sm">
-                                                            <span className="text-red-600 font-bold flex items-center gap-1"><span className="text-lg">❌</span> তোমার উত্তর:</span>
+                                                            <span className="text-red-600 font-bold flex items-center gap-1"><span className="text-lg">❌</span> {t("তোমার উত্তর:", "Your answer:")}</span>
                                                             <span className="text-gray-700 mt-1 block pl-6">
                                                                 {formatAnswerText(question, userAnswer)}
                                                             </span>
                                                         </div>
 
                                                         <div className="p-3 bg-white rounded-xl border border-green-100 shadow-sm mt-1">
-                                                            <span className="text-green-600 font-bold flex items-center gap-1"><span className="text-lg">✅</span> সঠিক উত্তর:</span>
+                                                            <span className="text-green-600 font-bold flex items-center gap-1"><span className="text-lg">✅</span> {t("সঠিক উত্তর:", "Correct answer:")}</span>
                                                             <span className="text-gray-700 mt-1 block pl-6">
                                                                 {formatAnswerText(question, question.correctAnswer)}
                                                             </span>
@@ -1240,9 +1256,9 @@ export default function Quiz({ onFinish }: QuizProps) {
 
                                         {/* যদি সব উত্তর সঠিক হয়! */}
                                         {wrongCount === 0 && (
-                                            <div className="text-center py-10">
+                                                <div className="text-center py-10">
                                                 <span className="text-6xl block mb-4">🌟</span>
-                                                <h3 className="text-2xl font-bold text-green-600">বাহ! তোমার সব উত্তর সঠিক হয়েছে!</h3>
+                                                <h3 className="text-2xl font-bold text-green-600">{t("বাহ! তোমার সব উত্তর সঠিক হয়েছে!", "Wow! All your answers are correct!")}</h3>
                                             </div>
                                         )}
                                     </div>
@@ -1335,9 +1351,9 @@ export default function Quiz({ onFinish }: QuizProps) {
                                         boxShadow: "0 8px 40px rgba(239,68,68,0.12), 0 2px 12px rgba(0,0,0,0.07)",
                                     }}
                                 >
-                                    <QuestionHeader title={q.title} qNum={current + 1} total={TOTAL} audioUrl={q.audio} />
+                                    <QuestionHeader title={q.title} qNum={current + 1} total={TOTAL} audioUrl={q.audio} text="প্রশ্ন" />
                                     <div className="flex flex-col gap-4 px-5 py-5">
-                                        <QuestionRenderer q={q} answer={answer} onChange={handleAnswer} />
+                                        <QuestionRenderer q={q} answer={answer} onChange={(val) => handleAnswer(q.id, val)} />
                                     </div>
                                 </div>
                             </div>

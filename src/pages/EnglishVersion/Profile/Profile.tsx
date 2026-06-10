@@ -1,6 +1,6 @@
 import { useState } from "react";
-import bgImage from "../../assets/images/start-journey-page-bg.jpeg";
-import TopNav from "../../components/Shared/TopBar";
+import bgImage from "../../../assets/images/start-journey-page-bg.jpeg";
+import TopNav from "../../../components/Shared/TopBar";
 
 export default function Profile() {
   const [activeTab, setActiveTab] = useState<"general" | "badges">("general");
@@ -50,7 +50,7 @@ export default function Profile() {
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.40),rgba(219,234,254,0.18),rgba(255,255,255,0.46))] pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.75),transparent_34%),radial-gradient(circle_at_20%_20%,rgba(191,219,254,0.28),transparent_22%),radial-gradient(circle_at_80%_18%,rgba(255,255,255,0.22),transparent_20%)] pointer-events-none" />
 
-      <TopNav title="প্রোফাইল" brandName="মেট ক্লাব" />
+      <TopNav title="Profile" brandName="Met Club" />
 
       <main className="relative z-10 mx-auto mt-10 max-w-5xl px-4">
         <div style={styles.glassCard} className="overflow-hidden rounded-[2.5rem]">
@@ -70,8 +70,8 @@ export default function Profile() {
                 </button>
               </div>
               <div className="mb-4">
-                <h2 className="text-3xl font-bold text-gray-800">রাহেলা বেগম</h2>
-                <p className="font-medium text-gray-600">আইডি: MC-2024-8902</p>
+                <h2 className="text-3xl font-bold text-gray-800">Rahela Begum</h2>
+                <p className="font-medium text-gray-600">ID: MC-2024-8902</p>
               </div>
             </div>
           </section>
@@ -79,10 +79,10 @@ export default function Profile() {
           <section className="mt-20 border-b border-white/60 px-10 py-6">
             <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
               {[
-                { label: "মোট পয়েন্ট", val: "১২৫০", color: "text-orange-500" },
-                { label: "অর্জিত ব্যাজ", val: "০৮", color: "text-red-500" },
-                { label: "কুইজ সম্পন্ন", val: "২৪", color: "text-green-500" },
-                { label: "অর্জিত সার্টিফিকেট", val: "০২", color: "text-blue-500" },
+                { label: "Total Point", val: "1250", color: "text-orange-500" },
+                { label: "Earned Badges", val: "08", color: "text-red-500" },
+                { label: "Quizzes Completed", val: "24", color: "text-green-500" },
+                { label: "Certificates Earned", val: "02", color: "text-blue-500" },
               ].map((stat) => (
                 <div key={stat.label} className="rounded-2xl border border-white/60 bg-[linear-gradient(180deg,rgba(255,255,255,0.42),rgba(255,255,255,0.24))] p-3 text-center shadow-[0_8px_24px_rgba(59,130,246,0.08)] backdrop-blur-xl">
                   <p className="text-xs font-bold uppercase text-gray-500">{stat.label}</p>
@@ -95,10 +95,10 @@ export default function Profile() {
           <section className="border-b border-white/55 px-10 mt-4">
             <div className="flex gap-8">
               <button onClick={() => setActiveTab("general")} className={`py-4 transition-all ${activeTab === "general" ? styles.activeTabBtn : styles.inactiveTabBtn}`}>
-                ব্যক্তিগত তথ্য
+                General Information
               </button>
               <button onClick={() => setActiveTab("badges")} className={`py-4 transition-all ${activeTab === "badges" ? styles.activeTabBtn : styles.inactiveTabBtn}`}>
-                পুরস্কার ও ব্যাজ
+                Earned Badges
               </button>
             </div>
           </section>
@@ -108,37 +108,37 @@ export default function Profile() {
               <div className="grid grid-cols-1 gap-8 md:grid-cols-2 animate-fadeIn">
                 <div className="space-y-5">
                   <h3 className="flex items-center gap-2 text-lg font-bold text-gray-700">
-                    <span className="h-6 w-2 rounded-full bg-red-500" /> সাধারণ তথ্য
+                    <span className="h-6 w-2 rounded-full bg-red-500" /> General Information
                   </h3>
                   <div>
-                    <label className="ml-1 text-sm font-semibold text-gray-600">শিক্ষার্থীর পূর্ণ নাম</label>
-                    {renderField("রাহেলা বেগম")}
+                    <label className="ml-1 text-sm font-semibold text-gray-600">Full Name</label>
+                    {renderField("Rahela Begum")}
                   </div>
                   <div>
-                    <label className="ml-1 text-sm font-semibold text-gray-600">শ্রেণি ও বিভাগ</label>
-                    {renderField("৬ষ্ঠ শ্রেণি (ক-শাখা)")}
+                    <label className="ml-1 text-sm font-semibold text-gray-600">Class and Section</label>
+                    {renderField("Class 6 (Section A)")}
                   </div>
                   <div>
-                    <label className="ml-1 text-sm font-semibold text-gray-600">মোবাইল নম্বর</label>
-                    {renderField("০১৭XXXXXX৮৯")}
+                    <label className="ml-1 text-sm font-semibold text-gray-600">Mobile Number</label>
+                    {renderField("017XXXXXX89")}
                   </div>
                 </div>
 
                 <div className="space-y-5">
                   <h3 className="flex items-center gap-2 text-lg font-bold text-gray-700">
-                    <span className="h-6 w-2 rounded-full bg-orange-500" /> শিক্ষা প্রতিষ্ঠানের তথ্য
+                    <span className="h-6 w-2 rounded-full bg-orange-500" /> School Information
                   </h3>
                   <div>
-                    <label className="ml-1 text-sm font-semibold text-gray-600">স্কুলের নাম</label>
-                    {renderField("সরকারি বালিকা উচ্চ বিদ্যালয়, ঢাকা")}
+                    <label className="ml-1 text-sm font-semibold text-gray-600">School Name</label>
+                    {renderField("Government Girls' High School, Dhaka")}
                   </div>
                   <div>
-                    <label className="ml-1 text-sm font-semibold text-gray-600">রোল নম্বর</label>
-                    {renderField("০৫")}
+                    <label className="ml-1 text-sm font-semibold text-gray-600">Roll Number</label>
+                    {renderField("05")}
                   </div>
                   <div>
-                    <label className="ml-1 text-sm font-semibold text-gray-600">পিতার নাম</label>
-                    {renderField("মো: আব্দুর রহিম")}
+                    <label className="ml-1 text-sm font-semibold text-gray-600">Father's Name</label>
+                    {renderField("Mr. Abdur Rahim")}
                   </div>
                 </div>
               </div>
@@ -147,10 +147,10 @@ export default function Profile() {
             {activeTab === "badges" && (
               <div className="grid grid-cols-2 gap-6 md:grid-cols-4 animate-fadeIn">
                 {[
-                  { name: "দ্রুত শিক্ষার্থী", icon: "⚡", desc: "৫টি কুইজ দ্রুত শেষ করা" },
-                  { name: "সেরা বন্ধু", icon: "🤝", desc: "বন্ধুদের সাহায্য করা" },
-                  { name: "গণিত মাস্টার", icon: "📐", desc: "গণিতে ১০০% পাওয়া" },
-                  { name: "সাপ্তাহিক হিরো", icon: "🏆", desc: "টপ চার্টে থাকা" },
+                  { name: "Fast Learner", icon: "⚡", desc: "Completed 5 quizzes quickly" },
+                  { name: "Best Friend", icon: "🤝", desc: "Helped friends" },
+                  { name: "Math Master", icon: "📐", desc: "Scored 100% in Math" },
+                  { name: "Weekly Hero", icon: "🏆", desc: "Ranked in the top chart" },
                 ].map((badge) => (
                   <div key={badge.name} className="cursor-help rounded-3xl border border-dashed border-white/65 bg-[linear-gradient(180deg,rgba(255,255,255,0.38),rgba(255,255,255,0.18))] p-4 text-center shadow-[0_10px_30px_rgba(59,130,246,0.08)] transition hover:bg-white/80 backdrop-blur-xl">
                     <div className="mb-2 text-4xl">{badge.icon}</div>
@@ -162,25 +162,19 @@ export default function Profile() {
             )}
 
             <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/55 pt-8 sm:flex-row">
-              <button className="flex items-center gap-2 rounded-xl px-4 py-2 font-bold text-red-500 transition hover:bg-white/60 backdrop-blur-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-                </svg>
-                লগ আউট করুন
-              </button>
 
               <div className="flex w-full flex-col gap-4 sm:w-auto sm:flex-row">
                 <button
                   onClick={() => setIsPasswordModalOpen(true)}
                   className="w-full rounded-2xl border border-white/65 bg-white/50 px-6 py-3 font-bold text-gray-700 shadow-[0_8px_24px_rgba(255,255,255,0.16)] backdrop-blur-xl transition hover:bg-white/80 sm:w-auto"
                 >
-                  পাসওয়ার্ড পরিবর্তন
+                  Change Password
                 </button>
                 <button
                   onClick={() => setIsEditMode((prev) => !prev)}
                   className={`${isEditMode ? "bg-green-500 hover:bg-green-600 text-white" : styles.gradientBtn} w-full whitespace-nowrap rounded-2xl px-10 py-3 font-bold shadow-lg sm:w-auto`}
                 >
-                  {isEditMode ? "সেভ করুন" : "তথ্য এডিট করুন"}
+                  {isEditMode ? "Save" : "Edit Information"}
                 </button>
               </div>
             </div>
@@ -201,30 +195,30 @@ export default function Profile() {
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
-              পাসওয়ার্ড পরিবর্তন
+              Change Password
             </h3>
 
             <div className="space-y-4">
               <div>
-                <label className="mb-1 ml-1 block text-sm font-semibold text-gray-700">বর্তমান পাসওয়ার্ড</label>
-                <input type="password" placeholder="বর্তমান পাসওয়ার্ড লিখুন" className="w-full rounded-xl border border-white/70 bg-white/70 px-4 py-3 outline-none transition-all backdrop-blur-xl focus:border-transparent focus:bg-white focus:ring-2 focus:ring-red-400" />
+                <label className="mb-1 ml-1 block text-sm font-semibold text-gray-700">Current Password</label>
+                <input type="password" placeholder="Enter current password" className="w-full rounded-xl border border-white/70 bg-white/70 px-4 py-3 outline-none transition-all backdrop-blur-xl focus:border-transparent focus:bg-white focus:ring-2 focus:ring-red-400" />
               </div>
               <div>
-                <label className="mb-1 ml-1 block text-sm font-semibold text-gray-700">নতুন পাসওয়ার্ড</label>
-                <input type="password" placeholder="নতুন পাসওয়ার্ড লিখুন" className="w-full rounded-xl border border-white/70 bg-white/70 px-4 py-3 outline-none transition-all backdrop-blur-xl focus:border-transparent focus:bg-white focus:ring-2 focus:ring-red-400" />
+                <label className="mb-1 ml-1 block text-sm font-semibold text-gray-700">New Password</label>
+                <input type="password" placeholder="Enter new password" className="w-full rounded-xl border border-white/70 bg-white/70 px-4 py-3 outline-none transition-all backdrop-blur-xl focus:border-transparent focus:bg-white focus:ring-2 focus:ring-red-400" />
               </div>
               <div>
-                <label className="mb-1 ml-1 block text-sm font-semibold text-gray-700">নতুন পাসওয়ার্ড নিশ্চিত করুন</label>
-                <input type="password" placeholder="পাসওয়ার্ড পুনরায় লিখুন" className="w-full rounded-xl border border-white/70 bg-white/70 px-4 py-3 outline-none transition-all backdrop-blur-xl focus:border-transparent focus:bg-white focus:ring-2 focus:ring-red-400" />
+                <label className="mb-1 ml-1 block text-sm font-semibold text-gray-700">Confirm New Password</label>
+                <input type="password" placeholder="Re-enter new password" className="w-full rounded-xl border border-white/70 bg-white/70 px-4 py-3 outline-none transition-all backdrop-blur-xl focus:border-transparent focus:bg-white focus:ring-2 focus:ring-red-400" />
               </div>
             </div>
 
             <div className="mt-8 flex gap-4">
               <button onClick={() => setIsPasswordModalOpen(false)} className="flex-1 rounded-xl border border-white/70 px-4 py-3 font-bold text-gray-600 transition hover:bg-white/80">
-                বাতিল
+                Cancel
               </button>
               <button onClick={() => setIsPasswordModalOpen(false)} className="flex-1 rounded-xl bg-linear-to-r from-red-500 to-orange-500 px-4 py-3 font-bold text-white shadow-md transition hover:shadow-lg">
-                আপডেট করুন
+                Update
               </button>
             </div>
           </div>

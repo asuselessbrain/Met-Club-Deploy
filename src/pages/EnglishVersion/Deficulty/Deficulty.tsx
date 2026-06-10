@@ -1,13 +1,13 @@
 import bgImage from "../../../assets/images/start-journey-page-bg.jpeg";
 import { Link, useParams } from "react-router";
 import { use, useEffect, useState } from "react";
-import type { ChapterTopic } from "../Index/Chapter";
 import useAxiosProtected from "../../../hooks/axiosProtected";
+import type { ChapterTopic } from "../Chapter/Chapter";
 
 const DIFFICULTIES = [
     {
         key: "easy",
-        label: "সহজ",
+        label: "Easy",
         emoji: "☀️",
         border: "border-red-300",
         bg: "bg-gradient-to-br from-red-100 to-rose-200",
@@ -19,7 +19,7 @@ const DIFFICULTIES = [
     },
     {
         key: "medium",
-        label: "মাঝারি",
+        label: "Medium",
         emoji: "⛰️",
         border: "border-rose-300",
         bg: "bg-gradient-to-br from-rose-100 to-red-200",
@@ -31,7 +31,7 @@ const DIFFICULTIES = [
     },
     {
         key: "hard",
-        label: "কঠিন",
+        label: "Hard",
         emoji: "🏔️",
         border: "border-red-300",
         bg: "bg-gradient-to-br from-red-100 to-red-200",
@@ -44,7 +44,7 @@ const DIFFICULTIES = [
 ];
 
 const fetchChapters = async () => {
-    const response = await fetch('/chapter.json');
+    const response = await fetch('/chapter.en.json');
     return response.json() as Promise<ChapterTopic[]>;
 };
 
@@ -107,7 +107,7 @@ export default function Deficulty() {
                         letterSpacing: "0.04em",
                     }}
                 >
-                    লার্নিং জোন
+                    Learning Zone
                 </h1>
 
                 {/* ── Subtitle ── */}
@@ -115,7 +115,7 @@ export default function Deficulty() {
                     className="sub-anim relative z-10 mt-3 text-base md:text-lg font-extrabold tracking-wide text-gray-700 text-center"
                     style={{ letterSpacing: "0.06em" }}
                 >
-                    কঠিনতার স্তর নির্বাচন করুন:&nbsp;
+                    Select Difficulty Level:&nbsp;
                     <span style={{ color: "#b91c1c", textShadow:
                 "-0.6px -0.6px 0 rgba(255,255,255,0.95), 0.6px -0.6px 0 rgba(255,255,255,0.95), -0.6px 0.6px 0 rgba(255,255,255,0.95), 0.6px 0.6px 0 rgba(255,255,255,0.95), 0 2px 8px rgba(127,29,29,0.18)", }}>{topic?.title}</span>
                 </p>

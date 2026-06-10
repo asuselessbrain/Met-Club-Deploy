@@ -74,7 +74,7 @@ export default function Registration() {
             </div>
 
             <div className="relative z-10 px-4 pt-4 sm:px-8 md:px-12">
-                <TopNav title="নিবন্ধন" />
+                <TopNav title="নিবন্ধন" brandName="মেট ক্লাব" />
             </div>
 
             <div className="relative flex min-h-[calc(100vh-88px)] items-center justify-center px-4 py-8 sm:px-8 md:px-12">

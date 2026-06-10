@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "title": "Weather and Climate",
+    "image": "/assets/chapters/chapter-1.png",
+    "borderColor": "#a78bfa",
+    "glowColor": "rgba(167,139,250,0.35)"
+  },
+  {
+    "id": 2,
+    "title": "Water System",
+    "image": "/assets/chapters/chapter-2.png",
+    "borderColor": "#7dd3fc",
+    "glowColor": "rgba(125,211,252,0.35)"
+  },
+  {
+    "id": 3,
+    "title": "Biodiversity and Environment",
+    "image": "/assets/chapters/chapter-3.png",
+    "borderColor": "#86efac",
+    "glowColor": "rgba(134,239,172,0.35)"
+  },
+  {
+    "id": 4,
+    "title": "Structure of the Earth",
+    "image": "/assets/chapters/chapter-4.png",
+    "borderColor": "#fca5a5",
+    "glowColor": "rgba(252,165,165,0.35)"
+  },
+  {
+    "id": 5,
+    "title": "Water and Weather-related Disasters",
+    "image": "/assets/chapters/chapter-5.png",
+    "borderColor": "#f97316",
+    "glowColor": "rgba(249,115,22,0.35)"
+  },
+  {
+    "id": 6,
+    "title": "Earthquake and Fire Disasters",
+    "image": "/assets/chapters/chapter-6.png",
+    "borderColor": "#a78bfa",
+    "glowColor": "rgba(167,139,250,0.35)"
+  },
+  {
+    "id": 7,
+    "title": "Disaster Risk Assessment and Mapping",
+    "image": "/assets/chapters/chapter-7.png",
+    "borderColor": "#fca5a5",
+    "glowColor": "rgba(252,165,165,0.35)"
+  },
+  {
+    "id": 8,
+    "title": "Climate Change",
+    "image": "/assets/chapters/chapter-8.png",
+    "borderColor": "#7dd3fc",
+    "glowColor": "rgba(125,211,252,0.35)"
+  },
+  {
+    "id": 9,
+    "title": "Early Warning",
+    "image": "/assets/chapters/chapter-9.png",
+    "borderColor": "#fcd34d",
+    "glowColor": "rgba(252,211,77,0.35)"
+  },
+  {
+    "id": 10,
+    "title": "Disaster Preparedness",
+    "image": "/assets/chapters/chapter-10.png",
+    "borderColor": "#86efac",
+    "glowColor": "rgba(134,239,172,0.35)"
+  },
+  {
+    "id": 11,
+    "title": "School Disaster Preparedness",
+    "image": "/assets/chapters/chapter-14.png",
+    "borderColor": "#f59e0b",
+    "glowColor": "rgba(245,158,11,0.35)"
+  },
+  {
+    "id": 12,
+    "title": "Disaster Recovery",
+    "image": "/assets/chapters/chapter-15.png",
+    "borderColor": "#6ee7b7",
+    "glowColor": "rgba(110,231,183,0.35)"
+  }
+]

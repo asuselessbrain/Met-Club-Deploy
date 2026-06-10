@@ -94,7 +94,7 @@ export default function Tutorials() {
           background: "linear-gradient(180deg, rgba(20,6,6,0.22) 0%, rgba(20,6,6,0.14) 55%, rgba(20,6,6,0.18) 100%)",
         }}
       />
-            <TopNav title="টিউটোরিয়াল ভিডিও" />
+            <TopNav title="টিউটোরিয়াল ভিডিও" brandName="মেট ক্লাব" />
 
         <div className="px-4 py-8 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-6xl">

@@ -8,6 +8,7 @@ import { getLocalizedPath, getStoredLocale, setStoredLocale, type AppLocale } fr
 interface TopNavProps {
     title?: string;
     tone?: "default" | "red";
+    brandName: string;
 }
 
 const user = {
@@ -55,7 +56,7 @@ const menuItems = [
     // },
 ];
 
-export default function TopNav({ title, tone = "default" }: TopNavProps) {
+export default function TopNav({ title, tone = "default", brandName }: TopNavProps) {
     void tone;
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
@@ -137,7 +138,7 @@ export default function TopNav({ title, tone = "default" }: TopNavProps) {
                                         "-0.6px -0.6px 0 rgba(255,255,255,0.95), 0.6px -0.6px 0 rgba(255,255,255,0.95), -0.6px 0.6px 0 rgba(255,255,255,0.95), 0.6px 0.6px 0 rgba(255,255,255,0.95), 0 2px 8px rgba(127,29,29,0.18)",
                                 }}
                             >
-                                মেট ক্লাব
+                                {brandName}
                             </span>
                         </div>
                     </Link>

@@ -16,7 +16,7 @@ export interface ChapterTopic {
 }
 
 const fetchChapters = async () => {
-  const response = await fetch('/chapter.json');
+  const response = await fetch('/chapter.en.json');
   return response.json() as Promise<ChapterTopic[]>;
 };
 
@@ -94,7 +94,7 @@ export default function Chapter() {
         }}
       >
         <div className="relative z-20 w-full self-stretch">
-          <TopNav title="লার্নিং জোন" brandName="মেট ক্লাব" />
+          <TopNav title="Learning Zone" brandName="Met Club" />
         </div>
 
         {/* Soft overlay so cards are readable over the bg */}
