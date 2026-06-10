@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, Outlet, useLocation } from "react-router";
 import Sidebar from "./Sidebar";
-import bgImage from "../../assets/images/start-journey-page-bg.jpeg";
+import bgImage from "../../../assets/images/start-journey-page-bg.jpeg";
 import { FiHome, FiMenu, FiX } from "react-icons/fi";
 import { FiGrid, FiBook, FiLayers, FiFileText, FiPlusCircle, FiPlayCircle } from "react-icons/fi";
 import { NavLink } from "react-router";

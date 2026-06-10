@@ -1111,7 +1111,6 @@ export default function Quiz({ onFinish }: QuizProps) {
     const [showReview, setShowReview] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-
     const quizQuestions = useLoaderData() as QuizQuestion[];
     const [searchParams] = useSearchParams();
     const axios = useAxiosProtected();
