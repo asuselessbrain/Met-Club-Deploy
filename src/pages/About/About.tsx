@@ -39,7 +39,7 @@ export default function About() {
                         className="text-lg max-w-3xl mx-auto leading-relaxed animate-slide-up delay-300 font-semibold"
                         style={{ color: "#ffffff", textShadow: subtitleShadow }}
                     >
-                        একটি যুব-চালিত প্ল্যাটফর্ম যেখানে শিশুরা আবহাওয়া পর্যবেক্ষণ এবং দুর্যোগ সতর্কতার মাধ্যমে তাদের সম্প্রদায়কে নিরাপদ রাখতে শিখে
+                        একটি শিশু-কিশোর চালিত প্ল্যাটফর্ম যেখানে শিশুরা আবহাওয়া পর্যবেক্ষণ এবং দুর্যোগ সতর্কতার মাধ্যমে তাদের সম্প্রদায়কে নিরাপদ রাখতে শিখে
                     </div>
                 </div>
 
@@ -107,7 +107,7 @@ export default function About() {
                         <div className="grid md:grid-cols-2 gap-8 items-center">
                             <div className="text-center md:text-left">
                                 <p className="text-xl font-semibold text-gray-800 leading-relaxed mb-6">
-                                    "মেট ক্লাব – আবহাওয়া চক্র" একটি যুব-চালিত প্ল্যাটফর্ম যা শিশু এবং তরুণদের দ্বারা পরিচালিত হয়।
+                                    "মেট ক্লাব – আবহাওয়া চক্র" একটি শিশু-কিশোর চালিত প্ল্যাটফর্ম যা শিশু এবং তরুণদের দ্বারা পরিচালিত হয়।
                                 </p>
                                 <div className="space-y-4">
                                     <div className="flex items-center space-x-3 bg-red-50 rounded-xl p-4 border border-red-200">
@@ -188,31 +188,78 @@ export default function About() {
                         <p className="text-lg md:text-xl font-semibold" style={{ color: "#1f2937", textShadow: subtitleShadow }}>যুব নেতৃত্ব এবং সহযোগিতার মাধ্যমে শক্তিশালী</p>
                     </div>
 
-                    <div className="max-w-6xl mx-auto">
+                    <div className="max-w-6xl mx-auto space-y-12">
+                        {/* Technical Advisor Section */}
                         <div>
-                            <div className="flex flex-col items-center space-y-8">
-                                <div className="w-full max-w-md">
-                                    <div className="bg-linear-to-r from-red-600 to-red-500 text-white rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition-transform">
-                                        <Users className="w-12 h-12 mx-auto mb-3" />
-                                        <h3 className="text-2xl font-bold">কারিগরি উপদেষ্টা</h3>
-                                        <p className="text-sm mt-2 opacity-90 font-semibold">পেশাদার নির্দেশনা প্রদান</p>
-                                    </div>
+                            <div className="w-full max-w-3xl mx-auto mb-8">
+                                <div className="bg-linear-to-r from-red-700 to-red-600 text-white rounded-2xl p-8 text-center shadow-lg hover:scale-105 transition-transform">
+                                    <Users className="w-14 h-14 mx-auto mb-3" />
+                                    <h3 className="text-3xl font-bold mb-2">কারিগরি উপদেষ্টা</h3>
+                                    <p className="text-sm opacity-90 font-semibold">পেশাদার নির্দেশনা এবং কারিগরি সহায়তা প্রদান</p>
                                 </div>
+                            </div>
+                            <div className="bg-white rounded-2xl p-8 shadow-md border-l-4 border-red-500">
+                                <h4 className="text-xl font-bold mb-4" style={{ color: "#b91c1c" }}>দায়িত্বসমূহ:</h4>
+                                <ul className="space-y-3 text-gray-800 font-semibold">
+                                    <li className="flex items-start space-x-3">
+                                        <span className="text-red-600 font-bold mt-1">•</span>
+                                        <span>আবহাওয়া ও দুর্যোগ সংক্রান্ত কারিগরি জ্ঞান ও তথ্য দিয়ে ক্লাবকে সহায়তা প্রদান করা</span>
+                                    </li>
+                                    <li className="flex items-start space-x-3">
+                                        <span className="text-red-600 font-bold mt-1">•</span>
+                                        <span>শিশু ও তরুণ সদস্যদের সহজ ও বোধগম্যভাবে আবহাওয়া বিষয়ক শিক্ষা ও প্রশিক্ষণ দেওয়ার পদ্ধতি নির্ধারণে সহায়তা করা</span>
+                                    </li>
+                                    <li className="flex items-start space-x-3">
+                                        <span className="text-red-600 font-bold mt-1">•</span>
+                                        <span>ক্লাবের কার্যক্রম পরিকল্পনা, বাস্তবায়ন ও মূল্যায়নে পরামর্শ প্রদান করা</span>
+                                    </li>
+                                    <li className="flex items-start space-x-3">
+                                        <span className="text-red-600 font-bold mt-1">•</span>
+                                        <span>ক্লাব সদস্যদের আবহাওয়া পর্যবেক্ষণ, পূর্বাভাস ব্যাখ্যা, এবং আগাম সতর্কবার্তার ব্যবহার শেখাতে নির্দেশনা ও সহায়তা প্রদান করা</span>
+                                    </li>
+                                    <li className="flex items-start space-x-3">
+                                        <span className="text-red-600 font-bold mt-1">•</span>
+                                        <span>ক্লাবের যাবতীয় উপকরণ (পাঠ্য, ভিজ্যুয়াল, পোস্টার ইত্যাদি) প্রস্তুতকরণে কারিগরি দিকনির্দেশনা প্রদান করা</span>
+                                    </li>
+                                    <li className="flex items-start space-x-3">
+                                        <span className="text-red-600 font-bold mt-1">•</span>
+                                        <span>শিশুদের জন্য নিরাপদ ও অংশগ্রহণমূলক শেখার পরিবেশ নিশ্চিত করতে দিকনির্দেশনা দেওয়া</span>
+                                    </li>
+                                    <li className="flex items-start space-x-3">
+                                        <span className="text-red-600 font-bold mt-1">•</span>
+                                        <span>প্রয়োজনে সংশ্লিষ্ট সংস্থা বা বিশেষজ্ঞদের সঙ্গে ক্লাবের যোগাযোগ স্থাপন এবং সমন্বয় সাধন করা</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
 
+                        {/* Executive Structure */}
+                        <div className="pt-8">
+                            <div className="flex flex-col items-center space-y-8">
                                 <div className="flex items-center justify-center w-full">
                                     <div className="w-1 h-12 bg-linear-to-b from-red-500 to-orange-500"></div>
                                 </div>
 
-                                <div className="grid md:grid-cols-2 gap-6 w-full">
-                                    <div className="bg-linear-to-br from-orange-500 to-red-500 text-white rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition-transform">
-                                        <Award className="w-10 h-10 mx-auto mb-3" />
-                                        <h3 className="text-xl font-bold">প্রধান নির্বাহী</h3>
-                                        <p className="text-3xl font-black mt-2 text-white">৪ জন</p>
-                                    </div>
-                                    <div className="bg-linear-to-br from-red-400 to-orange-500 text-white rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition-transform">
-                                        <Users className="w-10 h-10 mx-auto mb-3" />
-                                        <h3 className="text-xl font-bold">কার্যনির্বাহী সদস্য</h3>
-                                        <p className="text-3xl font-black mt-2 text-white">৭ জন</p>
+                                {/* Chief Executives */}
+                                <div className="w-full">
+                                    <h4 className="text-2xl font-bold text-center mb-6" style={{ color: "#b91c1c", textShadow: titleShadow }}>প্রধান নির্বাহী (৪ জন)</h4>
+                                    <div className="grid md:grid-cols-2 gap-6">
+                                        <div className="bg-gradient-to-br from-orange-600 to-orange-500 text-white rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition-transform">
+                                            <Award className="w-10 h-10 mx-auto mb-3" />
+                                            <h3 className="text-xl font-bold">ক্যাপ্টেন</h3>
+                                        </div>
+                                        <div className="bg-gradient-to-br from-orange-500 to-red-500 text-white rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition-transform">
+                                            <Users className="w-10 h-10 mx-auto mb-3" />
+                                            <h3 className="text-xl font-bold">ভাইস-ক্যাপ্টেন</h3>
+                                        </div>
+                                        <div className="bg-gradient-to-br from-red-500 to-orange-500 text-white rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition-transform">
+                                            <Target className="w-10 h-10 mx-auto mb-3" />
+                                            <h3 className="text-xl font-bold">অর্থ-বন্ধু</h3>
+                                        </div>
+                                        <div className="bg-gradient-to-br from-orange-500 to-red-400 text-white rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition-transform">
+                                            <Heart className="w-10 h-10 mx-auto mb-3" />
+                                            <h3 className="text-xl font-bold">বার্তা-বন্ধু</h3>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -220,8 +267,14 @@ export default function About() {
                                     <div className="w-1 h-12 bg-linear-to-b from-orange-500 to-red-400"></div>
                                 </div>
 
-                                <div className="w-full max-w-md">
-                                    <div className="bg-linear-to-r from-red-500 to-red-600 text-white rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition-transform">
+                                {/* Executive Members & General Members */}
+                                <div className="grid md:grid-cols-2 gap-6 w-full">
+                                    <div className="bg-gradient-to-br from-orange-500 to-red-500 text-white rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition-transform">
+                                        <Users className="w-10 h-10 mx-auto mb-3" />
+                                        <h3 className="text-xl font-bold">কার্যনির্বাহী সদস্য</h3>
+                                        <p className="text-3xl font-black mt-2 text-white">৭ জন</p>
+                                    </div>
+                                    <div className="bg-gradient-to-r from-red-600 to-red-700 text-white rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition-transform">
                                         <Heart className="w-12 h-12 mx-auto mb-3" />
                                         <h3 className="text-2xl font-bold">সাধারণ সদস্য</h3>
                                         <p className="text-sm mt-2 opacity-90 font-semibold">৭ম-৯ম শ্রেণির সকল শিক্ষার্থী</p>
@@ -247,7 +300,7 @@ export default function About() {
                             { icon: '🌤️', title: 'আবহাওয়া পর্যবেক্ষণ' },
                             { icon: '📚', title: 'ওয়ার্কশপ ও প্রশিক্ষণ' },
                             { icon: '📢', title: 'সচেতনতা ক্যাম্পেইন' },
-                            { icon: '📅', title: 'ইভেন্ট উদ্যাপন' }
+                            { icon: '📅', title: 'ইভেন্ট উদযাপন' }
                         ].map((activity, index) => (
                             <div
                                 key={index}
@@ -279,7 +332,7 @@ export default function About() {
                         <div className="flex items-center justify-center space-x-4 mb-6">
                             <img src={logo} alt="MET CLUB LOGO" className='w-40 h-40' />
                         </div>
-                        <h2 className="text-4xl md:text-5xl font-black mb-6" style={{ color: "#b91c1c", textShadow: titleShadow }}>তরুণ মন, শক্তিশালী সতর্কতা</h2>
+                        <h2 className="text-4xl md:text-5xl font-black mb-6" style={{ color: "#b91c1c", textShadow: titleShadow }}>তরুন চিন্তা, শক্তিশালী সতর্কতা</h2>
                         <p className="text-xl md:text-2xl font-bold mb-8 text-red-800">
                             আবহাওয়ার পূর্বাভাস বুঝে গড়ি আমাদের নিরাপদের পথ
                         </p>
@@ -299,7 +352,11 @@ export default function About() {
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-8">
-                        {['চট্টগ্রাম', 'পটুয়াখালী', 'গাইবান্ধা'].map((location, idx) => (
+                        {[
+                            { name: 'চট্টগ্রাম', org: 'বাস্তবায়নকারী সংস্থা: ইপসা (YPSA)' },
+                            { name: 'পটুয়াখালী', org: 'বাস্তবায়নকারী সংস্থা: জাগোনারী (JAGO NARI)' },
+                            { name: 'গাইবান্ধা', org: 'বাস্তবায়নকারী সংস্থা: এসকেএস ফাউন্ডেশন (SKS Foundation)' },
+                        ].map((loc, idx) => (
                             <div key={idx} className="group rounded-3xl shadow-xl p-10 text-center hover:scale-105 transition-all duration-500" style={{
                                 background: "rgba(255,255,255,0.22)",
                                 border: "1.5px solid #fca5a599",
@@ -313,8 +370,9 @@ export default function About() {
                                         চালু
                                     </div>
                                 </div>
-                                <h3 className="text-3xl font-black mb-3" style={{ color: "#b91c1c", textShadow: titleShadow }}>{location}</h3>
-                                <p className="text-lg text-gray-800 font-semibold">বর্তমানে সক্রিয়</p>
+                                <h3 className="text-3xl font-black mb-3" style={{ color: "#b91c1c", textShadow: titleShadow }}>{loc.name}</h3>
+                                <p className="text-lg text-gray-800 font-semibold mb-3">বর্তমানে সক্রিয়</p>
+                                <p className="text-sm font-bold mb-3" style={{ color: "#b91c1c" }}>{loc.org}</p>
                                 <div className="mt-6 flex items-center justify-center space-x-2 text-red-700">
                                     <TrendingUp className="w-5 h-5" />
                                     <span className="font-bold">৫০+ সদস্য</span>
