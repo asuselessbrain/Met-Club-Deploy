@@ -172,6 +172,13 @@ export default function Registration() {
                                     <option value="4">চতুর্থ শ্রেণি</option>
                                     <option value="5">পঞ্চম শ্রেণি</option>
                                     <option value="6">ষষ্ঠ শ্রেণি</option>
+                                    <option value="7">সাতম শ্রেণি</option>
+                                    <option value="8">আটম শ্রেণি</option>
+                                    <option value="9">নবম শ্রেণি</option>
+                                    <option value="10">দশম শ্রেণি</option>
+                                    <option value="11">একাদশ শ্রেণি</option>
+                                    <option value="12">দ্বাদশ শ্রেণি</option>
+                                    <option value="0">অন্যান্য</option>
                                 </select>
                                 {errors.class && <p className="mt-1 text-xs text-red-500">{errors.class.message}</p>}
                             </div>
