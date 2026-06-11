@@ -21,8 +21,12 @@ export default function Login() {
     const onSubmit = async (data: LoginFormValues) => {
         try {
             const res = await axiosInstance.post("/auth/login", data);
-            localStorage.setItem("token", res.data.data);
+            localStorage.setItem("token", res.data.data.accessToken);
             toast.success(res.data.message || "লগইন সফল! এখন যাত্রা শুরু করুন।", {id: "error"});
+            if(res.data.data.user.role === "admin") {
+                navigate("/admin/overview");
+                return;
+            }
             navigate("/start-journey");
         } catch (error) {
             if(axios.isAxiosError(error)) {
