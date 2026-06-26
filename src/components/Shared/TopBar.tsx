@@ -60,20 +60,15 @@ export default function TopNav({ title, tone = "default", brandName }: TopNavPro
     void tone;
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
-    const [langOpen, setLangOpen] = useState(false);
-    const langRef = useRef<HTMLDivElement>(null);
     const navigate = useNavigate();
     const location = useLocation();
     const [locale, setLocale] = useState<AppLocale>(() => getStoredLocale());
     const handleLogout = useLogout();
 
     useEffect(() => {
-        const handleClickOutside = (e: MouseEvent) => {
-            if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
                 setDropdownOpen(false);
-            }
-            if (langRef.current && !langRef.current.contains(e.target as Node)) {
-                setLangOpen(false);
             }
         };
 
@@ -157,82 +152,59 @@ export default function TopNav({ title, tone = "default", brandName }: TopNavPro
 
                     {/* RIGHT USER */}
                     <div className="relative z-30 shrink-0 flex items-center gap-2" ref={dropdownRef}>
-                        <div className="relative" ref={langRef}>
-                            <button
-                                onClick={() => {
-                                    setDropdownOpen(false);
-                                    setLangOpen((p) => !p);
-                                }}
-                                className="flex items-center gap-1.5 rounded-2xl px-3 py-1.5 font-semibold transition-all duration-200 select-none"
+                        <div className="relative">
+                            <div
+                                className="flex items-center rounded-full p-0.5 bg-white/80 border border-white/80 shadow-sm"
                                 style={{
-                                    background: "rgba(255,255,255,0.30)",
-                                    border: "1.5px solid rgba(255,255,255,0.45)",
-                                    boxShadow: "0 4px 14px rgba(185,28,28,0.12)",
-                                    backdropFilter: "blur(14px)",
-                                    WebkitBackdropFilter: "blur(14px)",
-                                    cursor: "pointer",
-                                    color: "#7f1d1d",
+                                    backdropFilter: "blur(20px)",
+                                    WebkitBackdropFilter: "blur(20px)",
+                                    boxShadow: "0 8px 30px rgba(0,0,0,0.08)",
                                 }}
-                                aria-label="Open language menu"
                             >
-                                <span>{locale === "en" ? "English" : "বাংলা"}</span>
-                                <svg
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="2.5"
-                                    className="w-4 h-4 transition-transform duration-200"
-                                    style={{ transform: langOpen ? "rotate(180deg)" : "rotate(0deg)" }}
-                                >
-                                    <polyline points="6 9 12 15 18 9" />
-                                </svg>
-                            </button>
-
-                            {langOpen && (
-                                <div
-                                    className="absolute right-0 top-full mt-2 rounded-xl overflow-hidden z-50"
+                                <button
+                                    onClick={() => {
+                                        const next: AppLocale = "en";
+                                        setStoredLocale(next);
+                                        setLocale(next);
+                                        navigate(getLocalizedPath(location.pathname, next));
+                                    }}
+                                    className="relative flex-1 cursor-pointer rounded-full px-3 py-2 text-sm font-semibold transition"
                                     style={{
-                                        width: 160,
-                                        background: "linear-gradient(120deg, rgba(255,237,234,0.98), rgba(255,223,215,0.9))",
-                                        boxShadow: "0 10px 30px rgba(185,28,28,0.14)",
-                                        border: "1.5px solid rgba(255,255,255,0.44)",
-                                        backdropFilter: "blur(12px)",
-                                        WebkitBackdropFilter: "blur(12px)",
+                                        color: locale === "en" ? "#7f1d1d" : "#6b7280",
+                                        background: locale === "en" ? "rgba(239,68,68,0.12)" : "transparent",
+                                        borderRadius: "999px",
                                     }}
                                 >
-                                    <button
-                                        onClick={() => {
-                                            const next: AppLocale = "en";
-                                            setStoredLocale(next);
-                                            setLocale(next);
-                                            setLangOpen(false);
-                                            navigate(getLocalizedPath(location.pathname, next));
-                                        }}
-                                        className={`w-full text-left px-3 py-2 rounded transition ${locale === "en" ? "bg-red-100 text-red-800" : "hover:bg-red-50"}`}
-                                    >
-                                        English {locale === "en" && <span className="ml-2 font-bold">✓</span>}
-                                    </button>
-
-                                    <button
-                                        onClick={() => {
-                                            const next: AppLocale = "bn";
-                                            setStoredLocale(next);
-                                            setLocale(next);
-                                            setLangOpen(false);
-                                            navigate(getLocalizedPath(location.pathname, next));
-                                        }}
-                                        className={`w-full text-left px-3 py-2 rounded transition ${locale === "bn" ? "bg-red-100 text-red-800" : "hover:bg-red-50"}`}
-                                    >
-                                        বাংলা {locale === "bn" && <span className="ml-2 font-bold">✓</span>}
-                                    </button>
-                                </div>
-                            )}
+                                    English
+                                </button>
+                                <button
+                                    onClick={() => {
+                                        const next: AppLocale = "bn";
+                                        setStoredLocale(next);
+                                        setLocale(next);
+                                        navigate(getLocalizedPath(location.pathname, next));
+                                    }}
+                                    className="relative flex-1 cursor-pointer rounded-full px-3 py-2 text-sm font-semibold transition"
+                                    style={{
+                                        color: locale === "bn" ? "#7f1d1d" : "#6b7280",
+                                        background: locale === "bn" ? "rgba(239,68,68,0.12)" : "transparent",
+                                        borderRadius: "999px",
+                                    }}
+                                >
+                                    বাংলা
+                                </button>
+                                <span
+                                    className="pointer-events-none absolute top-1/2 h-9 w-1/2 rounded-full bg-red-100 shadow-sm transition-all"
+                                    style={{
+                                        left: locale === "en" ? 4 : "calc(50% + 4px)",
+                                        transform: "translateY(-50%)",
+                                        background: "rgba(239,68,68,0.14)",
+                                    }}
+                                />
+                            </div>
                         </div>
                         <button
-                            onClick={() => {
-                                setLangOpen(false);
-                                setDropdownOpen((prev) => !prev);
-                            }}
+                            onClick={() => setDropdownOpen((prev) => !prev)}
                             className="flex items-center gap-2 rounded-2xl px-3 py-1.5 transition-all duration-200 select-none"
                             style={{
                                 background: dropdownOpen ? "rgba(255,255,255,0.42)" : "rgba(255,255,255,0.30)",
