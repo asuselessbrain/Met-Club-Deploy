@@ -17,7 +17,7 @@ type Tutorial = {
 const resolveImageUrl = (value: string) => {
     if (!value) return "";
     if (value.startsWith("http")) return value;
-    return ("http://119.15.153.74/api" + value).replace("/api/v1", "");
+    return ("http://localhost:5000" + value).replace("/api/v1", "");
 };
 
 const getYoutubeEmbedUrl = (input: string) => {

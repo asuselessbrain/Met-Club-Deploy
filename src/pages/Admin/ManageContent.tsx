@@ -12,13 +12,6 @@ type Chapter = {
   title: string;
 };
 
-type Subchapter = {
-  id: number;
-  chapterId: number;
-  order: number;
-  title: string;
-};
-
 type ContentSection = {
   image?: string | null;
   content?: string;
@@ -27,14 +20,12 @@ type ContentSection = {
 type LearningContent = {
   id: number;
   chapterId: number;
-  subchapterId: number;
   sections: ContentSection[];
   updatedAt?: string;
 };
 
 type EnrichedContent = LearningContent & {
   chapterTitle: string;
-  subchapterTitle: string;
 };
 
 export default function ManageContent() {
@@ -51,25 +42,21 @@ export default function ManageContent() {
     const loadData = async () => {
       setIsLoading(true);
       try {
-        const [chapterResponse, subchapterResponse, contentResponse] = await Promise.all([
+        const [chapterResponse, contentResponse] = await Promise.all([
           fetch("/chapter.json"),
-          fetch("/subChapter.json"),
           axiosInstance.get("/content"),
         ]);
 
         const chapterData = (await chapterResponse.json()) as Chapter[];
-        const subchapterData = (await subchapterResponse.json()) as Subchapter[];
         const contentData = (contentResponse.data?.data || []) as LearningContent[];
 
         if (cancelled) return;
 
         const enriched = contentData.map((item) => {
           const chapterTitle = chapterData.find((chapter) => chapter.id === item.chapterId)?.title || `Chapter ${item.chapterId}`;
-          const subchapterTitle = subchapterData.find((subchapter) => subchapter.id === item.subchapterId)?.title || `Subchapter ${item.subchapterId}`;
           return {
             ...item,
             chapterTitle,
-            subchapterTitle,
           };
         });
 
@@ -98,13 +85,12 @@ export default function ManageContent() {
       const sectionText = item.sections.map((section) => section.content || "").join(" ").toLowerCase();
       return (
         item.chapterTitle.toLowerCase().includes(normalized) ||
-        item.subchapterTitle.toLowerCase().includes(normalized) ||
         sectionText.includes(normalized)
       );
     });
   }, [contents, query]);
 
-  const handleDelete = async (subchapterId: number) => {
+  const handleDelete = async (chapterId: number) => {
     const swalWithTailwindButtons = Swal.mixin({
       customClass: {
         actions: "gap-3",
@@ -124,9 +110,9 @@ export default function ManageContent() {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          const res = await axiosInstance.delete(`/content/${subchapterId}`);
-          setContents((prev) => prev.filter((item) => item.subchapterId !== subchapterId));
-          if (selectedContent?.subchapterId === subchapterId) {
+          const res = await axiosInstance.delete(`/content/${chapterId}`);
+          setContents((prev) => prev.filter((item) => item.chapterId !== chapterId));
+          if (selectedContent?.chapterId === chapterId) {
             setSelectedContent(null);
           }
           swalWithTailwindButtons.fire({
@@ -149,8 +135,8 @@ export default function ManageContent() {
     });
   };
 
-  const goToEdit = (subchapterId: number) => {
-    navigate(`/admin/create-content?subchapterId=${subchapterId}`);
+  const goToEdit = (chapterId: number) => {
+    navigate(`/admin/create-content?chapterId=${chapterId}`);
   };
 
   return (
@@ -199,7 +185,6 @@ export default function ManageContent() {
           <thead>
             <tr className="border-b border-gray-300/50">
               <th className="p-3 font-semibold text-gray-700">অধ্যায়</th>
-              <th className="p-3 font-semibold text-gray-700">সাব-অধ্যায়</th>
               <th className="p-3 font-semibold text-gray-700">বিভাগ</th>
               <th className="p-3 font-semibold text-gray-700">আপডেট</th>
               <th className="p-3 font-semibold text-gray-700 text-right">অ্যাকশন</th>
@@ -208,13 +193,13 @@ export default function ManageContent() {
           <tbody>
             {isLoading ? (
               <tr>
-                <td className="p-6 text-gray-500" colSpan={6}>
+                <td className="p-6 text-gray-500" colSpan={5}>
                   লোড হচ্ছে...
                 </td>
               </tr>
             ) : filteredContents.length === 0 ? (
               <tr>
-                <td className="p-6 text-gray-500" colSpan={6}>
+                <td className="p-6 text-gray-500" colSpan={5}>
                   কোনো কন্টেন্ট পাওয়া যায়নি
                 </td>
               </tr>
@@ -223,7 +208,6 @@ export default function ManageContent() {
                 return (
                   <tr key={content.id} className="border-b border-gray-300/20 hover:bg-white/20 transition-colors align-top">
                     <td className="p-3 text-gray-700">{content.chapterTitle}</td>
-                    <td className="p-3 text-gray-700">{content.subchapterTitle}</td>
                     <td className="p-3 text-gray-700">{content.sections.length} টি</td>
                     <td className="p-3 text-gray-700">
                       {content.updatedAt ? new Date(content.updatedAt).toLocaleDateString("bn-BD") : "-"}
@@ -240,14 +224,14 @@ export default function ManageContent() {
                         <button
                           className="p-2 rounded-lg bg-blue-100 text-blue-600 hover:bg-blue-200 transition-colors"
                           title="সম্পাদনা করুন"
-                          onClick={() => goToEdit(content.subchapterId)}
+                          onClick={() => goToEdit(content.chapterId)}
                         >
                           <FiEdit2 className="w-4 h-4" />
                         </button>
                         <button
                           className="p-2 rounded-lg bg-red-100 text-red-600 hover:bg-red-200 transition-colors"
                           title="মুছে ফেলুন"
-                          onClick={() => handleDelete(content.subchapterId)}
+                          onClick={() => handleDelete(content.chapterId)}
                         >
                           <FiTrash2 className="w-4 h-4" />
                         </button>
@@ -267,7 +251,7 @@ export default function ManageContent() {
             <div className="flex items-start justify-between gap-4 mb-5">
               <div>
                 <h3 className="text-2xl font-bold text-red-700">কন্টেন্ট প্রিভিউ</h3>
-                <p className="text-sm text-gray-600">{selectedContent.chapterTitle} / {selectedContent.subchapterTitle}</p>
+                <p className="text-sm text-gray-600">{selectedContent.chapterTitle}</p>
               </div>
               <button
                 type="button"

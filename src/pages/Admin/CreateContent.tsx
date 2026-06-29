@@ -15,13 +15,7 @@ interface Section {
   content: string;
 }
 
-interface Subchapter {
-  id: number;
-  chapterId: number;
-  order: number;
-  title: string;
-  image?: string;
-}
+
 
 interface Chapter {
   id: number;
@@ -34,10 +28,8 @@ export default function CreateContent() {
   const nextSectionIdRef = useRef(2);
   const [searchParams] = useSearchParams();
   const [chapter, setChapter] = useState("");
-  const [subchapter, setSubchapter] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [chapters, setChapters] = useState<Chapter[]>([]);
-  const [subchapters, setSubchapters] = useState<Subchapter[]>([]);
   const [sections, setSections] = useState<Section[]>([
     { id: 1, image: null, content: "" },
   ]);
@@ -81,29 +73,18 @@ export default function CreateContent() {
       .then((res) => res.json())
       .then((data: Chapter[]) => setChapters(data))
       .catch((err) => console.error("Failed to load chapters:", err));
-
-    fetch("/subChapter.json")
-      .then((res) => res.json())
-      .then((data: Subchapter[]) => setSubchapters(data))
-      .catch((err) => console.error("Failed to load subchapters:", err));
   }, []);
 
   useEffect(() => {
-    const subchapterIdFromQuery = searchParams.get("subchapterId");
-    if (!subchapterIdFromQuery || subchapters.length === 0) return;
+    const chapterIdFromQuery = searchParams.get("chapterId");
+    if (!chapterIdFromQuery) return;
 
-    const matchedSubchapter = subchapters.find(
-      (item) => String(item.id) === subchapterIdFromQuery
-    );
-    if (!matchedSubchapter) return;
-
-    setChapter(String(matchedSubchapter.chapterId));
-    setSubchapter(subchapterIdFromQuery);
-  }, [searchParams, subchapters]);
+    setChapter(chapterIdFromQuery);
+  }, [searchParams]);
 
   useEffect(() => {
-    // reset to empty template when no subchapter selected
-    if (!subchapter) {
+    // reset to empty template when no chapter selected
+    if (!chapter) {
       setSections([{ id: 1, image: null, content: "" }]);
       nextSectionIdRef.current = 2;
       return;
@@ -112,14 +93,14 @@ export default function CreateContent() {
     let cancelled = false;
     (async () => {
       try {
-        const resp = await axiosInstance.get(`/content/subchapter/${subchapter}`);
+        const resp = await axiosInstance.get(`/content/chapter/${chapter}`);
         const data = resp.data?.data;
         if (cancelled) return;
 
         const sectionsFromDb: Array<{ image?: string | null; content?: string }> = data?.sections || [];
 
         if (!data || sectionsFromDb.length === 0) {
-          // no content for this subchapter — show empty template
+          // no content for this chapter — show empty template
           setSections([{ id: 1, image: null, content: "" }]);
           nextSectionIdRef.current = 2;
           return;
@@ -142,18 +123,17 @@ export default function CreateContent() {
     return () => {
       cancelled = true;
     };
-  }, [subchapter, axiosInstance]);
+  }, [chapter, axiosInstance]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!chapter || !subchapter) {
-      toast.error("অধ্যায় এবং সাব-অধ্যায় নির্বাচন করুন", {id: "error"});
+    if (!chapter) {
+      toast.error("অধ্যায় নির্বাচন করুন", {id: "error"});
       return;
     }
 
     const form = new FormData();
     form.append("chapterId", String(chapter));
-    form.append("subchapterId", String(subchapter));
 
     const files: File[] = [];
     const sectionsMeta: Array<{
@@ -215,11 +195,6 @@ export default function CreateContent() {
   };
 
   const quillFormats = ["bold", "italic", "underline", "list", "bullet", "link"];
-  const filteredSubchapters = chapter
-    ? subchapters
-      .filter((s) => String(s.chapterId) === chapter)
-      .sort((a, b) => a.order - b.order)
-    : [];
 
   return (
     <div
@@ -239,44 +214,20 @@ export default function CreateContent() {
       </h2>
 
       <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 p-5 rounded-xl bg-white/30 border border-white/50">
+        <div className="p-5 rounded-xl bg-white/30 border border-white/50">
           <div>
             <label className="block text-sm font-semibold text-gray-700 mb-1">
               অধ্যায়
             </label>
             <select
               value={chapter}
-              onChange={(e) => {
-                setChapter(e.target.value);
-                setSubchapter("");
-              }}
+              onChange={(e) => setChapter(e.target.value)}
               className="w-full px-4 py-3 rounded-xl border border-white/50 bg-white/60 focus:outline-none focus:ring-2 focus:ring-red-400"
             >
               <option value="">-- অধ্যায় বেছে নিন --</option>
               {chapters.map((c) => (
                 <option key={c.id} value={String(c.id)}>
                   {c.title}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1">
-              সাব-অধ্যায়
-            </label>
-            <select
-              value={subchapter}
-              onChange={(e) => setSubchapter(e.target.value)}
-              className={
-                "w-full px-4 py-3 rounded-xl border border-white/50 bg-white/60 focus:outline-none focus:ring-2 focus:ring-red-400 " +
-                (!chapter ? "opacity-60 cursor-not-allowed" : "")
-              }
-              disabled={!chapter}
-            >
-              <option value="">-- সাব-অধ্যায় বেছে নিন --</option>
-              {filteredSubchapters.map((s) => (
-                <option key={s.id} value={String(s.id)}>
-                  {s.title}
                 </option>
               ))}
             </select>

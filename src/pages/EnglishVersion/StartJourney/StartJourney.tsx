@@ -107,7 +107,7 @@ export default function StartJourney() {
                             btnShadow="rgba(249,115,22,0.42)"
                             btnLabel={isChapterOneCompleted ? "Enter Simulation" : "Complete First Chapter"}
                             // disabled={!isChapterOneCompleted}
-                            link="http://119.15.153.74:8080"
+                            link="http://localhost:5000:8080"
                             description={
                                 <>
                                     <strong>Test your skills!</strong>

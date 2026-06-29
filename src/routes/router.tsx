@@ -8,7 +8,6 @@ import { getStoredLocale } from "../utils/language";
 // Lazy load page components
 const StartJourney = lazy(() => import("../pages/StartJourney"));
 const Chapter = lazy(() => import("../pages/LearnignZone/Index/Chapter"));
-const Subchapter = lazy(() => import("../pages/LearnignZone/Subchapter/Subchapter"));
 const Deficulty = lazy(() => import("../pages/LearnignZone/Deficulty/Deficulty"));
 const StartInterface = lazy(() => import("../pages/LearnignZone/quiz/StartInterface"));
 const Quiz = lazy(() => import("../pages/LearnignZone/quiz/quiz"));
@@ -18,7 +17,6 @@ const Profile = lazy(() => import("../pages/Profile/Profile"));
 const AdminLayout = lazy(() => import("../components/banglaVersion/Admin/AdminLayout"));
 const Overview = lazy(() => import("../pages/Admin/Overview"));
 const ManageChapters = lazy(() => import("../pages/Admin/ManageChapters"));
-const ManageSubchapters = lazy(() => import("../pages/Admin/ManageSubchapters"));
 const CreateContent = lazy(() => import("../pages/Admin/CreateContent"));
 const ManageContent = lazy(() => import("../pages/Admin/ManageContent"));
 const ManageTutorials = lazy(() => import("../pages/Admin/ManageTutorials"));
@@ -29,7 +27,6 @@ const EnglishHome = lazy(() => import("../pages/EnglishVersion/Home"));
 const EnglishAbout = lazy(() => import("../pages/EnglishVersion/About/About"));
 const EnglishStartJourney = lazy(() => import("../pages/EnglishVersion/StartJourney/StartJourney"));
 const EnglishChapter = lazy(() => import("../pages/EnglishVersion/Chapter/Chapter"));
-const EnglishSubchapter = lazy(() => import("../pages/EnglishVersion/Subchapter/Subchapter"));
 const EnglishStartInterface = lazy(() => import("../pages/EnglishVersion/QuizStartInterface/StartInterface"));
 const EnglishQuizDeficultyLevel = lazy(()=>import("../pages/EnglishVersion/Deficulty/Deficulty"))
 const EnglishProfile = lazy(() => import("../pages/EnglishVersion/Profile/Profile"));
@@ -125,88 +122,12 @@ const router = createBrowserRouter([
     ,loader: ({ request }) => redirectToStoredLocale(request.url, "/learning-zone", "/en/learning-zone"),
   },
   {
-    path: "/subchapters/:chapterId",
-    element: <SuspenseWrapper><Subchapter /></SuspenseWrapper>,
-    loader: async ({ request, params }) => {
-      const localeRedirect = redirectToStoredLocale(request.url, "/subchapters", "/en/subchapters");
-      if (localeRedirect) return localeRedirect;
-
-      const chapterIdParam = params.chapterId;
-      if (!chapterIdParam) {
-        throw new Response("Invalid chapter id", { status: 400 });
-      }
-
-      const chapterId = Number.parseInt(chapterIdParam, 10);
-      if (Number.isNaN(chapterId)) {
-        throw new Response("Invalid chapter id", { status: 400 });
-      }
-
-      const [chapterResponse, subchapterResponse] = await Promise.all([
-        fetch('/chapter.json'),
-        fetch('/subChapter.json'),
-      ]);
-
-      const chapters = await chapterResponse.json() as Array<{ id: number; title: string; image: string; borderColor: string; glowColor: string }>;
-        const subchapters = await subchapterResponse.json() as Array<{ id: number; chapterId: number; order: number; title: string; image?: string }>;
-
-      const chapter = chapters.find((item) => item.id === chapterId);
-      if (!chapter) {
-        throw new Response("Not Found", { status: 404 });
-      }
-
-      return {
-        chapter,
-        subchapters: subchapters
-          .filter((item) => item.chapterId === chapterId)
-          .sort((a, b) => a.order - b.order),
-      };
-    },
-  },
-  {
-    path: "/en/subchapters/:chapterId",
-    element: <SuspenseWrapper><EnglishSubchapter /></SuspenseWrapper>,
-    loader: async ({ request, params }) => {
-      const localeRedirect = redirectToStoredLocale(request.url, "/subchapters", "/en/subchapters");
-      if (localeRedirect) return localeRedirect;
-
-      const chapterIdParam = params.chapterId;
-      if (!chapterIdParam) {
-        throw new Response("Invalid chapter id", { status: 400 });
-      }
-
-      const chapterId = Number.parseInt(chapterIdParam, 10);
-      if (Number.isNaN(chapterId)) {
-        throw new Response("Invalid chapter id", { status: 400 });
-      }
-
-      const [chapterResponse, subchapterResponse] = await Promise.all([
-        fetch('/chapter.en.json'),
-        fetch('/subChapter.en.json'),
-      ]);
-
-      const chapters = await chapterResponse.json() as Array<{ id: number; title: string; image: string; borderColor: string; glowColor: string }>;
-        const subchapters = await subchapterResponse.json() as Array<{ id: number; chapterId: number; order: number; title: string; image?: string }>;
-
-      const chapter = chapters.find((item) => item.id === chapterId);
-      if (!chapter) {
-        throw new Response("Not Found", { status: 404 });
-      }
-
-      return {
-        chapter,
-        subchapters: subchapters
-          .filter((item) => item.chapterId === chapterId)
-          .sort((a, b) => a.order - b.order),
-      };
-    },
-  },
-  {
-    path: "/lesson/:subchapterId?",
+    path: "/lesson/:chapterId?",
     element: <SuspenseWrapper><Section /></SuspenseWrapper>,
     loader: ({ request }) => redirectToStoredLocale(request.url, "/lesson", "/en/lesson"),
   },
   {
-    path: "/en/lesson/:subchapterId?",
+    path: "/en/lesson/:chapterId?",
     element: <SuspenseWrapper><Section /></SuspenseWrapper>,
     loader: ({ request }) => redirectToStoredLocale(request.url, "/lesson", "/en/lesson"),
   },
@@ -239,10 +160,11 @@ const router = createBrowserRouter([
       const response = await fetch('/quiz.json');
 
       const { subchapterId, difficulty } = params;
+      const targetSubchapterId = Number(subchapterId) === 5 ? 14 : Number(subchapterId);
       const quizData = await response.json() as QuizRouteData[];
       const filteredQuizData = quizData.filter((quiz) => {
         return (
-          quiz.subChapterId === Number(subchapterId) &&
+          quiz.subChapterId === targetSubchapterId &&
           quiz.difficulty === difficulty
         );
       });
@@ -258,11 +180,12 @@ const router = createBrowserRouter([
       if (localeRedirect) return localeRedirect;
 
       const { subchapterId, difficulty } = params;
+      const targetSubchapterId = Number(subchapterId) === 5 ? 14 : Number(subchapterId);
       const response = await fetch('/quiz.en.json');
       const quizData = await response.json() as QuizRouteData[];
       const filteredQuizData = quizData.filter((quiz) => {
         return (
-          quiz.subChapterId === Number(subchapterId) &&
+          quiz.subChapterId === targetSubchapterId &&
           quiz.difficulty === difficulty
         );
       });
@@ -315,10 +238,6 @@ const router = createBrowserRouter([
       {
         path: "chapters",
         element: <SuspenseWrapper><ManageChapters /></SuspenseWrapper>,
-      },
-      {
-        path: "subchapters",
-        element: <SuspenseWrapper><ManageSubchapters /></SuspenseWrapper>,
       },
       {
         path: "content",

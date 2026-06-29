@@ -6,13 +6,14 @@ import BottomNav from "../../../components/Shared/BottomNav";
 import CompletionModal from "../../../components/banglaVersion/Modal/CompletionModal";
 import { resolveMediaUrl } from "../../../utils/media";
 import useAxiosProtected from "../../../hooks/axiosProtected";
+import { getStoredLocale } from "../../../utils/language";
 
 type LessonSection = {
   id: number;
   title: string;
   image: string;
   htmlContent: string;
-  subChapterId: number;
+  chapterId: number;
 };
 
 export default function Section() {
@@ -26,30 +27,32 @@ export default function Section() {
   const [showModal, setShowModal] = useState(false);
   const axios = useAxiosProtected();
   const navigateToQuiz = useNavigate();
-  const { subchapterId } = useParams();
+  const { chapterId } = useParams();
+
   useEffect(() => {
     let cancelled = false;
 
     const loadLesson = async () => {
-      if (!subchapterId) return;
+      if (!chapterId) return;
 
       setIsLoading(true);
       try {
-        const [subchapterResponse, contentResponse] = await Promise.all([
-          fetch("/subChapter.json"),
-          axios.get(`/content/subchapter/${subchapterId}`),
+        const locale = getStoredLocale();
+        const chapterFile = locale === "en" ? "/chapter.en.json" : "/chapter.json";
+
+        const [chapterResponse, contentResponse] = await Promise.all([
+          fetch(chapterFile),
+          axios.get(`/content/chapter/${chapterId}`),
         ]);
 
-        const subchapters = (await subchapterResponse.json()) as Array<{
+        const chapters = (await chapterResponse.json()) as Array<{
           id: number;
-          chapterId: number;
-          order: number;
           title: string;
           image?: string;
         }>;
 
-        const subchapter = subchapters.find((item) => item.id === Number(subchapterId));
-        if (!subchapter || cancelled) return;
+        const chapter = chapters.find((item) => item.id === Number(chapterId));
+        if (!chapter || cancelled) return;
 
         const backendSections = (contentResponse.data?.data?.sections || []) as Array<{
           image?: string | null;
@@ -58,13 +61,13 @@ export default function Section() {
 
         const mappedSections = backendSections.map((item, index) => ({
           id: index + 1,
-          title: subchapter.title,
+          title: chapter.title,
           image: resolveMediaUrl(item.image),
           htmlContent: item.content || "",
-          subChapterId: Number(subchapterId),
+          chapterId: Number(chapterId),
         }));
 
-        setLessonTitle(subchapter.title);
+        setLessonTitle(chapter.title);
         setSections(mappedSections);
         setCurrent(0);
       } catch (error) {
@@ -85,21 +88,21 @@ export default function Section() {
     return () => {
       cancelled = true;
     };
-  }, [axios, subchapterId]);
+  }, [axios, chapterId]);
 
   console.log(sections);
 
   useEffect(() => {
     const isChapterFinished = async () => {
-      if (!subchapterId) return;
-      const res = await axios.get(`/user/chapter-completion-status/${subchapterId}`);
+      if (!chapterId) return;
+      const res = await axios.get(`/user/chapter-completion-status/${chapterId}`);
       if (res.data.data) {
         setShowModal(true);
       }
     };
 
     isChapterFinished();
-  }, [axios, subchapterId]);
+  }, [axios, chapterId]);
 
   const TOTAL = sections.length;
   const section = sections[current];
@@ -124,10 +127,10 @@ export default function Section() {
     } else {
       setIsPending(true);
       try {
-        const res = await axios.patch(`/user/update-chapter-completion/${subchapterId}`);
+        const res = await axios.patch(`/user/update-chapter-completion/${chapterId}`);
 
         if (res.data.success) {
-          navigateToQuiz(`/start-quiz/${subchapterId}`);
+          navigateToQuiz(`/start-quiz/${chapterId}`);
         }
       } finally {
         setIsPending(false);
@@ -152,7 +155,7 @@ export default function Section() {
         <div className="max-w-lg rounded-3xl border border-red-100 bg-white p-8 shadow-xl">
           <h1 className="text-3xl font-black text-red-700">এই অংশে কন্টেন্ট নেই</h1>
           <p className="mt-3 text-slate-600">
-            এই chapter{subchapterId ? " / subchapter" : ""} এর জন্য এখনও section যোগ করা হয়নি।
+            এই চ্যাপ্টারের জন্য এখনও কোনো কন্টেন্ট যোগ করা হয়নি।
           </p>
           <button
             className="mt-6 rounded-2xl bg-red-600 px-5 py-3 font-bold text-white"
@@ -455,7 +458,7 @@ export default function Section() {
         />
 
         {showModal && (
-          <CompletionModal subChapterId={String(subchapterId || "")} setShowModal={setShowModal} />
+          <CompletionModal chapterId={String(chapterId || "")} setShowModal={setShowModal} />
         )}
       </div>
     </>

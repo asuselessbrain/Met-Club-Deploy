@@ -33,7 +33,7 @@ function TopicCard({ topic, index }: { topic: ChapterTopic; index: number }) {
   const [hovered, setHovered] = useState(false);
   const locale = getStoredLocale();
   return (
-    <Link to={getLocalizedPath(`/subchapters/${topic.id}`, locale)} className="block w-45">
+    <Link to={getLocalizedPath(`/lesson/${topic.id}`, locale)} className="block w-45">
       <div
         className="relative flex flex-col items-center justify-between rounded-2xl w-45 min-h-45 md:min-h-47.5 bg-[linear-gradient(145deg,rgba(255,255,255,0.86),rgba(255,245,242,0.74))] backdrop-blur-md p-4 cursor-pointer transition-all duration-300"
         style={{

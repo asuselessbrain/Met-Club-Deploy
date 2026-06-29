@@ -1,42 +1,42 @@
 [
   {
     "id": 1,
-    "title": "আবহাওয়া ও জলবায়ু",
+    "title": "আবহাওয়া ও জলবায়ু",
     "image": "/assets/chapters/chapter-1.png",
     "borderColor": "#a78bfa",
     "glowColor": "rgba(167,139,250,0.35)"
   },
   {
     "id": 2,
-    "title": "পানি ব্যবস্থা",
+    "title": "পানি ও আবহাওয়াজনিত দুর্যোগ",
     "image": "/assets/chapters/chapter-2.png",
     "borderColor": "#7dd3fc",
     "glowColor": "rgba(125,211,252,0.35)"
   },
   {
     "id": 3,
-    "title": "জীববৈচিত্র্য ও পরিবেশ",
+    "title": "ভূ ও অগ্নিজনিত দুর্যোগ",
     "image": "/assets/chapters/chapter-3.png",
     "borderColor": "#86efac",
     "glowColor": "rgba(134,239,172,0.35)"
   },
   {
     "id": 4,
-    "title": "পৃথিবীর গঠন",
+    "title": "দুর্যোগ প্রস্তুতি",
     "image": "/assets/chapters/chapter-4.png",
     "borderColor": "#fca5a5",
     "glowColor": "rgba(252,165,165,0.35)"
   },
   {
     "id": 5,
-    "title": "পানি ও আবহাওয়াজনিত দুর্যোগ",
+    "title": "স্কুলের আগাম দুর্যোগ প্রস্তুতি",
     "image": "/assets/chapters/chapter-5.png",
     "borderColor": "#f97316",
     "glowColor": "rgba(249,115,22,0.35)"
   },
   {
     "id": 6,
-    "title": "ভূ- ও অগ্নিজনিত দুর্যোগ",
+    "title": "প্রাথমিক সতর্কীকরণ",
     "image": "/assets/chapters/chapter-6.png",
     "borderColor": "#a78bfa",
     "glowColor": "rgba(167,139,250,0.35)"
@@ -50,37 +50,16 @@
   },
   {
     "id": 8,
-    "title": "জলবায়ু পরিবর্তন",
+    "title": "জলবায়ু পরিবর্তন",
     "image": "/assets/chapters/chapter-8.png",
     "borderColor": "#7dd3fc",
     "glowColor": "rgba(125,211,252,0.35)"
   },
   {
     "id": 9,
-    "title": "প্রাথমিক সতর্কীকরণ",
+    "title": "দুর্যোগ পরবর্তী ব্যবস্থা",
     "image": "/assets/chapters/chapter-9.png",
     "borderColor": "#fcd34d",
     "glowColor": "rgba(252,211,77,0.35)"
-  },
-  {
-    "id": 10,
-    "title": "দুর্যোগ প্রস্তুতি",
-    "image": "/assets/chapters/chapter-10.png",
-    "borderColor": "#86efac",
-    "glowColor": "rgba(134,239,172,0.35)"
-  },
-  {
-    "id": 11,
-    "title": "স্কুলের আগাম দুর্যোগ প্রস্তুতি",
-    "image": "/assets/chapters/chapter-14.png",
-    "borderColor": "#f59e0b",
-    "glowColor": "rgba(245,158,11,0.35)"
-  },
-  {
-    "id": 12,
-    "title": "দুর্যোগ পরবর্তী ব্যবস্থা",
-    "image": "/assets/chapters/chapter-15.png",
-    "borderColor": "#6ee7b7",
-    "glowColor": "rgba(110,231,183,0.35)"
   }
 ]
