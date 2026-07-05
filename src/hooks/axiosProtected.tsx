@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 
 const instance = axios.create({
-    baseURL: "http://localhost:5000/api/v1",
+    baseURL: "http://119.15.153.74/api/api/v1",
     withCredentials: true,
 });
 

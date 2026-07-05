@@ -1,65 +1,72 @@
 [
   {
     "id": 1,
-    "title": "আবহাওয়া ও জলবায়ু",
-    "image": "/assets/chapters/chapter-1.png",
+    "title": "আবহাওয়া ও জলবায়ুর ধারণা",
+    "image": "/assets/chapters/chapter-1.webp",
     "borderColor": "#a78bfa",
     "glowColor": "rgba(167,139,250,0.35)"
   },
   {
     "id": 2,
-    "title": "পানি ও আবহাওয়াজনিত দুর্যোগ",
-    "image": "/assets/chapters/chapter-2.png",
+    "title": "আবহাওয়ার অনিশ্চয়তা",
+    "image": "/assets/chapters/chapter-2.webp",
     "borderColor": "#7dd3fc",
     "glowColor": "rgba(125,211,252,0.35)"
   },
   {
     "id": 3,
-    "title": "ভূ ও অগ্নিজনিত দুর্যোগ",
-    "image": "/assets/chapters/chapter-3.png",
+    "title": "পানি চক্র",
+    "image": "/assets/chapters/chapter-3.webp",
     "borderColor": "#86efac",
     "glowColor": "rgba(134,239,172,0.35)"
   },
   {
     "id": 4,
-    "title": "দুর্যোগ প্রস্তুতি",
-    "image": "/assets/chapters/chapter-4.png",
+    "title": "নদী ও পানি প্রবাহ অঞ্চল",
+    "image": "/assets/chapters/chapter-4.webp",
     "borderColor": "#fca5a5",
     "glowColor": "rgba(252,165,165,0.35)"
   },
   {
     "id": 5,
-    "title": "স্কুলের আগাম দুর্যোগ প্রস্তুতি",
-    "image": "/assets/chapters/chapter-5.png",
+    "title": "বন্যা",
+    "image": "/assets/chapters/chapter-5.webp",
     "borderColor": "#f97316",
     "glowColor": "rgba(249,115,22,0.35)"
   },
   {
     "id": 6,
-    "title": "প্রাথমিক সতর্কীকরণ",
-    "image": "/assets/chapters/chapter-6.png",
-    "borderColor": "#a78bfa",
-    "glowColor": "rgba(167,139,250,0.35)"
+    "title": "স্কুলের দুর্যোগ ব্যবস্থাপনা কমিটি",
+    "image": "/assets/chapters/chapter-6.webp",
+    "borderColor": "#38bdf8",
+    "glowColor": "rgba(56,189,248,0.35)"
   },
   {
     "id": 7,
-    "title": "দুর্যোগ ঝুঁকি নিরূপণ ও ম্যাপিং",
-    "image": "/assets/chapters/chapter-7.png",
-    "borderColor": "#fca5a5",
-    "glowColor": "rgba(252,165,165,0.35)"
+    "title": "স্কুলের ঝুঁকি নিরূপণ",
+    "image": "/assets/chapters/chapter-7.webp",
+    "borderColor": "#f472b6",
+    "glowColor": "rgba(244,114,182,0.35)"
   },
   {
     "id": 8,
-    "title": "জলবায়ু পরিবর্তন",
-    "image": "/assets/chapters/chapter-8.png",
-    "borderColor": "#7dd3fc",
-    "glowColor": "rgba(125,211,252,0.35)"
+    "title": "স্থানীয় ও ঐতিহ্যগত জ্ঞান",
+    "image": "/assets/chapters/chapter-8.webp",
+    "borderColor": "#fbbf24",
+    "glowColor": "rgba(251,191,36,0.35)"
   },
   {
     "id": 9,
-    "title": "দুর্যোগ পরবর্তী ব্যবস্থা",
-    "image": "/assets/chapters/chapter-9.png",
-    "borderColor": "#fcd34d",
-    "glowColor": "rgba(252,211,77,0.35)"
+    "title": "ঘূর্ণিঝড়",
+    "image": "/assets/chapters/chapter-9.webp",
+    "borderColor": "#34d399",
+    "glowColor": "rgba(52,211,153,0.35)"
+  },
+  {
+    "id": 10,
+    "title": "গো-ব্যাগ",
+    "image": "/assets/chapters/chapter-10.webp",
+    "borderColor": "#a78bfa",
+    "glowColor": "rgba(167,139,250,0.35)"
   }
 ]

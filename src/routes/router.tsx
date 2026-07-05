@@ -32,7 +32,7 @@ const EnglishQuizDeficultyLevel = lazy(()=>import("../pages/EnglishVersion/Defic
 const EnglishProfile = lazy(() => import("../pages/EnglishVersion/Profile/Profile"));
 
 type QuizRouteData = {
-  subChapterId: number;
+  chapterId: number;
   difficulty: string;
 };
 
@@ -132,39 +132,39 @@ const router = createBrowserRouter([
     loader: ({ request }) => redirectToStoredLocale(request.url, "/lesson", "/en/lesson"),
   },
   {
-    path: '/start-quiz/:subchapterId',
+    path: '/start-quiz/:chapterId',
     element: <SuspenseWrapper><StartInterface /></SuspenseWrapper>
     ,loader: ({ request }) => redirectToStoredLocale(request.url, "/start-quiz", "/en/start-quiz"),
   },
   {
-    path: '/en/start-quiz/:subchapterId',
+    path: '/en/start-quiz/:chapterId',
     element: <SuspenseWrapper><EnglishStartInterface /></SuspenseWrapper>
     ,loader: ({ request }) => redirectToStoredLocale(request.url, "/start-quiz", "/en/start-quiz"),
   },
   {
-    path: "/select-difficulty/:subchapterId",
+    path: "/select-difficulty/:chapterId",
     element: <SuspenseWrapper><Deficulty /></SuspenseWrapper>
     ,loader: ({ request }) => redirectToStoredLocale(request.url, "/select-difficulty", "/en/select-difficulty"),
   },
   {
-    path: "/en/select-difficulty/:subchapterId",
+    path: "/en/select-difficulty/:chapterId",
     element: <SuspenseWrapper><EnglishQuizDeficultyLevel /></SuspenseWrapper>
     ,loader: ({ request }) => redirectToStoredLocale(request.url, "/select-difficulty", "/en/select-difficulty"),
   },
   {
-    path: "/quiz/:subchapterId/:difficulty",
+    path: "/quiz/:chapterId/:difficulty",
     element: <SuspenseWrapper><Quiz /></SuspenseWrapper>,
     loader: async ({ request, params }) => {
       const localeRedirect = redirectToStoredLocale(request.url, "/quiz", "/en/quiz");
       if (localeRedirect) return localeRedirect;
       const response = await fetch('/quiz.json');
 
-      const { subchapterId, difficulty } = params;
-      const targetSubchapterId = Number(subchapterId) === 5 ? 14 : Number(subchapterId);
+      const { chapterId, difficulty } = params;
+      const targetChapterId = Number(chapterId);
       const quizData = await response.json() as QuizRouteData[];
       const filteredQuizData = quizData.filter((quiz) => {
         return (
-          quiz.subChapterId === targetSubchapterId &&
+          quiz.chapterId === targetChapterId &&
           quiz.difficulty === difficulty
         );
       });
@@ -173,19 +173,19 @@ const router = createBrowserRouter([
     }
   },
   {
-    path: "/en/quiz/:subchapterId/:difficulty",
+    path: "/en/quiz/:chapterId/:difficulty",
     element: <SuspenseWrapper><Quiz /></SuspenseWrapper>,
     loader: async ({ request, params }) => {
       const localeRedirect = redirectToStoredLocale(request.url, "/quiz", "/en/quiz");
       if (localeRedirect) return localeRedirect;
 
-      const { subchapterId, difficulty } = params;
-      const targetSubchapterId = Number(subchapterId) === 5 ? 14 : Number(subchapterId);
+      const { chapterId, difficulty } = params;
+      const targetChapterId = Number(chapterId);
       const response = await fetch('/quiz.en.json');
       const quizData = await response.json() as QuizRouteData[];
       const filteredQuizData = quizData.filter((quiz) => {
         return (
-          quiz.subChapterId === targetSubchapterId &&
+          quiz.chapterId === targetChapterId &&
           quiz.difficulty === difficulty
         );
       });

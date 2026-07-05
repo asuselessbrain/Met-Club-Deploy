@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import bgImage from "../../../assets/images/start-journey-page-bg.jpeg";
 import { MatchQuestion, CategorizeQuestion } from "./DragDropMobile";
-import { Link, useLoaderData, useSearchParams } from "react-router";
+import { Link, useLoaderData, useParams } from "react-router";
 import TopNav from "../../../components/Shared/TopBar";
 import BottomNav from "../../../components/Shared/BottomNav";
 import type { FillBlanksQuestionProps, HotspotQuestionProps, ImageSelectionQuestionProps, MCQQuestionProps, QuestionRendererProps, QuizAnswer, QuizAnswers, QuizProps, QuizQuestion, SequenceQuestionProps, TrueFalseQuestionProps, PuzzleQuestionProps } from "../../../types";
@@ -10,7 +10,6 @@ import useAxiosProtected from "../../../hooks/axiosProtected";
 import { getStoredLocale } from "../../../utils/language";
 
 // simple translator helper for this file — read stored locale on each call
-const locale = getStoredLocale();
 const t = (bn: string, en: string) => (getStoredLocale() === "en" ? en : bn);
 
 const isNonArrayObject = (
@@ -196,7 +195,7 @@ export function HotspotQuestion({ q, answer, onChange }: HotspotQuestionProps) {
             </div>
 
             {/* ── নতুন: limit পূর্ণ হলে feedback banner ── */}
-                    {isFull && (
+            {isFull && (
                 <div
                     className={`flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-medium border ${allCorrect
                         ? "bg-green-50 border-green-200 text-green-700"
@@ -216,6 +215,7 @@ export function HotspotQuestion({ q, answer, onChange }: HotspotQuestionProps) {
 export function TrueFalseQuestion({ q, answer, onChange }: TrueFalseQuestionProps) {
     const selectedAnswer = typeof answer === "string" ? answer : null;
     const isCorrect = selectedAnswer === q.correctAnswer;
+    const locale = getStoredLocale();
 
     return (
         <div className="flex flex-col gap-5">
@@ -289,7 +289,7 @@ export function TrueFalseQuestion({ q, answer, onChange }: TrueFalseQuestionProp
                 </div>
 
                 {/* ── Feedback banner ── */}
-                        {selectedAnswer && (
+                {selectedAnswer && (
                     <div
                         className={`flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-medium border ${isCorrect
                             ? "bg-green-50 border-green-200 text-green-700"
@@ -317,7 +317,8 @@ function FillBlanksQuestion({ q, answer, onChange }: FillBlanksQuestionProps) {
         : [];
 
     // statement এ যেকোনো সংখ্যক _ (underscore) থাকলে সেটা দিয়ে parts বানাই
-    const parts = q.statement.split(/_+/);
+    const statement = q.statement || q.question || "";
+    const parts = statement.split(/_+/);
 
     // বাক্যে যতবার ভাঙা হয়েছে, তার চেয়ে ১ কম হবে আমাদের আসল শূন্যস্থান সংখ্যা
     const expectedBlankCount = parts.length - 1;
@@ -578,7 +579,8 @@ function ImageSelectionQuestion({ q, answer, onChange }: ImageSelectionQuestionP
 // 6. MCQ
 function MCQQuestion({ q, answer, onChange }: MCQQuestionProps) {
     const selectedAnswer = typeof answer === "string" ? answer : null;
-    const letters = ["ক", "খ", "গ", "ঘ"];
+    const locale = getStoredLocale();
+    const letters = locale === "en" ? ["A", "B", "C", "D"] : ["ক", "খ", "গ", "ঘ"];
     const isCorrect = selectedAnswer === q.correctAnswer;
 
     return (
@@ -1063,7 +1065,7 @@ const checkIsCorrect = (q: QuizQuestion, userAnswer: QuizAnswer) => {
 
 const getQuestionPrompt = (question: QuizQuestion) => {
     if (question.type === "fill_in_the_blanks") {
-        return question.statement;
+        return question.statement || question.question || "";
     }
     return question.question;
 };
@@ -1112,7 +1114,7 @@ export default function Quiz({ onFinish }: QuizProps) {
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     const quizQuestions = useLoaderData() as QuizQuestion[];
-    const [searchParams] = useSearchParams();
+    const { chapterId } = useParams();
     const axios = useAxiosProtected();
 
     // stable setter that doesn't depend on the current question object
@@ -1125,16 +1127,18 @@ export default function Quiz({ onFinish }: QuizProps) {
     if (!quizQuestions || !Array.isArray(quizQuestions) || quizQuestions.length === 0) {
         return (
             <div className="min-h-[40vh] flex items-center justify-center p-6">
-                <p className="text-gray-700 text-center">{t("কোন প্রশ্ন পাওয়া যায়নি — সাবচ্যাপ্টার বা ডিফিকালটি সঠিক আছে কিনা পরীক্ষা করুন।", "No quiz found — please check subchapter and difficulty parameters.")}</p>
+                <p className="text-gray-700 text-center">{t("কোন প্রশ্ন পাওয়া যায়নি — অধ্যায় বা ডিফিকালটি সঠিক আছে কিনা পরীক্ষা করুন।", "No quiz found — please check chapter and difficulty parameters.")}</p>
             </div>
         );
     }
 
-    const chapterId = searchParams.get("subchapterId");
-
+    console.log(chapterId)
     const TOTAL = quizQuestions.length;
 
     const q = quizQuestions[current];
+    const handleCurrentAnswer = useCallback((val: QuizAnswer) => {
+        handleAnswer(q.id, val);
+    }, [handleAnswer, q.id]);
     const answer = answers[q.id] ?? null;
     const isAnswered = answer !== null && answer !== undefined &&
         !(Array.isArray(answer) && answer.length === 0) &&
@@ -1255,7 +1259,7 @@ export default function Quiz({ onFinish }: QuizProps) {
 
                                         {/* যদি সব উত্তর সঠিক হয়! */}
                                         {wrongCount === 0 && (
-                                                <div className="text-center py-10">
+                                            <div className="text-center py-10">
                                                 <span className="text-6xl block mb-4">🌟</span>
                                                 <h3 className="text-2xl font-bold text-green-600">{t("বাহ! তোমার সব উত্তর সঠিক হয়েছে!", "Wow! All your answers are correct!")}</h3>
                                             </div>
@@ -1352,7 +1356,7 @@ export default function Quiz({ onFinish }: QuizProps) {
                                 >
                                     <QuestionHeader title={q.title} qNum={current + 1} total={TOTAL} audioUrl={q.audio} text="প্রশ্ন" />
                                     <div className="flex flex-col gap-4 px-5 py-5">
-                                        <QuestionRenderer q={q} answer={answer} onChange={(val) => handleAnswer(q.id, val)} />
+                                        <QuestionRenderer q={q} answer={answer} onChange={handleCurrentAnswer} />
                                     </div>
                                 </div>
                             </div>

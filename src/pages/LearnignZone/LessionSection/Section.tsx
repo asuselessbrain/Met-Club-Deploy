@@ -25,6 +25,7 @@ export default function Section() {
   const [sections, setSections] = useState<LessonSection[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
+  const [isCompleted, setIsCompleted] = useState(false);
   const axios = useAxiosProtected();
   const navigateToQuiz = useNavigate();
   const { chapterId } = useParams();
@@ -90,13 +91,12 @@ export default function Section() {
     };
   }, [axios, chapterId]);
 
-  console.log(sections);
-
   useEffect(() => {
     const isChapterFinished = async () => {
       if (!chapterId) return;
       const res = await axios.get(`/user/chapter-completion-status/${chapterId}`);
       if (res.data.data) {
+        setIsCompleted(true);
         setShowModal(true);
       }
     };
@@ -125,6 +125,10 @@ export default function Section() {
     if (current < TOTAL - 1) {
       navigate(1);
     } else {
+      if (isCompleted) {
+        navigateToQuiz(`/start-quiz/${chapterId}`);
+        return;
+      }
       setIsPending(true);
       try {
         const res = await axios.patch(`/user/update-chapter-completion/${chapterId}`);

@@ -71,7 +71,8 @@ export interface TrueFalseQuestionData extends BaseQuestion {
 
 export interface FillBlankQuestionData extends BaseQuestion {
     type: "fill_in_the_blanks";
-    statement: string;
+    statement?: string;
+    question?: string;
     options: string[];
     correctAnswer: string;
 }

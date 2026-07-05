@@ -5,7 +5,7 @@ import { getLocalizedPath, getStoredLocale } from "../../../utils/language";
 import { useLocaleRouteSync } from "../../../hooks/useLocaleRouteSync";
 
 export default function StartInterface() {
-    const { subchapterId } = useParams();
+    const { chapterId } = useParams();
     const locale = getStoredLocale();
     useLocaleRouteSync("/start-quiz", "/en/start-quiz");
 
@@ -114,7 +114,7 @@ export default function StartInterface() {
                                 </p>
 
                                 <p className="font-bold text-gray-600">Let’s see what happens!</p>
-                                <Link to={getLocalizedPath(`/select-difficulty/${subchapterId}`, locale)} className="w-full">
+                                <Link to={getLocalizedPath(`/select-difficulty/${chapterId}`, locale)} className="w-full">
                                     <button
                                         className="w-full flex items-center justify-center gap-2 py-4 rounded-2xl font-bold text-white text-lg transition-all duration-300 active:scale-95 hover:scale-[1.02] cursor-pointer"
                                         style={{

@@ -1,65 +1,72 @@
 [
   {
     "id": 1,
-    "title": "Weather and Climate",
-    "image": "/assets/chapters/chapter-1.png",
+    "title": "Weather and Climate Concept",
+    "image": "/assets/chapters/chapter-1.webp",
     "borderColor": "#a78bfa",
     "glowColor": "rgba(167,139,250,0.35)"
   },
   {
     "id": 2,
-    "title": "Water and Weather-related Disasters",
-    "image": "/assets/chapters/chapter-2.png",
+    "title": "Weather Uncertainty",
+    "image": "/assets/chapters/chapter-2.webp",
     "borderColor": "#7dd3fc",
     "glowColor": "rgba(125,211,252,0.35)"
   },
   {
     "id": 3,
-    "title": "Geological and Volcanic Disasters",
-    "image": "/assets/chapters/chapter-3.png",
+    "title": "Water Cycle",
+    "image": "/assets/chapters/chapter-3.webp",
     "borderColor": "#86efac",
     "glowColor": "rgba(134,239,172,0.35)"
   },
   {
     "id": 4,
-    "title": "Disaster Preparedness",
-    "image": "/assets/chapters/chapter-4.png",
+    "title": "River and Water Flow Region",
+    "image": "/assets/chapters/chapter-4.webp",
     "borderColor": "#fca5a5",
     "glowColor": "rgba(252,165,165,0.35)"
   },
   {
     "id": 5,
-    "title": "School Disaster Preparedness",
-    "image": "/assets/chapters/chapter-5.png",
+    "title": "Flood",
+    "image": "/assets/chapters/chapter-5.webp",
     "borderColor": "#f97316",
     "glowColor": "rgba(249,115,22,0.35)"
   },
   {
     "id": 6,
-    "title": "Early Warning",
-    "image": "/assets/chapters/chapter-6.png",
-    "borderColor": "#a78bfa",
-    "glowColor": "rgba(167,139,250,0.35)"
+    "title": "School Disaster Management Committee",
+    "image": "/assets/chapters/chapter-6.webp",
+    "borderColor": "#38bdf8",
+    "glowColor": "rgba(56,189,248,0.35)"
   },
   {
     "id": 7,
-    "title": "Disaster Risk Assessment and Mapping",
-    "image": "/assets/chapters/chapter-7.png",
-    "borderColor": "#fca5a5",
-    "glowColor": "rgba(252,165,165,0.35)"
+    "title": "School Hazard Assessment",
+    "image": "/assets/chapters/chapter-7.webp",
+    "borderColor": "#f472b6",
+    "glowColor": "rgba(244,114,182,0.35)"
   },
   {
     "id": 8,
-    "title": "Climate Change",
-    "image": "/assets/chapters/chapter-8.png",
-    "borderColor": "#7dd3fc",
-    "glowColor": "rgba(125,211,252,0.35)"
+    "title": "Local and Traditional Knowledge",
+    "image": "/assets/chapters/chapter-8.webp",
+    "borderColor": "#fbbf24",
+    "glowColor": "rgba(251,191,36,0.35)"
   },
   {
     "id": 9,
-    "title": "Post-Disaster Management",
-    "image": "/assets/chapters/chapter-9.png",
-    "borderColor": "#fcd34d",
-    "glowColor": "rgba(252,211,77,0.35)"
+    "title": "Cyclone",
+    "image": "/assets/chapters/chapter-9.webp",
+    "borderColor": "#34d399",
+    "glowColor": "rgba(52,211,153,0.35)"
+  },
+  {
+    "id": 10,
+    "title": "Go-Bag",
+    "image": "/assets/chapters/chapter-10.webp",
+    "borderColor": "#a78bfa",
+    "glowColor": "rgba(167,139,250,0.35)"
   }
 ]

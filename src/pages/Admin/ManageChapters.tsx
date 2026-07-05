@@ -1,9 +1,9 @@
 import { FiEdit2, FiTrash2 } from "react-icons/fi";
 
 const dummyChapters = [
-  { id: 1, title: "সূচনা পর্ব", subchapters: 3, status: "প্রকাশিত" },
-  { id: 2, title: "ডিজিটাল লিটারেসি", subchapters: 5, status: "প্রকাশিত" },
-  { id: 3, title: "অনলাইন নিরাপত্তা", subchapters: 2, status: "খসড়া" },
+  { id: 1, title: "সূচনা পর্ব", status: "প্রকাশিত" },
+  { id: 2, title: "ডিজিটাল লিটারেসি", status: "প্রকাশিত" },
+  { id: 3, title: "অনলাইন নিরাপত্তা", status: "খসড়া" },
 ];
 
 export default function ManageChapters() {
@@ -43,7 +43,6 @@ export default function ManageChapters() {
             <tr className="border-b border-gray-300/50">
               <th className="p-3 font-semibold text-gray-700">আইডি</th>
               <th className="p-3 font-semibold text-gray-700">শিরোনাম</th>
-              <th className="p-3 font-semibold text-gray-700">সাব-অধ্যায়</th>
               <th className="p-3 font-semibold text-gray-700">স্ট্যাটাস</th>
               <th className="p-3 font-semibold text-gray-700 text-right">অ্যাকশন</th>
             </tr>
@@ -53,7 +52,6 @@ export default function ManageChapters() {
               <tr key={chapter.id} className="border-b border-gray-300/20 hover:bg-white/20 transition-colors">
                 <td className="p-3 text-gray-800">#{chapter.id}</td>
                 <td className="p-3 font-medium text-gray-900">{chapter.title}</td>
-                <td className="p-3 text-gray-700">{chapter.subchapters}</td>
                 <td className="p-3">
                   <span
                     className={`px-3 py-1 rounded-full text-xs font-bold ${

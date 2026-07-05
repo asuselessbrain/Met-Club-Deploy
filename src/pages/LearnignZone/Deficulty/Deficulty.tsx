@@ -52,11 +52,11 @@ const chaptersPromise = fetchChapters();
 
 export default function Deficulty() {
 
-    const { subchapterId } = useParams();
+    const { chapterId } = useParams();
 
     const chapters = use(chaptersPromise);
 
-    const topic = chapters.find((c) => c.id === Number(subchapterId));
+    const topic = chapters.find((c) => c.id === Number(chapterId));
 
     const [quizLevel, setQuizLevel] = useState<"easy" | "medium" | "hard" | null>(null);
 
@@ -64,12 +64,12 @@ export default function Deficulty() {
 
     useEffect(() => {
         const quizLevel = async () => {
-            const res = await axios.get(`/user/quiz-level-info/${subchapterId}`);
+            const res = await axios.get(`/user/quiz-level-info/${chapterId}`);
             setQuizLevel(res.data.data);
         };
         quizLevel();
 
-    }, [axios, subchapterId])
+    }, [axios, chapterId])
 
     const isLocked = (key: string) => {
         if (quizLevel === null) return key === "medium" || key === "hard";
@@ -116,8 +116,10 @@ export default function Deficulty() {
                     style={{ letterSpacing: "0.06em" }}
                 >
                     কঠিনতার স্তর নির্বাচন করুন:&nbsp;
-                    <span style={{ color: "#b91c1c", textShadow:
-                "-0.6px -0.6px 0 rgba(255,255,255,0.95), 0.6px -0.6px 0 rgba(255,255,255,0.95), -0.6px 0.6px 0 rgba(255,255,255,0.95), 0.6px 0.6px 0 rgba(255,255,255,0.95), 0 2px 8px rgba(127,29,29,0.18)", }}>{topic?.title}</span>
+                    <span style={{
+                        color: "#b91c1c", textShadow:
+                            "-0.6px -0.6px 0 rgba(255,255,255,0.95), 0.6px -0.6px 0 rgba(255,255,255,0.95), -0.6px 0.6px 0 rgba(255,255,255,0.95), 0.6px 0.6px 0 rgba(255,255,255,0.95), 0 2px 8px rgba(127,29,29,0.18)",
+                    }}>{topic?.title}</span>
                 </p>
 
                 {/* ── Topic card ── */}
@@ -140,7 +142,7 @@ export default function Deficulty() {
                     {/* Topic illustration — replace emoji with <img> when you have the asset */}
                     <div
                         className="w-32 h-32 rounded-xl flex items-center justify-center"
-                        style={{ background: "rgba(252,165,165,0.16)", fontSize: 72 }}
+                        style={{ fontSize: 72 }}
                     >
                         {/* 👇 Swap this with your actual image:*/}
                         <img src={topic?.image} alt={topic?.title} className="w-full h-full object-contain" />
@@ -182,7 +184,7 @@ export default function Deficulty() {
                             <div key={d.key} className={`btn-${idx + 1}`}>
                                 {locked
                                     ? btn
-                                    : <Link to={`/quiz/${subchapterId}/${d.key}`}>{btn}</Link>}
+                                    : <Link to={`/quiz/${chapterId}/${d.key}`}>{btn}</Link>}
                             </div>
                         );
                     })}
