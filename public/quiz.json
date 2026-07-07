@@ -2461,7 +2461,7 @@
         "chapterId": 7,
         "difficulty": "hard",
         "type": "true_false",
-        "title": "প্রশ্ন ১২: সত্য না মিথ্যা বলো",
+        "title": "প্রশ্ন ১১: সত্য না মিথ্যা বলো",
         "description": "একটি বাক্য দেওয়া আছে: 'শুধু একবার ঝুঁকি খুঁজলেই হয়। তারপর আর দেখার দরকার নেই।'",
         "question": "এই কথাটা কি ঠিক?",
         "options": [
@@ -2469,15 +2469,14 @@
             "মিথ্যা"
         ],
         "correctAnswer": "মিথ্যা",
-        "image": "/assets/images/chapter7/hardQuiz22.jpeg",
-        "audio": "/assets/audios/chapter-7/hardQuiz22.mp3"
+        "audio": null
     },
     {
         "id": 103,
         "chapterId": 7,
         "difficulty": "hard",
         "type": "drag_drop_categorize",
-        "title": "প্রশ্ন ১৩: টেনে আনো আর মেলাও",
+        "title": "প্রশ্ন ১২: টেনে আনো আর মেলাও",
         "description": "ছয়টি বিবৃতি এবং তিনটি বক্স (ঝুঁকিপূর্ণ, নিরাপদ, নিরাপত্তা ব্যবস্থা) দেওয়া আছে।",
         "question": "কোন বিবৃতিটি কোন বক্সে যাবে? টেনে সঠিক বক্সে মেলাও।",
         "itemsToCategorize": [
@@ -2526,14 +2525,14 @@
             ]
         },
         "image": null,
-        "audio": "/assets/audios/chapter-7/hardQuiz23.mp3"
+        "audio": null
     },
     {
         "id": 104,
         "chapterId": 7,
         "difficulty": "hard",
         "type": "mcq",
-        "title": "প্রশ্ন ১৪: গল্পের ঘটনা শনাক্ত করো",
+        "title": "প্রশ্ন ১৩: গল্পের ঘটনা শনাক্ত করো",
         "description": "গল্পের তিনটি প্যানেল। প্যানেল ১: জারিন আর নাজিহা সিঁড়ির ভাঙা ধাপ দেখছে, নাজিহা চেকলিস্টে লিখছে। প্যানেল ২: শিক্ষক স্কুলের ছবিতে লাল আর সবুজ মার্কার দিচ্ছেন। প্যানেল ৩: জারিন আর নাজিহা প্রধান শিক্ষকের সামনে দাঁড়িয়ে রিপোর্ট দিচ্ছে।",
         "question": "কোন প্যানেলে ঝুঁকি শনাক্ত করা, কোনটিতে ঝুঁকি চিহ্নিত করা আর কোনটিতে রিপোর্ট করা দেখানো হয়েছে?",
         "options": [
@@ -2543,17 +2542,17 @@
             "প্যানেল ১-শনাক্ত, প্যানেল ২-রিপোর্ট, প্যানেল ৩-চিহ্নিত"
         ],
         "correctAnswer": "প্যানেল ১-শনাক্ত, প্যানেল ২-চিহ্নিত, প্যানেল ৩-রিপোর্ট",
-        "image": "/assets/images/chapter7/hardQuiz24.jpeg",
-        "audio": "/assets/audios/chapter-7/hardQuiz24.mp3"
+        "image": "/assets/images/chapter7/E-7_Q-13.png",
+        "audio": null
     },
     {
         "id": 105,
         "chapterId": 7,
         "difficulty": "hard",
         "type": "fill_in_the_blanks",
-        "title": "প্রশ্ন ১৫: খালি জায়গা পূরণ করো",
+        "title": "প্রশ্ন ১৪: খালি জায়গা পূরণ করো",
         "description": "একটি ছবি দেওয়া আছে। ছবিতে স্কুলের গেটের কাছে একটি স্পিড ব্রেকার বসানো হয়েছে।",
-        "statement": "ゲটের কাছে দ্রুতগামী গাড়ির ঝুঁকি কমাতে ____ বসানো হয়।",
+        "statement": "গেটের কাছে দ্রুতগামী গাড়ির ঝুঁকি কমাতে ____ বসানো হয়।",
         "options": [
             "ট্রাফিক সিগন্যাল",
             "স্পিড ব্রেকার",
@@ -2561,30 +2560,26 @@
             "জেব্রা ক্রসিং"
         ],
         "correctAnswer": "স্পিড ব্রেকার",
-        "image": "/assets/images/chapter7/hardQuiz25.jpeg",
-        "audio": "/assets/audios/chapter-7/hardQuiz25.mp3"
+        "image": "/assets/images/chapter7/E-7_Q-14.png",
+        "audio": null
     },
     {
         "id": 106,
         "chapterId": 8,
         "difficulty": "easy",
-        "type": "hotspot",
-        "title": "প্রশ্ন ১: ছবিতে ক্লিক করো",
-        "description": "একটি ছবি দেওয়া আছে। ছবিতে দেখা যাচ্ছে—গরুর পাল একসাথে ডাকছে, অস্থির হয়ে উঠছে। তারা কিছুতেই ঘরে ফিরতে চাইছে না।",
-        "question": "ছবির কোন অংশ দেখে তুমি বুঝতে পারছ যে বড় ঝড় আসতে পারে? সঠিক জায়গায় ক্লিক করে টিক চিহ্ন দাও।",
-        "hotspots": [
-            {
-                "id": "cows_herd",
-                "label": "গরুর পাল",
-                "x": 50,
-                "y": 50
-            }
+        "type": "mcq",
+        "title": "প্রশ্ন ১: ছবি দেখে খবর তৈরি করো",
+        "description": "একটি ছবি দেওয়া আছে। ছবিতে স্যাটেলাইট ভাইয়া আকাশের দিকে তাকিয়ে আছেন। তার হাতে একটি ট্যাব, যাতে মেঘের ছবি দেখা যাচ্ছে। পাশে দাদি দাঁড়িয়ে আছেন, তিনি হাত দিয়ে গরুর পাল দেখাচ্ছেন।",
+        "question": "ছবিতে কী ঘটছে?",
+        "options": [
+            "দাদি আর স্যাটেলাইট ভাইয়া ঝগড়া করছে",
+            "দাদি আর স্যাটেলাইট ভাইয়া দুজন মিলে আবহাওয়া বুঝতে চেষ্টা করছে",
+            "স্যাটেলাইট ভাইয়া দাদিকে বকছেন",
+            "দাদি স্যাটেলাইট ভাইয়াকে চা খাওয়াচ্ছেন"
         ],
-        "correctAnswer": [
-            "cows_herd"
-        ],
-        "image": "/assets/images/chapter8/easyQuiz1.jpeg",
-        "audio": "/assets/audios/chapter-8/easyQuiz1.mp3"
+        "correctAnswer": "দাদি আর স্যাটেলাইট ভাইয়া দুজন মিলে আবহাওয়া বুঝতে চেষ্টা করছে",
+        "image": "/assets/images/chapter8/E-8_Q-1.png",
+        "audio": null
     },
     {
         "id": 107,
@@ -2593,14 +2588,14 @@
         "type": "true_false",
         "title": "প্রশ্ন ২: সত্য না মিথ্যা বলো",
         "description": "একটি ছবি দেওয়া আছে। ছবিতে পিঁপড়ার দল ডিম নিয়ে উঁচু জায়গায় যাচ্ছে।",
-        "question": "\"পিঁপড়ারা ডিম নিয়ে উঁচু জায়গায় যাচ্ছে মানে বন্যা আসছে।\"",
+        "question": "\"পিঁপড়ারা ডিম নিয়ে উঁচু জায়গায় যাচ্ছে মানে বন্যা আসছে।\"",
         "options": [
             "সত্য",
             "মিথ্যা"
         ],
         "correctAnswer": "সত্য",
-        "image": "/assets/images/chapter8/easyQuiz2.jpeg",
-        "audio": "/assets/audios/chapter-8/easyQuiz2.mp3"
+        "image": "/assets/images/chapter8/E-8_Q-2.png",
+        "audio": null
     },
     {
         "id": 108,
@@ -2617,8 +2612,8 @@
             "শীত"
         ],
         "correctAnswer": "ঝড়",
-        "image": "/assets/images/chapter8/easyQuiz3.jpeg",
-        "audio": "/assets/audios/chapter-8/easyQuiz3.mp3"
+        "image": "/assets/images/chapter8/E-8_Q-3.png",
+        "audio": null
     },
     {
         "id": 109,
@@ -2632,17 +2627,17 @@
             {
                 "id": "white_clouds",
                 "label": "সাদা পালকের মতো মেঘ",
-                "image": "/assets/images/chapter8/easyQuiz4.1.jpeg"
+                "image": "/assets/images/chapter8/E-8_Q-4.1.png"
             },
             {
                 "id": "black_clouds",
-                "label": "কালো পাহাড়ের মতো মেঘ",
-                "image": "/assets/images/chapter8/easyQuiz4.2.jpeg"
+                "label": "কালো পাহাড়ের মতো মেঘ",
+                "image": "/assets/images/chapter8/E-8_Q-4.2.png"
             }
         ],
         "correctAnswer": "white_clouds",
         "image": null,
-        "audio": "/assets/audios/chapter-8/easyQuiz4.mp3"
+        "audio": null
     },
     {
         "id": 110,
@@ -2677,7 +2672,7 @@
             "L3": "বাসা ছেড়ে দল বেঁধে উঁচুতে চলে যায়"
         },
         "image": null,
-        "audio": "/assets/audios/chapter-8/easyQuiz5.mp3"
+        "audio": null
     },
     {
         "id": 111,
@@ -2686,7 +2681,7 @@
         "type": "fill_in_the_blanks",
         "title": "প্রশ্ন ৬: খালি জায়গা পূরণ করো",
         "description": "একটি ছবি দেওয়া আছে। ছবিতে স্যাটেলাইট ভাইয়া ও দাদু পাশাপাশি বসে আছেন। টেবিলের ওপর একটি স্যাটেলাইটের ছবি আর একটি খাতা রাখা।",
-        "statement": "দাদু বলেন, প্রকৃতিই আমাদের সবচেয়ে বড় ____।",
+        "statement": "দাদি বলেন, প্রকৃতিই আমাদের সবচেয়ে বড় ____।",
         "options": [
             "স্যাটেলাইট",
             "মোবাইল",
@@ -2694,8 +2689,8 @@
             "রেডিও"
         ],
         "correctAnswer": "স্যাটেলাইট",
-        "image": "/assets/images/chapter8/medQuiz12.jpeg",
-        "audio": "/assets/audios/chapter-8/medQuiz12.mp3"
+        "image": "/assets/images/chapter8/E-8_Q-6.png",
+        "audio": null
     },
     {
         "id": 112,
@@ -2710,8 +2705,8 @@
             "মিথ্যা"
         ],
         "correctAnswer": "মিথ্যা",
-        "image": "/assets/images/chapter8/medQuiz13.jpeg",
-        "audio": "/assets/audios/chapter-8/medQuiz13.mp3"
+        "image": "/assets/images/chapter8/E-8_Q-7.png",
+        "audio": null
     },
     {
         "id": 113,
@@ -2769,8 +2764,8 @@
             "কেউ কিছু করছে না"
         ],
         "correctAnswer": "স্যাটেলাইটের তথ্য আর দাদুর জ্ঞান—দুটো একসাথে মানুষকে সাবধান করছে",
-        "image": "/assets/images/chapter8/medQuiz15.jpeg",
-        "audio": "/assets/audios/chapter-8/medQuiz15.mp3"
+        "image": "/assets/images/chapter8/E-8_Q-9.png",
+        "audio": null
     },
     {
         "id": 115,
@@ -2820,8 +2815,8 @@
             "মিথ্যা"
         ],
         "correctAnswer": "মিথ্যা",
-        "image": "/assets/images/chapter8/hardQuiz22.jpeg",
-        "audio": "/assets/audios/chapter-8/hardQuiz22.mp3"
+        "image": "/assets/images/chapter8/E-8_Q-11.png",
+        "audio": null
     },
     {
         "id": 117,
@@ -2872,7 +2867,7 @@
             ]
         },
         "image": null,
-        "audio": "/assets/audios/chapter-8/hardQuiz23.mp3"
+        "audio": null
     },
     {
         "id": 118,
@@ -2889,8 +2884,8 @@
             "প্যানেল ১-ঐতিহ্যগত জ্ঞান, প্যানেল ২-সমন্বয়, প্যানেল ৩-আধুনিক প্রযুক্তি"
         ],
         "correctAnswer": "প্যানেল ১-ঐতিহ্যগত জ্ঞান, প্যানেল ২-আধুনিক প্রযুক্তি, প্যানেল ৩-সমন্বয়",
-        "image": "/assets/images/chapter8/hardQuiz24.jpeg",
-        "audio": "/assets/audios/chapter-8/hardQuiz24.mp3"
+        "image": "/assets/images/chapter8/E-8_Q-13.png",
+        "audio": null
     },
     {
         "id": 119,
@@ -2906,9 +2901,9 @@
             "বিরোধ",
             "তুলনা"
         ],
-        "correctAnswer": "সমন্বয়",
-        "image": "/assets/images/chapter8/hardQuiz25.jpeg",
-        "audio": "/assets/audios/chapter-8/hardQuiz25.mp3"
+        "correctAnswer": "সমন্বয়",
+        "image": "/assets/images/chapter8/E-8_Q-14.png",
+        "audio": null
     },
     {
         "id": 120,
@@ -2925,30 +2920,26 @@
             "স্যাটেলাইট থাকলে দাদুর জ্ঞানের কোনো মূল্য নেই"
         ],
         "correctAnswer": "দরকার আছে। কারণ সব জায়গায় মোবাইল নেটওয়ার্ক বা বিদ্যুৎ নাও থাকতে পারে। তখন দাদুর জ্ঞানই কাজে দেয়।",
-        "image": "/assets/images/chapter8/hardQuiz26.jpeg",
-        "audio": "/assets/audios/chapter-8/hardQuiz26.mp3"
+        "image": "/assets/images/chapter8/E-8_Q-15.png",
+        "audio": null
     },
     {
         "id": 121,
         "chapterId": 10,
         "difficulty": "easy",
-        "type": "hotspot",
-        "title": "প্রশ্ন ১: ছবিতে ক্লিক করো",
-        "description": "একটি ছবি দেওয়া আছে। ছবিতে রহিমের পরিবারের সবাই টেবিলের চারপাশে বসে গো-ব্যাগ তৈরির জন্য তালিকা তৈরি করছে। টেবিলের ওপর কিছু জিনিসপত্র রাখা—বিস্কুট, পানির বোতল, টর্চ।",
-        "question": "ছবির কোন জিনিসটি দেখে তুমি বুঝতে পারছ যে তারা গো-ব্যাগ তৈরি করছে? সঠিক জায়গায় ক্লিক করে টিক চিহ্ন দাও।",
-        "hotspots": [
-            {
-                "id": "go_bag_on_table",
-                "label": "টেবিলের ওপর রাখা গো-ব্যাগ",
-                "x": 50,
-                "y": 50
-            }
+        "type": "mcq",
+        "title": "প্রশ্ন ১: ছবি দেখে খবর তৈরি করো",
+        "description": "একটি ছবি দেওয়া আছে। ছবিতে রহিমের বাবা আলমারি থেকে পুরনো কাগজপত্র বের করছেন। রহিম পাশে দাঁড়িয়ে তাকে সাহায্য করছে।",
+        "question": "ছবিতে কী ঘটছে?",
+        "options": [
+            "তারা খেলা করছে",
+            "তারা গো-ব্যাগের জন্য কাগজপত্র জোগাড় করছে",
+            "তারা ঘর পরিষ্কার করছে",
+            "তারা টিভি দেখছে"
         ],
-        "correctAnswer": [
-            "go_bag_on_table"
-        ],
-        "image": "/assets/images/chapter10/easyQuiz1.jpeg",
-        "audio": "/assets/audios/chapter-10/easyQuiz1.mp3"
+        "correctAnswer": "তারা গো-ব্যাগের জন্য কাগজপত্র জোগাড় করছে",
+        "image": "/assets/images/chapter10/E-10_Q-5.png",
+        "audio": null
     },
     {
         "id": 122,
@@ -2963,8 +2954,8 @@
             "মিথ্যা"
         ],
         "correctAnswer": "মিথ্যা",
-        "image": "/assets/images/chapter10/easyQuiz2.jpeg",
-        "audio": "/assets/audios/chapter-10/easyQuiz2.mp3"
+        "image": "/assets/images/chapter10/E-10_Q-1.png",
+        "audio": null
     },
     {
         "id": 123,
@@ -2981,8 +2972,8 @@
             "কাগজপত্র"
         ],
         "correctAnswer": "টর্চ",
-        "image": "/assets/images/chapter10/easyQuiz3.jpeg",
-        "audio": "/assets/audios/chapter-10/easyQuiz3.mp3"
+        "image": "/assets/images/chapter10/E-10_Q-2.png",
+        "audio": null
     },
     {
         "id": 124,
@@ -2996,12 +2987,12 @@
             {
                 "id": "watching_tv",
                 "label": "টিভি দেখার ছবি",
-                "image": "/assets/images/chapter10/easyQuiz4.1.jpeg"
+                "image": "/assets/images/chapter10/E-10_Q-3.1.png"
             },
             {
                 "id": "making_gobag",
                 "label": "গো-ব্যাগ তৈরির ছবি",
-                "image": "/assets/images/chapter10/easyQuiz4.2.jpeg"
+                "image": "/assets/images/chapter10/E-10_Q-3.2.png"
             }
         ],
         "correctAnswer": "making_gobag",
@@ -3020,22 +3011,22 @@
             {
                 "id": "L1",
                 "label": "বিস্কুটের প্যাকেট",
-                "image": "/assets/images/chapter10/biscuits.png"
+                "image": "/assets/images/chapter10/E-10_Q-4.1.png"
             },
             {
                 "id": "L2",
                 "label": "পানির বোতল",
-                "image": "/assets/images/chapter10/water_bottle.png"
+                "image": "/assets/images/chapter10/E-10_Q-4.2.png"
             },
             {
                 "id": "L3",
                 "label": "টর্চ",
-                "image": "/assets/images/chapter10/torch.png"
+                "image": "/assets/images/chapter10/E-10_Q-4.3.png"
             },
             {
                 "id": "L4",
                 "label": "জন্ম সনদ",
-                "image": "/assets/images/chapter10/certificate.png"
+                "image": "/assets/images/chapter10/E-10_Q-4.4.png"
             }
         ],
         "rightItems": [
@@ -3051,7 +3042,7 @@
             "L4": "কাগজপত্র"
         },
         "image": null,
-        "audio": "/assets/audios/chapter-10/easyQuiz5.mp3"
+        "audio": null
     },
     {
         "id": 126,
@@ -3068,8 +3059,8 @@
             "চামড়ার"
         ],
         "correctAnswer": "প্লাস্টিকের",
-        "image": "/assets/images/chapter10/medQuiz12.jpeg",
-        "audio": "/assets/audios/chapter-10/medQuiz12.mp3"
+        "image": "/assets/images/chapter10/E-10_Q-6.png",
+        "audio": null
     },
     {
         "id": 127,
@@ -3084,8 +3075,8 @@
             "মিথ্যা"
         ],
         "correctAnswer": "মিথ্যা",
-        "image": "/assets/images/chapter10/medQuiz13.jpeg",
-        "audio": "/assets/audios/chapter-10/medQuiz13.mp3"
+        "image": "/assets/images/chapter10/E-10_Q-7.png",
+        "audio": null
     },
     {
         "id": 128,
@@ -3135,7 +3126,7 @@
             ]
         },
         "image": null,
-        "audio": "/assets/audios/chapter-10/medQuiz14.mp3"
+        "audio": null
     },
     {
         "id": 129,
@@ -3152,8 +3143,8 @@
             "কারণ তার বাবা-মা বাড়িতে নেই"
         ],
         "correctAnswer": "কারণ সে জানে তাদের গো-ব্যাগ তৈরি আছে",
-        "image": "/assets/images/chapter10/medQuiz15.jpeg",
-        "audio": "/assets/audios/chapter-10/medQuiz15.mp3"
+        "image": "/assets/images/chapter10/E-10_Q-9.png",
+        "audio": null
     },
     {
         "id": 130,
@@ -3183,7 +3174,7 @@
             "C"
         ],
         "image": null,
-        "audio": "/assets/audios/chapter-10/medQuiz16.mp3"
+        "audio": null
     },
     {
         "id": 131,
@@ -3200,8 +3191,8 @@
             "১ বছর"
         ],
         "correctAnswer": "৬ মাস",
-        "image": "/assets/images/chapter10/hardQuiz25.jpeg",
-        "audio": "/assets/audios/chapter-10/hardQuiz25.mp3"
+        "image": "/assets/images/chapter10/E-10_Q-11.png",
+        "audio": null
     },
     {
         "id": 132,
@@ -3210,7 +3201,7 @@
         "type": "puzzle",
         "title": "প্রশ্ন ১২: পাজল সাজাও",
         "description": "চারটি বাক্যাংশ দেওয়া আছে।",
-        "question": "টুকরোগুলো সঠিকভাবে সাজিয়ে একটি অর্থपूर्ण বাক্য তৈরি করো।",
+        "question": "টুকরোগুলো সঠিকভাবে সাজিয়ে একটি অর্থপূর্ণ বাক্য তৈরি করো।",
         "options": [
             {
                 "id": "P1",
@@ -3236,7 +3227,7 @@
             "P4"
         ],
         "image": null,
-        "audio": "/assets/audios/chapter-10/hardQuiz27.mp3"
+        "audio": null
     },
     {
         "id": 133,
@@ -3253,8 +3244,8 @@
             "বেশি করে টাকা"
         ],
         "correctAnswer": "বেবি ফুড, ডায়াপার, বয়স্ক মানুষের প্রয়োজনীয় ওষুধ",
-        "image": "/assets/images/chapter10/hardQuiz28.jpeg",
-        "audio": "/assets/audios/chapter-10/hardQuiz28.mp3"
+        "image": "/assets/images/chapter10/E-10_Q-13.png",
+        "audio": null
     },
     {
         "id": 134,
@@ -3294,7 +3285,7 @@
             "E"
         ],
         "image": null,
-        "audio": "/assets/audios/chapter-10/hardQuiz29.mp3"
+        "audio": null
     },
     {
         "id": 135,
@@ -3311,8 +3302,8 @@
             "কারণ তার অনেক বন্ধু আছে"
         ],
         "correctAnswer": "কারণ তার পরিবার দুর্যোগ মোকাবিলায় প্রস্তুত",
-        "image": "/assets/images/chapter10/hardQuiz30.jpeg",
-        "audio": "/assets/audios/chapter-10/hardQuiz30.mp3"
+        "image": "/assets/images/chapter10/E-10_Q-15.png",
+        "audio": null
     },
     {
         "id": 136,
