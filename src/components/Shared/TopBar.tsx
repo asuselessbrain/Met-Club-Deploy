@@ -1,9 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import metClubLogo from "../../assets/images/logo_original.png";
 import { FiPlay } from "react-icons/fi";
 import useLogout from "../../hooks/useLogout";
-import { getLocalizedPath, getStoredLocale, setStoredLocale, type AppLocale } from "../../utils/language";
 
 interface TopNavProps {
     title?: string;
@@ -61,8 +60,6 @@ export default function TopNav({ title, tone = "default", brandName }: TopNavPro
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
     const navigate = useNavigate();
-    const location = useLocation();
-    const [locale, setLocale] = useState<AppLocale>(() => getStoredLocale());
     const handleLogout = useLogout();
 
     useEffect(() => {
@@ -118,7 +115,7 @@ export default function TopNav({ title, tone = "default", brandName }: TopNavPro
 
                 <div className="relative z-10 mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-0">
                     {/* LEFT LOGO */}
-                    <Link to={getLocalizedPath("/", locale)} className="relative z-10 shrink-0">
+                    <Link to="/" className="relative z-10 shrink-0">
                         <div className="flex items-center gap-2 group">
 
                             <img src={metClubLogo} alt="মেট ক্লাব লোগো" className="h-12 w-12 object-contain" />
@@ -267,7 +264,7 @@ export default function TopNav({ title, tone = "default", brandName }: TopNavPro
                                     {menuItems.map((item) => (
                                         <Link
                                             key={item.label}
-                                            to={getLocalizedPath(item.href, locale)}
+                                            to={item.href}
                                             className="flex items-center gap-3 px-4 py-2.5 transition-colors duration-150"
                                             style={{
                                                 color: "#7f1d1d",
