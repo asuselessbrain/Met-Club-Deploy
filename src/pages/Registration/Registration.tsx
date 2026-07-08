@@ -172,8 +172,8 @@ export default function Registration() {
                                     <option value="4">চতুর্থ শ্রেণি</option>
                                     <option value="5">পঞ্চম শ্রেণি</option>
                                     <option value="6">ষষ্ঠ শ্রেণি</option>
-                                    <option value="7">সাতম শ্রেণি</option>
-                                    <option value="8">আটম শ্রেণি</option>
+                                    <option value="7">সপ্তম শ্রেণি</option>
+                                    <option value="8">অষ্টম শ্রেণি</option>
                                     <option value="9">নবম শ্রেণি</option>
                                     <option value="10">দশম শ্রেণি</option>
                                     <option value="11">একাদশ শ্রেণি</option>
