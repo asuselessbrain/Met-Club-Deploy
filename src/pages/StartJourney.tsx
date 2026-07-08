@@ -127,6 +127,72 @@ export default function StartJourney() {
             />
           </div>
         </div>
+
+        {/* NASA Learning Resources Banner */}
+        <div className="mt-8 md:mt-10 w-full max-w-4xl z-10 px-2 animate-[dropIn_0.5s_ease-out]">
+          <a
+            href="https://www.nasa.gov/learning-resources/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative flex flex-col sm:flex-row items-center justify-between p-6 rounded-2xl border transition-all duration-300 hover:scale-[1.015] active:scale-[0.99] overflow-hidden"
+            style={{
+              background: "rgba(255, 255, 255, 0.16)",
+              borderColor: "rgba(255, 255, 255, 0.28)",
+              backdropFilter: "blur(24px) saturate(160%)",
+              WebkitBackdropFilter: "blur(24px) saturate(160%)",
+              boxShadow: "0 10px 30px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.3)",
+            }}
+          >
+            {/* Glass shine animation effect */}
+            <div
+              className="absolute inset-0 pointer-events-none rounded-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-300"
+              style={{
+                background: "linear-gradient(120deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.05) 50%, transparent 100%)",
+              }}
+            />
+
+            <div className="flex items-center gap-4 text-center sm:text-left flex-col sm:flex-row z-10">
+              <div className="w-14 h-14 flex items-center justify-center rounded-2xl bg-blue-950/40 border border-blue-400/30 shadow-inner flex-shrink-0">
+                <svg
+                  className="w-8 h-8 text-cyan-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M4.5 16.5c-1.5 1.26-2.5 3.19-2.5 5.5s1 4.24 2.5 5.5" />
+                  <path d="M12 2s-8 6-8 12c0 2 2 4 4 4v2l3-3 3 3v-2c2 0 4-2 4-4 0-6-8-12-8-12z" />
+                  <line x1="9" y1="15" x2="15" y2="15" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="text-xl font-black text-[#7f1d1d] flex items-center gap-2 justify-center sm:justify-start" style={{ textShadow: "0 1px 2px rgba(255,255,255,0.3)" }}>
+                  নাসা লার্নিং রিসোর্স
+                </h3>
+                <p className="text-sm text-gray-800 font-semibold mt-1">
+                  নাসার অফিশিয়াল পোর্টাল থেকে মহাকাশ, জলবায়ু ও দুর্যোগের নানা আকর্ষণীয় তথ্য এক্সপ্লোর করুন।
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-5 sm:mt-0 z-10 flex-shrink-0">
+              <span
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-white font-bold text-sm transition-all duration-200"
+                style={{
+                  background: "linear-gradient(135deg, #ef4444, #dc2626)",
+                  boxShadow: "0 4px 14px rgba(220, 38, 38, 0.4)",
+                }}
+              >
+                রিসোর্সে প্রবেশ করুন
+                <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </span>
+            </div>
+          </a>
+        </div>
       </div>
 
       {/* Dropdown animation keyframe */}

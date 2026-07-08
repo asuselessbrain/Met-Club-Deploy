@@ -1,7 +1,11 @@
 import { Target, Eye, Users, Award, MapPin, Heart, Shield, Sparkles, TrendingUp } from 'lucide-react';
 import logo from "../../../assets/images/logo_original.png";
 import Partners from '../../../components/Shared/Partners';
-import homeBg from "../../../assets/images/about-page-bg.png";
+import coverVideo from "../../../assets/videos/Drone shot for cover.mp4";
+import whatIsVideo from "../../../assets/videos/What is MET Club_.mp4";
+import activitiesVideo from "../../../assets/videos/MET Club activities and impact.mp4";
+import whatIsPoster from "../../../assets/images/what_is_poster.jpg";
+import activitiesPoster from "../../../assets/images/activities_poster.jpg";
 import startJourneyBg from "../../../assets/images/start-journey-page-bg.jpeg";
 import aboutBg from "../../../assets/images/about-page-bg.png";
 import chapterBg from "../../../assets/images/chapter-bg.png";
@@ -19,7 +23,19 @@ export default function About() {
             <TopNav title="About Us" brandName="Met Club" />
 
             {/* Hero Section */}
-            <section className="relative z-10 min-h-screen flex items-center justify-center pt-24 pb-24 bg-cover bg-bottom bg-no-repeat" style={{ backgroundImage: `url(${homeBg})` }}>
+            <section className="relative z-10 min-h-screen flex items-center justify-center pt-24 pb-24 overflow-hidden">
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover z-0"
+                >
+                    <source src={coverVideo} type="video/mp4" />
+                </video>
+                {/* Overlay for text readability */}
+                <div className="absolute inset-0 bg-black/45 z-10"></div>
+
                 <div className="relative z-20 text-center px-4 max-w-6xl mx-auto header-anim">
                     <div
                         className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 animate-slide-up delay-100"
@@ -43,9 +59,9 @@ export default function About() {
                     </div>
                 </div>
 
-                <div className="absolute top-32 left-10 text-6xl animate-float opacity-60">☀️</div>
-                <div className="absolute top-52 right-20 text-7xl animate-float-delayed opacity-60">☁️</div>
-                <div className="absolute bottom-32 left-32 text-5xl animate-float opacity-60">🌧️</div>
+                <div className="absolute top-32 left-10 text-6xl animate-float opacity-60 z-20">☀️</div>
+                <div className="absolute top-52 right-20 text-7xl animate-float-delayed opacity-60 z-20">☁️</div>
+                <div className="absolute bottom-32 left-32 text-5xl animate-float opacity-60 z-20">🌧️</div>
             </section>
 
             {/* Mission & Vision - Solid Background, Solid Cards */}
@@ -124,12 +140,28 @@ export default function About() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="flex justify-center">
-                                <div className="relative">
-                                    <div className="text-9xl animate-float"><img src={logo} alt="MET CLUB LOGO" /></div>
-                                    <div className="absolute -top-8 -right-8 text-6xl animate-float-delayed opacity-80">☀️</div>
-                                    <div className="absolute -bottom-4 -left-8 text-6xl animate-float opacity-80">🌧️</div>
-                                    <div className="absolute top-1/2 -right-12 text-6xl animate-float-delayed opacity-80">☁️</div>
+                            <div className="flex justify-center w-full">
+                                <div className="relative w-full max-w-lg">
+                                    {/* Video Wrapper */}
+                                    <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-black hover:scale-[1.02] transition-transform duration-300 z-10">
+                                        <video 
+                                            controls 
+                                            controlsList="nodownload"
+                                            preload="metadata"
+                                            poster={whatIsPoster}
+                                            className="w-full aspect-video object-cover"
+                                        >
+                                            <source src={whatIsVideo} type="video/mp4" />
+                                            Your browser does not support the video tag.
+                                        </video>
+                                        <div className="absolute top-3 right-3 bg-red-600/90 text-white font-bold text-xs px-3 py-1 rounded-full shadow-md pointer-events-none z-10 animate-pulse">
+                                            Video 🎥
+                                        </div>
+                                    </div>
+                                    {/* Atmospheric floating emojis */}
+                                    <div className="absolute -top-8 -right-8 text-6xl animate-float-delayed opacity-80 pointer-events-none z-20">☀️</div>
+                                    <div className="absolute -bottom-4 -left-8 text-6xl animate-float opacity-80 pointer-events-none z-20">🌧️</div>
+                                    <div className="absolute top-1/2 -right-12 text-6xl animate-float-delayed opacity-80 pointer-events-none z-20">☁️</div>
                                 </div>
                             </div>
                         </div>
@@ -283,8 +315,32 @@ export default function About() {
                         <p className="text-xl md:text-2xl font-bold mb-8 text-red-800">
                             We build a safer path by understanding weather forecasts.
                         </p>
-                        <div className="max-w-4xl mx-auto text-lg leading-relaxed font-semibold text-gray-800">
+                        <div className="max-w-4xl mx-auto text-lg leading-relaxed font-semibold text-gray-800 mb-12">
                             We believe children are powerful agents of change. Through Met Club, we equip them with knowledge, skills, and confidence so they can protect their families and communities from weather-related disasters.
+                        </div>
+
+                        {/* Activities & Impact Video Section */}
+                        <div className="flex justify-center mt-10">
+                            <div className="relative w-full max-w-3xl">
+                                <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-black hover:scale-[1.02] transition-transform duration-300 z-10">
+                                    <video 
+                                        controls 
+                                        controlsList="nodownload"
+                                        preload="metadata"
+                                        poster={activitiesPoster}
+                                        className="w-full aspect-video object-cover"
+                                    >
+                                        <source src={activitiesVideo} type="video/mp4" />
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <div className="absolute top-4 right-4 bg-orange-600/90 text-white font-bold text-sm px-4 py-1.5 rounded-full shadow-md pointer-events-none z-10 animate-pulse">
+                                        Activities & Impact 🎬
+                                    </div>
+                                </div>
+                                {/* Floating cloud decor */}
+                                <div className="absolute -top-10 -left-12 text-7xl animate-float opacity-70 pointer-events-none z-20">☁️</div>
+                                <div className="absolute -bottom-10 -right-12 text-7xl animate-float-delayed opacity-70 pointer-events-none z-20">🌤️</div>
+                            </div>
                         </div>
                     </div>
                 </div>
