@@ -152,7 +152,7 @@ export default function ZoneCard({
                         {btnLabel}
                     </button>
                 ) : (
-                    <a href={link} target="_blank" rel="noopener noreferrer" className="z-10 inline-block cursor-pointer">
+                    <Link to={link} rel="noopener noreferrer" className="z-10 inline-block cursor-pointer">
                         <button
                             className="z-10 px-8 py-3 rounded-full text-white font-medium text-sm md:text-base transition-all duration-200 active:scale-95 cursor-pointer"
                             style={{
@@ -166,7 +166,7 @@ export default function ZoneCard({
                         >
                             {btnLabel}
                         </button>
-                    </a>
+                    </Link>
                 )
             )}
         </div>

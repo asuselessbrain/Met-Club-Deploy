@@ -152,57 +152,6 @@ export default function TopNav({ title, tone = "default", brandName }: TopNavPro
 
                     {/* RIGHT USER */}
                     <div className="relative z-30 shrink-0 flex items-center gap-2" ref={dropdownRef}>
-                        <div className="relative">
-                            <div
-                                className="flex items-center rounded-full p-0.5 bg-white/80 border border-white/80 shadow-sm"
-                                style={{
-                                    backdropFilter: "blur(20px)",
-                                    WebkitBackdropFilter: "blur(20px)",
-                                    boxShadow: "0 8px 30px rgba(0,0,0,0.08)",
-                                }}
-                            >
-                                <button
-                                    onClick={() => {
-                                        const next: AppLocale = "en";
-                                        setStoredLocale(next);
-                                        setLocale(next);
-                                        navigate(getLocalizedPath(location.pathname, next));
-                                    }}
-                                    className="relative flex-1 cursor-pointer rounded-full px-3 py-2 text-sm font-semibold transition"
-                                    style={{
-                                        color: locale === "en" ? "#7f1d1d" : "#6b7280",
-                                        background: locale === "en" ? "rgba(239,68,68,0.12)" : "transparent",
-                                        borderRadius: "999px",
-                                    }}
-                                >
-                                    English
-                                </button>
-                                <button
-                                    onClick={() => {
-                                        const next: AppLocale = "bn";
-                                        setStoredLocale(next);
-                                        setLocale(next);
-                                        navigate(getLocalizedPath(location.pathname, next));
-                                    }}
-                                    className="relative flex-1 cursor-pointer rounded-full px-3 py-2 text-sm font-semibold transition"
-                                    style={{
-                                        color: locale === "bn" ? "#7f1d1d" : "#6b7280",
-                                        background: locale === "bn" ? "rgba(239,68,68,0.12)" : "transparent",
-                                        borderRadius: "999px",
-                                    }}
-                                >
-                                    বাংলা
-                                </button>
-                                <span
-                                    className="pointer-events-none absolute top-1/2 h-9 w-1/2 rounded-full bg-red-100 shadow-sm transition-all"
-                                    style={{
-                                        left: locale === "en" ? 4 : "calc(50% + 4px)",
-                                        transform: "translateY(-50%)",
-                                        background: "rgba(239,68,68,0.14)",
-                                    }}
-                                />
-                            </div>
-                        </div>
                         <button
                             onClick={() => setDropdownOpen((prev) => !prev)}
                             className="flex items-center gap-2 rounded-2xl px-3 py-1.5 transition-all duration-200 select-none"
