@@ -1,4 +1,5 @@
-import { createBrowserRouter, redirect } from "react-router";
+import { createBrowserRouter, redirect, ScrollRestoration, Outlet } from "react-router";
+import type { RouteObject } from "react-router";
 import { lazy } from "react";
 import LoginGuard from "../components/HomeRedirect/HomeRedirect";
 import App from "../App";
@@ -30,6 +31,8 @@ const EnglishChapter = lazy(() => import("../pages/EnglishVersion/Chapter/Chapte
 const EnglishStartInterface = lazy(() => import("../pages/EnglishVersion/QuizStartInterface/StartInterface"));
 const EnglishQuizDeficultyLevel = lazy(()=>import("../pages/EnglishVersion/Deficulty/Deficulty"))
 const EnglishProfile = lazy(() => import("../pages/EnglishVersion/Profile/Profile"));
+const MetClubModule = lazy(()=> import("../pages/MET_Club_Module"));
+const MetClubModule2 = lazy(()=> import("../pages/Met_Club"));
 
 type QuizRouteData = {
   chapterId: number;
@@ -59,7 +62,7 @@ function redirectToStoredLocale(requestUrl: string, bnPath: string, enPath: stri
   return redirect(`${targetBase}${suffix}${url.search}`);
 }
 
-const router = createBrowserRouter([
+const routes: RouteObject[] = [
 
   {
     path: "/",
@@ -224,6 +227,16 @@ const router = createBrowserRouter([
     loader: ({ request }) => redirectToStoredLocale(request.url, "/profile", "/en/profile"),
   },
   {
+    path: "/met-club-module",
+    element: <SuspenseWrapper><MetClubModule /></SuspenseWrapper>
+    ,loader: ({ request }) => redirectToStoredLocale(request.url, "/select-difficulty", "/en/select-difficulty"),
+  },
+  {
+    path: "/met-club-module-2",
+    element: <SuspenseWrapper><MetClubModule2 /></SuspenseWrapper>
+    ,loader: ({ request }) => redirectToStoredLocale(request.url, "/select-difficulty", "/en/select-difficulty"),
+  },
+  {
     path: "/admin",
     element: <SuspenseWrapper><AdminLayout /></SuspenseWrapper>,
     children: [
@@ -256,6 +269,18 @@ const router = createBrowserRouter([
         element: <SuspenseWrapper><CreateTutorial /></SuspenseWrapper>,
       },
     ],
+  }
+];
+
+const router = createBrowserRouter([
+  {
+    element: (
+      <>
+        <ScrollRestoration />
+        <Outlet />
+      </>
+    ),
+    children: routes
   }
 ]);
 

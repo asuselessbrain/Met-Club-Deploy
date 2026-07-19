@@ -135,7 +135,7 @@ export default function BottomNav({
             {current + 1} / {total}
           </span>
 
-          <div className="flex gap-1 sm:gap-1.5">
+          <div className={`gap-1 sm:gap-1.5 ${total > 8 ? "hidden md:flex" : "flex"}`}>
             {Array.from({ length: total }).map((_, i) => (
               <div
                 key={i}

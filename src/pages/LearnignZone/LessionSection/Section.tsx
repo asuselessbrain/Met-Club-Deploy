@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import bgImage from "../../../assets/images/start-journey-page-bg.jpeg";
 import { useNavigate, useParams } from "react-router";
 import TopNav from "../../../components/Shared/TopBar";
@@ -29,6 +29,13 @@ export default function Section() {
   const axios = useAxiosProtected();
   const navigateToQuiz = useNavigate();
   const { chapterId } = useParams();
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTo(0, 0);
+    }
+  }, [current]);
 
   useEffect(() => {
     let cancelled = false;
@@ -236,7 +243,7 @@ export default function Section() {
               )}
             </div>
 
-            <div className="w-full text-sm lg:w-[50%] p-4 flex flex-col justify-start text-left overflow-y-auto custom-scrollbar min-w-0">
+            <div ref={scrollRef} className="w-full text-sm lg:w-[50%] p-4 flex flex-col justify-start text-left overflow-y-auto custom-scrollbar min-w-0">
               <div
                 className="lesson-content max-w-none text-slate-700"
                 dangerouslySetInnerHTML={{ __html: section.htmlContent }}
