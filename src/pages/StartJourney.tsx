@@ -10,9 +10,9 @@ import { useLocaleRouteSync } from "../hooks/useLocaleRouteSync";
 
 
 export default function StartJourney() {
-  
+
   useLocaleRouteSync("/start-journey", "/en/start-journey");
-  
+
 
   const axios = useAxiosProtected();
 
@@ -26,7 +26,7 @@ export default function StartJourney() {
     checkChapterOneCompletion();
   }, [axios]);
 
-  
+
 
   return (
     <div className="relative min-h-screen flex flex-col overflow-x-hidden" style={{
@@ -74,13 +74,13 @@ export default function StartJourney() {
         <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-stretch">
           <div className="card1 h-full">
             <ZoneCard
-              title="লার্নিং জোন"
+              title="লার্ন উইথ ফান"
               titleColor="#991b1b"
               borderColor="#f87171"
               btnBg="linear-gradient(135deg, #ef4444, #dc2626)"
               btnShadow="rgba(239,68,68,0.42)"
               btnLabel="পড়া শুরু করুন"
-              link="/learning-zone"
+              link="/learning-selection"
               description={
                 <>
                   <strong>আপনার জ্ঞান বৃদ্ধি করুন!</strong>
@@ -101,7 +101,7 @@ export default function StartJourney() {
 
           <div className="card2 h-full">
             <ZoneCard
-              title="স্টোরি সিচুয়েশন"
+              title="কমিউনিটি রেসকিউ মিশন"
               titleColor="#9a3412"
               borderColor="#fb923c"
               btnBg="linear-gradient(135deg, #fb923c, #f97316)"

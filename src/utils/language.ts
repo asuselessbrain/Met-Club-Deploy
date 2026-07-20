@@ -26,6 +26,7 @@ export function getLocalizedPath(pathname: string, locale: AppLocale) {
         { bn: "/start-journey", en: "/en/start-journey" },
         { bn: "/learning-zone", en: "/en/learning-zone" },
         { bn: "/select-difficulty", en: "/en/select-difficulty" },
+        { bn: "/learning-selection", en: "/en/learning-selection" },
     ];
 
     for (const item of localizedPaths) {

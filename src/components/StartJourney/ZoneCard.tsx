@@ -81,7 +81,7 @@ export default function ZoneCard({
 
             {/* Title */}
             <h2
-                className="text-2xl font-black tracking-widest uppercase z-10"
+                className="text-2xl font-black tracking-widest uppercase z-10 text-center"
                 style={{
                     color: titleColor,
                     textShadow:
@@ -123,7 +123,7 @@ export default function ZoneCard({
             </p>
 
             {/* Button */}
-            {title === "লার্নিং জোন" || title === "Learning Zone" ? (
+            {title === "লার্ন উইথ ফান" || title === "Learning Zone" ? (
                 <Link to={link} className="z-10 inline-block cursor-pointer">
                     <button
                         className="z-10 px-8 py-3 rounded-full text-white font-medium text-sm md:text-base transition-all duration-200 active:scale-95 cursor-pointer"

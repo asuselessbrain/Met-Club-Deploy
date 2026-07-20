@@ -33,6 +33,8 @@ const EnglishQuizDeficultyLevel = lazy(()=>import("../pages/EnglishVersion/Defic
 const EnglishProfile = lazy(() => import("../pages/EnglishVersion/Profile/Profile"));
 const MetClubModule = lazy(()=> import("../pages/MET_Club_Module"));
 const MetClubModule2 = lazy(()=> import("../pages/Met_Club"));
+const LearningSelection = lazy(() => import("../pages/LearningSelection"));
+const EnglishLearningSelection = lazy(() => import("../pages/EnglishVersion/LearningSelection/LearningSelection"));
 
 type QuizRouteData = {
   chapterId: number;
@@ -103,6 +105,16 @@ const routes: RouteObject[] = [
     path: "/en/start-journey",
     element: <SuspenseWrapper><EnglishStartJourney /></SuspenseWrapper>,
     loader: ({ request }) => redirectToStoredLocale(request.url, "/start-journey", "/en/start-journey"),
+  },
+  {
+    path: "/learning-selection",
+    element: <SuspenseWrapper><LearningSelection /></SuspenseWrapper>,
+    loader: ({ request }) => redirectToStoredLocale(request.url, "/learning-selection", "/en/learning-selection"),
+  },
+  {
+    path: "/en/learning-selection",
+    element: <SuspenseWrapper><EnglishLearningSelection /></SuspenseWrapper>,
+    loader: ({ request }) => redirectToStoredLocale(request.url, "/learning-selection", "/en/learning-selection"),
   },
   {
     path: "/registration",

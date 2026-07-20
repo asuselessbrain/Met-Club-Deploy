@@ -79,7 +79,7 @@ export default function StartJourney() {
                             btnBg="linear-gradient(135deg, #ef4444, #dc2626)"
                             btnShadow="rgba(239,68,68,0.42)"
                             btnLabel="Start Learning"
-                            link="/learning-zone"
+                            link="/en/learning-selection"
                             description={
                                 <>
                                     <strong>Enhance your knowledge!</strong>

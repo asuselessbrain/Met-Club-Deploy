@@ -498,7 +498,9 @@ function CoverPage() {
           color: "#fff",
         }}
       >
-        <Eyebrow color="rgba(255,255,255,0.15)">MET ক্লাব • ই-লার্নিং</Eyebrow>
+        <div>
+          <Eyebrow color="rgba(255,255,255,0.15)">MET ক্লাব • ই-লার্নিং</Eyebrow>
+        </div>
         <h1 className="text-2xl sm:text-4xl md:text-5xl font-black my-3 leading-tight">
           আগাম পদক্ষেপ
           <br /> ও <br />
@@ -1346,20 +1348,61 @@ function Chapter4() {
           স্তম্ভের ওপর। মজার ব্যাপার — আমরা আগের অধ্যায়গুলোতে এর কয়েকটি ইতিমধ্যেই শিখে
           ফেলেছি! চলো মিলিয়ে দেখি:
         </p>
-        <div style={{ background: "#111", color: "#fff", textAlign: "center", padding: 10, borderRadius: "10px 10px 0 0", fontWeight: 800 }}>
-          নিরাপদ মানুষ ও সম্পদ 🏠
+        <div style={{
+          background: "linear-gradient(135deg, #1e293b, #0f172a)",
+          color: "#fff",
+          textAlign: "center",
+          padding: "12px 16px",
+          borderRadius: "14px 14px 0 0",
+          fontWeight: 800,
+          fontSize: "1.1rem",
+          borderBottom: "4px solid #f59e0b",
+          boxShadow: "0 4px 6px -1px rgba(0,0,0,0.1)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "8px"
+        }}>
+          <span>নিরাপদ মানুষ ও সম্পদ</span>
+          <span>🏠</span>
         </div>
-        <div style={{ display: "flex", gap: 10, marginBottom: 16 }}>
+        <div style={{ 
+          display: "flex", 
+          gap: "12px", 
+          background: "rgba(255, 255, 255, 0.4)",
+          padding: "12px",
+          borderRadius: "0 0 14px 14px",
+          border: "1.5px solid #e2e8f0",
+          borderTop: "none",
+          boxShadow: "0 10px 15px -3px rgba(0,0,0,0.05)",
+          marginBottom: 20
+        }}>
           {[
-            { n: 1, icon: "🔎", t: "ঝুঁকির জ্ঞান", d: "(অধ্যায় ২)", c: "#B8791F" },
-            { n: 2, icon: "📡", t: "পর্যবেক্ষণ ও পূর্বাভাস", d: "(অধ্যায় ৩)", c: "#2E7D32" },
-            { n: 3, icon: "📢", t: "বার্তা প্রচার ও যোগাযোগ", d: "(এই অধ্যায়)", c: "#C62828" },
-            { n: 4, icon: "🏃", t: "সাড়া দেওয়ার সক্ষমতা", d: "(অধ্যায় ১ ও ৫)", c: "#1565C0" },
+            { n: 1, icon: "🔎", t: "ঝুঁকির জ্ঞান", d: "(অধ্যায় ২)", c: "linear-gradient(135deg, #d97706, #b45309)" },
+            { n: 2, icon: "📡", t: "পর্যবেক্ষণ ও পূর্বাভাস", d: "(অধ্যায় ৩)", c: "linear-gradient(135deg, #16a34a, #15803d)" },
+            { n: 3, icon: "📢", t: "বার্তা প্রচার ও যোগাযোগ", d: "(এই অধ্যায়)", c: "linear-gradient(135deg, #dc2626, #b91c1c)" },
+            { n: 4, icon: "🏃", t: "সাড়া দেওয়ার সক্ষমতা", d: "(অধ্যায় ১ ও ৫)", c: "linear-gradient(135deg, #2563eb, #1d4ed8)" },
           ].map((s) => (
-            <div key={s.n} style={{ flex: 1, background: s.c, color: "#fff", padding: 14, textAlign: "center", borderRadius: 8 }}>
-              <div style={{ fontSize: 22 }}>{s.icon}</div>
-              <div style={{ fontWeight: 800, fontSize: 14 }}>{s.t}</div>
-              <div style={{ fontSize: 12, opacity: 0.85 }}>{s.d}</div>
+            <div 
+              key={s.n} 
+              style={{ 
+                flex: 1, 
+                background: s.c, 
+                color: "#fff", 
+                padding: "16px 8px", 
+                textAlign: "center", 
+                borderRadius: "10px",
+                boxShadow: "0 4px 12px rgba(0,0,0,0.12)",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "4px"
+              }}
+            >
+              <div style={{ fontSize: "1.6rem", filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.2))" }}>{s.icon}</div>
+              <div style={{ fontWeight: 800, fontSize: "0.9rem", lineHeight: 1.25, textShadow: "0 1px 2px rgba(0,0,0,0.3)" }}>{s.t}</div>
+              <div style={{ fontSize: "0.75rem", opacity: 0.9, fontWeight: 500 }}>{s.d}</div>
             </div>
           ))}
         </div>
@@ -1942,7 +1985,7 @@ export default function App() {
         onPrev={() => setPage(NAV[idx - 1].key)}
         onNext={() => {
           if (idx >= NAV.length - 1) {
-            navigate("/learning-zone");
+            navigate("/learning-selection");
           } else {
             setPage(NAV[idx + 1].key);
           }
