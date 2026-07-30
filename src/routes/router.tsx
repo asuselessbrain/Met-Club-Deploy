@@ -22,6 +22,8 @@ const CreateContent = lazy(() => import("../pages/Admin/CreateContent"));
 const ManageContent = lazy(() => import("../pages/Admin/ManageContent"));
 const ManageTutorials = lazy(() => import("../pages/Admin/ManageTutorials"));
 const CreateTutorial = lazy(() => import("../pages/Admin/CreateTutorial"));
+const ManageSchools = lazy(() => import("../pages/Admin/ManageSchools"));
+const CreateSchool = lazy(() => import("../pages/Admin/CreateSchool"));
 const Section = lazy(() => import("../pages/LearnignZone/LessionSection/Section"));
 const Tutorials = lazy(() => import("../pages/Tutorials/Tutorials"));
 const EnglishHome = lazy(() => import("../pages/EnglishVersion/Home"));
@@ -35,6 +37,8 @@ const MetClubModule = lazy(()=> import("../pages/MET_Club_Module"));
 const MetClubModule2 = lazy(()=> import("../pages/Met_Club"));
 const LearningSelection = lazy(() => import("../pages/LearningSelection"));
 const EnglishLearningSelection = lazy(() => import("../pages/EnglishVersion/LearningSelection/LearningSelection"));
+const LocationDetails = lazy(() => import("../pages/Location/LocationDetails"));
+const EnglishLocationDetails = lazy(() => import("../pages/EnglishVersion/Location/EnglishLocationDetails"));
 
 type QuizRouteData = {
   chapterId: number;
@@ -219,6 +223,16 @@ const routes: RouteObject[] = [
     loader: ({ request }) => redirectToStoredLocale(request.url, "/about", "/en/about"),
   },
   {
+    path: "/location/:id",
+    element: <SuspenseWrapper><LocationDetails /></SuspenseWrapper>,
+    loader: ({ request }) => redirectToStoredLocale(request.url, "/location", "/en/location"),
+  },
+  {
+    path: "/en/location/:id",
+    element: <SuspenseWrapper><EnglishLocationDetails /></SuspenseWrapper>,
+    loader: ({ request }) => redirectToStoredLocale(request.url, "/location", "/en/location"),
+  },
+  {
     path: "/tutorials",
     element: <SuspenseWrapper><Tutorials /></SuspenseWrapper>,
     loader: ({ request }) => redirectToStoredLocale(request.url, "/tutorials", "/en/tutorials"),
@@ -279,6 +293,14 @@ const routes: RouteObject[] = [
       {
         path: "create-tutorial",
         element: <SuspenseWrapper><CreateTutorial /></SuspenseWrapper>,
+      },
+      {
+        path: "schools",
+        element: <SuspenseWrapper><ManageSchools /></SuspenseWrapper>,
+      },
+      {
+        path: "create-school",
+        element: <SuspenseWrapper><CreateSchool /></SuspenseWrapper>,
       },
     ],
   }

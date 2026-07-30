@@ -1,4 +1,4 @@
-const API_ORIGIN = "http://119.15.153.74/api";
+const API_ORIGIN = "http://meteorologyclub.com/api";
 
 export const resolveMediaUrl = (value?: string | null) => {
   if (!value) return "";

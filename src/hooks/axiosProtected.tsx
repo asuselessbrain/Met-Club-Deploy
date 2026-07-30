@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 
 const instance = axios.create({
-    baseURL: "http://119.15.153.74/api/api/v1",
+    baseURL: "http://meteorologyclub.com/api/api/v1",
     withCredentials: true,
 });
 
@@ -76,7 +76,7 @@ const useAxiosProtected = () => {
             }
         );
 
-        return () =>{
+        return () => {
             instance.interceptors.request.eject(requestInterceptor);
             instance.interceptors.response.eject(responseInterceptor);
         }

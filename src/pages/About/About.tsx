@@ -4,12 +4,15 @@ import Partners from '../../components/Shared/Partners';
 import coverVideo from "../../assets/videos/Drone shot for cover.mp4";
 import whatIsVideo from "../../assets/videos/What is MET Club_.mp4";
 import whatIsPoster from "../../assets/images/what_is_poster.jpg";
-import activitiesPoster from "../../assets/images/activities_poster.jpg";
 import startJourneyBg from "../../assets/images/start-journey-page-bg.jpeg"
 import aboutBg from "../../assets/images/about-page-bg.png"
 import chapterBg from "../../assets/images/chapter-bg.png"
 import TopNav from "../../components/Shared/TopBar";
 import { useLocaleRouteSync } from "../../hooks/useLocaleRouteSync";
+import jagoNariLogo from "../../assets/partners/partner3.png";
+import sksLogo from "../../assets/partners/partner4.png";
+import ypsaLogo from "../../assets/partners/partner5.jpg";
+import { Link } from "react-router";
 
 const titleShadow = "-1px -1px 0 rgba(255,255,255,0.96), 1px -1px 0 rgba(255,255,255,0.96), -1px 1px 0 rgba(255,255,255,0.96), 1px 1px 0 rgba(255,255,255,0.96), 0 2px 0 rgba(185,28,28,0.20), 0 8px 20px rgba(127,29,29,0.24)";
 const subtitleShadow = "0 1px 6px rgba(255,255,255,0.28)";
@@ -376,31 +379,36 @@ export default function About() {
 
                     <div className="grid md:grid-cols-3 gap-8">
                         {[
-                            { name: 'চট্টগ্রাম', org: 'বাস্তবায়নকারী সংস্থা: ইপসা (YPSA)' },
-                            { name: 'পটুয়াখালী', org: 'বাস্তবায়নকারী সংস্থা: জাগোনারী (JAGO NARI)' },
-                            { name: 'গাইবান্ধা', org: 'বাস্তবায়নকারী সংস্থা: এসকেএস ফাউন্ডেশন (SKS Foundation)' },
+                            { name: 'চট্টগ্রাম', org: 'বাস্তবায়নকারী সংস্থা: ইপসা (YPSA)', logo: ypsaLogo, id: 'chattogram' },
+                            { name: 'পটুয়াখালী', org: 'বাস্তবায়নকারী সংস্থা: জাগোনারী (JAGO NARI)', logo: jagoNariLogo, id: 'patuakhali' },
+                            { name: 'গাইবান্ধা', org: 'বাস্তবায়নকারী সংস্থা: এসকেএস ফাউন্ডেশন (SKS Foundation)', logo: sksLogo, id: 'gaibandha' },
                         ].map((loc, idx) => (
-                            <div key={idx} className="group rounded-3xl shadow-xl p-10 text-center hover:scale-105 transition-all duration-500" style={{
+                            <Link to={`/location/${loc.id}`} key={idx} className="group relative rounded-3xl shadow-xl p-8 pt-12 text-center hover:scale-105 transition-all duration-500 block" style={{
                                 background: "rgba(255,255,255,0.22)",
                                 border: "1.5px solid #fca5a599",
                                 backdropFilter: "blur(20px) saturate(160%)",
                                 WebkitBackdropFilter: "blur(20px) saturate(160%)",
                                 boxShadow: "0 10px 30px rgba(0,0,0,0.12)",
                             }}>
-                                <div className="relative mb-6">
-                                    <MapPin className="w-20 h-20 mx-auto text-red-500 group-hover:scale-110 transition-transform" />
-                                    <div className="absolute -top-2 right-1/4 bg-red-600 text-white rounded-full px-3 py-1 text-xs font-bold shadow-md">
-                                        চালু
+                                <div className="absolute top-6 right-8">
+                                    <div className="relative">
+                                        <MapPin className="w-7 h-7 text-red-500/80 group-hover:scale-110 group-hover:text-red-500 transition-all duration-300" />
+                                        <div className="absolute -top-2 -right-4 bg-red-600 text-white rounded-full px-2 py-[2px] text-[10px] font-bold shadow-md tracking-wide whitespace-nowrap z-10">
+                                            চালু
+                                        </div>
                                     </div>
                                 </div>
-                                <h3 className="text-3xl font-black mb-3" style={{ color: "#b91c1c", textShadow: titleShadow }}>{loc.name}</h3>
+                                <h3 className="text-3xl font-black mb-3 mt-4" style={{ color: "#b91c1c", textShadow: titleShadow }}>{loc.name}</h3>
                                 <p className="text-lg text-gray-800 font-semibold mb-3">বর্তমানে সক্রিয়</p>
-                                <p className="text-sm font-bold mb-3" style={{ color: "#b91c1c" }}>{loc.org}</p>
+                                <p className="text-sm font-semibold mb-3" style={{ color: "#b91c1c" }}>{loc.org}</p>
+                                <div className="flex items-center justify-center h-16 mt-4 mb-2">
+                                    <img src={loc.logo} alt={loc.name} className="h-full w-auto max-w-[140px] object-contain rounded-md" />
+                                </div>
                                 <div className="mt-6 flex items-center justify-center space-x-2 text-red-700">
                                     <TrendingUp className="w-5 h-5" />
                                     <span className="font-bold">৫০+ সদস্য</span>
                                 </div>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </div>

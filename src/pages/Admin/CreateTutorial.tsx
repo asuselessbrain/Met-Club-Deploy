@@ -68,7 +68,7 @@ export default function CreateTutorial() {
     if (!form.thumbnailImage) return null;
     if (typeof form.thumbnailImage === "string") {
       if (form.thumbnailImage.startsWith("http")) return form.thumbnailImage;
-      return ("http://119.15.153.74/api" + form.thumbnailImage).replace("/api/v1", "");
+      return ("http://meteorologyclub.com/api" + form.thumbnailImage).replace("/api/v1", "");
     }
     return URL.createObjectURL(form.thumbnailImage);
   };
@@ -77,12 +77,12 @@ export default function CreateTutorial() {
     e.preventDefault();
 
     if (!form.tutorialNumber || !form.name || !form.title || !form.videoLink) {
-      toast.error("সব তথ্য পূরণ করুন", {id: "error"});
+      toast.error("সব তথ্য পূরণ করুন", { id: "error" });
       return;
     }
 
     if (!form.thumbnailImage) {
-      toast.error("thumbnail image দিতে হবে", {id: "error"});
+      toast.error("thumbnail image দিতে হবে", { id: "error" });
       return;
     }
 
@@ -102,17 +102,17 @@ export default function CreateTutorial() {
       setIsSubmitting(true);
       if (form.id) {
         const res = await axiosInstance.patch(`/tutorials/${form.id}`, payload);
-        toast.success(res.data.message || "Tutorial updated", {id: "error"});
+        toast.success(res.data.message || "Tutorial updated", { id: "error" });
       } else {
         const res = await axiosInstance.post("/tutorials", payload);
-        toast.success(res.data.message || "Tutorial created", {id: "error"});
+        toast.success(res.data.message || "Tutorial created", { id: "error" });
       }
       navigate("/admin/tutorials");
     } catch (error) {
-      if(axios.isAxiosError(error)) {
-        toast.error(error.response?.data.errorMessage, {id: "error"});
+      if (axios.isAxiosError(error)) {
+        toast.error(error.response?.data.errorMessage, { id: "error" });
       }
-      toast.error("Tutorial save করা যায়নি", {id: "error"});
+      toast.error("Tutorial save করা যায়নি", { id: "error" });
     } finally {
       setIsSubmitting(false);
     }

@@ -3,14 +3,13 @@ import logo from "../../../assets/images/logo_original.png";
 import Partners from '../../../components/Shared/Partners';
 import coverVideo from "../../../assets/videos/Drone shot for cover.mp4";
 import whatIsVideo from "../../../assets/videos/What is MET Club_.mp4";
-import activitiesVideo from "../../../assets/videos/MET Club activities and impact.mp4";
 import whatIsPoster from "../../../assets/images/what_is_poster.jpg";
-import activitiesPoster from "../../../assets/images/activities_poster.jpg";
 import startJourneyBg from "../../../assets/images/start-journey-page-bg.jpeg";
 import aboutBg from "../../../assets/images/about-page-bg.png";
 import chapterBg from "../../../assets/images/chapter-bg.png";
 import TopNav from "../../../components/Shared/TopBar";
 import { useLocaleRouteSync } from "../../../hooks/useLocaleRouteSync";
+import { Link } from "react-router";
 
 const titleShadow = "-1px -1px 0 rgba(255,255,255,0.96), 1px -1px 0 rgba(255,255,255,0.96), -1px 1px 0 rgba(255,255,255,0.96), 1px 1px 0 rgba(255,255,255,0.96), 0 2px 0 rgba(185,28,28,0.20), 0 8px 20px rgba(127,29,29,0.24)";
 const subtitleShadow = "0 1px 6px rgba(255,255,255,0.28)";
@@ -144,8 +143,8 @@ export default function About() {
                                 <div className="relative w-full max-w-lg">
                                     {/* Video Wrapper */}
                                     <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-black hover:scale-[1.02] transition-transform duration-300 z-10">
-                                        <video 
-                                            controls 
+                                        <video
+                                            controls
                                             controlsList="nodownload"
                                             preload="metadata"
                                             poster={whatIsPoster}
@@ -190,16 +189,16 @@ export default function About() {
                             { icon: '🦸', title: 'Inspiring children to take an active role in disaster response' }
                         ].map((objective, index) => (
                             <div
-                                    key={index}
-                                    className="group rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
-                                    style={{
-                                        background: "rgba(255,255,255,0.22)",
-                                        border: "1.5px solid #fca5a599",
-                                        backdropFilter: "blur(20px) saturate(160%)",
-                                        WebkitBackdropFilter: "blur(20px) saturate(160%)",
-                                        boxShadow: "0 10px 30px rgba(0,0,0,0.12)",
-                                    }}
-                                >
+                                key={index}
+                                className="group rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                                style={{
+                                    background: "rgba(255,255,255,0.22)",
+                                    border: "1.5px solid #fca5a599",
+                                    backdropFilter: "blur(20px) saturate(160%)",
+                                    WebkitBackdropFilter: "blur(20px) saturate(160%)",
+                                    boxShadow: "0 10px 30px rgba(0,0,0,0.12)",
+                                }}
+                            >
                                 <div className={`w-20 h-20 bg-linear-to-br from-red-400 to-orange-500 rounded-2xl flex items-center justify-center text-4xl mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform shadow-lg mx-auto`}>
                                     {objective.icon}
                                 </div>
@@ -319,29 +318,7 @@ export default function About() {
                             We believe children are powerful agents of change. Through Met Club, we equip them with knowledge, skills, and confidence so they can protect their families and communities from weather-related disasters.
                         </div>
 
-                        {/* Activities & Impact Video Section */}
-                        <div className="flex justify-center mt-10">
-                            <div className="relative w-full max-w-3xl">
-                                <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-black hover:scale-[1.02] transition-transform duration-300 z-10">
-                                    <video 
-                                        controls 
-                                        controlsList="nodownload"
-                                        preload="metadata"
-                                        poster={activitiesPoster}
-                                        className="w-full aspect-video object-cover"
-                                    >
-                                        <source src={activitiesVideo} type="video/mp4" />
-                                        Your browser does not support the video tag.
-                                    </video>
-                                    <div className="absolute top-4 right-4 bg-orange-600/90 text-white font-bold text-sm px-4 py-1.5 rounded-full shadow-md pointer-events-none z-10 animate-pulse">
-                                        Activities & Impact 🎬
-                                    </div>
-                                </div>
-                                {/* Floating cloud decor */}
-                                <div className="absolute -top-10 -left-12 text-7xl animate-float opacity-70 pointer-events-none z-20">☁️</div>
-                                <div className="absolute -bottom-10 -right-12 text-7xl animate-float-delayed opacity-70 pointer-events-none z-20">🌤️</div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </section>
@@ -355,8 +332,12 @@ export default function About() {
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-8">
-                        {['Chattogram', 'Patuakhali', 'Gaibandha'].map((location, idx) => (
-                            <div key={idx} className="group rounded-3xl shadow-xl p-10 text-center hover:scale-105 transition-all duration-500" style={{
+                        {[
+                            { name: 'Chattogram', id: 'chattogram' },
+                            { name: 'Patuakhali', id: 'patuakhali' },
+                            { name: 'Gaibandha', id: 'gaibandha' }
+                        ].map((loc, idx) => (
+                            <Link to={`/en/location/${loc.id}`} key={idx} className="group rounded-3xl shadow-xl p-10 text-center hover:scale-105 transition-all duration-500 block" style={{
                                 background: "rgba(255,255,255,0.22)",
                                 border: "1.5px solid #fca5a599",
                                 backdropFilter: "blur(20px) saturate(160%)",
@@ -369,13 +350,13 @@ export default function About() {
                                         Active
                                     </div>
                                 </div>
-                                <h3 className="text-3xl font-black mb-3" style={{ color: "#b91c1c", textShadow: titleShadow }}>{location}</h3>
+                                <h3 className="text-3xl font-black mb-3" style={{ color: "#b91c1c", textShadow: titleShadow }}>{loc.name}</h3>
                                 <p className="text-lg text-gray-800 font-semibold">Currently active</p>
                                 <div className="mt-6 flex items-center justify-center space-x-2 text-red-700">
                                     <TrendingUp className="w-5 h-5" />
                                     <span className="font-bold">50+ members</span>
                                 </div>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </div>
