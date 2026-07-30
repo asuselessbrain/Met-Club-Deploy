@@ -3,7 +3,6 @@ import logo from "../../assets/images/logo_original.png"
 import Partners from '../../components/Shared/Partners';
 import coverVideo from "../../assets/videos/Drone shot for cover.mp4";
 import whatIsVideo from "../../assets/videos/What is MET Club_.mp4";
-import activitiesVideo from "../../assets/videos/MET Club activities and impact.mp4";
 import whatIsPoster from "../../assets/images/what_is_poster.jpg";
 import activitiesPoster from "../../assets/images/activities_poster.jpg";
 import startJourneyBg from "../../assets/images/start-journey-page-bg.jpeg"
@@ -362,27 +361,6 @@ export default function About() {
                         </p>
                         <div className="max-w-4xl mx-auto text-lg leading-relaxed font-semibold text-gray-800 mb-12">
                             আমরা বিশ্বাস করি যে শিশুরা পরিবর্তনের শক্তিশালী এজেন্ট। মেট ক্লাবের মাধ্যমে, আমরা তাদের জ্ঞান, দক্ষতা এবং আত্মবিশ্বাস দিয়ে সজ্জিত করি যাতে তারা তাদের পরিবার এবং সম্প্রদায়কে আবহাওয়াজনিত দুর্যোগ থেকে রক্ষা করতে পারে।
-                        </div>
-
-                        {/* Activities & Impact Video Section */}
-                        <div className="flex justify-center mt-10">
-                            <div className="relative w-full max-w-3xl">
-                                <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-black hover:scale-[1.02] transition-transform duration-300 z-10">
-                                    <video
-                                        controls
-                                        controlsList="nodownload"
-                                        preload="metadata"
-                                        poster={activitiesPoster}
-                                        className="w-full aspect-video object-cover"
-                                    >
-                                        <source src={activitiesVideo} type="video/mp4" />
-                                        Your browser does not support the video tag.
-                                    </video>
-                                    <div className="absolute top-4 right-4 bg-orange-600/90 text-white font-bold text-sm px-4 py-1.5 rounded-full shadow-md pointer-events-none z-10 animate-pulse">
-                                        আমাদের কার্যক্রম ও প্রভাব 🎬
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
