@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router";
 import schoolImage from "../../../assets/images/school_illustration.png";
+import bgImage from "../../../assets/images/start-journey-page-bg.jpeg";
 import { MapPin, Users, Leaf } from "lucide-react";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
@@ -115,7 +116,7 @@ export default function EnglishLocationDetails() {
                     <section 
                         className="relative py-16 md:py-20 shadow-sm border-b border-gray-200"
                         style={{ 
-                            backgroundImage: "url('/src/assets/images/start-journey-page-bg.jpeg')", 
+                            backgroundImage: `url(${bgImage})`, 
                             backgroundSize: 'cover', 
                             backgroundPosition: 'center',
                         }}
