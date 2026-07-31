@@ -10,6 +10,7 @@ type ClubMember = {
   classBn: string;
   classEn: string;
   image?: string;
+  imageFile?: File;
 };
 
 export default function CreateSchool() {
@@ -88,24 +89,59 @@ export default function CreateSchool() {
     setMembers((prev) => prev.filter((_, i) => i !== index));
   };
 
+  const handleMemberFileChange = (index: number, e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      const file = e.target.files[0];
+      setMembers((prev) => {
+        const newMembers = [...prev];
+        newMembers[index] = { ...newMembers[index], imageFile: file };
+        return newMembers;
+      });
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
 
-    // Add default avatar for members without images
-    const processedMembers = members.map(m => ({
-      ...m,
-      image: m.image || `https://ui-avatars.com/api/?name=${encodeURIComponent(m.nameEn || m.nameBn)}&background=random&color=fff`
-    }));
+    const formDataToSend = new FormData();
+    const images: File[] = [];
 
-    const payload = { ...formData, members: processedMembers };
+    const processedMembers = members.map((m) => {
+      const processed: any = {
+        nameBn: m.nameBn,
+        nameEn: m.nameEn,
+        classBn: m.classBn,
+        classEn: m.classEn,
+        image: m.image
+      };
+      
+      if (m.imageFile) {
+        images.push(m.imageFile);
+        processed.imageIndex = images.length - 1;
+      } else if (!m.image) {
+        processed.image = `https://ui-avatars.com/api/?name=${encodeURIComponent(m.nameEn || m.nameBn)}&background=random&color=fff`;
+      }
+      return processed;
+    });
+
+    const payloadData = { ...formData, members: processedMembers };
+    formDataToSend.append("data", JSON.stringify(payloadData));
+    
+    images.forEach((img) => {
+      formDataToSend.append("images", img);
+    });
 
     try {
       if (id) {
-        await axiosInstance.patch(`/schools/${id}`, payload);
+        await axiosInstance.patch(`/schools/${id}`, formDataToSend, {
+          headers: { "Content-Type": "multipart/form-data" }
+        });
         toast.success("School updated successfully");
       } else {
-        await axiosInstance.post(`/schools`, payload);
+        await axiosInstance.post(`/schools`, formDataToSend, {
+          headers: { "Content-Type": "multipart/form-data" }
+        });
         toast.success("School created successfully");
       }
       navigate("/admin/schools"); // We'll update the route for this later
@@ -295,6 +331,17 @@ export default function CreateSchool() {
                     onChange={(e) => handleMemberChange(index, "classEn", e.target.value)}
                     className="w-full px-3 py-1.5 text-sm rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-red-200"
                   />
+                </div>
+                <div className="md:col-span-10">
+                  <label className="text-xs text-gray-500">ছবি (Image)</label>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    onChange={(e) => handleMemberFileChange(index, e)}
+                    className="w-full px-3 py-1.5 text-sm rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-red-200"
+                  />
+                  {member.imageFile && <p className="text-xs text-green-600 mt-1">নির্বাচিত: {member.imageFile.name}</p>}
+                  {!member.imageFile && member.image && <p className="text-xs text-blue-600 mt-1">আগের ছবি সংরক্ষিত আছে</p>}
                 </div>
                 <div className="md:col-span-2 flex items-end justify-end pb-1">
                   <button

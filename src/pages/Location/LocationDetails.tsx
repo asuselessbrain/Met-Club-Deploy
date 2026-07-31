@@ -6,10 +6,12 @@ import { MapPin, Users, Leaf } from "lucide-react";
 import { useEffect, useState } from "react";
 import useAxiosProtected from "../../hooks/axiosProtected";
 import toast from "react-hot-toast";
+import { resolveMediaUrl } from "../../utils/media";
 
 type Student = {
     id: number;
     nameBn: string;
+    nameEn: string;
     classBn: string;
     image: string;
 };
@@ -212,18 +214,31 @@ export default function LocationDetails() {
                                     </h3>
 
                                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-                                        {school.members.map((student) => (
+                                        {school.members.map((student) => {
+                                            const getAvatarUrl = () => {
+                                                if (student.image) {
+                                                    if (student.image.startsWith('/uploads')) {
+                                                        return resolveMediaUrl(student.image);
+                                                    }
+                                                    if (student.image.includes('ui-avatars.com')) {
+                                                        return `https://ui-avatars.com/api/?name=${encodeURIComponent(student.nameEn || "Member")}&background=random&color=fff`;
+                                                    }
+                                                    return student.image;
+                                                }
+                                                return `https://ui-avatars.com/api/?name=${encodeURIComponent(student.nameEn || "Member")}&background=random&color=fff`;
+                                            };
+                                            return (
                                             <div key={student.id} className="bg-white rounded-2xl p-4 flex flex-col items-center text-center shadow-md hover:shadow-lg transition-shadow relative group cursor-default">
                                                 {/* Avatar */}
                                                 <div className="w-20 h-20 rounded-full bg-gray-100 border-2 border-red-50 overflow-hidden mb-3 mt-2 shadow-inner">
-                                                    <img src={student.image || `https://ui-avatars.com/api/?name=${encodeURIComponent(student.nameBn)}&background=random&color=fff`} alt={student.nameBn} className="w-full h-full object-cover" />
+                                                    <img src={getAvatarUrl()} alt={student.nameBn} className="w-full h-full object-cover" />
                                                 </div>
 
                                                 {/* Details */}
                                                 <h4 className="font-bold text-gray-800 text-sm leading-tight mb-1">{student.nameBn}</h4>
                                                 <p className="text-xs text-red-600 font-semibold">{student.classBn}</p>
                                             </div>
-                                        ))}
+                                        )})}
                                     </div>
                                 </div>
                             </div>
