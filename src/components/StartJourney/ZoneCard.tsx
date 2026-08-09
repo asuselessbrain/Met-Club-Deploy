@@ -93,16 +93,15 @@ export default function ZoneCard({
 
             {/* Illustration */}
             <div
-                className="flex items-center justify-center rounded-full transition-transform duration-500"
+                className="flex flex-1 items-center justify-center rounded-full transition-transform duration-500 my-2"
                 style={{
                     background: `radial-gradient(circle, ${blobColor}22 0%, transparent 70%)`,
-                    transform: hovered ? "scale(1.06)" : "scale(1)",
+                    transform: hovered ? "scale(1.04)" : "scale(1)",
                 }}
             >
                 <div
                     className="transition-transform duration-500"
                     style={{
-                        transform: hovered ? "scale(1.06)" : "scale(1)",
                         filter: "drop-shadow(0 8px 16px rgba(0,0,0,0.12))",
                     }}
                 >
