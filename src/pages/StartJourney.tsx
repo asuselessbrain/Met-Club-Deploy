@@ -110,7 +110,7 @@ export default function StartJourney() {
               btnShadow="rgba(249,115,22,0.42)"
               btnLabel={isChapterOneCompleted ? "সিমুলেশনে প্রবেশ করুন" : "প্রথম অধ্যায় সম্পন্ন করুন"}
               // disabled={!isChapterOneCompleted}
-              link="/games"
+              link="/games/"
               description={
                 <>
                   <strong>আপনার দক্ষতা পরীক্ষা করুন!</strong>
