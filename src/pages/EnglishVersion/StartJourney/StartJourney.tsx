@@ -107,7 +107,7 @@ export default function StartJourney() {
                             btnShadow="rgba(249,115,22,0.42)"
                             btnLabel={isChapterOneCompleted ? "Enter Simulation" : "Complete First Chapter"}
                             // disabled={!isChapterOneCompleted}
-                            link="http://meteorologyclub.com/api:8080"
+                            link="https://meteorologyclub.com/api:8080"
                             description={
                                 <>
                                     <strong>Test your skills!</strong>
